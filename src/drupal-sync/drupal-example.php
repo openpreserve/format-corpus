@@ -8,7 +8,7 @@ $anon_session = xmlrpc($xmlrpc_url, 'system.connect');
 
 // Use anon session id to login with authentication
 $user = 'admin';
-$password = 'web-4anj';
+$password = '';
 $authenticated_session = xmlrpc($xmlrpc_url, 'user.login', $anon_session['sessid'], $user, $password);
 
 // Now we have an anuthenticated session, and when this ID is passed to services, it will run under that user's permissions

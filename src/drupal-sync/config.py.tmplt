@@ -1,0 +1,11 @@
+'''
+Created on 27 Nov 2010
+
+@author: anj
+'''
+
+config = {
+  'url': 'http://host/services/xmlrpc',
+  'username': 'username',
+  'password': '',
+}

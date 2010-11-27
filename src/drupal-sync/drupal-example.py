@@ -4,13 +4,7 @@ import hmac
 import os.path, sys, time, mimetypes, xmlrpclib, pprint, base64
 pp = pprint.PrettyPrinter()
 
-config = {
-#  'url': 'http://localhost.domd/~anj/drupals/drupal-7.0-beta3/services/xmlrpc',
-  'url': 'http://localhost.domd/~anj/drupals/drupal-6/services/xmlrpc',
-  'username': 'admin',
-  'password': 'web-4anj',
-#  'key': '05a665ffbee0436af1fb1918ee903f3c',
-}
+from config import config
 
 # Make initial connection to service, then login as developer
 server = xmlrpclib.Server(config['url'], allow_none=True);
@@ -73,7 +67,7 @@ else:
     # pp.pprint(ff) # DEBUG - dump the file structure - including the file data
 '''
 #node = server.node.get(config['key'], 'localhost', '', 'C7nW8P3nDw', connection['sessid'],1)
-node = server.node.get(sessid,1,{})
+node = server.node.get(sessid,4,{})
 pp.pprint(node)
 
 print "----"
@@ -83,7 +77,7 @@ node = {
   'type': 'format',
   'status': 1,
   'promote': 1,
-#  'nid': 2,
+  'nid': 3,
   'title': 'Remote Test ' + timestamp,
   'body': 'This is a test created from a remote app. Easy.',
   'uid': user['uid'],

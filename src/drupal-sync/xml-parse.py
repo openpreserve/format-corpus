@@ -1,5 +1,4 @@
-import json
-import lxml
+import json, lxml, pprint, fido.prepare
 from lxml import objectify
 
 class objectJSONEncoder(json.JSONEncoder):
@@ -21,9 +20,31 @@ class objectJSONEncoder(json.JSONEncoder):
             return o.__dict__
         return json.JSONEncoder.default(self, o)
         
+#obj = objectify.fromstring("<Book><price>1.50</price><author>W. Shakespeare</author></Book>")
+#print objectJSONEncoder().encode(obj)
 
-obj = objectify.fromstring("<Book><price>1.50</price><author>W. Shakespeare</author></Book>")
-print objectJSONEncoder().encode(obj)
+obj2 = objectify.parse("pronom/xml/puid.fmt.10.xml", )
+print objectJSONEncoder().encode(obj2.getroot())
 
-sudo port install python_select
- 	sudo python_select python26
+ff = obj2.getroot().report_format_detail.FileFormat;
+
+print ff.FormatName;
+print len(ff.InternalSignature);
+print ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue;
+
+print fido.prepare.convert_to_regex("49492A00")
+
+# 
+# Identifiers (PUID, MIME, Apple UID)
+# Developers
+# Document*
+# - ...
+# ExternalSignature
+# InternalSignature (ByteSequence*
+# RelatedFormat* (Type, ID, Name, Version?)
+# - Has lower priority than
+# - Is subsequent version of
+# - Is supertype of 
+# CompressionType*
+# FormatProperty*
+
