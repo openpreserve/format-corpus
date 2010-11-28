@@ -60,7 +60,7 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-          'nid': 11,
+          'nid': 9,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    dfr.push_pronom('pronom/xml/puid.fmt.101.xml')
+    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
         
 '''
      <Document>
