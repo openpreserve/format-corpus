@@ -45,7 +45,6 @@ class DrupalFormatRegistry():
     def find_taxonomy_term(self, vid, term):
         tid = -1
         for t in  self.server.taxonomy.getTree(self.sessid, vid):
-            pprint.pprint(t)
             if( t['name'] == term ):
                  tid = t['tid']
         return tid
@@ -55,7 +54,7 @@ class DrupalFormatRegistry():
         ff = doc.getroot().report_format_detail.FileFormat;
         
         timestamp = str(int(time.time()))
-        #timestamp = str(int(time.mktime(time.strptime(ff.LastUpdatedDate.text, "%d %b %Y"))))
+        #timestamp = str(int(time.mktime()))
         
         node = {
           'type': 'format',
@@ -76,9 +75,12 @@ class DrupalFormatRegistry():
           'field_aliases': [{'value': ff.FormatAliases.text}],
           'field_creator': [{'value': ff.Developers.DeveloperCompoundName.text}],
     # FormatFamilies
-    #      'field_release_date': [{'value': ff.ReleaseDate.text}],
-    # 'field_release_date': [{'date_type': 'date',
+          'field_release_date': [{'value': { 'date': ff.ReleaseDate.text }}],
+    #      'field_release_date': [{'value': { 'date': time.strftime("%d %b %Y", time.strptime(ff.ReleaseDate.text, "%d %b %Y"))}}],
+    # 'field_release_date': [{
+    #                         'date_type': 'date',
     #                         'timezone': 'UTC',
+   #                          'value': time.strftime("%Y-%m-%dT00:00:00", time.strptime(ff.ReleaseDate.text, "%d %b %Y")) }],
     #                         'timezone_db': 'UTC',
     #                         'value': '1992-06-03T00:00:00'}],
     # WithdrawnDate
@@ -89,6 +91,8 @@ class DrupalFormatRegistry():
           'field_regex': [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text) }],
     
         }
+        
+        
         
         # Loop through FileFormatIdentifier[]
         for ffid in ff.FileFormatIdentifier:
