@@ -5,7 +5,7 @@ Created on 27 Nov 2010
 '''
 
 import hmac
-import os.path, sys, time, mimetypes, xmlrpclib, pprint, base64
+import os, os.path, fnmatch, sys, time, mimetypes, xmlrpclib, pprint, base64
 import json, lxml, pprint, fido.prepare
 from lxml import objectify
 
@@ -50,7 +50,8 @@ class DrupalFormatRegistry():
         return tid
 
     def push_pronom(self, source ):
-        doc = objectify.parse( source )
+        parser = objectify.makeparser(remove_blank_text=True)
+        doc = objectify.parse( source, parser )
         ff = doc.getroot().report_format_detail.FileFormat;
         
         timestamp = str(int(time.time()))
@@ -60,7 +61,7 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-          'nid': 9,
+#          'nid': 9,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
@@ -73,9 +74,9 @@ class DrupalFormatRegistry():
           'field_version': [{'value': ff.FormatVersion.text}],
           'field_fullname': [{'value': ff.FormatName.text}],
           'field_aliases': [{'value': ff.FormatAliases.text}],
-          'field_creator': [{'value': ff.Developers.DeveloperCompoundName.text}],
     # FormatFamilies
-          'field_release_date': [{'value': { 'date': ff.ReleaseDate.text }}],
+          'field_release_date': [{'value': { 'date': ff.ReleaseDate.text.strip() }}],
+          'field_withdrawn_date': [{'value': { 'date': ff.WithdrawnDate.text.strip()  }}],
     #      'field_release_date': [{'value': { 'date': time.strftime("%d %b %Y", time.strptime(ff.ReleaseDate.text, "%d %b %Y"))}}],
     # 'field_release_date': [{
     #                         'date_type': 'date',
@@ -88,30 +89,34 @@ class DrupalFormatRegistry():
     #      'field_conforms_to': [{'nid': ''}],
     #      'field_encapsulates': [],
     #      'field_hasformat': [{'nid': ''}],
-          'field_regex': [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text) }],
     
         }
         
-        
+        if( ff.find("./Developers") ):
+            node['field_creator'] = [{'value': ff.Developers.DeveloperCompoundName.text}];
         
         # Loop through FileFormatIdentifier[]
-        for ffid in ff.FileFormatIdentifier:
-            if( ffid.IdentifierType.text == "PUID"):
-                node['field_puid'] = [{'value': ffid.Identifier.text}]
-            if( ffid.IdentifierType.text == "Apple Uniform Type Identifier"):
-                node['field_apple_uid'] = [{'value': ffid.Identifier.text}]
-            if( ffid.IdentifierType.text == "MIME"):
-                node['field_mimetype'] = [{'value': self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text) }]
+        if( ff.find("./FileFormatIdentifier") ):
+            for ffid in ff.FileFormatIdentifier:
+                if( ffid.IdentifierType.text == "PUID"):
+                    node['field_puid'] = [{'value': ffid.Identifier.text}]
+                if( ffid.IdentifierType.text == "Apple Uniform Type Identifier"):
+                    node['field_apple_uid'] = [{'value': ffid.Identifier.text}]
+                if( ffid.IdentifierType.text == "MIME"):
+                    node['field_mimetype'] = [{'value': self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text) }]
          
          
         # Loop through ExternalSignature[]
-        node['field_extensions'] = []
-        for es in ff.ExternalSignature:
-            if( es.SignatureType.text == "File extension" ):
-                node['field_extensions'].append( 
-                        { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text) } )
-        
-        
+        if( ff.find("./ExternalSignature") ):
+            node['field_extensions'] = []
+            for es in ff.ExternalSignature:
+                if( es.SignatureType.text == "File extension" ):
+                    node['field_extensions'].append( 
+                            { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text) } )
+        # Internal Signatures
+        if( ff.find("./InternalSignature") ):
+            node['field_regex'] = [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text) }];
+
         #Split FormatTypes and add.
         #      'field_type': [{'value': ''}],
         
@@ -142,7 +147,12 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    #dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    
+    for file in os.listdir('pronom/xml'):
+        if fnmatch.fnmatch(file, 'puid.*.xml'):
+            print file
+            dfr.push_pronom('pronom/xml/'+file)
         
 '''
      <Document>
