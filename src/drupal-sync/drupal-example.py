@@ -105,7 +105,7 @@ node = {
 pp.pprint(node) # DEBUG - dump the node - shows exact format to use in other languages
 
 try:
-    n = server.node.save(sessid, node)
+    #n = server.node.save(sessid, node)
     print n, node
     nn = server.node.get(sessid,n,{})  # DEBUG - get the final node - not needed now that we know it works
 
