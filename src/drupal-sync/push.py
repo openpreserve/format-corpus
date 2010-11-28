@@ -115,20 +115,26 @@ class DrupalFormatRegistry():
                             { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
         # Internal Signatures
         if( hasattr(ff,"InternalSignature") ):
+            node['field_is1_name'] = [{"value": ff.InternalSignature[0].SignatureName.text.strip()}]
+            node['field_is1_desc'] = [{"value": ff.InternalSignature[0].SignatureNote.text.strip()}]
             node['field_regex'] = [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text.strip()) }];
 
         #Split FormatTypes and add.
         #      'field_type': [{'value': ''}],
+        if( hasattr(ff, 'FormatTypes') ):
+            node['field_type'] = []
+            for type in ff.FormatTypes.text.split(','):
+                node['field_type'].append( { 'value': self.add_taxonomy_term(self.type_vid, type.strip())} )
         
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
 
         
         pp = pprint.PrettyPrinter()    
-        pp.pprint(node);
+        #pp.pprint(node);
         
         try:
             n = self.server.node.save( self.sessid, node)
-            print n, node
+            print n, node['title']
             nn = self.server.node.get( self.sessid,n,{})  # DEBUG - get the final node - not needed now that we know it works
         
         except xmlrpclib.Fault, err:
@@ -137,7 +143,9 @@ class DrupalFormatRegistry():
             print "Fault string: %s" % err.faultString
         
         else:
-            pp.pprint(n) # DEBUG
+            pass
+            #pp.pprint(nn['title'])
+            #pp.pprint(n) # DEBUG
             pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 
@@ -155,6 +163,15 @@ if __name__ == "__main__":
     #        dfr.push_pronom('pronom/xml/'+file)
         
 '''
+ 'field_doc_link': [{'attributes': [],
+                     'title': 'Adobe Photoshop: TIFF Technical Notes',
+                     'url': 'http://partners.adobe.com/public/developer/en/tiff/TIFFphotoshop.pdf'},
+                    {'attributes': [],
+                     'title': 'Adobe PageMaker 6.0: TIFF Technical Notes',
+                     'url': 'http://partners.adobe.com/public/developer/en/tiff/TIFFPM6.pdf'}],
+ 'field_doc_title': [{'value': 'Adobe Systems Incorporated, 2002, Adobe Photoshop: TIFF Technical Notes'},
+                     {'value': 'Adobe Systems Incorporated, 1995, Adobe PageMaker 6.0: TIFF Technical Notes'}],
+
      <Document>
         <DocumentID>13</DocumentID>
         <DisplayText>European Broadcasting Union, 2001, Technical Specification 3285: BWF - a format for audio data files in broadcasting, Version 1</DisplayText>
