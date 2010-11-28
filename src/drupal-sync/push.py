@@ -61,19 +61,19 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-#          'nid': 9,
+          'nid': 383,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
           'created': timestamp,
           'revision_timestamp': timestamp,
           
-          'title': ff.FormatName.text,
-          'body': ff.FormatDescription.text,
-          'field_shortname' : [ {'value': ff.FormatName.text}, ],
-          'field_version': [{'value': ff.FormatVersion.text}],
-          'field_fullname': [{'value': ff.FormatName.text}],
-          'field_aliases': [{'value': ff.FormatAliases.text}],
+          'title': ff.FormatName.text.strip(),
+          'body': ff.FormatDescription.text.strip(),
+          'field_shortname' : [ {'value': ff.FormatName.text.strip()}, ],
+          'field_version': [{'value': ff.FormatVersion.text.strip()}],
+          'field_fullname': [{'value': ff.FormatName.text.strip()}],
+          'field_aliases': [{'value': ff.FormatAliases.text.strip()}],
     # FormatFamilies
           'field_release_date': [{'value': { 'date': ff.ReleaseDate.text.strip() }}],
           'field_withdrawn_date': [{'value': { 'date': ff.WithdrawnDate.text.strip()  }}],
@@ -92,30 +92,30 @@ class DrupalFormatRegistry():
     
         }
         
-        if( ff.find("./Developers") ):
-            node['field_creator'] = [{'value': ff.Developers.DeveloperCompoundName.text}];
+        if( hasattr(ff, "Developers") ):
+            node['field_creator'] = [{'value': ff.Developers.DeveloperCompoundName.text.strip()}];
         
         # Loop through FileFormatIdentifier[]
-        if( ff.find("./FileFormatIdentifier") ):
+        if( hasattr(ff, "FileFormatIdentifier") ):
             for ffid in ff.FileFormatIdentifier:
                 if( ffid.IdentifierType.text == "PUID"):
-                    node['field_puid'] = [{'value': ffid.Identifier.text}]
+                    node['field_puid'] = [{'value': ffid.Identifier.text.strip()}]
                 if( ffid.IdentifierType.text == "Apple Uniform Type Identifier"):
-                    node['field_apple_uid'] = [{'value': ffid.Identifier.text}]
+                    node['field_apple_uid'] = [{'value': ffid.Identifier.text.strip()}]
                 if( ffid.IdentifierType.text == "MIME"):
-                    node['field_mimetype'] = [{'value': self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text) }]
+                    node['field_mimetype'] = [{'value': self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text.strip()) }]
          
          
         # Loop through ExternalSignature[]
-        if( ff.find("./ExternalSignature") ):
+        if( hasattr(ff, "ExternalSignature") ):
             node['field_extensions'] = []
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
                     node['field_extensions'].append( 
-                            { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text) } )
+                            { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
         # Internal Signatures
-        if( ff.find("./InternalSignature") ):
-            node['field_regex'] = [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text) }];
+        if( hasattr(ff,"InternalSignature") ):
+            node['field_regex'] = [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text.strip()) }];
 
         #Split FormatTypes and add.
         #      'field_type': [{'value': ''}],
@@ -147,12 +147,12 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    #dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
     
-    for file in os.listdir('pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.*.xml'):
-            print file
-            dfr.push_pronom('pronom/xml/'+file)
+    #for file in os.listdir('pronom/xml'):
+    #    if fnmatch.fnmatch(file, 'puid.fmt.*.xml'):
+    #        print file
+    #        dfr.push_pronom('pronom/xml/'+file)
         
 '''
      <Document>
