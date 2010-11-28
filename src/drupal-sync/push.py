@@ -61,7 +61,7 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-          'nid': 383,
+#          'nid': 383,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
@@ -130,7 +130,7 @@ class DrupalFormatRegistry():
 
         
         pp = pprint.PrettyPrinter()    
-        #pp.pprint(node);
+        pp.pprint(node);
         
         try:
             n = self.server.node.save( self.sessid, node)
@@ -146,7 +146,7 @@ class DrupalFormatRegistry():
             pass
             #pp.pprint(nn['title'])
             #pp.pprint(n) # DEBUG
-            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+            #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 
 
@@ -155,12 +155,12 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    dfr.push_pronom('pronom/xml/puid.fmt.1.xml')
     
-    #for file in os.listdir('pronom/xml'):
-    #    if fnmatch.fnmatch(file, 'puid.fmt.*.xml'):
-    #        print file
-    #        dfr.push_pronom('pronom/xml/'+file)
+    for file in os.listdir('pronom/xml'):
+        if fnmatch.fnmatch(file, 'puid.b-fmt.?.xml'):
+            print file
+            dfr.push_pronom('pronom/xml/'+file)
         
 '''
  'field_doc_link': [{'attributes': [],

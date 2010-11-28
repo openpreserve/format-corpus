@@ -1,6 +1,10 @@
 foreg
 =====
 
+Some complex signatures require escaping in ways not 100% clear to me.
+Perhaps curly brackets are the issue?
+Also, need to get the regex escaping right in general.
+
 Note that most formats have very few internal signatures, but 
 
 * puid.fmt.134.xml:8
