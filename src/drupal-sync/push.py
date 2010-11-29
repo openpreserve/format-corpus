@@ -6,15 +6,54 @@ Created on 27 Nov 2010
 
 import hmac
 import os, os.path, fnmatch, sys, time, mimetypes, xmlrpclib, pprint, base64
-import json, lxml, pprint, fido.prepare
+import json,lxml, pprint, fido.prepare
 from lxml import objectify
 
+
+import base64
+import urllib
+from urllib import unquote, splittype, splithost
+import xmlrpclib
+
+class UrllibTransport(xmlrpclib.Transport):
+    def set_proxy(self, proxy):
+        self.proxyurl = proxy
+                
+    def request(self, host, handler, request_body, verbose=0):
+        type, r_type = splittype(self.proxyurl)
+        phost, XXX = splithost(r_type)
+
+        puser_pass = None
+        if '@' in phost:
+            user_pass, phost = phost.split('@', 1)
+            if ':' in user_pass:
+                user, password = user_pass.split(':', 1)
+                puser_pass = base64.encodestring('%s:%s' % (unquote(user),
+                                                unquote(password))).strip()
+        
+        urlopener = urllib.FancyURLopener({'http':'http://%s'%phost})
+        if not puser_pass:
+            urlopener.addheaders = [('User-agent', self.user_agent)]
+        else:
+            urlopener.addheaders = [('User-agent', self.user_agent),
+                                    ('Proxy-authorization', 'Basic ' + puser_pass) ]
+
+        host = unquote(host)
+        f = urlopener.open("http://%s%s"%(host,handler), request_body)
+
+        self.verbose = verbose 
+        return self.parse_response(f)
 
 class DrupalFormatRegistry():
     
     def __init__(self, config):
+        # Proxy:
+        p = UrllibTransport()
+        if( config.has_key('proxy') ):
+            p.set_proxy(config['proxy'])
+    
         # Make initial connection to service, then login as developer
-        self.server = xmlrpclib.Server(config['url'], allow_none=True);
+        self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
         self.connection = self.server.system.connect();
         
         # hash_hmac('sha256', $timestamp .';'.$domain .';'. $nonce .';'.'user.get', 'remote_api_key');
@@ -30,6 +69,10 @@ class DrupalFormatRegistry():
         self.ext_vid = 1
         self.mime_vid = 2
         self.type_vid = 3
+        #
+        self.ext_vid = 3
+        self.mime_vid = 4
+        self.type_vid = 5
         
     
     def add_taxonomy_term(self, vid, term):
@@ -61,12 +104,12 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-#          'nid': 383,
+          'nid': 25,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
-          'created': timestamp,
-          'revision_timestamp': timestamp,
+#          'created': timestamp,
+#          'revision_timestamp': timestamp,
           
           'title': ff.FormatName.text.strip(),
           'body': ff.FormatDescription.text.strip(),
@@ -77,14 +120,6 @@ class DrupalFormatRegistry():
     # FormatFamilies
           'field_release_date': [{'value': { 'date': ff.ReleaseDate.text.strip() }}],
           'field_withdrawn_date': [{'value': { 'date': ff.WithdrawnDate.text.strip()  }}],
-    #      'field_release_date': [{'value': { 'date': time.strftime("%d %b %Y", time.strptime(ff.ReleaseDate.text, "%d %b %Y"))}}],
-    # 'field_release_date': [{
-    #                         'date_type': 'date',
-    #                         'timezone': 'UTC',
-   #                          'value': time.strftime("%Y-%m-%dT00:00:00", time.strptime(ff.ReleaseDate.text, "%d %b %Y")) }],
-    #                         'timezone_db': 'UTC',
-    #                         'value': '1992-06-03T00:00:00'}],
-    # WithdrawnDate
     
     #      'field_conforms_to': [{'nid': ''}],
     #      'field_encapsulates': [],
@@ -113,22 +148,55 @@ class DrupalFormatRegistry():
                 if( es.SignatureType.text == "File extension" ):
                     node['field_extensions'].append( 
                             { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
+                    
         # Internal Signatures
         if( hasattr(ff,"InternalSignature") ):
-            node['field_is1_name'] = [{"value": ff.InternalSignature[0].SignatureName.text.strip()}]
-            node['field_is1_desc'] = [{"value": ff.InternalSignature[0].SignatureNote.text.strip()}]
-            node['field_regex'] = [{'value': fido.prepare.convert_to_regex(ff.InternalSignature[0].ByteSequence[0].ByteSequenceValue.text.strip()) }];
+            node['field_is1_name'] = []
+            node['field_is1_desc'] = []
+            node['field_regex'] = [];
+            for isg in ff.InternalSignature:
+                node['field_is1_name'].append( {"value": isg.SignatureName.text.strip()} )
+                node['field_is1_desc'].append( {"value": isg.SignatureNote.text.strip()} )
+                node['field_regex'].append( {'value': fido.prepare.convert_to_regex(isg.ByteSequence[0].ByteSequenceValue.text.strip()) } );
 
+        # Documents
+        if( hasattr(ff, "Document") ):
+            node['field_doc_title'] = []
+            node['field_doc_link'] = []
+            node['field_doc_type'] = []
+            node['field_doc_avail'] = []
+            node['field_doc_avail_note'] = []
+#            node['field_doc_pub_date'] = []
+            node['field_doc_ipr'] = []
+            node['field_doc_note'] = []
+            node['field_doc_author'] = []
+            node['field_doc_publisher'] = []
+            for doc in ff.Document:
+                node['field_doc_title'].append( {"value": doc.DisplayText.text.strip() })
+                node['field_doc_link'].append( {'attributes': [],
+                     'title': doc.TitleText.text.strip(),
+                     'url': 'http://'+doc.DocumentIdentifier.Identifier.text.strip() } )
+                node['field_doc_type'].append( {"value": doc.DocumentType.text.strip() })
+                node['field_doc_avail'].append( {"value": doc.AvailabilityDescription.text.strip() })
+                node['field_doc_avail_note'].append( {"value": doc.AvailabilityNote.text.strip() })
+#                node['field_doc_pub_date'].append( {"value": { 'date': doc.PublicationDate.text.strip() } } )
+                node['field_doc_ipr'].append( {"value": doc.DocumentIPR.text.strip() })
+                node['field_doc_note'].append( {"value": doc.DocumentNote.text.strip() })
+                node['field_doc_author'].append( {"value": doc.Author.AuthorCompoundName.text.strip() })
+                node['field_doc_publisher'].append( {"value": doc.Publisher.PublisherCompoundName.text.strip() })
+                    
         #Split FormatTypes and add.
         #      'field_type': [{'value': ''}],
         if( hasattr(ff, 'FormatTypes') ):
             node['field_type'] = []
+            node['taxonomy'] = []
             for type in ff.FormatTypes.text.split(','):
-                node['field_type'].append( { 'value': self.add_taxonomy_term(self.type_vid, type.strip())} )
+                tid = self.add_taxonomy_term(self.type_vid, type.strip())
+#                node['field_type'].append( { 'value': tid } )
+                node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
         
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
 
-        
         pp = pprint.PrettyPrinter()    
         pp.pprint(node);
         
@@ -146,7 +214,7 @@ class DrupalFormatRegistry():
             pass
             #pp.pprint(nn['title'])
             #pp.pprint(n) # DEBUG
-            #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 
 
@@ -155,56 +223,13 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    dfr.push_pronom('pronom/xml/puid.fmt.1.xml')
+    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
     
     for file in os.listdir('pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.b-fmt.?.xml'):
+        if fnmatch.fnmatch(file, 'puid.-fmt.?.xml'):
             print file
             dfr.push_pronom('pronom/xml/'+file)
         
-'''
- 'field_doc_link': [{'attributes': [],
-                     'title': 'Adobe Photoshop: TIFF Technical Notes',
-                     'url': 'http://partners.adobe.com/public/developer/en/tiff/TIFFphotoshop.pdf'},
-                    {'attributes': [],
-                     'title': 'Adobe PageMaker 6.0: TIFF Technical Notes',
-                     'url': 'http://partners.adobe.com/public/developer/en/tiff/TIFFPM6.pdf'}],
- 'field_doc_title': [{'value': 'Adobe Systems Incorporated, 2002, Adobe Photoshop: TIFF Technical Notes'},
-                     {'value': 'Adobe Systems Incorporated, 1995, Adobe PageMaker 6.0: TIFF Technical Notes'}],
-
-     <Document>
-        <DocumentID>13</DocumentID>
-        <DisplayText>European Broadcasting Union, 2001, Technical Specification 3285: BWF - a format for audio data files in broadcasting, Version 1</DisplayText>
-        <DocumentType>Authoritative</DocumentType>
-        <AvailabilityDescription>Public</AvailabilityDescription>
-        <AvailabilityNote>
-        </AvailabilityNote>
-        <PublicationDate>01 Jul 2001</PublicationDate>
-        <TitleText>Technical Specification 3285: BWF - a format for audio data files in broadcasting, Version 1</TitleText>
-        <DocumentIPR>
-        </DocumentIPR>
-        <DocumentNote>
-        </DocumentNote>
-        <DocumentIdentifier>
-          <Identifier>www.ebu.ch/CMSimages/en/tec_doc_t3285_tcm6-10544.pdf</Identifier>
-          <IdentifierType>URL</IdentifierType>
-        </DocumentIdentifier>
-        <Author>
-          <AuthorID>104</AuthorID>
-          <AuthorName>
-          </AuthorName>
-          <OrganisationName>European Broadcasting Union</OrganisationName>
-          <AuthorCompoundName>European Broadcasting Union</AuthorCompoundName>
-        </Author>
-        <Publisher>
-          <PublisherID>104</PublisherID>
-          <PublisherName>
-          </PublisherName>
-          <OrganisationName>European Broadcasting Union</OrganisationName>
-          <PublisherCompoundName>European Broadcasting Union</PublisherCompoundName>
-        </Publisher>
-      </Document>
-'''
 '''
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>

@@ -28,6 +28,13 @@ Note that most formats have very few internal signatures, but
 * puid.x-fmt.398.xml:2
 
 
+Due to issues with the multigroup module, you have to set the number of repeats to be larger than 8 when syncing.
+Looks ugly, but works fine.
+Nope, it doesn't really work, because nesting repeated items does not work.
+And the XMLRPC interface is pretty nasty.
+Looked at using full nodes, but that makes things more complex on the code end and looks ugly.
+So, trying flexifield...
+
 Sync
 ----
 * XMLRPC Services
