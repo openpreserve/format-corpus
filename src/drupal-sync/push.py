@@ -157,7 +157,8 @@ class DrupalFormatRegistry():
                                'value': { 
                                     'field_title' : [{ 'value': isg.SignatureName.text.strip() }], 
                                     'field_note' : [{ 'value': isg.SignatureNote.text.strip() }], 
-                                    'field_regex' : [{ 'value': fido.prepare.convert_to_regex(isg.ByteSequence[0].ByteSequenceValue.text.strip()) }],
+                                    'field_regex' : [{ 'value': 
+                                        repr(fido.prepare.convert_to_regex(isg.ByteSequence[0].ByteSequenceValue.text.strip())) }],
                                 }
                                 })
 
