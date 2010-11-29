@@ -104,7 +104,7 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-          'nid': 25,
+          'nid': 45,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
@@ -151,40 +151,37 @@ class DrupalFormatRegistry():
                     
         # Internal Signatures
         if( hasattr(ff,"InternalSignature") ):
-            node['field_is1_name'] = []
-            node['field_is1_desc'] = []
-            node['field_regex'] = [];
+            node['field_int_sigs'] = []
             for isg in ff.InternalSignature:
-                node['field_is1_name'].append( {"value": isg.SignatureName.text.strip()} )
-                node['field_is1_desc'].append( {"value": isg.SignatureNote.text.strip()} )
-                node['field_regex'].append( {'value': fido.prepare.convert_to_regex(isg.ByteSequence[0].ByteSequenceValue.text.strip()) } );
+                node['field_int_sigs'].append( { 
+                               'value': { 
+                                    'field_title' : [{ 'value': isg.SignatureName.text.strip() }], 
+                                    'field_note' : [{ 'value': isg.SignatureNote.text.strip() }], 
+                                    'field_regex' : [{ 'value': fido.prepare.convert_to_regex(isg.ByteSequence[0].ByteSequenceValue.text.strip()) }],
+                                }
+                                })
 
         # Documents
         if( hasattr(ff, "Document") ):
-            node['field_doc_title'] = []
-            node['field_doc_link'] = []
-            node['field_doc_type'] = []
-            node['field_doc_avail'] = []
-            node['field_doc_avail_note'] = []
-#            node['field_doc_pub_date'] = []
-            node['field_doc_ipr'] = []
-            node['field_doc_note'] = []
-            node['field_doc_author'] = []
-            node['field_doc_publisher'] = []
+            node['field_documents'] = []
             for doc in ff.Document:
-                node['field_doc_title'].append( {"value": doc.DisplayText.text.strip() })
-                node['field_doc_link'].append( {'attributes': [],
-                     'title': doc.TitleText.text.strip(),
-                     'url': 'http://'+doc.DocumentIdentifier.Identifier.text.strip() } )
-                node['field_doc_type'].append( {"value": doc.DocumentType.text.strip() })
-                node['field_doc_avail'].append( {"value": doc.AvailabilityDescription.text.strip() })
-                node['field_doc_avail_note'].append( {"value": doc.AvailabilityNote.text.strip() })
-#                node['field_doc_pub_date'].append( {"value": { 'date': doc.PublicationDate.text.strip() } } )
-                node['field_doc_ipr'].append( {"value": doc.DocumentIPR.text.strip() })
-                node['field_doc_note'].append( {"value": doc.DocumentNote.text.strip() })
-                node['field_doc_author'].append( {"value": doc.Author.AuthorCompoundName.text.strip() })
-                node['field_doc_publisher'].append( {"value": doc.Publisher.PublisherCompoundName.text.strip() })
-                    
+                content = {
+                                    'field_title' : [{"value": doc.DisplayText.text.strip() }],
+                                    'field_doc_type' : [{"value": doc.DocumentType.text.strip() }],
+                                    'field_doc_avail' : [{"value": doc.AvailabilityDescription.text.strip() }],
+                                    'field_doc_avail_note' : [{"value": doc.AvailabilityNote.text.strip() }],
+                                    'field_doc_pub_date' : [{"value": { 'date': doc.PublicationDate.text.strip() } } ],
+                                    'field_doc_ipr' : [{"value": doc.DocumentIPR.text.strip() }],
+                                    'field_doc_note' : [{"value": doc.DocumentNote.text.strip() }],
+                                    'field_doc_author' : [{"value": doc.Author.AuthorCompoundName.text.strip() }],
+                                    'field_doc_publisher' : [{"value": doc.Publisher.PublisherCompoundName.text.strip() }],
+                           }
+                if( hasattr(doc, "DocumentIdentifier")):
+                    content['field_doc_link'] = [{'attributes': [],
+                                                  'title': doc.TitleText.text.strip(),
+                                                   'url': 'http://'+doc.DocumentIdentifier.Identifier.text.strip() } ]
+                node['field_documents'].append( { 'value': content } )
+                
         #Split FormatTypes and add.
         #      'field_type': [{'value': ''}],
         if( hasattr(ff, 'FormatTypes') ):
@@ -223,10 +220,10 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    #dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
     
     for file in os.listdir('pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.-fmt.?.xml'):
+        if fnmatch.fnmatch(file, 'puid.fmt.2.xml'):
             print file
             dfr.push_pronom('pronom/xml/'+file)
         

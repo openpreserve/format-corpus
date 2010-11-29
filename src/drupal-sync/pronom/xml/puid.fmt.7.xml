@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+  <report_format_detail>
+    <FileFormat>
+      <FormatID>609</FormatID>
+      <FormatName>Tagged Image File Format</FormatName>
+      <FormatVersion>3</FormatVersion>
+      <FormatAliases>TIFF (3)</FormatAliases>
+      <FormatFamilies>
+      </FormatFamilies>
+      <FormatTypes>Image (Raster)</FormatTypes>
+      <FormatDisclosure>Full</FormatDisclosure>
+      <FormatDescription>The Tagged Image File Format (TIFF) is a raster image format originally developed by the Aldus Corporation, primarily for use in scanning and desk-top publishing. When Adobe Systems Incorporated purchased Aldus in 1994, they acquired the rights to the TIFF format and have maintained it since then. TIFF files comprise three sections: an Image File Header (IFH), an Image File Directory (IFD), and the image data. TIFF files can contain multiple images (multi-page TIFF), and each image has a separate IFD. The IFH always appears at the beginning of the file, and is immediately followed by a pointer to the first IFD. The IFD contains metadata which describes the associated image, stored as a series of tags. The IFD also contains a pointer to the actual image data. TIFF 3.0 supports colour depths from 1 bit to 24 bit (e.g. monochrome to true colour), and a range of compression types (RLE, and CCITT Group 3 and Group 4).</FormatDescription>
+      <BinaryFileFormat>Binary</BinaryFileFormat>
+      <ByteOrders>Little-endian (Intel) and Big-endian (Motorola)</ByteOrders>
+      <ReleaseDate>01 Aug 1986</ReleaseDate>
+      <WithdrawnDate>
+      </WithdrawnDate>
+      <ProvenanceSourceID>1</ProvenanceSourceID>
+      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+      <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
+      <ProvenanceDescription>
+      </ProvenanceDescription>
+      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <FormatNote>
+      </FormatNote>
+      <FormatRisk>
+      </FormatRisk>
+      <TechnicalEnvironment>
+      </TechnicalEnvironment>
+      <FileFormatIdentifier>
+        <Identifier>fmt/7</Identifier>
+        <IdentifierType>PUID</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/tiff</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>public.tiff</Identifier>
+        <IdentifierType>Apple Uniform Type Identifier</IdentifierType>
+      </FileFormatIdentifier>
+      <Developers>
+        <DeveloperID>82</DeveloperID>
+        <DeveloperName>
+        </DeveloperName>
+        <OrganisationName>Aldus Corporation</OrganisationName>
+        <DeveloperCompoundName>Aldus Corporation</DeveloperCompoundName>
+      </Developers>
+      <ExternalSignature>
+        <ExternalSignatureID>635</ExternalSignatureID>
+        <Signature>tif</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
+      <ExternalSignature>
+        <ExternalSignatureID>725</ExternalSignatureID>
+        <Signature>tiff</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>9</SignatureID>
+        <SignatureName>TIFF generic (little-endian)</SignatureName>
+        <SignatureNote>Header</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>183</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>49492A00</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>10</SignatureID>
+        <SignatureName>TIFF generic (big-endian)</SignatureName>
+        <SignatureNote>Header</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>184</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>4D4D002A</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>672</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>673</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>752</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Is previous version of</RelationshipType>
+        <RelatedFormatID>610</RelatedFormatID>
+        <RelatedFormatName>Tagged Image File Format</RelatedFormatName>
+        <RelatedFormatVersion>4</RelatedFormatVersion>
+      </RelatedFormat>
+      <CompressionType>
+        <CompressionID>13</CompressionID>
+        <CompressionName>Run Length Encoding</CompressionName>
+        <CompressionVersion>
+        </CompressionVersion>
+        <CompressionAliases>RLE</CompressionAliases>
+        <CompressionFamilies>
+        </CompressionFamilies>
+        <Description>Run length encoding (RLE) is perhaps the simplest image compression technique in common use. RLE algorithms are lossless, and work by searching for runs of bits, bytes, or pixels of the same value, and encoding the length and value of the run. As such, RLE achieves best results with images containing large areas of contiguous colour, and especially monochrome images. Complex colour images, such as photographs, do not compress well – in some cases, RLE can actually increase the file size. There are a number of RLE variants in common use, which are encountered in the TIFF, PCX and BMP graphics formats.</Description>
+        <Lossiness>Lossless</Lossiness>
+        <ReleaseDate>
+        </ReleaseDate>
+        <WithdrawnDate>
+        </WithdrawnDate>
+        <CompressionDocumentation>
+        </CompressionDocumentation>
+        <CompressionIPR>
+        </CompressionIPR>
+        <CompressionNote>
+        </CompressionNote>
+        <CompressionIdentifier>
+          <Identifier>x-cmp/13</Identifier>
+          <IdentifierType>PUID</IdentifierType>
+        </CompressionIdentifier>
+      </CompressionType>
+      <CompressionType>
+        <CompressionID>14</CompressionID>
+        <CompressionName>CCITT T.4</CompressionName>
+        <CompressionVersion>
+        </CompressionVersion>
+        <CompressionAliases>CCITT Group 3</CompressionAliases>
+        <CompressionFamilies>
+        </CompressionFamilies>
+        <Description>Officially known as CCITT T.4, Group 3 is a compression algorithm developed by the International Telegraph and Telephone Consultative Committee in 1985 for encoding and compressing 1-bit (monochrome) image data. Its primary use has been in fax transmission, and it is optimised for scanned printed or handwritten documents. Group 3 is a lossless algorithm, of which two forms exist: one-dimensional (which is a modified version of Huffman encoding) and two-dimensional, which offers superior compression rates. Due to its origin as a data transmission protocol, Group 3 encoding incorporates error detection codes. Group 3 compression is most commonly used in the TIFF file format.</Description>
+        <Lossiness>Lossless</Lossiness>
+        <ReleaseDate>01 Jan 1985</ReleaseDate>
+        <WithdrawnDate>
+        </WithdrawnDate>
+        <CompressionDocumentation>CCITT Blue Book, 1989, Volume VII, Fascicle VII.3: Terminal equipment and protocols for telematic services, recommendations T.0 - T.63</CompressionDocumentation>
+        <CompressionIPR>
+        </CompressionIPR>
+        <CompressionNote>
+        </CompressionNote>
+        <CompressionIdentifier>
+          <Identifier>x-cmp/14</Identifier>
+          <IdentifierType>PUID</IdentifierType>
+        </CompressionIdentifier>
+        <Developer>
+          <DeveloperID>124</DeveloperID>
+          <DeveloperName>
+          </DeveloperName>
+          <OrganisationName>International Telecommunication Union</OrganisationName>
+          <DeveloperCompoundName>International Telecommunication Union</DeveloperCompoundName>
+        </Developer>
+      </CompressionType>
+      <CompressionType>
+        <CompressionID>15</CompressionID>
+        <CompressionName>CCITT T.6</CompressionName>
+        <CompressionVersion>
+        </CompressionVersion>
+        <CompressionAliases>CCITT Group 4</CompressionAliases>
+        <CompressionFamilies>
+        </CompressionFamilies>
+        <Description>Officially known as CCITT T.6, Group 4 is a compression algorithm developed by the International Telegraph and Telephone Consultative Committee as a development of the two-dimensional Group 3 standard for encoding and compressing 1-bit (monochrome) image data. It is faster, and offers compression rates which are typically double those of Group 3. Like Group 3, it is lossless and designed for 1-bit images. However, being designed as a storage rather than transmission format, it does not incorporate the error detection and correction functions of Group 3 compression. Group 4 compression is most commonly used in the TIFF file format.</Description>
+        <Lossiness>Lossless</Lossiness>
+        <ReleaseDate>01 Jan 1989</ReleaseDate>
+        <WithdrawnDate>
+        </WithdrawnDate>
+        <CompressionDocumentation>CCITT Blue Book, 1989, Volume VII, Fascicle VII.3: Terminal equipment and protocols for telematic services, recommendations T.0 - T.63</CompressionDocumentation>
+        <CompressionIPR>
+        </CompressionIPR>
+        <CompressionNote>
+        </CompressionNote>
+        <CompressionIdentifier>
+          <Identifier>x-cmp/15</Identifier>
+          <IdentifierType>PUID</IdentifierType>
+        </CompressionIdentifier>
+        <Developer>
+          <DeveloperID>124</DeveloperID>
+          <DeveloperName>
+          </DeveloperName>
+          <OrganisationName>International Telecommunication Union</OrganisationName>
+          <DeveloperCompoundName>International Telecommunication Union</DeveloperCompoundName>
+        </Developer>
+      </CompressionType>
+      <FormatProperties>
+        <FormatProperty>
+          <PropertyName>Compression Type</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Compression Level</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Image Width</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Image Height</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Colour Space</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Sampling Frequency Unit</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>X Sampling Frequency</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Y Sampling Frequency</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Bits Per Sample</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Samples Per Pixel</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+        <FormatProperty>
+          <PropertyName>Byte Order</PropertyName>
+          <PropertyDescription>
+          </PropertyDescription>
+          <PropertyType>Instance</PropertyType>
+          <PropertyRiskScore>
+          </PropertyRiskScore>
+          <PropertyHighRisk>
+          </PropertyHighRisk>
+          <PropertyValueDescription>
+          </PropertyValueDescription>
+          <PropertyRisks />
+        </FormatProperty>
+      </FormatProperties>
+    </FileFormat>
+    <SearchCriteria>Criteria</SearchCriteria>
+  </report_format_detail>
+</PRONOM-Report>

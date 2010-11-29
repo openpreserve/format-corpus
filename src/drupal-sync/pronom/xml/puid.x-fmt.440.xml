@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+  <report_format_detail>
+    <FileFormat>
+      <FormatID>852</FormatID>
+      <FormatName>CATIA Product Description</FormatName>
+      <FormatVersion>5</FormatVersion>
+      <FormatAliases>
+      </FormatAliases>
+      <FormatFamilies>
+      </FormatFamilies>
+      <FormatTypes>
+      </FormatTypes>
+      <FormatDisclosure>Full</FormatDisclosure>
+      <FormatDescription>Outline record CATIA 3-D CAD Product Description (collection of models)</FormatDescription>
+      <BinaryFileFormat>Binary</BinaryFileFormat>
+      <ByteOrders>
+      </ByteOrders>
+      <ReleaseDate>
+      </ReleaseDate>
+      <WithdrawnDate>
+      </WithdrawnDate>
+      <ProvenanceSourceID>131</ProvenanceSourceID>
+      <ProvenanceName>Digital Library Research Group / MIT Libraries</ProvenanceName>
+      <ProvenanceSourceDate>06 Apr 2009</ProvenanceSourceDate>
+      <ProvenanceDescription>
+      </ProvenanceDescription>
+      <LastUpdatedDate>06 Apr 2009</LastUpdatedDate>
+      <FormatNote>
+      </FormatNote>
+      <FormatRisk>
+      </FormatRisk>
+      <TechnicalEnvironment>
+      </TechnicalEnvironment>
+      <FileFormatIdentifier>
+        <Identifier>application/octet-stream</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>x-fmt/440</Identifier>
+        <IdentifierType>PUID</IdentifierType>
+      </FileFormatIdentifier>
+      <Developers>
+        <DeveloperID>135</DeveloperID>
+        <DeveloperName>
+        </DeveloperName>
+        <OrganisationName>Dassault Systems</OrganisationName>
+        <DeveloperCompoundName>Dassault Systems</DeveloperCompoundName>
+      </Developers>
+      <Support>
+        <SupportID>135</SupportID>
+        <SupportName>
+        </SupportName>
+        <OrganisationName>Dassault Systems</OrganisationName>
+        <SupportCompoundName>Dassault Systems</SupportCompoundName>
+      </Support>
+      <ExternalSignature>
+        <ExternalSignatureID>848</ExternalSignatureID>
+        <Signature>catproduct</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
+    </FileFormat>
+    <SearchCriteria>Criteria</SearchCriteria>
+  </report_format_detail>
+</PRONOM-Report>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PRONOM-Report xmlns="http://pronom.nationalarchives.gov.uk">
+  <report_format_detail>
+    <FileFormat>
+      <FormatID>993</FormatID>
+      <FormatName>Document Express with DjVu Professional Edition</FormatName>
+      <FormatVersion>6.5</FormatVersion>
+      <FormatAliases>
+      </FormatAliases>
+      <FormatFamilies>
+      </FormatFamilies>
+      <FormatTypes>
+      </FormatTypes>
+      <FormatDisclosure>
+      </FormatDisclosure>
+      <FormatDescription>Outline record only.</FormatDescription>
+      <BinaryFileFormat>Text</BinaryFileFormat>
+      <ByteOrders>
+      </ByteOrders>
+      <ReleaseDate>
+      </ReleaseDate>
+      <WithdrawnDate>
+      </WithdrawnDate>
+      <ProvenanceSourceID>149</ProvenanceSourceID>
+      <ProvenanceName>National Library of Singapore / National Library Board Singapore</ProvenanceName>
+      <ProvenanceSourceDate>08 Jan 2010</ProvenanceSourceDate>
+      <ProvenanceDescription>
+      </ProvenanceDescription>
+      <LastUpdatedDate>08 Jan 2010</LastUpdatedDate>
+      <FormatNote>
+      </FormatNote>
+      <FormatRisk>
+      </FormatRisk>
+      <TechnicalEnvironment>
+      </TechnicalEnvironment>
+      <FileFormatIdentifier>
+        <Identifier>fmt/255</Identifier>
+        <IdentifierType>PUID</IdentifierType>
+      </FileFormatIdentifier>
+      <Developers>
+        <DeveloperID>151</DeveloperID>
+        <DeveloperName>
+        </DeveloperName>
+        <OrganisationName>Caminova Corporation</OrganisationName>
+        <DeveloperCompoundName>Caminova Corporation</DeveloperCompoundName>
+      </Developers>
+      <Support>
+        <SupportID>151</SupportID>
+        <SupportName>
+        </SupportName>
+        <OrganisationName>Caminova Corporation</OrganisationName>
+        <SupportCompoundName>Caminova Corporation</SupportCompoundName>
+      </Support>
+      <ExternalSignature>
+        <ExternalSignatureID>950</ExternalSignatureID>
+        <Signature>djvu</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
+    </FileFormat>
+    <SearchCriteria>Criteria</SearchCriteria>
+  </report_format_detail>
+</PRONOM-Report>
