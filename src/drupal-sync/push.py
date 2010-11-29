@@ -196,11 +196,10 @@ class DrupalFormatRegistry():
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
 
         pp = pprint.PrettyPrinter()    
-        pp.pprint(node);
+        #pp.pprint(node);
         
         try:
             n = self.server.node.save( self.sessid, node)
-            print n, node['title']
             nn = self.server.node.get( self.sessid,n,{})  # DEBUG - get the final node - not needed now that we know it works
         
         except xmlrpclib.Fault, err:
@@ -209,10 +208,10 @@ class DrupalFormatRegistry():
             print "Fault string: %s" % err.faultString
         
         else:
-            pass
+            print n, node['title']
             #pp.pprint(nn['title'])
             #pp.pprint(n) # DEBUG
-            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+            #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 
 
