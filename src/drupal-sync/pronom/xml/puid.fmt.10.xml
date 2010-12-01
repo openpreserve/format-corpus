@@ -356,7 +356,7 @@
         <CompressionIdentifier>
           <Identifier>x-cmp/13</Identifier>
           <IdentifierType>PUID</IdentifierType>
-        </CompressionIdentifier>
+	    </CompressionIdentifier>
       </CompressionType>
       <CompressionType>
         <CompressionID>14</CompressionID>

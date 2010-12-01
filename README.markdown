@@ -4,6 +4,7 @@ A Prototype Editable Format Registry Build On Drupal
 To Do
 -----
 * Variable-location regexes are not handled correctly.
+* Duplicate entries are currently a problem. Probably an artifact of when 'Version' was allowed as one of the uniqueness parameters.
 * Check RDF mappings.
 * Check for missing fields.
 * When adding taxonomy terms, also add a description 'Files with extension xxx'.
