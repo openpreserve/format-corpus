@@ -1,7 +1,7 @@
 foreg
 =====
 
-* 
+* doc.Author.AuthorCompoundName not always present, see fmt/121
 * Regexs are borked because other parameters (EOF etc) not being used.
 * WAVE Format GUID
 
