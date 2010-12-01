@@ -51,9 +51,11 @@ class DrupalFormatRegistry():
         p = UrllibTransport()
         if( config.has_key('proxy') ):
             p.set_proxy(config['proxy'])
-    
+            self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
+        else:
+             self.server = xmlrpclib.Server(config['url'], allow_none=True);
+
         # Make initial connection to service, then login as developer
-        self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
         self.connection = self.server.system.connect();
         
         # hash_hmac('sha256', $timestamp .';'.$domain .';'. $nonce .';'.'user.get', 'remote_api_key');
@@ -103,15 +105,22 @@ class DrupalFormatRegistry():
             return found[0]['node']
 
     def find_node_for_format(self, title, version):
+        node_title = title
+        if( version != "" ):
+            node_title = title + " " + version
+        print "Searching for "+node_title+"..."
         try:
-            found = self.server.search.nodes( self.sessid, '"'+title+' '+version+'"', "true" )
+            found = self.server.search.nodes( self.sessid, '"'+node_title+'"', "true" )
         except xmlrpclib.Fault, err:
             return -1;
         else :
+            print "Found "+str(len(found))+" matches!"
             pprint.pprint(found)
-            if len(found) != 1:
-                return -1
-            return found[0]['node']
+            for f in found:
+                if( f['title'].strip() == node_title.strip() ):
+                    return f['node']
+            print "No matching title found!"
+            return -1
     
 
     def push_pronom(self, source ):
@@ -141,11 +150,6 @@ class DrupalFormatRegistry():
     # FormatFamilies
           'field_release_date': [{'value': { 'date': ff.ReleaseDate.text.strip() }}],
           'field_withdrawn_date': [{'value': { 'date': ff.WithdrawnDate.text.strip()  }}],
-    
-    #      'field_conforms_to': [{'nid': ''}],
-    #      'field_encapsulates': [],
-    #      'field_hasformat': [{'nid': ''}],
-    
         }
         
 
@@ -211,10 +215,11 @@ class DrupalFormatRegistry():
                                     'field_doc_pub_date' : [{ 'date': doc.PublicationDate.text.strip() } ],
                                     'field_doc_ipr' : [{"value": doc.DocumentIPR.text.strip() }],
                                     'field_doc_note' : [{"value": doc.DocumentNote.text.strip() }],
-                                    'field_doc_publisher' : [{"value": doc.Publisher.PublisherCompoundName.text.strip() }],
                            }
                 if( hasattr(doc, 'Author')):
                     content['field_doc_author'] = [{"value": doc.Author.AuthorCompoundName.text.strip() }];
+                if( hasattr(doc, 'Publisher')):
+                    content['field_doc_publisher'] = [{"value": doc.Publisher.PublisherCompoundName.text.strip() }];
                 if( hasattr(doc, "DocumentIdentifier")):
                     content['field_doc_link'] = []
                     for doci in doc.DocumentIdentifier:
@@ -256,13 +261,20 @@ class DrupalFormatRegistry():
                         node['field_equivalent_to'].append({'nid': { 'nid' : rf_node_id}})
                     if( rf.RelationshipType.text == "Has lower priority than" ):
                         node['field_lower_priority_than'].append({'nid': { 'nid' : rf_node_id}})
-                        #node['field_lower_priority_than'].append({'value' : rf_node_id })
                     if( rf.RelationshipType.text == "Is subsequent version of" ):
                         node['field_subsequent_version'].append({'nid': { 'nid' : rf_node_id}})
-                        #node['field_subsequent_version'].append({'value' : rf_node_id })
                     if( rf.RelationshipType.text == "Is subtype of" ):
                         node['field_conforms_to'].append({'nid': { 'nid' : rf_node_id}})
-                        #node['field_conforms_to'].append({'value' : rf_node_id })
+
+        # If empty, ensure empty:
+#        if len(node['field_equivalent_to']) == 0:
+#            node['field_equivalent_to'] =  [{'nid': '' }]
+#        if len(node['field_lower_priority_than']) == 0:
+#            node['field_lower_priority_than'] =  [{'nid': ''}]
+#        if len(node['field_subsequent_version']) == 0:
+#            node['field_subsequent_version'] =  [{'nid': ''}]
+#        if len(node['field_conforms_to']) == 0:
+#            node['field_conforms_to'] =  [{'nid': ''}]
 
         # Check if this record is already there, and if so, update instead of add:
         node_id = dfr.find_node_for_puid(node['field_puid'][0]['value']);
@@ -286,7 +298,7 @@ class DrupalFormatRegistry():
             print n, node['title']
             #pp.pprint(nn['title'])
             #pp.pprint(n) # DEBUG
-            #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 
 
@@ -296,26 +308,10 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
-    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    dfr.push_pronom('pronom/xml/puid.fmt.101.xml')
     
     for file in os.listdir('pronom/xml'):
         if fnmatch.fnmatch(file, 'puid.fmt.*.xml'):
             print file
             dfr.push_pronom('pronom/xml/'+file)
         
-'''
-      <RelatedFormat>
-        <RelationshipType>Has lower priority than</RelationshipType>
-        <RelatedFormatID>672</RelatedFormatID>
-        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
-        <RelatedFormatVersion>2.2</RelatedFormatVersion>
-
-        <RelationshipType>Equivalent to</RelationshipType>
-        <RelationshipType>Has lower priority than</RelationshipType>
-        <RelationshipType>Is subsequent version of</RelationshipType>
-        <RelationshipType>Is subtype of</RelationshipType>
-        
-        <RelationshipType>Has priority over</RelationshipType>
-        <RelationshipType>Is previous version of</RelationshipType>
-        <RelationshipType>Is supertype of</RelationshipType>
-'''

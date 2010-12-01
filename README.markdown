@@ -1,53 +1,33 @@
-foreg
-=====
+A Prototype Editable Format Registry Build On Drupal
+====================================================
 
-* When adding taxonomy terms, also add a description 'Files with extension xxx'.
+To Do
+-----
 * Check RDF mappings.
-* Check document uploads.
 * Check for missing fields.
-* Regexs are borked because other parameters (EOF etc) not being used.
-* WAVE Format GUID
-* PDF 1.6 (fmt/20) is a good example of the problems with relationships as implemented here.
+* When adding taxonomy terms, also add a description 'Files with extension xxx'.
+* Check multiple relationships of the same nature are pushed correctly. It does.
 
-
-Some complex signatures require escaping in ways not 100% clear to me.
-Perhaps curly brackets are the issue?
-Also, need to get the regex escaping right in general.
-
-Note that most formats have very few internal signatures, but 
-
-* puid.fmt.134.xml:8
-* puid.x-fmt.384.xml:7
-* puid.x-fmt.387.xml:4
-* puid.x-fmt.388.xml:4
-* puid.x-fmt.399.xml:4
-* puid.fmt.12.xml:3
-* puid.fmt.1.xml:2
-* puid.fmt.10.xml:2
-* puid.fmt.122.xml:2
-* puid.fmt.123.xml:2
-* puid.fmt.124.xml:2
-* puid.fmt.2.xml:2
-* puid.fmt.278.xml:2
-* puid.fmt.7.xml:2
-* puid.fmt.8.xml:2
-* puid.fmt.9.xml:2
-* puid.x-fmt.390.xml:2
-* puid.x-fmt.391.xml:2
-* puid.x-fmt.398.xml:2
-
-
-Due to issues with the multigroup module, you have to set the number of repeats to be larger than 8 when syncing.
-Looks ugly, but works fine.
-Nope, it doesn't really work, because nesting repeated items does not work.
-And the XMLRPC interface is pretty nasty.
-Looked at using full nodes, but that makes things more complex on the code end and looks ugly.
-So, trying flexifield...
+Issues
+------ 
+* Most importantly, having explored the data, there are clear problems with the current data model (e.g. URL and the implied http:// scheme) and also a lot of duplication of data, and the scope is too large.
+* Not 100% clear how to ensure old data is 'cleared'. When updating a node, it would perhaps be better to download all node contents and then update it locally before pushing it back again.
+* Regexs are still not quite right - the escaping is rather clumsy at present.
+* References to other nodes are only filled in in one direction, so any formats that complete (two-way) connections may be missed if only the back-link is present.
+* Actually, worse than that, you should really wait for the search indexes to have been fully re-build!
+* Because the push operation currently resolves node relationships by a remote search, the push has to be run twice to catch all references.
+* What on earth to do with the "WAVE Format GUID" IdentifierType?
+* The 'Unique Field' module does not cope well when one of the fields is left empty (i.e. Version). Just Title and PUID should be sufficient for now.
+* We are using Flexifield to compound entities. This is rather ugly, but sorting the actual data model is more important.
+* Most formats have very few internal signatures, some have a lot, up to 8 (fmt/134 http://beta.domd.info/domd/format/mpeg-12-audio-layer-3).
+* Trickiest part is relations and mapping Drupal Nodes to records. Embedding Drupal Node ID in the XML would be best.
+* The date field type appears to insert a default value over xmlrpc (at least under flexifields) and can lead to document publication dates like 0010-01-01. Must be careful to pass 'empty' values.
 
 
 Sync
 ----
 * XMLRPC Services
+* Python scripts to map from Drupal to/from XML.
 
 Visualisation
 -------------
@@ -58,9 +38,4 @@ Drupal modules for possible visualisation
 * http://drupal.org/project/timelinemap
 * http://drupal.org/project/timeline
 
-Issues
-------
-
-* The date field type appears to insert a default value over xmlrpc (at least under flexifields) and leads to document publication dates like 0010-01-01.
-* 
  
