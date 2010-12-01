@@ -4,6 +4,7 @@ foreg
 * doc.Author.AuthorCompoundName not always present, see fmt/121
 * Regexs are borked because other parameters (EOF etc) not being used.
 * WAVE Format GUID
+* PDF 1.6 (fmt/20) is a good example of the problems with relationships as implemented here.
 
 
 Some complex signatures require escaping in ways not 100% clear to me.

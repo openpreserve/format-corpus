@@ -204,9 +204,10 @@ class DrupalFormatRegistry():
                                     'field_doc_pub_date' : [{ 'date': doc.PublicationDate.text.strip() } ],
                                     'field_doc_ipr' : [{"value": doc.DocumentIPR.text.strip() }],
                                     'field_doc_note' : [{"value": doc.DocumentNote.text.strip() }],
-                                    'field_doc_author' : [{"value": doc.Author.AuthorCompoundName.text.strip() }],
                                     'field_doc_publisher' : [{"value": doc.Publisher.PublisherCompoundName.text.strip() }],
                            }
+                if( hasattr(doc, 'Author')):
+                    content['field_doc_author'] = [{"value": doc.Author.AuthorCompoundName.text.strip() }];
                 if( hasattr(doc, "DocumentIdentifier")):
                     content['field_doc_link'] = []
                     for doci in doc.DocumentIdentifier:
