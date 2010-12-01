@@ -3,6 +3,7 @@ A Prototype Editable Format Registry Build On Drupal
 
 To Do
 -----
+* Variable-location regexes are not handled correctly.
 * Check RDF mappings.
 * Check for missing fields.
 * When adding taxonomy terms, also add a description 'Files with extension xxx'.
