@@ -91,6 +91,28 @@ class DrupalFormatRegistry():
             if( t['name'] == term ):
                  tid = t['tid']
         return tid
+    
+    def find_node_for_puid(self, puid):
+        try:
+            found = self.server.search.nodes( self.sessid, '"'+puid+'"', "true", "field_puid" )
+        except xmlrpclib.Fault, err:
+            return -1;
+        else :
+            if len(found) != 1:
+                return -1
+            return found[0]['node']
+
+    def find_node_for_format(self, title, version):
+        try:
+            found = self.server.search.nodes( self.sessid, '"'+title+' '+version+'"', "true" )
+        except xmlrpclib.Fault, err:
+            return -1;
+        else :
+            pprint.pprint(found)
+            if len(found) != 1:
+                return -1
+            return found[0]['node']
+    
 
     def push_pronom(self, source ):
         parser = objectify.makeparser(remove_blank_text=True)
@@ -104,7 +126,6 @@ class DrupalFormatRegistry():
           'type': 'format',
           'status': 1,
           'promote': 1,
-          'nid': 45,
           'uid': self.user['uid'],
           'name': self.user['name'],
           'changed': timestamp,
@@ -127,10 +148,15 @@ class DrupalFormatRegistry():
     
         }
         
+
+        node['field_creator'] = [{'value': '' }]
         if( hasattr(ff, "Developers") ):
             node['field_creator'] = [{'value': ff.Developers.DeveloperCompoundName.text.strip()}];
         
         # Loop through FileFormatIdentifier[]
+        node['field_puid'] = [{'value': '' }]
+        node['field_apple_uid'] = [{'value': '' }]
+        node['field_mimetype'] = [{'value': '' }]
         if( hasattr(ff, "FileFormatIdentifier") ):
             for ffid in ff.FileFormatIdentifier:
                 if( ffid.IdentifierType.text == "PUID"):
@@ -142,6 +168,7 @@ class DrupalFormatRegistry():
          
          
         # Loop through ExternalSignature[]
+        node['field_extensions'] = [{'value': '' }]
         if( hasattr(ff, "ExternalSignature") ):
             node['field_extensions'] = []
             for es in ff.ExternalSignature:
@@ -150,19 +177,22 @@ class DrupalFormatRegistry():
                             { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
                     
         # Internal Signatures
+        node['field_int_sigs'] = [{'value': {} }]
         if( hasattr(ff,"InternalSignature") ):
             node['field_int_sigs'] = []
             for isg in ff.InternalSignature:
-                node['field_int_sigs'].append( { 
-                               'value': { 
+                intsig = {  
                                     'field_title' : [{ 'value': isg.SignatureName.text.strip() }], 
                                     'field_note' : [{ 'value': isg.SignatureNote.text.strip() }], 
-                                    'field_regex' : [{ 'value': 
-                                        repr(fido.prepare.convert_to_regex(isg.ByteSequence[0].ByteSequenceValue.text.strip())) }],
+                                    'field_regex' : [],
                                 }
-                                })
+                for bs in isg.ByteSequence:
+                    intsig['field_regex'].append({ 'value': 
+                                        repr(fido.prepare.convert_to_regex(bs.ByteSequenceValue.text.strip())) })
+                node['field_int_sigs'].append( { 'value': intsig } )
 
         # Documents
+        node['field_documents'] = [{'value': {} }]
         if( hasattr(ff, "Document") ):
             node['field_documents'] = []
             for doc in ff.Document:
@@ -171,20 +201,28 @@ class DrupalFormatRegistry():
                                     'field_doc_type' : [{"value": doc.DocumentType.text.strip() }],
                                     'field_doc_avail' : [{"value": doc.AvailabilityDescription.text.strip() }],
                                     'field_doc_avail_note' : [{"value": doc.AvailabilityNote.text.strip() }],
-                                    'field_doc_pub_date' : [{"value": { 'date': doc.PublicationDate.text.strip() } } ],
+                                    'field_doc_pub_date' : [{ 'date': doc.PublicationDate.text.strip() } ],
                                     'field_doc_ipr' : [{"value": doc.DocumentIPR.text.strip() }],
                                     'field_doc_note' : [{"value": doc.DocumentNote.text.strip() }],
                                     'field_doc_author' : [{"value": doc.Author.AuthorCompoundName.text.strip() }],
                                     'field_doc_publisher' : [{"value": doc.Publisher.PublisherCompoundName.text.strip() }],
                            }
                 if( hasattr(doc, "DocumentIdentifier")):
-                    content['field_doc_link'] = [{'attributes': [],
+                    content['field_doc_link'] = []
+                    for doci in doc.DocumentIdentifier:
+                        if( doci.IdentifierType.text == "URL" ):
+                            content['field_doc_link'].append( { 'attributes': [],
                                                   'title': doc.TitleText.text.strip(),
-                                                   'url': 'http://'+doc.DocumentIdentifier.Identifier.text.strip() } ]
+                                                   'url': 'http://'+doci.Identifier.text.strip() })
+                        if( doci.IdentifierType.text == "ISBN" ):
+                            content['field_doc_link'].append( { 'attributes': [],
+                                                  'title': "ISBN "+doci.Identifier.text.strip(),
+                                                   'url': 'http://www.worldcat.org/search?q=bn:'+doci.Identifier.text.strip() })
                 node['field_documents'].append( { 'value': content } )
                 
         #Split FormatTypes and add.
-        #      'field_type': [{'value': ''}],
+        node['taxonomy'] = {}
+        node['field_type'] = [{'value': '' }]
         if( hasattr(ff, 'FormatTypes') ):
             node['field_type'] = []
             node['taxonomy'] = []
@@ -194,9 +232,38 @@ class DrupalFormatRegistry():
                 node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
         
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
+        
+        # Relationships
+        node['field_equivalent_to'] = []
+        node['field_lower_priority_than'] = []
+        node['field_subsequent_version'] = []
+        node['field_conforms_to'] = []
+        if( hasattr(ff, 'RelatedFormat')):
+            for rf in ff.RelatedFormat:
+                rf_node_id = self.find_node_for_format(rf.RelatedFormatName.text.strip(), rf.RelatedFormatVersion.text.strip())
+                if( rf_node_id != -1 ):
+                    rf_node_id = rf.RelatedFormatName.text.strip()+" "+rf.RelatedFormatVersion.text.strip()+" [nid:"+str(rf_node_id)+"]"
+                    print rf_node_id
+                    if( rf.RelationshipType.text == "Equivalent to" ):
+                        node['field_equivalent_to'].append({'nid': { 'nid' : rf_node_id}})
+                    if( rf.RelationshipType.text == "Has lower priority than" ):
+                        node['field_lower_priority_than'].append({'nid': { 'nid' : rf_node_id}})
+                        #node['field_lower_priority_than'].append({'value' : rf_node_id })
+                    if( rf.RelationshipType.text == "Is subsequent version of" ):
+                        node['field_subsequent_version'].append({'nid': { 'nid' : rf_node_id}})
+                        #node['field_subsequent_version'].append({'value' : rf_node_id })
+                    if( rf.RelationshipType.text == "Is subtype of" ):
+                        node['field_conforms_to'].append({'nid': { 'nid' : rf_node_id}})
+                        #node['field_conforms_to'].append({'value' : rf_node_id })
 
+        # Check if this record is already there, and if so, update instead of add:
+        node_id = dfr.find_node_for_puid(node['field_puid'][0]['value']);
+        if( node_id != -1 ):
+            node['nid'] = node_id;
+
+        # DEBUG
         pp = pprint.PrettyPrinter()    
-        #pp.pprint(node);
+        pp.pprint(node);
         
         try:
             n = self.server.node.save( self.sessid, node)
@@ -220,10 +287,11 @@ if __name__ == "__main__":
     
     
     dfr = DrupalFormatRegistry(config)
-    #dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
+    
+    dfr.push_pronom('pronom/xml/puid.fmt.10.xml')
     
     for file in os.listdir('pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.fmt.2.xml'):
+        if fnmatch.fnmatch(file, 'puid.fmt.*.xml'):
             print file
             dfr.push_pronom('pronom/xml/'+file)
         
@@ -236,10 +304,10 @@ if __name__ == "__main__":
 
         <RelationshipType>Equivalent to</RelationshipType>
         <RelationshipType>Has lower priority than</RelationshipType>
-        <RelationshipType>Has priority over</RelationshipType>
-        <RelationshipType>Is previous version of</RelationshipType>
         <RelationshipType>Is subsequent version of</RelationshipType>
         <RelationshipType>Is subtype of</RelationshipType>
-        <RelationshipType>Is supertype of</RelationshipType>
         
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelationshipType>Is previous version of</RelationshipType>
+        <RelationshipType>Is supertype of</RelationshipType>
 '''
