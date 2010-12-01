@@ -1,7 +1,10 @@
 foreg
 =====
 
-* doc.Author.AuthorCompoundName not always present, see fmt/121
+* When adding taxonomy terms, also add a description 'Files with extension xxx'.
+* Check RDF mappings.
+* Check document uploads.
+* Check for missing fields.
 * Regexs are borked because other parameters (EOF etc) not being used.
 * WAVE Format GUID
 * PDF 1.6 (fmt/20) is a good example of the problems with relationships as implemented here.

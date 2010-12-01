@@ -187,8 +187,15 @@ class DrupalFormatRegistry():
                                     'field_regex' : [],
                                 }
                 for bs in isg.ByteSequence:
-                    intsig['field_regex'].append({ 'value': 
-                                        repr(fido.prepare.convert_to_regex(bs.ByteSequenceValue.text.strip())) })
+                    regex =  bs.ByteSequenceValue.text.strip()
+                    endianness = bs.Endianness.text.strip()
+                    pos = 'BOF'
+                    if( bs.PositionType.text.strip() == "Absolute from EOF" ):
+                        pos = 'EOF'
+                    offset = bs.Offset.text.strip()
+                    maxoffset = bs.MaxOffset.text.strip()
+                    regex = fido.prepare.convert_to_regex( regex, endianness, pos, offset, maxoffset)
+                    intsig['field_regex'].append({ 'value': repr(regex) })
                 node['field_int_sigs'].append( { 'value': intsig } )
 
         # Documents
