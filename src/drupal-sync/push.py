@@ -100,6 +100,9 @@ class DrupalFormatRegistry():
         except xmlrpclib.Fault, err:
             return -1;
         else :
+            print "Found "+str(len(found))+" PUID matches!"
+            #pprint.pprint(found)
+            # Need to peel through matches and locate the matching PUID?
             if len(found) != 1:
                 return -1
             return found[0]['node']
@@ -114,7 +117,7 @@ class DrupalFormatRegistry():
         except xmlrpclib.Fault, err:
             return -1;
         else :
-            print "Found "+str(len(found))+" matches!"
+            print "Found "+str(len(found))+" Title Version matches!"
             #pprint.pprint(found)
             for f in found:
                 if( f['title'].strip() == node_title.strip() ):
