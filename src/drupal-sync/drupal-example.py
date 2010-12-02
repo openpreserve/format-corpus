@@ -2,12 +2,50 @@
 
 import hmac
 import os.path, sys, time, mimetypes, xmlrpclib, pprint, base64
-pp = pprint.PrettyPrinter()
+import urllib
+from urllib import unquote, splittype, splithost
 
 from config import config
 
+pp = pprint.PrettyPrinter()
+
+class UrllibTransport(xmlrpclib.Transport):
+    def set_proxy(self, proxy):
+        self.proxyurl = proxy
+                
+    def request(self, host, handler, request_body, verbose=0):
+        type, r_type = splittype(self.proxyurl)
+        phost, XXX = splithost(r_type)
+
+        puser_pass = None
+        if '@' in phost:
+            user_pass, phost = phost.split('@', 1)
+            if ':' in user_pass:
+                user, password = user_pass.split(':', 1)
+                puser_pass = base64.encodestring('%s:%s' % (unquote(user),
+                                                unquote(password))).strip()
+        
+        urlopener = urllib.FancyURLopener({'http':'http://%s'%phost})
+        if not puser_pass:
+            urlopener.addheaders = [('User-agent', self.user_agent)]
+        else:
+            urlopener.addheaders = [('User-agent', self.user_agent),
+                                    ('Proxy-authorization', 'Basic ' + puser_pass) ]
+
+        host = unquote(host)
+        f = urlopener.open("http://%s%s"%(host,handler), request_body)
+
+        self.verbose = verbose 
+        return self.parse_response(f)
+
 # Make initial connection to service, then login as developer
-server = xmlrpclib.Server(config['url'], allow_none=True);
+p = UrllibTransport()
+if( config.has_key('proxy') ):
+    p.set_proxy(config['proxy'])
+    server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
+else:
+    server = xmlrpclib.Server(config['url'], allow_none=True);
+    
 connection = server.system.connect();
 
 # hash_hmac('sha256', $timestamp .';'.$domain .';'. $nonce .';'.'user.get', 'remote_api_key');
@@ -67,14 +105,14 @@ else:
     # pp.pprint(ff) # DEBUG - dump the file structure - including the file data
 '''
 #node = server.node.get(config['key'], 'localhost', '', 'C7nW8P3nDw', connection['sessid'],1)
-node = server.node.get(sessid,4,{})
+node = server.node.get(sessid,1,{})
 pp.pprint(node)
 
 print "----"
 
 # Create the node object and reference the new fid just created
 node = {
-  'type': 'format',
+  'type': 'story',
   'status': 1,
   'promote': 1,
   'nid': 3,
@@ -83,15 +121,15 @@ node = {
   'uid': user['uid'],
   'name': user['name'],
   'changed': timestamp,
-  'field_shortname' : [
-    {'value': 'shortname'},
-  ],
-  'field_version' : [
-    {'value': 'Newest'},
-  ],
-  'field_puid' : [
-    {'value': 'fmt/12'},
-  ],
+#  'field_shortname' : [
+#    {'value': 'shortname'},
+#  ],
+#  'field_version' : [
+#    {'value': 'Newest'},
+#  ],
+#  'field_puid' : [
+#    {'value': 'fmt/12'},
+#  ],
 #  'files': { f: {
 #    'new': 1, # Required to insert the referenced file->fid as new attachment!
 #    'fid': f, # f is fid from uploaded video file

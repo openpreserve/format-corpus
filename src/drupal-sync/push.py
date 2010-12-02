@@ -68,9 +68,9 @@ class DrupalFormatRegistry():
         self.sessid = self.session['sessid'];
         self.user = self.session['user'];
         # Taxnonomy Vocabulary IDs
-        self.ext_vid = 1
-        self.mime_vid = 2
-        self.type_vid = 3
+        #self.ext_vid = 1
+        #self.mime_vid = 2
+        #self.type_vid = 3
         #
         self.ext_vid = 3
         self.mime_vid = 4
@@ -115,7 +115,7 @@ class DrupalFormatRegistry():
             return -1;
         else :
             print "Found "+str(len(found))+" matches!"
-            pprint.pprint(found)
+            #pprint.pprint(found)
             for f in found:
                 if( f['title'].strip() == node_title.strip() ):
                     return f['node']
@@ -283,7 +283,7 @@ class DrupalFormatRegistry():
 
         # DEBUG
         pp = pprint.PrettyPrinter()    
-        pp.pprint(node);
+        #pp.pprint(node);
         
         try:
             n = self.server.node.save( self.sessid, node)
@@ -298,7 +298,7 @@ class DrupalFormatRegistry():
             print n, node['title']
             #pp.pprint(nn['title'])
             #pp.pprint(n) # DEBUG
-            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+            #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 
 
@@ -311,7 +311,9 @@ if __name__ == "__main__":
     dfr.push_pronom('pronom/xml/puid.fmt.101.xml')
     
     for file in os.listdir('pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.fmt.*.xml'):
+        if fnmatch.fnmatch(file, 'puid.*fmt.*.xml'):
             print file
             dfr.push_pronom('pronom/xml/'+file)
+            
+    print "DONE!"
         
