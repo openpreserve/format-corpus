@@ -5,6 +5,7 @@ To Do
 -----
 * Variable-location regexes are not handled correctly.
 * When adding taxonomy terms, also add a description 'Files with extension xxx', 'MIME Type [link to IANA page e.g. http://www.iana.org/assignments/media-types/application/ and http://www.iana.org/assignments/media-types/application/pdf]'.
+* Also, add [none] and [unknown] taxonomy entries to distinguish the two cases?
 * Used domd/format/[title-raw] for format aliases, but switch to domd/pronom/[field_puid-raw] for demonstration purposes. Note that needed to allow slashes to remain in order for this to work as expected.
 
 Issues
@@ -28,7 +29,7 @@ Issues
 * Trickiest part is relations and mapping Drupal Nodes to records. Embedding Drupal Node ID in the XML would be best.
 * The date field type appears to insert a default value (at least under flexifields) and can lead to displayed errors and document publication dates like 0010-01-01. Must be careful to pass 'empty' values. However, it is not clear that fixing this is worthwhile given that we probably need to sort out the data model.
 * Title and PUID are required to be unique (in combination, so be aware that multiple identical titles with no PUID may be allowed).
-
+* The Diff module does not cope with embedded Flexifields (Documents and InternalSignatures).
 
 Sync
 ----
