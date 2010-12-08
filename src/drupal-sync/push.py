@@ -311,12 +311,12 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
-    dfr.push_pronom('pronom/xml/puid.fmt.101.xml')
+    dfr.push_pronom('../../data/pronom/xml/puid.fmt.101.xml')
     
-    for file in os.listdir('pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.*fmt.*.xml'):
+    for file in os.listdir('../../data/pronom/xml'):
+        if fnmatch.fnmatch(file, 'puid.fmt..xml'):
             print file
-            dfr.push_pronom('pronom/xml/'+file)
+            dfr.push_pronom('../../data/pronom/xml/'+file)
             
     print "DONE!"
         
