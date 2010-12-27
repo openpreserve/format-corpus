@@ -14,7 +14,7 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
+      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -54,7 +54,7 @@
       <InternalSignature>
         <SignatureID>200</SignatureID>
         <SignatureName>ZIP format</SignatureName>
-        <SignatureNote>Local file header at BOF + central file header and end of central directory near EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the kongest fragment is not nearest EOF. The first fragment in the EOF byte sequence has been shortened by 1 byte to ensure that the subsequent fragment is the longest. This abbreviation does not reduce the overall signature strength too much and so will hopefully not result in any false pisitive identification. When the PRONOM bug has been fixed, the "504B01" at the start of the EOF byte sequence should be extended to "504B0102", and this note reduced.</SignatureNote>
+        <SignatureNote>Local file header at BOF + central file header and end of central directory near EOF. NB. The signature byte sequence is currently massaged to steer around the known PRONOM bug in the area of right fragment matching when the longest fragment is not nearest EOF. The first fragment in the EOF byte sequence has been shortened by 1 byte to ensure that the subsequent fragment is the longest. This abbreviation does not reduce the overall signature strength too much and so will hopefully not result in any false pisitive identification. When the PRONOM bug has been fixed, the "504B01" at the start of the EOF byte sequence should be extended to "504B0102", and this note reduced.</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>258</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -137,6 +137,54 @@
         <RelatedFormatID>910</RelatedFormatID>
         <RelatedFormatName>Microsoft Office Open XML</RelatedFormatName>
         <RelatedFormatVersion>2007</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1033</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Text</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1034</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Text</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1035</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Presentation</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1036</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Presentation</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1037</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Spreadsheet</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1038</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Spreadsheet</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1039</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Graphics</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1040</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Graphics</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
       </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>

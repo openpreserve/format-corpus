@@ -12,7 +12,7 @@
       <FormatTypes>
       </FormatTypes>
       <FormatDisclosure>Full</FormatDisclosure>
-      <FormatDescription>Outline record CATIA 3-D CAD Model</FormatDescription>
+      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -64,6 +64,25 @@
         <Signature>model</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>344</SignatureID>
+        <SignatureName>CATIA Model V4</SignatureName>
+        <SignatureNote>In the file header, the current level of CATIA used to create the model.</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>441</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>80</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>4341544941202020{2024}434154494120534F4C5554494F4E53205634{6}52454C4541534520</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

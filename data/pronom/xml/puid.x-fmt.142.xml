@@ -3,9 +3,8 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>203</FormatID>
-      <FormatName>Computer Graphics Metafile</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatName>Computer Graphics Metafile ASCII</FormatName>
+      <FormatVersion>1</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -14,7 +13,7 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
+      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -24,10 +23,10 @@
       </WithdrawnDate>
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
+      <ProvenanceSourceDate>02 Dec 2010</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>02 Dec 2010</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -47,6 +46,134 @@
         <Signature>cgm</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>350</SignatureID>
+        <SignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.1</SignatureName>
+        <SignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>445</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>42(45|65)(47|67)(4D|6D)(46|66)*(4D|6D)(46|66)(56|76)(65|45)(52|72)(53|73)(49|69)(4F|6F)(4E|6E){1}31</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>446</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>2048</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>45(4E|6E)(44|64)(4D|6D)(46|66){0-1}3B</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>351</SignatureID>
+        <SignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.2</SignatureName>
+        <SignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>447</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>42(45|65)(47|67)(4D|6D)(46|66)*(4D|6D)(46|66)(56|76)(65|45)(52|72)(53|73)(49|69)(4F|6F)(4E|6E){1}31</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>448</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>2048</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>65(4E|6E)(44|64)(4D|6D)(46|66){0-1}3B</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>353</SignatureID>
+        <SignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.3</SignatureName>
+        <SignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>449</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>62(45|65)(47|67)(4D|6D)(46|66)*(4D|6D)(46|66)(56|76)(65|45)(52|72)(53|73)(49|69)(4F|6F)(4E|6E){1}31</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>450</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>2048</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>45(4E|6E)(44|64)(4D|6D)(46|66){0-1}3B</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>354</SignatureID>
+        <SignatureName>Computer Graphics Metafile (Clear Text) Version 1 No.4</SignatureName>
+        <SignatureNote>Element name begmf (Begin Metafile) with any letter in the element name in upper or lower case, followed by any number of bytes, followed by version (MFVERSION{1}1 or mfversion{1}1, or any upper/lower case combination). Trailer endmf{0-1}; (with any letter in the element name in upper or lower case) that can be followed by a comment</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>451</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>62(45|65)(47|67)(4D|6D)(46|66)*(4D|6D)(46|66)(56|76)(65|45)(52|72)(53|73)(49|69)(4F|6F)(4E|6E){1}31</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>452</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>2048</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>65(4E|6E)(44|64)(4D|6D)(46|66){0-1}3B</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

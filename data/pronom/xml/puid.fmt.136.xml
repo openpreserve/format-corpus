@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>779</FormatID>
-      <FormatName>OpenDocument Text Format</FormatName>
+      <FormatName>OpenDocument Text</FormatName>
       <FormatVersion>1.0</FormatVersion>
       <FormatAliases>ODF Text (1.0)</FormatAliases>
       <FormatFamilies>
@@ -84,7 +84,7 @@
       <InternalSignature>
         <SignatureID>203</SignatureID>
         <SignatureName>ODF 1.0 text</SignatureName>
-        <SignatureNote>ZIP header + MIME-type declaration + version number</SignatureNote>
+        <SignatureNote>ZIP header + MIME-type declaration + version number. ODF versions without version number detail are assumed to be version 1.1</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>261</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -104,6 +104,12 @@
         <RelatedFormatID>778</RelatedFormatID>
         <RelatedFormatName>OpenDocument Format</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1033</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Text</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subtype of</RelationshipType>

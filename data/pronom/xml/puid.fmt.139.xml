@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>782</FormatID>
-      <FormatName>OpenDocument Drawing Format</FormatName>
+      <FormatName>OpenDocument Graphics</FormatName>
       <FormatVersion>1.0</FormatVersion>
       <FormatAliases>ODF Drawing (1.0)</FormatAliases>
       <FormatFamilies>
@@ -32,6 +32,13 @@
         <Identifier>fmt/139</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
+      <Developers>
+        <DeveloperID>127</DeveloperID>
+        <DeveloperName>
+        </DeveloperName>
+        <OrganisationName>OASIS</OrganisationName>
+        <DeveloperCompoundName>OASIS</DeveloperCompoundName>
+      </Developers>
       <Document>
         <DocumentID>72</DocumentID>
         <DisplayText>OASIS, 2005, Open Document Format for Office Applications (OpenDocument) v1.0, OASIS Standard, 1 May 2005</DisplayText>
@@ -97,6 +104,12 @@
         <RelatedFormatID>778</RelatedFormatID>
         <RelatedFormatName>OpenDocument Format</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1039</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Graphics</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subtype of</RelationshipType>

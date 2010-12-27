@@ -14,7 +14,7 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>Outline record only</FormatDescription>
+      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -39,15 +39,30 @@
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
       <ExternalSignature>
-        <ExternalSignatureID>210</ExternalSignatureID>
-        <Signature>flc</Signature>
-        <SignatureType>File extension</SignatureType>
-      </ExternalSignature>
-      <ExternalSignature>
         <ExternalSignatureID>211</ExternalSignatureID>
         <Signature>fli</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>338</SignatureID>
+        <SignatureName>Autodesk Animator FLIC fli</SignatureName>
+        <SignatureNote>
+        </SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>436</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>4</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>11AF{6}08{24}00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000{4}FAF1{2}0000000000000000</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

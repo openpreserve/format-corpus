@@ -93,25 +93,25 @@
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>779</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Text Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Text</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>780</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Spreadsheet Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Spreadsheet</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>781</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Presentation Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Presentation</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>782</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Drawing Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Graphics</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
@@ -137,25 +137,25 @@
       <RelatedFormat>
         <RelationshipType>Is supertype of</RelationshipType>
         <RelatedFormatID>779</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Text Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Text</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is supertype of</RelationshipType>
         <RelatedFormatID>780</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Spreadsheet Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Spreadsheet</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is supertype of</RelationshipType>
         <RelatedFormatID>781</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Presentation Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Presentation</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is supertype of</RelationshipType>
         <RelatedFormatID>782</RelatedFormatID>
-        <RelatedFormatName>OpenDocument Drawing Format</RelatedFormatName>
+        <RelatedFormatName>OpenDocument Graphics</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>

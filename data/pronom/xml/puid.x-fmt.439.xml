@@ -12,7 +12,7 @@
       <FormatTypes>
       </FormatTypes>
       <FormatDisclosure>Full</FormatDisclosure>
-      <FormatDescription>Outline record CATIA 3-D CAD Model</FormatDescription>
+      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -61,9 +61,8 @@
       </ExternalSignature>
       <InternalSignature>
         <SignatureID>239</SignatureID>
-        <SignatureName>CATIA Model 5</SignatureName>
-        <SignatureNote>
-        </SignatureNote>
+        <SignatureName>CATIA Part Description V5</SignatureName>
+        <SignatureNote>CATIA Version 5 identifier plus file extension of the file name (.CATPart)</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>312</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -75,7 +74,7 @@
           <IndirectOffsetLength>
           </IndirectOffsetLength>
           <Endianness>Little-endian</Endianness>
-          <ByteSequenceValue>56355F434656320000</ByteSequenceValue>
+          <ByteSequenceValue>56355F434656320000*2E43415450617274</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

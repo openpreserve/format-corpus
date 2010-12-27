@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>780</FormatID>
-      <FormatName>OpenDocument Spreadsheet Format</FormatName>
+      <FormatName>OpenDocument Spreadsheet</FormatName>
       <FormatVersion>1.0</FormatVersion>
       <FormatAliases>ODF Spreadsheet (1.0)</FormatAliases>
       <FormatFamilies>
@@ -104,6 +104,12 @@
         <RelatedFormatID>778</RelatedFormatID>
         <RelatedFormatName>OpenDocument Format</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1037</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Spreadsheet</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subtype of</RelationshipType>
