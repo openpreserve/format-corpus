@@ -5,9 +5,9 @@
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">Default</pydev_property>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.6</pydev_property>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
-<path>/foreg/src</path>
+<path>/foreg/src/main/python</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
-<path>/home/anj/workspace/fido</path>
+<path>/Users/anj/Projects/digitalpreservation/fido</path>
 </pydev_pathproperty>
 </pydev_project>
