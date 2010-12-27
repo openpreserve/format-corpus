@@ -3,6 +3,7 @@
  */
 package uk.bl.dpt.foreg;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.Authenticator;
@@ -28,12 +29,14 @@ public class ForegCmd {
 	 * http://commons.apache.org/cli/usage.html
 	 * 
 	 * @param args
+	 * @throws Exception 
 	 * @throws JAXBException 
 	 * @throws FileNotFoundException 
 	 */
-	public static void main(String[] args)  {
-		downloadSigFile();
-		pythonInvoker();
+	public static void main(String[] args) throws Exception  {
+		//downloadSigFile();
+		SigFileUtils.downloadAllPronomFormatRecords(new File("data/pronom"));
+		//pythonInvoker();
 	}
 	
 	/**
