@@ -315,7 +315,7 @@ if __name__ == "__main__":
     #exit
     
     for file in os.listdir('data/pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.fmt..xml'):
+        if fnmatch.fnmatch(file, 'puid.*fmt.*.xml'):
             print file
             dfr.push_pronom('data/pronom/xml/'+file)
             
