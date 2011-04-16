@@ -1,6 +1,10 @@
 '''
 Created on 27 Nov 2010
 
+When against D7 and attempting to add to empty taxonomies, got an odd error:
+http://drupal.org/node/1028230
+But now, even when taxonomy insert is fine, referencing from nodes is not stored.
+
 @author: anj
 '''
 
@@ -65,9 +69,7 @@ class DrupalFormatRegistry():
         p = UrllibTransport()
         if( config.has_key('proxy') ):
             p.set_proxy(config['proxy'])
-            self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
-        else:
-             self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
+        self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
 
         # Make initial connection to service, then login as developer
         self.connection = self.server.system.connect();
@@ -204,7 +206,7 @@ class DrupalFormatRegistry():
                     pprint.pprint(tid)
                     print "---"
                     #node['field_mimetypes'] = {'und': [{'tid': '23'}]}
-                    node['field_mimetypes'] = {'und': [{ 'value': [{'tid': tid }] }] }
+                    node['field_mimetypes'] = {'und': [{'tid': tid}]}
          
          
         # Loop through ExternalSignature[]
