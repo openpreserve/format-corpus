@@ -16,8 +16,13 @@ from urllib import unquote, splittype, splithost
 import xmlrpclib
 
 class UrllibTransport(xmlrpclib.Transport):
+    SESSION_ID_STRING = "PHPSESSID"
+    
     def set_proxy(self, proxy):
         self.proxyurl = proxy
+        
+    def set_sessid(self, sessid):
+        self.mysessid = sessid
                 
     def request(self, host, handler, request_body, verbose=0):
         type, r_type = splittype(self.proxyurl)
@@ -37,7 +42,8 @@ class UrllibTransport(xmlrpclib.Transport):
         else:
             urlopener.addheaders = [('User-agent', self.user_agent),
                                     ('Proxy-authorization', 'Basic ' + puser_pass) ]
-
+        if not self.mysessid is None:
+          handler.putheader("Cookie", "%s=%s" % (self.SESSION_ID_STRING,self.mysessid) )                                    
         host = unquote(host)
         f = urlopener.open("http://%s%s"%(host,handler), request_body)
 
@@ -62,41 +68,46 @@ class DrupalFormatRegistry():
         #h = hmac.new(key, data, digest_module)
         #result = h.hexdigest()
         
-        #session = server.user.login( config['username'], config['password']);
+        self.session = self.server.user.login( config['username'], config['password']);
         #session = server.user.login(config['key'], 'localhost.domd', '', 'C7nW83nDw', connection['sessid'], config['username'], config['password']);
-        self.session = self.server.user.login( self.connection['sessid'],config['username'], config['password']);
+        #self.session = self.server.user.login( self.connection['sessid'],config['username'], config['password']);
+        pprint.pprint(self.session);
         self.sessid = self.session['sessid'];
+        p.set_sessid(self.sessid)
         self.user = self.session['user'];
+        #self.user = config['username'];
         # Taxnonomy Vocabulary IDs
         #self.ext_vid = 1
         #self.mime_vid = 2
         #self.type_vid = 3
         #
-        self.ext_vid = 3
-        self.mime_vid = 4
-        self.type_vid = 5
-        
+        self.ext_vid = 2;
+        self.mime_vid = 3;
+        self.type_vid = 5;
+        #
+        nn = self.server.node.retrieve(1)
+        pprint.pprint(nn)
     
     def add_taxonomy_term(self, vid, term):
         # Use this to list the taxonomy:
         tid = self.find_taxonomy_term(vid, term)
         # if the given term is not present, use this to add it.
         if( tid == -1 ):
-            self.server.taxonomy.saveTerm(self.sessid, {"vid":vid,"name":term})
+            self.server.taxonomy_term.create({"vid":vid, "name":term})
             tid = self.find_taxonomy_term(vid, term)
         
         return tid
     
     def find_taxonomy_term(self, vid, term):
         tid = -1
-        for t in  self.server.taxonomy.getTree(self.sessid, vid):
+        for t in  self.server.taxonomy_vocabulary.getTree(vid):
             if( t['name'] == term ):
                  tid = t['tid']
         return tid
     
     def find_node_for_puid(self, puid):
         try:
-            found = self.server.search.nodes( self.sessid, '"'+puid+'"', "true", "field_puid" )
+            found = self.server.search.nodes( '"'+puid+'"', "true", "field_puid" )
         except xmlrpclib.Fault, err:
             return -1;
         else :
@@ -144,15 +155,15 @@ class DrupalFormatRegistry():
 #          'created': timestamp,
 #          'revision_timestamp': timestamp,
           
-          'title': ff.FormatName.text.strip(),
-          'body': ff.FormatDescription.text.strip(),
-          'field_shortname' : [ {'value': ff.FormatName.text.strip()}, ],
-          'field_version': [{'value': ff.FormatVersion.text.strip()}],
-          'field_fullname': [{'value': ff.FormatName.text.strip()}],
-          'field_aliases': [{'value': ff.FormatAliases.text.strip()}],
+          'title': ff.FormatName.text.strip()+" "+ ff.FormatVersion.text.strip(),
+          'body': {'und': [{'value': ff.FormatDescription.text.strip() }] },
+          'field_shortname' : {'und': [ {'value': ff.FormatName.text.strip()}, ] },
+          'field_version': {'und': [{'value': ff.FormatVersion.text.strip()}] },
+#          'field_fullname': [{'value': ff.FormatName.text.strip()}],
+          'field_aliases': {'und': [{'value': ff.FormatAliases.text.strip()}] },
     # FormatFamilies
-          'field_release_date': [{'value': { 'date': ff.ReleaseDate.text.strip() }}],
-          'field_withdrawn_date': [{'value': { 'date': ff.WithdrawnDate.text.strip()  }}],
+          'field_release_date': {'und': [{'value': { 'date': ff.ReleaseDate.text.strip() }}] },
+          'field_withdrawn_date': {'und': [{'value': { 'date': ff.WithdrawnDate.text.strip()  }}] },
         }
         
 
@@ -161,27 +172,29 @@ class DrupalFormatRegistry():
             node['field_creator'] = [{'value': ff.Developers.DeveloperCompoundName.text.strip()}];
         
         # Loop through FileFormatIdentifier[]
-        node['field_puid'] = [{'value': '' }]
-        node['field_apple_uid'] = [{'value': '' }]
-        node['field_mimetype'] = [{'value': '' }]
+        node['field_puid'] = {'und': [{'value': '' }] }
+        node['field_apple_uid'] = {'und': [{'value': '' }] }
+        node['field_mimetype'] = {'und': [{'value': '' }] }
         if( hasattr(ff, "FileFormatIdentifier") ):
             for ffid in ff.FileFormatIdentifier:
                 if( ffid.IdentifierType.text == "PUID"):
-                    node['field_puid'] = [{'value': ffid.Identifier.text.strip()}]
+                    node['field_puid'] = {'und': [{'value': ffid.Identifier.text.strip()}] }
                 if( ffid.IdentifierType.text == "Apple Uniform Type Identifier"):
-                    node['field_apple_uid'] = [{'value': ffid.Identifier.text.strip()}]
+                    node['field_apple_uid'] = {'und': [{'value': ffid.Identifier.text.strip()}] }
                 if( ffid.IdentifierType.text == "MIME"):
-                    node['field_mimetype'] = [{'value': self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text.strip()) }]
+                    tid = self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text.strip());
+                    pprint.pprint(tid)
+                    node['field_mimetypes'] = {'und': [{'tid': tid }] }
          
          
         # Loop through ExternalSignature[]
         node['field_extensions'] = [{'value': '' }]
         if( hasattr(ff, "ExternalSignature") ):
-            node['field_extensions'] = []
+            node['field_extensions'] = { 'und': [] }
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
-                    node['field_extensions'].append( 
-                            { 'value': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
+                    node['field_extensions']['und'].append(    
+                            { 'tid': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
                     
         # Internal Signatures
         node['field_int_sigs'] = [{'value': {} }]
@@ -280,17 +293,23 @@ class DrupalFormatRegistry():
 #            node['field_conforms_to'] =  [{'nid': ''}]
 
         # Check if this record is already there, and if so, update instead of add:
-        node_id = dfr.find_node_for_puid(node['field_puid'][0]['value']);
+        node_id = dfr.find_node_for_puid(node['field_puid']['und'][0]['value']);
+        do_update = False
         if( node_id != -1 ):
+            do_update = True
             node['nid'] = node_id;
 
         # DEBUG
-        pp = pprint.PrettyPrinter()    
-        #pp.pprint(node);
+        pp = pprint.PrettyPrinter()
+        pp.pprint(node['field_puid']['und'][0]['value'])
+        pp.pprint(node);
         
         try:
-            n = self.server.node.save( self.sessid, node)
-            nn = self.server.node.get( self.sessid,n,{})  # DEBUG - get the final node - not needed now that we know it works
+            if do_update:
+                n = self.server.node.update(node)
+            else:
+                n = self.server.node.create(node)
+            nn = self.server.node.retrieve(n,{})  # DEBUG - get the final node - not needed now that we know it works
         
         except xmlrpclib.Fault, err:
             print "A fault occurred"
@@ -303,7 +322,8 @@ class DrupalFormatRegistry():
             #pp.pprint(n) # DEBUG
             #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
-
+# NOTE Drupal taxonomy services create did not work when taxonomies were empty?
+# Strange error...
 
 if __name__ == "__main__":
     from config import config
@@ -311,11 +331,12 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
+    dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
     #dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
-    #exit
+    exit
     
     for file in os.listdir('data/pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.*fmt.*.xml'):
+        if fnmatch.fnmatch(file, 'puid.*fmt.*.xml-new'):
             print file
             dfr.push_pronom('data/pronom/xml/'+file)
             
