@@ -16,34 +16,42 @@ from urllib import unquote, splittype, splithost
 import xmlrpclib
 
 class UrllibTransport(xmlrpclib.Transport):
-    SESSION_ID_STRING = "PHPSESSID"
+    proxyurl = None
+    session_name = None
+    mysessid = None
     
     def set_proxy(self, proxy):
         self.proxyurl = proxy
         
-    def set_sessid(self, sessid):
+    def set_sessid(self, session_name, sessid):
+        self.session_name = session_name
         self.mysessid = sessid
                 
     def request(self, host, handler, request_body, verbose=0):
-        type, r_type = splittype(self.proxyurl)
-        phost, XXX = splithost(r_type)
+        if not self.proxyurl is None:
+            type, r_type = splittype(self.proxyurl)
+            phost, XXX = splithost(r_type)
 
-        puser_pass = None
-        if '@' in phost:
-            user_pass, phost = phost.split('@', 1)
-            if ':' in user_pass:
-                user, password = user_pass.split(':', 1)
-                puser_pass = base64.encodestring('%s:%s' % (unquote(user),
+            puser_pass = None
+            if '@' in phost:
+                user_pass, phost = phost.split('@', 1)
+                if ':' in user_pass:
+                    user, password = user_pass.split(':', 1)
+                    puser_pass = base64.encodestring('%s:%s' % (unquote(user),
                                                 unquote(password))).strip()
         
-        urlopener = urllib.FancyURLopener({'http':'http://%s'%phost})
-        if not puser_pass:
-            urlopener.addheaders = [('User-agent', self.user_agent)]
-        else:
-            urlopener.addheaders = [('User-agent', self.user_agent),
+            urlopener = urllib.FancyURLopener({'http':'http://%s'%phost})
+            if not puser_pass:
+                urlopener.addheaders = [('User-agent', self.user_agent)]
+            else:
+                urlopener.addheaders = [('User-agent', self.user_agent),
                                     ('Proxy-authorization', 'Basic ' + puser_pass) ]
+        else:
+            urlopener = urllib.FancyURLopener()
+            
         if not self.mysessid is None:
-          handler.putheader("Cookie", "%s=%s" % (self.SESSION_ID_STRING,self.mysessid) )                                    
+            urlopener.addheaders.append( ("Cookie", "%s=%s" % (self.session_name,self.mysessid) ) )
+            
         host = unquote(host)
         f = urlopener.open("http://%s%s"%(host,handler), request_body)
 
@@ -59,7 +67,7 @@ class DrupalFormatRegistry():
             p.set_proxy(config['proxy'])
             self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
         else:
-             self.server = xmlrpclib.Server(config['url'], allow_none=True);
+             self.server = xmlrpclib.Server(config['url'], allow_none=True, transport=p);
 
         # Make initial connection to service, then login as developer
         self.connection = self.server.system.connect();
@@ -71,9 +79,9 @@ class DrupalFormatRegistry():
         self.session = self.server.user.login( config['username'], config['password']);
         #session = server.user.login(config['key'], 'localhost.domd', '', 'C7nW83nDw', connection['sessid'], config['username'], config['password']);
         #self.session = self.server.user.login( self.connection['sessid'],config['username'], config['password']);
-        pprint.pprint(self.session);
         self.sessid = self.session['sessid'];
-        p.set_sessid(self.sessid)
+        self.session_name = self.session['session_name'];
+        p.set_sessid(self.session_name, self.sessid)
         self.user = self.session['user'];
         #self.user = config['username'];
         # Taxnonomy Vocabulary IDs
@@ -85,8 +93,13 @@ class DrupalFormatRegistry():
         self.mime_vid = 3;
         self.type_vid = 5;
         #
-        nn = self.server.node.retrieve(1)
-        pprint.pprint(nn)
+        try:
+            nn = self.server.node.retrieve(1)
+            pprint.pprint(nn)
+        except:
+            print "A fault occurred"
+            #print "Fault code: %d" % err.faultCode
+            #print "Fault string: %s" % err.faultString
     
     def add_taxonomy_term(self, vid, term):
         # Use this to list the taxonomy:
@@ -107,8 +120,10 @@ class DrupalFormatRegistry():
     
     def find_node_for_puid(self, puid):
         try:
-            found = self.server.search.nodes( '"'+puid+'"', "true", "field_puid" )
+            found = self.server.node.index( "'"+puid+"'", "true", "field_puid" )
         except xmlrpclib.Fault, err:
+            print "Fault code: %d" % err.faultCode
+            print "Fault string: %s" % err.faultString
             return -1;
         else :
             print "Found "+str(len(found))+" PUID matches!"
@@ -124,8 +139,10 @@ class DrupalFormatRegistry():
             node_title = title + " " + version
         print "Searching for "+node_title+"..."
         try:
-            found = self.server.search.nodes( self.sessid, '"'+node_title+'"', "true" )
+            found = self.server.node.index( '"'+node_title+'"', "true" )
         except xmlrpclib.Fault, err:
+            print "Fault code: %d" % err.faultCode
+            print "Fault string: %s" % err.faultString
             return -1;
         else :
             print "Found "+str(len(found))+" Title Version matches!"
@@ -174,7 +191,7 @@ class DrupalFormatRegistry():
         # Loop through FileFormatIdentifier[]
         node['field_puid'] = {'und': [{'value': '' }] }
         node['field_apple_uid'] = {'und': [{'value': '' }] }
-        node['field_mimetype'] = {'und': [{'value': '' }] }
+        node['field_mimetypes'] = {'und': [{'value': '' }] }
         if( hasattr(ff, "FileFormatIdentifier") ):
             for ffid in ff.FileFormatIdentifier:
                 if( ffid.IdentifierType.text == "PUID"):
@@ -183,18 +200,27 @@ class DrupalFormatRegistry():
                     node['field_apple_uid'] = {'und': [{'value': ffid.Identifier.text.strip()}] }
                 if( ffid.IdentifierType.text == "MIME"):
                     tid = self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text.strip());
+                    print "---MIME Type"
                     pprint.pprint(tid)
-                    node['field_mimetypes'] = {'und': [{'tid': tid }] }
+                    print "---"
+                    #node['field_mimetypes'] = {'und': [{'tid': '23'}]}
+                    node['field_mimetypes'] = {'und': [{ 'value': [{'tid': tid }] }] }
          
          
         # Loop through ExternalSignature[]
-        node['field_extensions'] = [{'value': '' }]
+        node['field_extensions'] = {'und': [{'value': '' }] }
         if( hasattr(ff, "ExternalSignature") ):
             node['field_extensions'] = { 'und': [] }
+            {'und': [{'tid': '25'}, {'tid': '24'}]}
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
-                    node['field_extensions']['und'].append(    
-                            { 'tid': self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip()) } )
+                    tid = self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip())
+                    print "---Ext"
+                    pprint.pprint(tid)
+                    print "---"
+                    node['field_extensions']['und'].append(
+                            { 'tid': tid } )
+        #node['field_extensions'] = {'und': [{'tid': '25'}, {'tid': '24'}]}
                     
         # Internal Signatures
         node['field_int_sigs'] = [{'value': {} }]
@@ -250,15 +276,15 @@ class DrupalFormatRegistry():
                 node['field_documents'].append( { 'value': content } )
                 
         #Split FormatTypes and add.
-        node['taxonomy'] = {}
-        node['field_type'] = [{'value': '' }]
+#        node['taxonomy'] = {}
+#        node['field_type'] = [{'value': '' }]
         if( hasattr(ff, 'FormatTypes') ):
-            node['field_type'] = []
-            node['taxonomy'] = []
+#            node['field_type'] = []
+#            node['taxonomy'] = []
             for type in ff.FormatTypes.text.split(','):
                 tid = self.add_taxonomy_term(self.type_vid, type.strip())
 #                node['field_type'].append( { 'value': tid } )
-                node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
+#                node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
         
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
         
@@ -320,7 +346,7 @@ class DrupalFormatRegistry():
             print n, node['title']
             #pp.pprint(nn['title'])
             #pp.pprint(n) # DEBUG
-            #pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 # NOTE Drupal taxonomy services create did not work when taxonomies were empty?
 # Strange error...
@@ -331,9 +357,9 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
-    dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
-    #dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
-    exit
+    #dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
+    dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
+    sys.exit(0)
     
     for file in os.listdir('data/pronom/xml'):
         if fnmatch.fnmatch(file, 'puid.*fmt.*.xml-new'):
