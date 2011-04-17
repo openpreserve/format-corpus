@@ -294,23 +294,24 @@ class DrupalFormatRegistry():
         # Relationships
         # This works for plain lists, but not autocomplete: node['field_same_as'] = {'und': {'nid': '43'} }
         node['field_same_as'] = {'und': [{'nid': '[nid:43]'}] }
-        node['field_lower_priority_than'] = []
-        node['field_subsequent_version'] = []
-        node['field_conforms_to'] = []
+        node['field_lower_priority_than'] = {'und': [] }
+        node['field_subsequent_version'] = {'und': [] }
+        node['field_conforms_to'] = {'und': [] }
         if( hasattr(ff, 'RelatedFormat')):
             for rf in ff.RelatedFormat:
                 rf_node_id = self.find_node_for_format(rf.RelatedFormatName.text.strip(), rf.RelatedFormatVersion.text.strip())
                 if( rf_node_id != -1 ):
+                    rf_node_id = rf_node_id['nid']
                     rf_node_id = rf.RelatedFormatName.text.strip()+" "+rf.RelatedFormatVersion.text.strip()+" [nid:"+str(rf_node_id)+"]"
                     print rf_node_id
                     if( rf.RelationshipType.text == "Equivalent to" ):
-                        node['field_same_as'].append({'nid': { 'nid' : rf_node_id}})
+                        node['field_same_as']['und'].append( { 'nid' : rf_node_id} )
                     if( rf.RelationshipType.text == "Has lower priority than" ):
-                        node['field_lower_priority_than'].append({'nid': { 'nid' : rf_node_id}})
+                        node['field_lower_priority_than']['und'].append( { 'nid' : rf_node_id} )
                     if( rf.RelationshipType.text == "Is subsequent version of" ):
-                        node['field_subsequent_version'].append({'nid': { 'nid' : rf_node_id}})
+                        node['field_subsequent_version']['und'].append( { 'nid' :rf_node_id} )
                     if( rf.RelationshipType.text == "Is subtype of" ):
-                        node['field_conforms_to'].append({'nid': { 'nid' : rf_node_id}})
+                        node['field_conforms_to']['und'].append( { 'nid' : rf_node_id } )
 
         # If empty, ensure empty:
 #        if len(node['field_equivalent_to']) == 0:
