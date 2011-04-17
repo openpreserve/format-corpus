@@ -122,7 +122,7 @@ class DrupalFormatRegistry():
     
     def find_node_for_puid(self, puid):
         try:
-            found = self.server.node.index( "'"+puid+"'", "true", "field_puid" )
+            found = self.server.node.index( '"'+puid+'"', "true" )#, "field_puid" )
         except xmlrpclib.Fault, err:
             print "Fault code: %d" % err.faultCode
             print "Fault string: %s" % err.faultString
@@ -141,7 +141,7 @@ class DrupalFormatRegistry():
             node_title = title + " " + version
         print "Searching for "+node_title+"..."
         try:
-            found = self.server.node.index( '"'+node_title+'"', "true" )
+            found = self.server.node.index( 0, "*", [{'title': '"'+node_title+'"' }] )
         except xmlrpclib.Fault, err:
             print "Fault code: %d" % err.faultCode
             print "Fault string: %s" % err.faultString
@@ -151,7 +151,7 @@ class DrupalFormatRegistry():
             #pprint.pprint(found)
             for f in found:
                 if( f['title'].strip() == node_title.strip() ):
-                    return f['node']
+                    return f
             print "No matching title found!"
             return -1
     
@@ -193,7 +193,7 @@ class DrupalFormatRegistry():
         # Loop through FileFormatIdentifier[]
         node['field_puid'] = {'und': [{'value': '' }] }
         node['field_apple_uid'] = {'und': [{'value': '' }] }
-        node['field_mimetypes'] = {'und': [{'value': '' }] }
+        node['field_mimetypes'] = {'und': [] }
         if( hasattr(ff, "FileFormatIdentifier") ):
             for ffid in ff.FileFormatIdentifier:
                 if( ffid.IdentifierType.text == "PUID"):
@@ -206,76 +206,24 @@ class DrupalFormatRegistry():
                     pprint.pprint(tid)
                     print "---"
                     #node['field_mimetypes'] = {'und': [{'tid': '23'}]}
-                    node['field_mimetypes'] = {'und': [{'tid': tid}]}
+                    node['field_mimetypes'] = {'und': { '1': tid } }
          
          
         # Loop through ExternalSignature[]
-        node['field_extensions'] = {'und': [{'value': '' }] }
+        node['field_extensions'] = [] #{'und': [{'value': '' }] }
         if( hasattr(ff, "ExternalSignature") ):
-            node['field_extensions'] = { 'und': [] }
-            {'und': [{'tid': '25'}, {'tid': '24'}]}
+            node['field_extensions'] = {'und': []}
+            #{'und': [{'tid': '25'}, {'tid': '24'}]}
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
                     tid = self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip())
                     print "---Ext"
                     pprint.pprint(tid)
+                    idx = len(node['field_extensions'])+1
                     print "---"
-                    node['field_extensions']['und'].append(
-                            { 'tid': tid } )
+                    node['field_extensions']['und'] = { '1' : tid }
         #node['field_extensions'] = {'und': [{'tid': '25'}, {'tid': '24'}]}
                     
-        # Internal Signatures
-        node['field_int_sigs'] = [{'value': {} }]
-        if( hasattr(ff,"InternalSignature") ):
-            node['field_int_sigs'] = []
-            for isg in ff.InternalSignature:
-                intsig = {  
-                                    'field_title' : [{ 'value': isg.SignatureName.text.strip() }], 
-                                    'field_note' : [{ 'value': isg.SignatureNote.text.strip() }], 
-                                    'field_regex' : [],
-                                }
-                for bs in isg.ByteSequence:
-                    regex =  bs.ByteSequenceValue.text.strip()
-                    endianness = bs.Endianness.text.strip()
-                    pos = 'BOF'
-                    if( bs.PositionType.text.strip() == "Absolute from EOF" ):
-                        pos = 'EOF'
-                    offset = bs.Offset.text.strip()
-                    maxoffset = bs.MaxOffset.text.strip()
-                    regex = fido.prepare.convert_to_regex( regex, endianness, pos, offset, maxoffset)
-                    intsig['field_regex'].append({ 'value': repr(regex) })
-                node['field_int_sigs'].append( { 'value': intsig } )
-
-        # Documents
-        node['field_documents'] = [{'value': {} }]
-        if( hasattr(ff, "Document") ):
-            node['field_documents'] = []
-            for doc in ff.Document:
-                content = {
-                                    'field_title' : [{"value": doc.DisplayText.text.strip() }],
-                                    'field_doc_type' : [{"value": doc.DocumentType.text.strip() }],
-                                    'field_doc_avail' : [{"value": doc.AvailabilityDescription.text.strip() }],
-                                    'field_doc_avail_note' : [{"value": doc.AvailabilityNote.text.strip() }],
-                                    'field_doc_pub_date' : [{ 'date': doc.PublicationDate.text.strip() } ],
-                                    'field_doc_ipr' : [{"value": doc.DocumentIPR.text.strip() }],
-                                    'field_doc_note' : [{"value": doc.DocumentNote.text.strip() }],
-                           }
-                if( hasattr(doc, 'Author')):
-                    content['field_doc_author'] = [{"value": doc.Author.AuthorCompoundName.text.strip() }];
-                if( hasattr(doc, 'Publisher')):
-                    content['field_doc_publisher'] = [{"value": doc.Publisher.PublisherCompoundName.text.strip() }];
-                if( hasattr(doc, "DocumentIdentifier")):
-                    content['field_doc_link'] = []
-                    for doci in doc.DocumentIdentifier:
-                        if( doci.IdentifierType.text == "URL" ):
-                            content['field_doc_link'].append( { 'attributes': [],
-                                                  'title': doc.TitleText.text.strip(),
-                                                   'url': 'http://'+doci.Identifier.text.strip() })
-                        if( doci.IdentifierType.text == "ISBN" ):
-                            content['field_doc_link'].append( { 'attributes': [],
-                                                  'title': "ISBN "+doci.Identifier.text.strip(),
-                                                   'url': 'http://www.worldcat.org/search?q=bn:'+doci.Identifier.text.strip() })
-                node['field_documents'].append( { 'value': content } )
                 
         #Split FormatTypes and add.
 #        node['taxonomy'] = {}
@@ -289,9 +237,62 @@ class DrupalFormatRegistry():
 #                node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
         
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
+
+        # Internal Signatures
+        node['field_int_sigs'] = [{'value': {} }]
+        if( hasattr(ff,"InternalSignature") ):
+             node['field_int_sigs'] = []
+             for isg in ff.InternalSignature:
+                 intsig = {  
+                                     'field_title' : [{ 'value': isg.SignatureName.text.strip() }], 
+                                     'field_note' : [{ 'value': isg.SignatureNote.text.strip() }], 
+                                     'field_regex' : [],
+                                 }
+                 for bs in isg.ByteSequence:
+                     regex =  bs.ByteSequenceValue.text.strip()
+                     endianness = bs.Endianness.text.strip()
+                     pos = 'BOF'
+                     if( bs.PositionType.text.strip() == "Absolute from EOF" ):
+                         pos = 'EOF'
+                     offset = bs.Offset.text.strip()
+                     maxoffset = bs.MaxOffset.text.strip()
+                     regex = fido.prepare.convert_to_regex( regex, endianness, pos, offset, maxoffset)
+                     intsig['field_regex'].append({ 'value': repr(regex) })
+                 node['field_int_sigs'].append( { 'value': intsig } )
+
+        # Documents
+        node['field_documents'] = [{'value': {} }]
+        if( hasattr(ff, "Document") ):
+             node['field_documents'] = []
+             for doc in ff.Document:
+                 content = {
+                                     'field_title' : [{"value": doc.DisplayText.text.strip() }],
+                                     'field_doc_type' : [{"value": doc.DocumentType.text.strip() }],
+                                     'field_doc_avail' : [{"value": doc.AvailabilityDescription.text.strip() }],
+                                     'field_doc_avail_note' : [{"value": doc.AvailabilityNote.text.strip() }],
+                                     'field_doc_pub_date' : [{ 'date': doc.PublicationDate.text.strip() } ],
+                                     'field_doc_ipr' : [{"value": doc.DocumentIPR.text.strip() }],
+                                     'field_doc_note' : [{"value": doc.DocumentNote.text.strip() }],
+                            }
+                 if( hasattr(doc, 'Author')):
+                     content['field_doc_author'] = [{"value": doc.Author.AuthorCompoundName.text.strip() }];
+                 if( hasattr(doc, 'Publisher')):
+                     content['field_doc_publisher'] = [{"value": doc.Publisher.PublisherCompoundName.text.strip() }];
+                 if( hasattr(doc, "DocumentIdentifier")):
+                     content['field_doc_link'] = []
+                     for doci in doc.DocumentIdentifier:
+                         if( doci.IdentifierType.text == "URL" ):
+                             content['field_doc_link'].append( { 'attributes': [],
+                                                   'title': doc.TitleText.text.strip(),
+                                                    'url': 'http://'+doci.Identifier.text.strip() })
+                         if( doci.IdentifierType.text == "ISBN" ):
+                             content['field_doc_link'].append( { 'attributes': [],
+                                                   'title': "ISBN "+doci.Identifier.text.strip(),
+                                                    'url': 'http://www.worldcat.org/search?q=bn:'+doci.Identifier.text.strip() })
+                 node['field_documents'].append( { 'value': content } )
         
         # Relationships
-        node['field_equivalent_to'] = []
+        node['field_same_as'] = []#{'und': [{'nid': '14'}]}
         node['field_lower_priority_than'] = []
         node['field_subsequent_version'] = []
         node['field_conforms_to'] = []
@@ -302,7 +303,7 @@ class DrupalFormatRegistry():
                     rf_node_id = rf.RelatedFormatName.text.strip()+" "+rf.RelatedFormatVersion.text.strip()+" [nid:"+str(rf_node_id)+"]"
                     print rf_node_id
                     if( rf.RelationshipType.text == "Equivalent to" ):
-                        node['field_equivalent_to'].append({'nid': { 'nid' : rf_node_id}})
+                        node['field_same_as'].append({'nid': { 'nid' : rf_node_id}})
                     if( rf.RelationshipType.text == "Has lower priority than" ):
                         node['field_lower_priority_than'].append({'nid': { 'nid' : rf_node_id}})
                     if( rf.RelationshipType.text == "Is subsequent version of" ):
@@ -321,19 +322,21 @@ class DrupalFormatRegistry():
 #            node['field_conforms_to'] =  [{'nid': ''}]
 
         # Check if this record is already there, and if so, update instead of add:
-        node_id = dfr.find_node_for_puid(node['field_puid']['und'][0]['value']);
+        node_match = dfr.find_node_for_format(node['title'],'');
         do_update = False
-        if( node_id != -1 ):
+        if node_match != -1:
             do_update = True
-            node['nid'] = node_id;
+            node['nid'] = node_match['nid'];
 
         # DEBUG
         pp = pprint.PrettyPrinter()
-        pp.pprint(node['field_puid']['und'][0]['value'])
         pp.pprint(node);
+        pp.pprint(node['field_version']['und'][0]['value'])
+        print "Submitting to the site... Update =", do_update
         
         try:
-            if do_update:
+            # knocked out .update, as it does not seem to change anything!
+            if do_update and False:
                 n = self.server.node.update(node)
             else:
                 n = self.server.node.create(node)
@@ -344,11 +347,10 @@ class DrupalFormatRegistry():
             print "Fault code: %d" % err.faultCode
             print "Fault string: %s" % err.faultString
         
-        else:
-            print n, node['title']
-            #pp.pprint(nn['title'])
-            #pp.pprint(n) # DEBUG
-            pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
+        print n, node['title']
+        #pp.pprint(nn['title'])
+        #pp.pprint(n) # DEBUG
+        pp.pprint(nn) # DEBUG - dump the final node - not needed now that we know it works
 
 # NOTE Drupal taxonomy services create did not work when taxonomies were empty?
 # Strange error...
@@ -359,8 +361,8 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
-    #dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
-    dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
+    dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
+    #dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
     sys.exit(0)
     
     for file in os.listdir('data/pronom/xml'):
