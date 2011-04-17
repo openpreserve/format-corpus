@@ -292,7 +292,8 @@ class DrupalFormatRegistry():
                  node['field_documents'].append( { 'value': content } )
         
         # Relationships
-        node['field_same_as'] = []#{'und': [{'nid': '14'}]}
+        # This works for plain lists, but not autocomplete: node['field_same_as'] = {'und': {'nid': '43'} }
+        node['field_same_as'] = {'und': [{'nid': '[nid:43]'}] }
         node['field_lower_priority_than'] = []
         node['field_subsequent_version'] = []
         node['field_conforms_to'] = []
