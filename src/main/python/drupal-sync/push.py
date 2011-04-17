@@ -212,16 +212,16 @@ class DrupalFormatRegistry():
         # Loop through ExternalSignature[]
         node['field_extensions'] = [] #{'und': [{'value': '' }] }
         if( hasattr(ff, "ExternalSignature") ):
-            node['field_extensions'] = {'und': []}
+            node['field_extensions'] = {'und': {} }
             #{'und': [{'tid': '25'}, {'tid': '24'}]}
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
                     tid = self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip())
                     print "---Ext"
                     pprint.pprint(tid)
-                    idx = len(node['field_extensions'])+1
+                    idx = len(node['field_extensions']['und'])+1
                     print "---"
-                    node['field_extensions']['und'] = { '1' : tid }
+                    node['field_extensions']['und'][str(idx)] = tid #, '2' : 24 }
         #node['field_extensions'] = {'und': [{'tid': '25'}, {'tid': '24'}]}
                     
                 
