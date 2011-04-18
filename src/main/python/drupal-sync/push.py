@@ -201,10 +201,10 @@ class DrupalFormatRegistry():
                 if( ffid.IdentifierType.text == "Apple Uniform Type Identifier"):
                     node['field_apple_uid'] = {'und': [{'value': ffid.Identifier.text.strip()}] }
                 if( ffid.IdentifierType.text == "MIME"):
-                    tid = self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text.strip());
-                    print "---MIME Type"
-                    pprint.pprint(tid)
-                    print "---"
+                    #tid = self.add_taxonomy_term(self.mime_vid, ffid.Identifier.text.strip());
+                    #print "---MIME Type"
+                    #pprint.pprint(tid)
+                    #print "---"
                     #node['field_mimetypes'] = {'und': [{'tid': '23'}]}
                     #node['field_mimetypes'] = {'und': { '1': tid } }
                     node['field_mimetypes']['und'] += ffid.Identifier.text.strip()+","
@@ -217,11 +217,11 @@ class DrupalFormatRegistry():
             #{'und': [{'tid': '25'}, {'tid': '24'}]}
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
-                    tid = self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip())
-                    print "---Ext"
-                    pprint.pprint(tid)
-                    idx = len(node['field_extensions']['und'])+1
-                    print "---"
+                    #tid = self.add_taxonomy_term(self.ext_vid, es.Signature.text.strip())
+                    #print "---Ext"
+                    #pprint.pprint(tid)
+                    #idx = len(node['field_extensions']['und'])+1
+                    #print "---"
                     node['field_extensions']['und'] += es.Signature.text.strip()+","
 	#,{ '1' : 25, '2' : 24 }
         #node['field_extensions'] = {'und': [{'tid': '25'}, {'tid': '24'}]}
@@ -234,8 +234,8 @@ class DrupalFormatRegistry():
             node['field_type'] = {'und': "" }
 #            node['taxonomy'] = []
             for type in ff.FormatTypes.text.split(','):
-                tid = self.add_taxonomy_term(self.type_vid, type.strip())
-                idx = len(node['field_type']['und'])+1
+                #tid = self.add_taxonomy_term(self.type_vid, type.strip())
+                #idx = len(node['field_type']['und'])+1
                 node['field_type']['und'] += type.strip()+","
 #                node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
         
@@ -296,7 +296,8 @@ class DrupalFormatRegistry():
         
         # Relationships
         # This works for plain lists, but not autocomplete: node['field_same_as'] = {'und': {'nid': '43'} }
-        node['field_same_as'] = {'und': [{'nid': '[nid:43]'}] }
+	# This works for autocomplete lists: node['field_same_as'] = {'und': [{'nid': '[nid:43]'}] }
+        node['field_same_as'] = {'und': [] }
         node['field_lower_priority_than'] = {'und': [] }
         node['field_subsequent_version'] = {'und': [] }
         node['field_conforms_to'] = {'und': [] }
@@ -366,12 +367,13 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
-    dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
+    #dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
     #dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
-    sys.exit(0)
+    #sys.exit(0)
     
     for file in os.listdir('data/pronom/xml'):
-        if fnmatch.fnmatch(file, 'puid.*fmt.*.xml-new'):
+	#if fnmatch.fnmatch(file, 'puid.*fmt.*.xml'):
+        if fnmatch.fnmatch(file, 'puid.fmt.?.xml'):
             print file
             dfr.push_pronom('data/pronom/xml/'+file)
             
