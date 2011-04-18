@@ -193,7 +193,7 @@ class DrupalFormatRegistry():
         # Loop through FileFormatIdentifier[]
         node['field_puid'] = {'und': [{'value': '' }] }
         node['field_apple_uid'] = {'und': [{'value': '' }] }
-        node['field_mimetypes'] = {'und': [] }
+        node['field_mimetypes'] = {'und': "" }
         if( hasattr(ff, "FileFormatIdentifier") ):
             for ffid in ff.FileFormatIdentifier:
                 if( ffid.IdentifierType.text == "PUID"):
@@ -206,13 +206,14 @@ class DrupalFormatRegistry():
                     pprint.pprint(tid)
                     print "---"
                     #node['field_mimetypes'] = {'und': [{'tid': '23'}]}
-                    node['field_mimetypes'] = {'und': { '1': tid } }
+                    #node['field_mimetypes'] = {'und': { '1': tid } }
+                    node['field_mimetypes']['und'] += ffid.Identifier.text.strip()+","
          
          
         # Loop through ExternalSignature[]
         node['field_extensions'] = [] #{'und': [{'value': '' }] }
         if( hasattr(ff, "ExternalSignature") ):
-            node['field_extensions'] = {'und': {} }
+            node['field_extensions'] = {'und': "" }
             #{'und': [{'tid': '25'}, {'tid': '24'}]}
             for es in ff.ExternalSignature:
                 if( es.SignatureType.text == "File extension" ):
@@ -221,19 +222,21 @@ class DrupalFormatRegistry():
                     pprint.pprint(tid)
                     idx = len(node['field_extensions']['und'])+1
                     print "---"
-                    node['field_extensions']['und'][str(idx)] = tid #, '2' : 24 }
+                    node['field_extensions']['und'] += es.Signature.text.strip()+","
+	#,{ '1' : 25, '2' : 24 }
         #node['field_extensions'] = {'und': [{'tid': '25'}, {'tid': '24'}]}
                     
                 
         #Split FormatTypes and add.
 #        node['taxonomy'] = {}
-#        node['field_type'] = [{'value': '' }]
+        node['field_type'] = []
         if( hasattr(ff, 'FormatTypes') ):
-#            node['field_type'] = []
+            node['field_type'] = {'und': "" }
 #            node['taxonomy'] = []
             for type in ff.FormatTypes.text.split(','):
                 tid = self.add_taxonomy_term(self.type_vid, type.strip())
-#                node['field_type'].append( { 'value': tid } )
+                idx = len(node['field_type']['und'])+1
+                node['field_type']['und'] += type.strip()+","
 #                node['taxonomy'] = { 'tags' : { str(self.type_vid) : type.strip() } }
         
         # ByteOrders (Big-endian|Little-endian (Intel)|Little-endian (Intel) and Big-endian)
