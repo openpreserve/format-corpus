@@ -3,11 +3,16 @@ A Prototype Editable Format Registry Build On Drupal
 
 To Do
 -----
+* Syncing of CNR controlled fields are broken at the moment, as both ends must be submitted in order to keep the links (otherwise, blank fields overwrite). Workaround is to switch off CNR during sync.This is symptomatic of the general problem that:
+* Node and other content that is to be updated should be downloaded, merged, and then pushed back. Need to think about git/xml/archival backend integration to get this right.
+* Internal Signatures and Documents are also ignored now, as they are full nodes.
 * Variable-location regexes are not handled correctly.
 * When adding taxonomy terms, also add a description 'Files with extension xxx', 'MIME Type [link to IANA page e.g. http://www.iana.org/assignments/media-types/application/ and http://www.iana.org/assignments/media-types/application/pdf]'.
 * Also, add [none] and [unknown] taxonomy entries to distinguish the two cases?
 * Fields should be validated wherever possible, using http://drupal.org/project/validation_api or rather http://drupal.org/project/covert_fields
 * Used domd/format/[title-raw] for format aliases, but switched to domd/pronom/[field_puid-raw] for demonstration purposes. Note that needed to allow slashes to remain in order for this to work as expected.
+* Note Characteristic is Property plus Value.
+* Distinguishing properties of the format from properties of instances of the format?
 
 Issues
 ------ 

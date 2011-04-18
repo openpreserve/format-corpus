@@ -367,7 +367,7 @@ if __name__ == "__main__":
     
     dfr = DrupalFormatRegistry(config)
     
-    #dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
+    dfr.push_pronom('data/pronom/xml/puid.fmt.10.xml')
     #dfr.push_pronom('data/pronom/xml/puid.fmt.101.xml')
     #sys.exit(0)
     
