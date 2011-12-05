@@ -4,7 +4,7 @@
 	<groupId>uk.bl.dpt</groupId>
 	<artifactId>foreg</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Fore3g</name>
+	<name>Foreg</name>
 	<description>Foreg utilities.</description>
 	<build>
 		<plugins>
@@ -49,8 +49,8 @@
 									<!-- source -->
 									<directory>../fido</directory>
 									<includes>
-          <include>**/*.py</include>
-        </includes>
+          								<include>**/*.py</include>
+        							</includes>
 								</resource>
 							</resources>
 						</configuration>
@@ -134,6 +134,13 @@
 			<groupId>planets-suite</groupId>
 			<artifactId>planets-core-techreg</artifactId>
 			<version>1.0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.python</groupId>
+			<artifactId>jython</artifactId>
+			<version>2.5.0</version>
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
