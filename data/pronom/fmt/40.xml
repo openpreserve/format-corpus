@@ -8,7 +8,7 @@
       <FormatAliases>Microsoft Word for Windows Document (97-XP)</FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>Text (Wordprocessed)</FormatTypes>
+      <FormatTypes>Word Processor</FormatTypes>
       <FormatDisclosure>None</FormatDisclosure>
       <FormatDescription>With the release of Word 97, Microsoft revised the native binary word processing format, which is based on its generic OLE2 Compound Document Format. The format is proprietary and Microsoft does not make details of its structure public. The information here is derived primarily from OpenOffice.org's reverse-engineered documentation of the format and should not therefore be regarded as definitive. A Word document is stored as a ‘WordDocument’ stream within a Compound Document Format file. The format remained unchanged with the releases of Word 2000, 2002 and 2003.</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>

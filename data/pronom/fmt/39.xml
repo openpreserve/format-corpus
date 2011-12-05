@@ -9,7 +9,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>Text (Wordprocessed)</FormatTypes>
+      <FormatTypes>Word Processor</FormatTypes>
       <FormatDisclosure>None</FormatDisclosure>
       <FormatDescription>With the release of Word 6.0, Microsoft introduced a new native binary word processing format, based on its generic OLE2 Compound Document Format. The format is proprietary and Microsoft does not make details of its structure public. The information here is derived primarily from OpenOffice.org's reverse-engineered documentation of the format and should not therefore be regarded as definitive. A Word document is stored as a ‘WordDocument’ stream within a Compound Document Format file. The format remained unchanged with the release of Word 95.</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>

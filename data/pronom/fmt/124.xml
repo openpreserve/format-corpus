@@ -4,13 +4,13 @@
     <FileFormat>
       <FormatID>331</FormatID>
       <FormatName>Encapsulated PostScript File Format</FormatName>
-      <FormatVersion>3.0</FormatVersion>
+      <FormatVersion>3</FormatVersion>
       <FormatAliases>EPS (3.0)</FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
       <FormatTypes>Page Description</FormatTypes>
       <FormatDisclosure>Full</FormatDisclosure>
-      <FormatDescription>Encapsulated Postscript (EPS) is a page description format, developed by Adobe Systems Incorporated. Version 3.0, the third version of the format, was developed in 1992. An EPS file comprises a header section followed by a PostScript document. An EPS can optionally include a preview raster image, in which case a binary header is prepended to the header.</FormatDescription>
+      <FormatDescription>Encapsulated Postscript (EPS) is a page description format, developed by Adobe Systems Incorporated. Version 3, the third version of the format, was developed in 1992, and subsequently revised in 1999 to include a number of extensions and features of the PostScript language not previously documented. An EPS file comprises a header section followed by a PostScript document. The header can refer to version 3.0 or version 3.1. An EPS can optionally include a preview raster image, in which case a binary header is prepended to the header.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -22,7 +22,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>04 May 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -90,6 +90,11 @@
         <Signature>epsf</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <ExternalSignature>
+        <ExternalSignatureID>1090</ExternalSignatureID>
+        <Signature>ps</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
       <InternalSignature>
         <SignatureID>179</SignatureID>
         <SignatureName>EPS 3.0</SignatureName>
@@ -143,11 +148,37 @@
           <ByteSequenceValue>252150532D41646F62652D332E3020455053462D332E30(0D|0A|0D0A|0A0D)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <InternalSignature>
+        <SignatureID>451</SignatureID>
+        <SignatureName>EPS 3.1</SignatureName>
+        <SignatureNote>Version comment ASCII: %!PS-Adobe-3.1 EPSF-3.0</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>566</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>252150532D41646F62652D332E3120455053462D332E30(0D|0A|0D0A|0A0D)</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>138</RelatedFormatID>
         <RelatedFormatName>Postscript</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>316</RelatedFormatID>
+        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
@@ -166,6 +197,13 @@
         <RelatedFormatID>773</RelatedFormatID>
         <RelatedFormatName>PostScript</RelatedFormatName>
         <RelatedFormatVersion>3.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1073</RelatedFormatID>
+        <RelatedFormatName>EndNote Import File</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subsequent version of</RelationshipType>

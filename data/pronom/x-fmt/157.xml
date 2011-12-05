@@ -10,8 +10,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Aggregate</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
@@ -43,6 +42,60 @@
         <Signature>iff</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>456</SignatureID>
+        <SignatureName>Interchange File</SignatureName>
+        <SignatureNote>All interchange file format files must start with either 'FORM', 'LIST', or 'CAT ' values. This is a generic signature that will identify Interchange Files which do not have a more complete and specific signature assigned to them within PRONOM.</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>572</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>(464F524D|4C495354|43415420)00</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>194</RelatedFormatID>
+        <RelatedFormatName>Audio Interchange File Format</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1083</RelatedFormatID>
+        <RelatedFormatName>Interchange File Format Interleaved Bitmap</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1084</RelatedFormatID>
+        <RelatedFormatName>Interchange File Format 8-bit Sampled Voice</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Is supertype of</RelationshipType>
+        <RelatedFormatID>1083</RelatedFormatID>
+        <RelatedFormatName>Interchange File Format Interleaved Bitmap</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Is supertype of</RelationshipType>
+        <RelatedFormatID>1084</RelatedFormatID>
+        <RelatedFormatName>Interchange File Format 8-bit Sampled Voice</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

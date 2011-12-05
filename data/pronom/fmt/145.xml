@@ -9,8 +9,7 @@
       <FormatAliases>PDF/X-1:2001</FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Page Description</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This 'exchange standard' format is based on Adobe's PDF specification and a subset of the PDF specification. This version  was an updated version of PDF/X-1:1999, and was based on PDF 1.3. It was superseded in 2003 by PDF/X-1a and PDF/X-3, at which point it was recommended that PDF/X-1 no longer be used. PDF/X-1 is the only PDF/X standard permitting encryption.</FormatDescription>

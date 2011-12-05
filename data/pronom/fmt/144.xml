@@ -9,8 +9,7 @@
       <FormatAliases>PDF/X-1:1999</FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Page Description</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>PDF/X was developed by the Committee for Graphics Arts Technologies Standards (CGATS) and Adobe. This  'exchange standard' format is based on Adobe's PDF specification and includes additional notes specifically for delivery of high quality colour advertisements. A subset of the PDF specification, and an application standard as well as a file format standard; it was considered a 'more reliable' PDF file. There are several versions of the standard, which address specific issues, PDF/X-1: 1999 was based on PDF 1.2, however there is no known implementation of this version. PDF/X-1 is the only PDF/X standard permitting encryption.</FormatDescription>

@@ -9,8 +9,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Database</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
@@ -44,7 +43,7 @@
       <InternalSignature>
         <SignatureID>381</SignatureID>
         <SignatureName>dBase Table Version II (date last updated (month (1-12), day (1-31), year)</SignatureName>
-        <SignatureNote>Version number (02), date last updated ((month (1-12), day (1-31), year), Maximum length of each record =1000, first character of field name is uppercase ASCII letter (41-5A), Field Type (C, N or L)</SignatureNote>
+        <SignatureNote>Version number (02), date last updated ((month (1-12), day (1-31), year), Maximum length of each record =1000, first character of field name is upper or lowercase ASCII letter (41-5A) or (61-7A), Field Type (C, N or L)</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>488</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -56,13 +55,13 @@
           <IndirectOffsetLength>
           </IndirectOffsetLength>
           <Endianness>Little-endian</Endianness>
-          <ByteSequenceValue>02{2}[01:1C][01:1F]????[00:03][41:5A]{10}(43|4E|4C)</ByteSequenceValue>
+          <ByteSequenceValue>02{2}[01:1C][01:1F]????[00:03]([41:5A]|[61:7A]){10}(43|4E|4C)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <InternalSignature>
         <SignatureID>382</SignatureID>
         <SignatureName>dBase Table Version II (date last updated MMDDYY all zero)</SignatureName>
-        <SignatureNote>Version number (02), date last updated MMDDYY all zero, Maximum length of each record =1000, first character of field name is uppercase ASCII letter (41-5A), Field Type (C, N or L)</SignatureNote>
+        <SignatureNote>Version number (02), date last updated MMDDYY all zero, Maximum length of each record =1000, first character of field name is upper or lowercase ASCII letter (41-5A) or (61-7A), Field Type (C, N or L)</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>489</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -74,7 +73,7 @@
           <IndirectOffsetLength>
           </IndirectOffsetLength>
           <Endianness>Little-endian</Endianness>
-          <ByteSequenceValue>02{2}000000??[00:03][41:5A]{10}(43|4E|4C)</ByteSequenceValue>
+          <ByteSequenceValue>02{2}000000??[00:03]([41:5A]|[61:7A]){10}(43|4E|4C)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

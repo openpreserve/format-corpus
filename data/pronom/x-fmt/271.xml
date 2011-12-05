@@ -9,8 +9,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Database</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
@@ -44,7 +43,7 @@
       <InternalSignature>
         <SignatureID>385</SignatureID>
         <SignatureName>dBase Table with dbt Version III+</SignatureName>
-        <SignatureNote>dbt Flag(Bit 7 of first byte), Version number(bits 0-2 of first byte), Date of last update MMDD, First uppercase character of field name, field type (C, D, L, M, N). Memo fields in the dbf and a flag indicating the existence of a database text (.dbt) file were already a part of the dbase III dbf file format.</SignatureNote>
+        <SignatureNote>dbt Flag(Bit 7 of first byte), Version number(bits 0-2 of first byte), Date of last update MMDD, First upper or lowercase character of field name, field type (C, D, L, M, N). Memo fields in the dbf and a flag indicating the existence of a database text (.dbt) file were already a part of the dbase III dbf file format.</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>491</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -57,7 +56,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>83??[01:0C][01:1F]{28}[41:5A]{10}(43|44|4C|4D|4E)</ByteSequenceValue>
+          <ByteSequenceValue>83??[01:0C][01:1F]{28}([41:5A]|[61:7A]){10}(43|44|4C|4D|4E)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

@@ -134,6 +134,13 @@
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>316</RelatedFormatID>
+        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>645</RelatedFormatID>
         <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
         <RelatedFormatVersion>

@@ -9,11 +9,11 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Image (Raster)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>PUID deprecated. Please see fmt/115 for information on OS/2 Bitmap 1.0 and Windows Bitmap 2.0.
+The only difference between Windows bitmap 2.0 and OS/2 bitmap 1.0 is the data type of the width and height fields of the bitmap header – for Windows 2.0 bitmaps they are signed short integers, for OS/2 1.0 bitmaps they are unsigned shorts. For positive numbers the representation is the same. Consequently, the file formats cannot be distinguished with a file signature test. The PUID for OS/2 Bitmap 1.0 has therefore been deprecated.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -26,7 +26,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>11 Jul 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -37,11 +37,12 @@
         <Identifier>x-fmt/25</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
-      <ExternalSignature>
-        <ExternalSignatureID>49</ExternalSignatureID>
-        <Signature>bmp</Signature>
-        <SignatureType>File extension</SignatureType>
-      </ExternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Equivalent to</RelationshipType>
+        <RelatedFormatID>728</RelatedFormatID>
+        <RelatedFormatName>Windows Bitmap</RelatedFormatName>
+        <RelatedFormatVersion>2.0</RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

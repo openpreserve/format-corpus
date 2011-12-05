@@ -9,7 +9,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>Text (Wordprocessed)</FormatTypes>
+      <FormatTypes>Word Processor</FormatTypes>
       <FormatDisclosure>None</FormatDisclosure>
       <FormatDescription>Word Document format is a word processing format developed by Microsoft. Word 2.0 format is the native file format of Microsoft Word 2.0 for Windows. It is proprietary and Microsoft does not make details of its structure public. A Word document file comprises a header section followed by a text section, which contains the document text in ANSI characters, followed by a format section, which contains formatting information about the text.</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>

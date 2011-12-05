@@ -10,8 +10,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Email</FormatTypes>
       <FormatDisclosure>Full</FormatDisclosure>
       <FormatDescription>Defined in RFC5322 the Internet Message Format provides a syntax for text messages that  are sent  among computer  users, within the framework of "electronic mail". Consisting of header fields and an optional body, encoded using ASCII characters. The Internet Message Format (*.eml) is a format used by numerous email systems. The format does not prevent the use of alternative formats for storage of electronic mail on those systems.</FormatDescription>
       <BinaryFileFormat>
@@ -37,6 +36,10 @@
       <FileFormatIdentifier>
         <Identifier>fmt/278</Identifier>
         <IdentifierType>PUID</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>message/rfc822</Identifier>
+        <IdentifierType>MIME</IdentifierType>
       </FileFormatIdentifier>
       <ExternalSignature>
         <ExternalSignatureID>1000</ExternalSignatureID>
@@ -69,8 +72,7 @@
         <ByteSequence>
           <ByteSequenceID>393</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
-          <Offset>
-          </Offset>
+          <Offset>0</Offset>
           <MaxOffset>4096</MaxOffset>
           <IndirectOffsetLocation>
           </IndirectOffsetLocation>
@@ -81,6 +83,19 @@
           <ByteSequenceValue>0D0A582D436F6E7665727465642D42793A20456D61696C6368656D7920??2E</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>641</RelatedFormatID>
+        <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>4.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>820</RelatedFormatID>
+        <RelatedFormatName>Microsoft Web Archive</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>645</RelatedFormatID>

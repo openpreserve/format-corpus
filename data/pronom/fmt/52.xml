@@ -7,7 +7,7 @@
       <FormatVersion>1.7</FormatVersion>
       <FormatAliases>RTF (1.7), RTF (XP), RTF (2002)</FormatAliases>
       <FormatFamilies>Rich Text Format</FormatFamilies>
-      <FormatTypes>Text (Wordprocessed)</FormatTypes>
+      <FormatTypes>Word Processor</FormatTypes>
       <FormatDisclosure>Full</FormatDisclosure>
       <FormatDescription>Rich Text Format (RTF) is a format developed by Microsoft to encode formatted text and graphics for use within applications or for data and formatting transfer between applications. It is closely associated with Microsoft Word, and new versions are developed with each release of Word. RTF files are encoded in plain text, typically ASCII, and consists of a series of control words, control symbols and groups. An RTF file comprises a Header section, containing various header tables, followed by a Document section, containing the document content and formatting. RTF version 1.7 is the version of the format associated with Microsoft Word 2002 (XP).</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
@@ -97,6 +97,18 @@
           <ByteSequenceValue>7B5C7274(66|6631)5C(616E7369|6D6163|7063|706361)5C616E7369637067{3-*}5C737473686664626368{1-4}5C73747368666C6F6368{1-4}5C737473686668696368{1-4}5C73747368666269</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>753</RelatedFormatID>
+        <RelatedFormatName>Rich Text Format</RelatedFormatName>
+        <RelatedFormatVersion>1.8</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1101</RelatedFormatID>
+        <RelatedFormatName>Rich Text Format</RelatedFormatName>
+        <RelatedFormatVersion>1.9</RelatedFormatVersion>
+      </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>626</RelatedFormatID>

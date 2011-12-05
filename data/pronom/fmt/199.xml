@@ -10,8 +10,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Audio, Video</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
@@ -70,7 +69,7 @@
         <ByteSequence>
           <ByteSequenceID>357</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
-          <Offset>0</Offset>
+          <Offset>4</Offset>
           <MaxOffset>
           </MaxOffset>
           <IndirectOffsetLocation>
@@ -78,9 +77,16 @@
           <IndirectOffsetLength>
           </IndirectOffsetLength>
           <Endianness>Little-endian</Endianness>
-          <ByteSequenceValue>{4}66747970{0-64}(6D703432|6D703431|69736F6D|69736F32){4-64}(6D6F6F76|6D646174|636D6F76)</ByteSequenceValue>
+          <ByteSequenceValue>66747970{0-64}(6D703432|6D703431|69736F6D|69736F32){4-64}(6D6F6F76|6D646174|636D6F76)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1103</RelatedFormatID>
+        <RelatedFormatName>3GPP Audio/Video File</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

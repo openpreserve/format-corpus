@@ -9,8 +9,7 @@
       <FormatAliases>PDF/X-2:2003</FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Page Description</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This 'exchange standard' format is based on Adobe's PDF specification and includes additional notes specifically for delivery of high quality colour advertisements. A subset of the PDF specification, and an application standard as well as a file format standard, it is considered a 'more reliable' PDF file. There are several versions of the standard, to address specific issues, and PDF/X-2 is a superset of PDF/X-3, which was based on PDF 1.4 (2003).</FormatDescription>

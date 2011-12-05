@@ -10,11 +10,11 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>GIS</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>ESRI ArcInfo Export File Format (also known as ArcInfo Interchange File Format) is a vector file format which is produced by ESRI and pre-dates the shapefile. It is as an export file used to enable coverage, grid or TIN and an associated INFO table to be transferred between different machines, which are not connected by any type of file sharing network. A volume has the extension .E00 through .E99. 
+A non-authoritative version of the specification can be found at: http://avce00.maptools.org/docs/v7_e00_cover.html</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -25,9 +25,8 @@
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <ProvenanceDescription>Format description information supplied by the Geospatial Multistate Access and Preservation Partnership (GeoMAPP), a grant funded collaboration sponsored by the National Digital Information Infrastructure Preservation Program (NDIIPP) of the Library of Congress, involving archives staff from North Carolina, Kentucky, Montana, and Utah state archives.</ProvenanceDescription>
+      <LastUpdatedDate>19 Aug 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -43,10 +42,15 @@
         <Signature>e00</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <ExternalSignature>
+        <ExternalSignatureID>1132</ExternalSignatureID>
+        <Signature>x00</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
       <InternalSignature>
         <SignatureID>389</SignatureID>
         <SignatureName>ESRI Arc/Info Export File</SignatureName>
-        <SignatureNote>line beginning with EXP, a constant 0, and the path name for creation of the export file ending in extension .e00</SignatureNote>
+        <SignatureNote>Header line beginning with EXP, followed by a constant of 0 or 1. Footer sequence ASCII: ..EOI..EOS..</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>495</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -59,7 +63,21 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>45585020203020{3-100}2E653030</ByteSequenceValue>
+          <ByteSequenceValue>4558502020[30:31]</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>658</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>454F49{0-2}454F53{0-2}0A</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

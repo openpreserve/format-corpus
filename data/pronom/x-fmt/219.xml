@@ -10,8 +10,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Aggregate</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
@@ -35,6 +34,10 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
+        <Identifier>application/x-internet-archive</Identifier>
+        <IdentifierType>GDFR Format Identifier</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
         <Identifier>x-fmt/219</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
@@ -43,6 +46,25 @@
         <Signature>arc</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>525</SignatureID>
+        <SignatureName>Alexa Archive File</SignatureName>
+        <SignatureNote>ASCII: (filedesc://) followed by recurring content type (URL IP-address Archive-date Content-type Archive-length)</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>647</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>66696C65646573633A2F2F{34-300}55524C2049502D6164647265737320417263686976652D6461746520436F6E74656E742D7479706520417263686976652D6C656E677468</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

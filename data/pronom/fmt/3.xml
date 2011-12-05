@@ -121,13 +121,13 @@
       </RelatedFormat>
       <CompressionType>
         <CompressionID>12</CompressionID>
-        <CompressionName>Lempel-Ziff-Welch</CompressionName>
+        <CompressionName>Lempel-Ziv-Welch</CompressionName>
         <CompressionVersion>
         </CompressionVersion>
         <CompressionAliases>LZW</CompressionAliases>
         <CompressionFamilies>
         </CompressionFamilies>
-        <Description>The Lempel-Ziff-Welch compression algorithm was developed by Terry Welch in 1984, as a modification of the LZ78 compressor. It is a lossless technique which can be applied to almost any type of data, but is most commonly used for image compression. LZW compression is effective on images with colour depths from 1-bit (monochrome) to 24-bit (True Colour). LZW compression is encountered in a range of common graphics file formats, including TIFF and GIF.</Description>
+        <Description>The Lempel-Ziv-Welch compression algorithm was developed by Terry Welch in 1984, as a modification of the LZ78 compressor. It is a lossless technique which can be applied to almost any type of data, but is most commonly used for image compression. LZW compression is effective on images with colour depths from 1-bit (monochrome) to 24-bit (True Colour). LZW compression is encountered in a range of common graphics file formats, including TIFF and GIF.</Description>
         <Lossiness>Lossless</Lossiness>
         <ReleaseDate>01 Jan 1984</ReleaseDate>
         <WithdrawnDate>

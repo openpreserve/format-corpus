@@ -81,20 +81,6 @@
           </Endianness>
           <ByteSequenceValue>252150532D41646F62652D322E31</ByteSequenceValue>
         </ByteSequence>
-        <ByteSequence>
-          <ByteSequenceID>250</ByteSequenceID>
-          <PositionType>Absolute from EOF</PositionType>
-          <Offset>0</Offset>
-          <MaxOffset>
-          </MaxOffset>
-          <IndirectOffsetLocation>
-          </IndirectOffsetLocation>
-          <IndirectOffsetLength>
-          </IndirectOffsetLength>
-          <Endianness>
-          </Endianness>
-          <ByteSequenceValue>2525454F46(0D|0A|0D0A)</ByteSequenceValue>
-        </ByteSequence>
       </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
@@ -106,13 +92,27 @@
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>331</RelatedFormatID>
         <RelatedFormatName>Encapsulated PostScript File Format</RelatedFormatName>
-        <RelatedFormatVersion>3.0</RelatedFormatVersion>
+        <RelatedFormatVersion>3</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>332</RelatedFormatID>
         <RelatedFormatName>Encapsulated PostScript File Format</RelatedFormatName>
         <RelatedFormatVersion>2.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>316</RelatedFormatID>
+        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1073</RelatedFormatID>
+        <RelatedFormatName>EndNote Import File</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>

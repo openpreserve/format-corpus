@@ -10,8 +10,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Text (Structured)</FormatTypes>
       <FormatDisclosure>None</FormatDisclosure>
       <FormatDescription>The OLE2 Compound Document Format is a generic document format developed by Microsoft as the underlying native binary format for many of its Office applications. The format is proprietary and Microsoft does not make details of its structure public. The information here is derived primarily from OpenOffice.org's reverse-engineered documentation of the format and should not therefore be regarded as definitive. A Compound Document acts as a file system in which independent data streams are organised within a hierarchy of containers, called storages. All storages and streams are contained within a parent Root Storage. A Directory Stream indexes every stream and storage in the file. A Compound Document begins with the Compound Document Header, including pointers to the location of the Directory Stream and Master Sector Allocation Table. The remainder of the file is organised into Sectors, the positions of which are defined in the Sector Allocation Table and Master Sector Allocation Table.</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>

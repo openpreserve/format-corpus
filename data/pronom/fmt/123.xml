@@ -147,6 +147,13 @@
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>316</RelatedFormatID>
+        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>771</RelatedFormatID>
         <RelatedFormatName>PostScript</RelatedFormatName>
         <RelatedFormatVersion>2.0</RelatedFormatVersion>
@@ -164,10 +171,17 @@
         <RelatedFormatVersion>3.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1073</RelatedFormatID>
+        <RelatedFormatName>EndNote Import File</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>331</RelatedFormatID>
         <RelatedFormatName>Encapsulated PostScript File Format</RelatedFormatName>
-        <RelatedFormatVersion>3.0</RelatedFormatVersion>
+        <RelatedFormatVersion>3</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subsequent version of</RelationshipType>

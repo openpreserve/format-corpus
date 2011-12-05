@@ -9,8 +9,7 @@
       <FormatAliases>JPF</FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Image (Raster)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>JPEG 2000 Extended File Format is an optional, lossless, extension of the JP2 format, the main file format for the JPEG 2000 international standard for image coding, created by the Joint Photographic Experts Group in 2000 for the compression of photographic images for storage or transmission. The standard specifies how an image and its metadata is transformed into byte stream data. This format is widely used for storing and transmitting photos and other compressed image data online. Although it is based on JP2 it can support multiple layers, animation and other features, and is a lossless image compression file. Like JP2 the format is made up of a contiguous sequence of boxes, beginning with a signature box and a file type box, which provides version and file type information.</FormatDescription>
