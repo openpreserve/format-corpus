@@ -12,7 +12,8 @@
       <FormatTypes>Page Description</FormatTypes>
       <FormatDisclosure>Full</FormatDisclosure>
       <FormatDescription>The Portable Document Format/ Archive is a format designed for long term preservation by Adobe Systems. PDF/A is a simplified version of PDF 1.4, with all of the features from PDF 1.4 that would impede long term preservation removed. Removed features include Javascript, Audio/Visual content, LZW compression and encryption. A major principle of PDF/A is that it is self contained and not reliant on externalities thus all font and colour information is encoded into the file. PDF/A files are larger than other types of PDF files due to the need for embedded information.
-PDF/A supports two levels of compliance PDF/A1-a (Accessible) and PDF/A1-b (Basic). PDF/A1-a is fully ISO 19005-1:2005 (PDF/A-1) compliant whereas PDF/A1-b is less stringent and not compliant. PDF/A1-a requires tagged PDF and Unicode whereas PDF/A1-b does not.</FormatDescription>
+PDF/A supports two levels of compliance PDF/A1-a (Accessible) and PDF/A1-b (Basic). PDF/A1-a is fully ISO 19005-1:2005 (PDF/A-1) compliant whereas PDF/A1-b is less stringent and not compliant. PDF/A1-a requires tagged PDF and Unicode whereas PDF/A1-b does not.
+The signature identification proposed for PDF/A 1b has been tested against a number of PDF/A and PDF files for verification. However, PDF itself is a complex format, and while the PDF/A 1b signature contained in PRONOM will identify many PDF/A 1b files, DROID can only identify what a file asserts itself to be. As there are a number of ways in which PDF/A 1b files can violate the PDF/A 1b conformance, which can not be spotted until the file is parsed, it is recommended that PDF files are tested against validation software when attempting to confirm identification. Further information concerning PDF/A violations, and a test suite of PDF items which fail to conform to PDF/A standards, can be found at http://www.pdfa.org/2011/08/isartor-test-suite/</FormatDescription>
       <BinaryFileFormat>Binary</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -22,9 +23,8 @@ PDF/A supports two levels of compliance PDF/A1-a (Accessible) and PDF/A1-b (Basi
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>11 Jul 2011</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>11 Jul 2011</LastUpdatedDate>
+      <ProvenanceDescription>Additional information regarding violations of PDF/A 1b conformance added November 2011.</ProvenanceDescription>
+      <LastUpdatedDate>08 Nov 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -88,8 +88,7 @@ PDF/A supports two levels of compliance PDF/A1-a (Accessible) and PDF/A1-b (Basi
           <ByteSequenceID>642</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
           <Offset>0</Offset>
-          <MaxOffset>
-          </MaxOffset>
+          <MaxOffset>144</MaxOffset>
           <IndirectOffsetLocation>
           </IndirectOffsetLocation>
           <IndirectOffsetLength>
@@ -111,7 +110,19 @@ PDF/A supports two levels of compliance PDF/A1-a (Accessible) and PDF/A1-b (Basi
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>786D6C6E733A7064666169643D(22|27)687474703A2F2F7777772E6169696D2E6F72672F706466612F6E732F6964{0-20}7064666169643A70617274(3D22|3D27|3E)31(22|27|3C2F7064666169643A706172743E){0-11}7064666169643A636F6E666F726D616E6365(3E|3D22|3D27)42(22|27|3C2F7064666169643A636F6E666F726D616E63653E)</ByteSequenceValue>
+          <ByteSequenceValue>786D6C6E733A7064666169643D(22|27)687474703A2F2F7777772E6169696D2E6F72672F706466612F6E732F6964{0-20}7064666169643A70617274(3D22|3D27|3E)31(22|27|3C2F7064666169643A706172743E){0-13}7064666169643A636F6E666F726D616E6365(3E|3D22|3D27)42(22|27|3C2F7064666169643A636F6E666F726D616E63653E)</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>692</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>332</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Little-endian</Endianness>
+          <ByteSequenceValue>0A{10}20{5}20(66|6E){1}0A{10}20{5}20(66|6E){1}0A{10}20{5}20(66|6E){1}0A{10}20{5}20(66|6E){1}0A{10}20{5}20(66|6E){1}0A{10}20{5}20(66|6E){1}0A747261696C6572</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>

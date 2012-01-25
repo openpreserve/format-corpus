@@ -9,8 +9,7 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Page Description</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
       <FormatDescription>Portable Document Format is a platform-independent format for representing formatted documents, developed by Adobe Systems Incorporated. It is the native format of Adobe’s Acrobat family of software products, version 1.7 corresponding to the release of Acrobat 8.0 and 9.0.  PDF is based on, and shares the same imaging model as, the PostScript page description language.  A PDF file comprises a Header section, a Body section containing the objects which make up the document, a Cross Reference Table, and a Trailer section.  PDF files can contain a wide variety of content, including text, images, video and audio.</FormatDescription>

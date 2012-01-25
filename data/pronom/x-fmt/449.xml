@@ -27,7 +27,7 @@
       <ProvenanceSourceDate>06 Apr 2009</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>06 Apr 2009</LastUpdatedDate>
+      <LastUpdatedDate>09 Nov 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -42,6 +42,11 @@
         <Identifier>x-fmt/449</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
+      <ExternalSignature>
+        <ExternalSignatureID>1173</ExternalSignatureID>
+        <Signature>sdn</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

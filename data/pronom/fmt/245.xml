@@ -40,7 +40,8 @@
       </FileFormatIdentifier>
       <ExternalSignature>
         <ExternalSignatureID>964</ExternalSignatureID>
-        <Signature>s</Signature>
+        <Signature>
+        </Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
     </FileFormat>

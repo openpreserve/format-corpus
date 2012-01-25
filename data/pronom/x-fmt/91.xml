@@ -116,13 +116,6 @@
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
-        <RelatedFormatID>316</RelatedFormatID>
-        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
-        <RelatedFormatVersion>
-        </RelatedFormatVersion>
-      </RelatedFormat>
-      <RelatedFormat>
-        <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>1073</RelatedFormatID>
         <RelatedFormatName>EndNote Import File</RelatedFormatName>
         <RelatedFormatVersion>

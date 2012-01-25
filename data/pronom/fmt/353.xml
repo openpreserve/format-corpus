@@ -223,6 +223,24 @@
           <ByteSequenceValue>4D4D002A</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>672</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>673</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>752</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.0</RelatedFormatVersion>
+      </RelatedFormat>
       <CompressionType>
         <CompressionID>11</CompressionID>
         <CompressionName>Baseline JPEG</CompressionName>

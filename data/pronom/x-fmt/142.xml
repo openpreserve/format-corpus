@@ -9,11 +9,11 @@
       </FormatAliases>
       <FormatFamilies>
       </FormatFamilies>
-      <FormatTypes>
-      </FormatTypes>
+      <FormatTypes>Image (Raster), Image (Vector), Text (Structured)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>Computer Graphics Metafile (CGM) is a standardized platform-independent format used for the interchange of raster and vector data. CGM was developed under the auspices of the International Standards Organization (ISO) and the American Standards National Institute (ANSI). It is also used in conjunction with a variety of input and output devices. Although CGM incorporates extensions designed to support raster data storage, files in CGM format are used primarily to store vector information. CGM files typically contain either bitmap or vector data, but rarely both. It uses Clear Text Encoding.
+File format specifications available at http://standards.iso.org/ittf/PubliclyAvailableStandards/c044114_ISO_IEC_8632-1_1999_Cor_1_2006%28E%29.pdf</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -24,9 +24,8 @@
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>02 Dec 2010</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Dec 2010</LastUpdatedDate>
+      <ProvenanceDescription>File format information supplied by NARA Information Services/Applied Research Division, The National Archives and Records Administration.</ProvenanceDescription>
+      <LastUpdatedDate>29 Nov 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>

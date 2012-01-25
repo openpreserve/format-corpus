@@ -26,13 +26,25 @@
       <ProvenanceSourceDate>02 Feb 2007</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Feb 2007</LastUpdatedDate>
+      <LastUpdatedDate>11 Nov 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
       </FormatRisk>
       <TechnicalEnvironment>
       </TechnicalEnvironment>
+      <FileFormatIdentifier>
+        <Identifier>com.microsoft.ico</Identifier>
+        <IdentifierType>Apple Uniform Type Identifier</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/vnd.microsoft.icon</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/x-icon</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
       <FileFormatIdentifier>
         <Identifier>x-fmt/418</Identifier>
         <IdentifierType>PUID</IdentifierType>

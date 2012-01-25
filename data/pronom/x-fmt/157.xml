@@ -70,6 +70,13 @@
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>195</RelatedFormatID>
+        <RelatedFormatName>Audio Interchange File Format (compressed)</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>1083</RelatedFormatID>
         <RelatedFormatName>Interchange File Format Interleaved Bitmap</RelatedFormatName>
         <RelatedFormatVersion>

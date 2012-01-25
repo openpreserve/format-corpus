@@ -14,7 +14,8 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>The DWF format is essentially an enhancement of the Autodesk Streamline DDP file format. Due to the wide variety of design data produced by Autodesk software packages, the DWF format is being targeted as the publishing format that will hold all published image data, 2D vector data, 3D vector data, animations, metadata, etc. The ZIP file format was chosen as the underlying storage mechanism for the DWF package.
+A DWF package must meet the following requirements: 1) The first 12 bytes of the physical package file must contain the DWF version header. 2) A manifest.xml file (hereafter “the manifest”) at the root of the zip archive that complies with the manifest.xsd schema. 3) File contents logically organized into sections, one for each component of the composite design, described by the manifest. 4) At least one resource file. 5) The manifest must contain an &lt;Interfaces&gt; element containing at least one &lt;Interface&gt; sub-element that indicates a document interface supported by the DWF package.  An example would be the ‘ePlot’ document interface, which implies that the DWF contains at least one valid ePlot page.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -25,9 +26,8 @@
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Dec 2010</LastUpdatedDate>
+      <ProvenanceDescription>File format information supplied by NARA Information Services/Applied Research Division, The National Archives and Records Administration.</ProvenanceDescription>
+      <LastUpdatedDate>29 Nov 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -35,9 +35,40 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
+        <Identifier>application/dwf</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>application/x-dwf</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>drawing/x-dwf</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/vnd.dwf</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/x-dwf</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>model/vnd.dwf</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
         <Identifier>x-fmt/49</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
+      <Developers>
+        <DeveloperID>18</DeveloperID>
+        <DeveloperName>
+        </DeveloperName>
+        <OrganisationName>Autodesk Corporation</OrganisationName>
+        <DeveloperCompoundName>Autodesk Corporation</DeveloperCompoundName>
+      </Developers>
       <ExternalSignature>
         <ExternalSignatureID>74</ExternalSignatureID>
         <Signature>dwf</Signature>

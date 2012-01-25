@@ -65,13 +65,6 @@
       </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
-        <RelatedFormatID>316</RelatedFormatID>
-        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
-        <RelatedFormatVersion>
-        </RelatedFormatVersion>
-      </RelatedFormat>
-      <RelatedFormat>
-        <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>638</RelatedFormatID>
         <RelatedFormatName>Extensible Markup Language</RelatedFormatName>
         <RelatedFormatVersion>1.0</RelatedFormatVersion>

@@ -147,13 +147,6 @@
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
-        <RelatedFormatID>316</RelatedFormatID>
-        <RelatedFormatName>Cascading Style Sheet</RelatedFormatName>
-        <RelatedFormatVersion>
-        </RelatedFormatVersion>
-      </RelatedFormat>
-      <RelatedFormat>
-        <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>771</RelatedFormatID>
         <RelatedFormatName>PostScript</RelatedFormatName>
         <RelatedFormatVersion>2.0</RelatedFormatVersion>

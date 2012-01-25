@@ -14,7 +14,9 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>AutoCAD slide files are screen images. A slide file consists of a header portion and one or more data records of variable length. Data records follow the header. Each data record begins with a field whose high-order byte is the record type. If a slide contains any vectors at all, a New colour record will be the first data record. The order of the vectors in a slide, and the order of the endpoints of those vectors, may vary.
+The slide format described in the previous paragraph is produced by AutoCAD Release 9 and later, and is portable among all computers running AutoCAD Release 9 or later. Previous versions of AutoCAD (as well as AutoShade 1.0 and AutoSketch 1.02) produce slides with a somewhat different header. Note that the old-format header does not contain a Test number field. The floating-point aspect ratio value and all 2-byte integers are written in the native format of the CPU that was used to create the file (for 8086-family CPUs, IEEE double-precision, and low-order byte first). Old-format slide files are not portable across machine types, but they can be read by any version of AutoCAD running on the same CPU type as the CPU with which the slide was created.
+File specifications are available at http://www.autodesk.com/techpubs/autocad/acadr14/dxf/slide_file_format_al_u05_b.htm</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -25,9 +27,8 @@
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <ProvenanceDescription>File format information supplied by NARA Information Services/Applied Research Division, The National Archives and Records Administration.</ProvenanceDescription>
+      <LastUpdatedDate>29 Nov 2011</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -35,9 +36,28 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
+        <Identifier>application/sld</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>application/x-sld</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/x-sld</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
         <Identifier>x-fmt/105</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>
+      <Developers>
+        <DeveloperID>18</DeveloperID>
+        <DeveloperName>
+        </DeveloperName>
+        <OrganisationName>Autodesk Corporation</OrganisationName>
+        <DeveloperCompoundName>Autodesk Corporation</DeveloperCompoundName>
+      </Developers>
       <ExternalSignature>
         <ExternalSignatureID>147</ExternalSignatureID>
         <Signature>sld</Signature>
