@@ -29,6 +29,7 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -40,13 +41,13 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<!-- this is important -->
+							< ! - - this is important - - >
 							<overwrite>true</overwrite>
-							<!-- target -->
+							< ! - - target - - >
 							<outputDirectory>${basedir}/target/classes</outputDirectory>
 							<resources>
 								<resource>
-									<!-- source -->
+									< ! - - source - - >
 									<directory>../fido</directory>
 									<includes>
           								<include>**/*.py</include>
@@ -57,6 +58,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
