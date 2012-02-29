@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<FFSignatureFile xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" xmlns:ns2="http://pronom.nationalarchives.gov.uk" DateCreated="2012-01-04T14:54:24" Version="55">
+<FFSignatureFile xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" xmlns:ns2="http://pronom.nationalarchives.gov.uk" DateCreated="2012-02-01T23:45:08" Version="56">
     <InternalSignatureCollection>
         <InternalSignature Specificity="Specific" ID="9">
             <ByteSequence Reference="BOFoffset">
