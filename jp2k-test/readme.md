@@ -7,7 +7,7 @@ All images were compressed lossily at a ratio of about 45:1. Encoding options (t
 + *icc* -  shows handling of ICC profiles by different encoders (as well as some *Photoshop*-specific weirdness)
 + *byteCorruption* - shows effects of removal/modification of bytes after image creation (these files were deliberately butchered - no encoder faults to blame!)  
 
-[*Jpylyzer*][jpylyzer] output files are included for each image. 
+[*Jpylyzer*][jpylyzer] output files are included for each image (note that these are best viewed in an *XML* editor as they are not pretty-printed). 
  
 The table below gives a description of the dataset:
 
@@ -350,7 +350,7 @@ Public Domain.
 
 Resolution fields and ICC profile were added specifically to demonstrate how these features are handled by different encoders. The diagram below shows the approximate workflow:
 
-![](diagram.png)
+![](https://raw.github.com/openplanets/format-corpus/master/jp2k-test/diagram.png)
 
 
 [jpylyzer]: http://www.openplanetsfoundation.org/software/jpylyzer
