@@ -1,5 +1,5 @@
-## Contents of this repository
-This repository contains a small test corpus of *JPEG 2000* (Part 1 and Part 2) images. 
+## Contents
+This folder contains a small test corpus of *JPEG 2000* (Part 1 and Part 2) images. 
 
 All images were compressed lossily at a ratio of about 45:1. Encoding options (tile size, progression order, etc.) are not uniform across all samples, and in most cases the application defaults were used (except for the *Aware*-created images). The images are subdivided into 3 groups:
 
