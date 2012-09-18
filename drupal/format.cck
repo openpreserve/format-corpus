@@ -1,0 +1,2359 @@
+$content['type']  = array (
+  'name' => 'Format',
+  'type' => 'format',
+  'description' => 'A digital object format.',
+  'title_label' => 'Title',
+  'body_label' => '',
+  'min_word_count' => '0',
+  'help' => '',
+  'node_options' => 
+  array (
+    'status' => true,
+    'promote' => true,
+    'revision' => true,
+    'sticky' => false,
+  ),
+  'old_type' => 'format',
+  'orig_type' => '',
+  'module' => 'node',
+  'custom' => '1',
+  'modified' => '1',
+  'locked' => '0',
+  'comment' => '2',
+  'comment_default_mode' => '4',
+  'comment_default_order' => '1',
+  'comment_default_per_page' => '50',
+  'comment_controls' => '3',
+  'comment_anonymous' => 0,
+  'comment_subject_field' => '1',
+  'comment_preview' => '1',
+  'comment_form_location' => '0',
+  'fivestar' => 0,
+  'fivestar_stars' => 5,
+  'fivestar_labels_enable' => 1,
+  'fivestar_label_0' => 'Cancel rating',
+  'fivestar_label_1' => 'Poor',
+  'fivestar_label_2' => 'Okay',
+  'fivestar_label_3' => 'Good',
+  'fivestar_label_4' => 'Great',
+  'fivestar_label_5' => 'Awesome',
+  'fivestar_label_6' => 'Give it @star/@count',
+  'fivestar_label_7' => 'Give it @star/@count',
+  'fivestar_label_8' => 'Give it @star/@count',
+  'fivestar_label_9' => 'Give it @star/@count',
+  'fivestar_label_10' => 'Give it @star/@count',
+  'fivestar_style' => 'average',
+  'fivestar_text' => 'dual',
+  'fivestar_title' => 1,
+  'fivestar_feedback' => 1,
+  'fivestar_unvote' => 0,
+  'fivestar_position_teaser' => 'hidden',
+  'fivestar_position' => 'below',
+  'skinr_settings' => 
+  array (
+    'comment_group' => 
+    array (
+      'bartik_mod' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+      'garland' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+      'pixture' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+      'tma' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+    ),
+    'node_group' => 
+    array (
+      'bartik_mod' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+      'garland' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+      'pixture' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+      'tma' => 
+      array (
+        'advanced' => 
+        array (
+          '_additional' => '',
+          '_template' => '',
+        ),
+      ),
+    ),
+  ),
+  'unique_field_fields' => 
+  array (
+    'field_shortname' => true,
+    'field_version' => true,
+    'title' => false,
+    'name' => false,
+    'field_fullname' => false,
+    'field_aliases' => false,
+    'field_type' => false,
+    'field_creator' => false,
+    'field_extensions' => false,
+    'field_mimetype' => false,
+    'field_release_date' => false,
+    'field_hasformat' => false,
+    'field_puid' => false,
+    'field_apple_uid' => false,
+    'field_haschildren' => false,
+    'field_conforms_to' => false,
+    'field_encapsulates' => false,
+    'field_doc_title' => false,
+    'field_doc_link' => false,
+    'field_is1_name' => false,
+    'field_is1_desc' => false,
+    'field_regex' => false,
+  ),
+  'unique_field_scope' => 'type',
+  'unique_field_comp' => 'all',
+  'unique_field_show_matches' => 
+  array (
+    'show_matches' => true,
+  ),
+  'ant' => '1',
+  'ant_pattern' => '[field_shortname-raw] [field_version-raw]',
+  'ant_php' => 0,
+);
+$content['groups']  = array (
+  0 => 
+  array (
+    'label' => 'Relationships',
+    'group_type' => 'standard',
+    'settings' => 
+    array (
+      'form' => 
+      array (
+        'style' => 'fieldset_collapsible',
+        'description' => '',
+      ),
+      'display' => 
+      array (
+        'description' => '',
+        'teaser' => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'full' => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        4 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        2 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        3 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'token' => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'label' => 'above',
+      ),
+    ),
+    'weight' => '7',
+    'group_name' => 'group_relationships',
+  ),
+  1 => 
+  array (
+    'label' => 'Identifiers',
+    'group_type' => 'standard',
+    'settings' => 
+    array (
+      'form' => 
+      array (
+        'style' => 'fieldset_collapsible',
+        'description' => '',
+      ),
+      'display' => 
+      array (
+        'description' => '',
+        'teaser' => 
+        array (
+          'format' => 'fieldset_collapsible',
+          'exclude' => 0,
+        ),
+        'full' => 
+        array (
+          'format' => 'fieldset_collapsible',
+          'exclude' => 0,
+        ),
+        4 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        2 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        3 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'token' => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'label' => 'above',
+      ),
+    ),
+    'weight' => '8',
+    'group_name' => 'group_identifiers',
+  ),
+  2 => 
+  array (
+    'label' => 'Internal Signatures',
+    'group_type' => 'multigroup',
+    'settings' => 
+    array (
+      'form' => 
+      array (
+        'style' => 'fieldset',
+        'description' => '',
+      ),
+      'display' => 
+      array (
+        'description' => '',
+        'teaser' => 
+        array (
+          'format' => 'fieldset_collapsed',
+          'exclude' => 0,
+        ),
+        'full' => 
+        array (
+          'format' => 'fieldset_collapsible',
+          'exclude' => 0,
+        ),
+        4 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        2 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        3 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'token' => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'label' => 'above',
+      ),
+      'multigroup' => 
+      array (
+        'subgroup' => 
+        array (
+          'weight' => -20,
+          'label' => 'above',
+          'teaser' => 
+          array (
+            'format' => 'fieldset_collapsible',
+            'exclude' => 0,
+          ),
+          'full' => 
+          array (
+            'format' => 'fieldset_collapsible',
+            'exclude' => 0,
+          ),
+        ),
+        'multiple-columns' => 0,
+        'required' => 1,
+        'multiple' => 1,
+        'labels' => 
+        array (
+          0 => '',
+          1 => '',
+          2 => '',
+          3 => '',
+          4 => '',
+          5 => '',
+          6 => '',
+          7 => '',
+          8 => '',
+          9 => '',
+        ),
+      ),
+    ),
+    'weight' => '10',
+    'group_name' => 'group_internal_sigs',
+  ),
+  3 => 
+  array (
+    'label' => 'Documents',
+    'group_type' => 'multigroup',
+    'settings' => 
+    array (
+      'form' => 
+      array (
+        'style' => 'fieldset_collapsible',
+        'description' => '',
+      ),
+      'display' => 
+      array (
+        'description' => '',
+        'teaser' => 
+        array (
+          'format' => 'fieldset_collapsed',
+          'exclude' => 0,
+        ),
+        'full' => 
+        array (
+          'format' => 'fieldset_collapsible',
+          'exclude' => 0,
+        ),
+        4 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        2 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        3 => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'token' => 
+        array (
+          'format' => 'fieldset',
+          'exclude' => 0,
+        ),
+        'label' => 'above',
+      ),
+      'multigroup' => 
+      array (
+        'subgroup' => 
+        array (
+          'weight' => -20,
+          'label' => 'above',
+          'teaser' => 
+          array (
+            'format' => 'fieldset_collapsible',
+            'exclude' => 0,
+          ),
+          'full' => 
+          array (
+            'format' => 'fieldset_collapsible',
+            'exclude' => 0,
+          ),
+        ),
+        'multiple-columns' => 0,
+        'required' => 0,
+        'multiple' => '1',
+        'labels' => 
+        array (
+          0 => '',
+          1 => '',
+          2 => '',
+          3 => '',
+          4 => '',
+          5 => '',
+          6 => '',
+          7 => '',
+          8 => '',
+          9 => '',
+        ),
+      ),
+    ),
+    'weight' => '11',
+    'group_name' => 'group_documents',
+  ),
+);
+$content['fields']  = array (
+  0 => 
+  array (
+    'label' => 'Short Name',
+    'field_name' => 'field_shortname',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '-1',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => 'A short name for this family of formats, e.g. for Portable Document Format, this might be \'PDF\'.',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_shortname][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => NULL,
+    'group' => false,
+    'required' => 1,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '-1',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  1 => 
+  array (
+    'label' => 'Version',
+    'field_name' => 'field_version',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => 0,
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_version][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_version' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_version][0][value',
+        ),
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => 0,
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  2 => 
+  array (
+    'label' => 'Full Name',
+    'field_name' => 'field_fullname',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '1',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_fullname][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_fullname' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_fullname][0][value',
+        ),
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '1',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  3 => 
+  array (
+    'label' => 'Aliases',
+    'field_name' => 'field_aliases',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '2',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_aliases][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_aliases' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_aliases][0][value',
+        ),
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '2',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  4 => 
+  array (
+    'label' => 'Type',
+    'field_name' => 'field_type',
+    'type' => 'content_taxonomy',
+    'widget_type' => 'content_taxonomy_autocomplete',
+    'change' => 'Change basic information',
+    'weight' => '3',
+    'new_terms' => 'insert',
+    'extra_parent' => '0',
+    'maxlength' => '255',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_type' => 
+      array (
+        'value' => '',
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '1',
+    'save_term_node' => 0,
+    'vid' => '3',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'op' => 'Save field settings',
+    'module' => 'content_taxonomy',
+    'widget_module' => 'content_taxonomy_autocomplete',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'int',
+        'not null' => false,
+        'sortable' => false,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '3',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'link',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'link',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  5 => 
+  array (
+    'label' => 'Creator',
+    'field_name' => 'field_creator',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '4',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_creator][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_creator' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_creator][0][value',
+        ),
+      ),
+    ),
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '4',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  6 => 
+  array (
+    'label' => 'Release Date',
+    'field_name' => 'field_release_date',
+    'type' => 'date',
+    'widget_type' => 'date_text',
+    'change' => 'Change basic information',
+    'weight' => '6',
+    'default_value' => 'blank',
+    'default_value2' => 'same',
+    'default_value_code' => '',
+    'default_value_code2' => '',
+    'input_format' => 'j M Y - H:i:s',
+    'input_format_custom' => '',
+    'advanced' => 
+    array (
+      'label_position' => 'above',
+      'text_parts' => 
+      array (
+        'year' => 0,
+        'month' => 0,
+        'day' => 0,
+        'hour' => 0,
+        'minute' => 0,
+        'second' => 0,
+      ),
+    ),
+    'increment' => '1',
+    'year_range' => '-3:+3',
+    'label_position' => 'above',
+    'text_parts' => 
+    array (
+    ),
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'repeat' => 0,
+    'todate' => '',
+    'granularity' => 
+    array (
+      'year' => 'year',
+      'month' => 'month',
+      'day' => 'day',
+    ),
+    'default_format' => 'medium',
+    'tz_handling' => 'none',
+    'timezone_db' => 'UTC',
+    'op' => 'Save field settings',
+    'module' => 'date',
+    'widget_module' => 'date',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '6',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'short',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'short',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  7 => 
+  array (
+    'label' => 'Parent Format',
+    'field_name' => 'field_hasformat',
+    'type' => 'nodereference',
+    'widget_type' => 'nodereference_autocomplete',
+    'change' => 'Change basic information',
+    'weight' => '7',
+    'autocomplete_match' => 'contains',
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'nid' => NULL,
+        '_error_element' => 'default_value_widget][field_hasformat][0][nid][nid',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_hasformat' => 
+      array (
+        0 => 
+        array (
+          'nid' => 
+          array (
+            'nid' => '',
+            '_error_element' => 'default_value_widget][field_hasformat][0][nid][nid',
+          ),
+          '_error_element' => 'default_value_widget][field_hasformat][0][nid][nid',
+        ),
+      ),
+    ),
+    'group' => 'group_relationships',
+    'required' => 0,
+    'multiple' => '0',
+    'referenceable_types' => 
+    array (
+      'format' => 'format',
+      'blog' => 0,
+      'book' => 0,
+      'neo_class' => 0,
+      'page' => 0,
+      'neo_property' => 0,
+      'sparql' => 0,
+      'story' => 0,
+      'neo_vocabulary' => 0,
+    ),
+    'advanced_view' => '--',
+    'advanced_view_args' => '',
+    'op' => 'Save field settings',
+    'module' => 'nodereference',
+    'widget_module' => 'nodereference',
+    'columns' => 
+    array (
+      'nid' => 
+      array (
+        'type' => 'int',
+        'unsigned' => true,
+        'not null' => false,
+        'index' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '7',
+      'parent' => 'group_relationships',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  8 => 
+  array (
+    'label' => 'Child Formats',
+    'field_name' => 'field_haschildren',
+    'type' => 'nodereferrer',
+    'widget_type' => 'nodereferrer_list',
+    'change' => 'Change basic information',
+    'weight' => '8',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'group' => 'group_relationships',
+    'required' => false,
+    'multiple' => 0,
+    'referrer_types' => 
+    array (
+      'format' => 'format',
+      'blog' => 0,
+      'book' => 0,
+      'neo_class' => 0,
+      'page' => 0,
+      'neo_property' => 0,
+      'story' => 0,
+      'neo_vocabulary' => 0,
+      'sparql' => false,
+    ),
+    'referrer_fields' => 
+    array (
+      'field_hasformat' => 'field_hasformat',
+      'field_vocabulary' => 0,
+      'field_subclassof' => 0,
+      'field_disjointwith' => 0,
+      'field_domain' => 0,
+      'field_range' => 0,
+      'field_inverse' => 0,
+      'field_subpropertyof' => 0,
+      'field_conforms_to' => false,
+    ),
+    'referrer_nodes_per_page' => '0',
+    'referrer_pager_element' => '0',
+    'referrer_order' => 'TITLE_ASC',
+    'op' => 'Save field settings',
+    'module' => 'nodereferrer',
+    'widget_module' => 'nodereferrer',
+    'columns' => 
+    array (
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '8',
+      'parent' => 'group_relationships',
+      'label' => 
+      array (
+        'format' => 'above',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  9 => 
+  array (
+    'label' => 'Conforms to',
+    'field_name' => 'field_conforms_to',
+    'type' => 'nodereference',
+    'widget_type' => 'nodereference_autocomplete',
+    'change' => 'Change basic information',
+    'weight' => '9',
+    'autocomplete_match' => 'contains',
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'nid' => NULL,
+        '_error_element' => 'default_value_widget][field_conforms_to][0][nid][nid',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_conforms_to' => 
+      array (
+        0 => 
+        array (
+          'nid' => 
+          array (
+            'nid' => '',
+            '_error_element' => 'default_value_widget][field_conforms_to][0][nid][nid',
+          ),
+          '_error_element' => 'default_value_widget][field_conforms_to][0][nid][nid',
+        ),
+      ),
+    ),
+    'group' => 'group_relationships',
+    'required' => 0,
+    'multiple' => '0',
+    'referenceable_types' => 
+    array (
+      'format' => 'format',
+      'page' => 0,
+      'story' => 0,
+    ),
+    'advanced_view' => '--',
+    'advanced_view_args' => '',
+    'op' => 'Save field settings',
+    'module' => 'nodereference',
+    'widget_module' => 'nodereference',
+    'columns' => 
+    array (
+      'nid' => 
+      array (
+        'type' => 'int',
+        'unsigned' => true,
+        'not null' => false,
+        'index' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '9',
+      'parent' => 'group_relationships',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  10 => 
+  array (
+    'label' => 'Encapsulates',
+    'field_name' => 'field_encapsulates',
+    'type' => 'nodereferrer',
+    'widget_type' => 'nodereferrer_list',
+    'change' => 'Change basic information',
+    'weight' => '10',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'group' => 'group_relationships',
+    'required' => false,
+    'multiple' => 0,
+    'referrer_types' => 
+    array (
+      'format' => 'format',
+      'page' => 0,
+      'story' => 0,
+    ),
+    'referrer_fields' => 
+    array (
+      'field_conforms_to' => 'field_conforms_to',
+      'field_hasformat' => 0,
+    ),
+    'referrer_nodes_per_page' => '0',
+    'referrer_pager_element' => '0',
+    'referrer_order' => 'TITLE_ASC',
+    'op' => 'Save field settings',
+    'module' => 'nodereferrer',
+    'widget_module' => 'nodereferrer',
+    'columns' => 
+    array (
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '10',
+      'parent' => 'group_relationships',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  11 => 
+  array (
+    'label' => 'Extensions',
+    'field_name' => 'field_extensions',
+    'type' => 'content_taxonomy',
+    'widget_type' => 'content_taxonomy_autocomplete',
+    'change' => 'Change basic information',
+    'weight' => '5',
+    'new_terms' => 'insert',
+    'extra_parent' => '0',
+    'maxlength' => '255',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_extensions' => 
+      array (
+        'value' => '',
+      ),
+    ),
+    'group' => 'group_identifiers',
+    'required' => 0,
+    'multiple' => '1',
+    'save_term_node' => 0,
+    'vid' => '1',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'op' => 'Save field settings',
+    'module' => 'content_taxonomy',
+    'widget_module' => 'content_taxonomy_autocomplete',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'int',
+        'not null' => false,
+        'sortable' => false,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '5',
+      'parent' => 'group_identifiers',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'link',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'link',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  12 => 
+  array (
+    'label' => 'MIME Type',
+    'field_name' => 'field_mimetype',
+    'type' => 'content_taxonomy',
+    'widget_type' => 'content_taxonomy_autocomplete',
+    'change' => 'Change basic information',
+    'weight' => '6',
+    'new_terms' => 'insert',
+    'extra_parent' => '0',
+    'maxlength' => '255',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_mimetype' => 
+      array (
+        'value' => '',
+      ),
+    ),
+    'group' => 'group_identifiers',
+    'required' => 0,
+    'multiple' => '1',
+    'save_term_node' => 0,
+    'vid' => '2',
+    'parent' => '0',
+    'parent_php_code' => '',
+    'depth' => '',
+    'op' => 'Save field settings',
+    'module' => 'content_taxonomy',
+    'widget_module' => 'content_taxonomy_autocomplete',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'int',
+        'not null' => false,
+        'sortable' => false,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '6',
+      'parent' => 'group_identifiers',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'link',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'link',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  13 => 
+  array (
+    'label' => 'PRONOM UID',
+    'field_name' => 'field_puid',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '7',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_puid][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_puid' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_puid][0][value',
+        ),
+      ),
+    ),
+    'group' => 'group_identifiers',
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '7',
+      'parent' => 'group_identifiers',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  14 => 
+  array (
+    'label' => 'Apple UID',
+    'field_name' => 'field_apple_uid',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '8',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => true,
+    'field_inherit_source' => 'nodereference',
+    'field_inherit_nodereference' => 'field_hasformat',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_apple_uid][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_apple_uid' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_apple_uid][0][value',
+        ),
+      ),
+    ),
+    'group' => 'group_identifiers',
+    'required' => 0,
+    'multiple' => '0',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '8',
+      'parent' => 'group_identifiers',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  15 => 
+  array (
+    'label' => 'Name',
+    'field_name' => 'field_is1_name',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '20',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_is1_name][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_is1_name' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_is1_name][0][value',
+        ),
+      ),
+    ),
+    'group' => 'group_internal_sigs',
+    'required' => 0,
+    'multiple' => 1,
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '20',
+      'parent' => 'group_internal_sigs',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  16 => 
+  array (
+    'label' => 'Description',
+    'field_name' => 'field_is1_desc',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '21',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_is1_desc][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_is1_desc' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_is1_desc][0][value',
+        ),
+      ),
+    ),
+    'group' => 'group_internal_sigs',
+    'required' => 0,
+    'multiple' => 1,
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '21',
+      'parent' => 'group_internal_sigs',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  17 => 
+  array (
+    'label' => 'Regular Expressions',
+    'field_name' => 'field_regex',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '22',
+    'rows' => '1',
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_regex][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_regex' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_regex][0][value',
+        ),
+      ),
+    ),
+    'group' => 'group_internal_sigs',
+    'required' => 0,
+    'multiple' => 1,
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '22',
+      'parent' => 'group_internal_sigs',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      5 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  18 => 
+  array (
+    'label' => 'Title',
+    'field_name' => 'field_doc_title',
+    'type' => 'text',
+    'widget_type' => 'text_textfield',
+    'change' => 'Change basic information',
+    'weight' => '16',
+    'rows' => 5,
+    'size' => '60',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'value' => '',
+        '_error_element' => 'default_value_widget][field_doc_title][0][value',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_doc_title' => 
+      array (
+        0 => 
+        array (
+          'value' => '',
+          '_error_element' => 'default_value_widget][field_doc_title][0][value',
+        ),
+      ),
+    ),
+    'group' => 'group_documents',
+    'required' => 0,
+    'multiple' => '1',
+    'text_processing' => '0',
+    'max_length' => '',
+    'allowed_values' => '',
+    'allowed_values_php' => '',
+    'op' => 'Save field settings',
+    'module' => 'text',
+    'widget_module' => 'text',
+    'columns' => 
+    array (
+      'value' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+        'views' => true,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '16',
+      'parent' => 'group_documents',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+  19 => 
+  array (
+    'label' => 'Link',
+    'field_name' => 'field_doc_link',
+    'type' => 'link',
+    'widget_type' => 'link',
+    'change' => 'Change basic information',
+    'weight' => '17',
+    'field_inherit' => false,
+    'field_inherit_source' => 'menu',
+    'field_inherit_nodereference' => '',
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'title' => '',
+        'url' => '',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => 
+    array (
+      'field_doc_link' => 
+      array (
+        0 => 
+        array (
+          'title' => '',
+          'url' => '',
+        ),
+      ),
+    ),
+    'group' => 'group_documents',
+    'required' => 0,
+    'multiple' => '1',
+    'validate_url' => 1,
+    'url' => 0,
+    'title' => 'optional',
+    'title_value' => '',
+    'enable_tokens' => 0,
+    'display' => 
+    array (
+      'url_cutoff' => '80',
+    ),
+    'attributes' => 
+    array (
+      'target' => 'default',
+      'rel' => '',
+      'class' => '',
+      'title' => '',
+    ),
+    'op' => 'Save field settings',
+    'module' => 'link',
+    'widget_module' => 'link',
+    'columns' => 
+    array (
+      'url' => 
+      array (
+        'type' => 'varchar',
+        'length' => 2048,
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'title' => 
+      array (
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'attributes' => 
+      array (
+        'type' => 'text',
+        'size' => 'medium',
+        'not null' => false,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '17',
+      'parent' => 'group_documents',
+      'label' => 
+      array (
+        'format' => 'inline',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      2 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      3 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+);
+$content['extra']  = array (
+  'title' => '-2',
+  'revision_information' => '13',
+  'author' => '14',
+  'options' => '15',
+  'comment_settings' => '16',
+  'menu' => '12',
+  'taxonomy' => '5',
+);
+
