@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='ascii'?>
+<jpylyzer xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="adobe:ns:meta/" xmlns:ns3="http://ns.adobe.com/exif/1.0/" xmlns:ns4="http://ns.adobe.com/photoshop/1.0/" xmlns:ns5="http://ns.adobe.com/tiff/1.0/" xmlns:ns6="http://ns.adobe.com/xap/1.0/" xmlns:ns7="http://ns.adobe.com/xap/1.0/mm/" xmlns:ns8="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmlns:ns9="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><toolInfo><toolName>jpylyzer.exe</toolName><toolVersion>1.6.3</toolVersion></toolInfo><fileInfo><fileName>balloon_eciRGBv2_aware.jp2</fileName><filePath>F:\johan\jp2kcorpus\icc\balloon_eciRGBv2_aware.jp2</filePath><fileSizeInBytes>1864443</fileSizeInBytes><fileLastModified>Mon Sep 03 14:13:07 2012</fileLastModified></fileInfo><isValidJP2>True</isValidJP2><tests /><properties><signatureBox /><fileTypeBox><br>jp2 </br><minV>0</minV><cL>jp2 </cL></fileTypeBox><jp2HeaderBox><imageHeaderBox><height>3701</height><width>2717</width><nC>3</nC><bPCSign>unsigned</bPCSign><bPCDepth>8</bPCDepth><c>jpeg2000</c><unkC>no</unkC><iPR>no</iPR></imageHeaderBox><colourSpecificationBox><meth>Restricted ICC</meth><prec>0</prec><approx>0</approx><icc><profileSize>1992</profileSize><preferredCMMType>ADBE</preferredCMMType><profileVersion>2.4.0</profileVersion><profileClass>Display Device Profile</profileClass><colourSpace>RGB </colourSpace><profileConnectionSpace>XYZ </profileConnectionSpace><dateTimeString>2007/03/02, 10:07:41</dateTimeString><profileSignature>acsp</profileSignature><primaryPlatform /><embeddedProfile>no</embeddedProfile><profileCannotBeUsedIndependently>no</profileCannotBeUsedIndependently><deviceManufacturer /><deviceModel /><transparency>Reflective</transparency><glossiness>Glossy</glossiness><polarity>Positive</polarity><colour>Colour</colour><renderingIntent>Media-Relative Colorimetric</renderingIntent><connectionSpaceIlluminantX>0.9642</connectionSpaceIlluminantX><connectionSpaceIlluminantY>1.0</connectionSpaceIlluminantY><connectionSpaceIlluminantZ>0.8249</connectionSpaceIlluminantZ><profileCreator>bICC</profileCreator><profileID>9c6d34a5ada445f6146d98b0510c126d</profileID><tag>cprt</tag><tag>desc</tag><tag>wtpt</tag><tag>rTRC</tag><tag>gTRC</tag><tag>bTRC</tag><tag>rXYZ</tag><tag>gXYZ</tag><tag>bXYZ</tag><description>eciRGB v2</description></icc></colourSpecificationBox><resolutionBox><captureResolutionBox><vRcN>300</vRcN><vRcD>254</vRcD><hRcN>300</hRcN><hRcD>254</hRcD><vRcE>4</vRcE><hRcE>4</hRcE><vRescInPixelsPerMeter>11811.02</vRescInPixelsPerMeter><hRescInPixelsPerMeter>11811.02</hRescInPixelsPerMeter><vRescInPixelsPerInch>300.0</vRescInPixelsPerInch><hRescInPixelsPerInch>300.0</hRescInPixelsPerInch></captureResolutionBox></resolutionBox></jp2HeaderBox><xmlBox><ns0:xmpmeta ns0:xmptk="Image::ExifTool 8.99"><rdf:RDF><rdf:Description rdf:about=""><dc:format>image/tiff</dc:format>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=""><ns3:ColorSpace>65535</ns3:ColorSpace>
+  <ns3:NativeDigest>36864,40960,40961,37121,37122,40962,40963,37510,40964,36867,36868,33434,33437,34850,34852,34855,34856,37377,37378,37379,37380,37381,37382,37383,37384,37385,37386,37396,41483,41484,41486,41487,41488,41492,41493,41495,41728,41729,41730,41985,41986,41987,41988,41989,41990,41991,41992,41993,41994,41995,41996,42016,0,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,22,23,24,25,26,27,28,30;845B2E5C86449502D445D3D7CCDFB2E5</ns3:NativeDigest>
+  <ns3:PixelXDimension>2717</ns3:PixelXDimension>
+  <ns3:PixelYDimension>3701</ns3:PixelYDimension>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=""><ns4:ColorMode>3</ns4:ColorMode>
+  <ns4:History>HASH(0x1b18b94), HASH(0x1b15378), HASH(0x1b15450), HASH(0x165a97c), HASH(0x1b18234)</ns4:History>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=""><ns5:BitsPerSample><rdf:Seq><rdf:li>8</rdf:li>
+    <rdf:li>8</rdf:li>
+    <rdf:li>8</rdf:li>
+   </rdf:Seq>
+  </ns5:BitsPerSample>
+  <ns5:Compression>1</ns5:Compression>
+  <ns5:ImageLength>3701</ns5:ImageLength>
+  <ns5:ImageWidth>2717</ns5:ImageWidth>
+  <ns5:NativeDigest>36864,40960,40961,37121,37122,40962,40963,37510,40964,36867,36868,33434,33437,34850,34852,34855,34856,37377,37378,37379,37380,37381,37382,37383,37384,37385,37386,37396,41483,41484,41486,41487,41488,41492,41493,41495,41728,41729,41730,41985,41986,41987,41988,41989,41990,41991,41992,41993,41994,41995,41996,42016,0,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,22,23,24,25,26,27,28,30;845B2E5C86449502D445D3D7CCDFB2E5</ns5:NativeDigest>
+  <ns5:Orientation>1</ns5:Orientation>
+  <ns5:PhotometricInterpretation>2</ns5:PhotometricInterpretation>
+  <ns5:PlanarConfiguration>1</ns5:PlanarConfiguration>
+  <ns5:ResolutionUnit>2</ns5:ResolutionUnit>
+  <ns5:SamplesPerPixel>3</ns5:SamplesPerPixel>
+  <ns5:Software>Adobe Photoshop CS4 Windows</ns5:Software>
+  <ns5:XResolution>300/1</ns5:XResolution>
+  <ns5:YResolution>300/1</ns5:YResolution>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=""><ns6:CreateDate>2008-07-19T16:14:14-07:00</ns6:CreateDate>
+  <ns6:CreatorTool>Adobe Photoshop CS3 Windows</ns6:CreatorTool>
+  <ns6:MetadataDate>2012-09-03T13:59:48+02:00</ns6:MetadataDate>
+  <ns6:ModifyDate>2012-09-03T13:59:48</ns6:ModifyDate>
+ </rdf:Description>
+
+ <rdf:Description rdf:about=""><ns7:DerivedFrom rdf:parseType="Resource"><ns8:documentID>uuid:6200E56DE155DD118C3CED023B237FE5</ns8:documentID>
+   <ns8:instanceID>xmp.iid:A8511FBDBEF5E1118725D39D37A733E8</ns8:instanceID>
+   <ns8:originalDocumentID>uuid:6200E56DE155DD118C3CED023B237FE5</ns8:originalDocumentID>
+  </ns7:DerivedFrom>
+  <ns7:DocumentID>uuid:6200E56DE155DD118C3CED023B237FE5</ns7:DocumentID>
+  <ns7:History><rdf:Seq><rdf:li rdf:parseType="Resource"><ns9:action>saved</ns9:action>
+     <ns9:changed>/</ns9:changed>
+     <ns9:instanceID>xmp.iid:A8511FBDBEF5E1118725D39D37A733E8</ns9:instanceID>
+     <ns9:softwareAgent>Adobe Photoshop CS4 Windows</ns9:softwareAgent>
+     <ns9:when>2012-09-03T13:58:56+02:00</ns9:when>
+    </rdf:li>
+    <rdf:li rdf:parseType="Resource"><ns9:action>converted</ns9:action>
+     <ns9:parameters>from image/jpeg to image/tiff</ns9:parameters>
+    </rdf:li>
+    <rdf:li rdf:parseType="Resource"><ns9:action>derived</ns9:action>
+     <ns9:parameters>converted from image/jpeg to image/tiff</ns9:parameters>
+    </rdf:li>
+    <rdf:li rdf:parseType="Resource"><ns9:action>saved</ns9:action>
+     <ns9:changed>/</ns9:changed>
+     <ns9:instanceID>xmp.iid:A9511FBDBEF5E1118725D39D37A733E8</ns9:instanceID>
+     <ns9:softwareAgent>Adobe Photoshop CS4 Windows</ns9:softwareAgent>
+     <ns9:when>2012-09-03T13:58:56+02:00</ns9:when>
+    </rdf:li>
+    <rdf:li rdf:parseType="Resource"><ns9:action>saved</ns9:action>
+     <ns9:changed>/</ns9:changed>
+     <ns9:instanceID>xmp.iid:AA511FBDBEF5E1118725D39D37A733E8</ns9:instanceID>
+     <ns9:softwareAgent>Adobe Photoshop CS4 Windows</ns9:softwareAgent>
+     <ns9:when>2012-09-03T13:59:48+02:00</ns9:when>
+    </rdf:li>
+   </rdf:Seq>
+  </ns7:History>
+  <ns7:InstanceID>xmp.iid:AA511FBDBEF5E1118725D39D37A733E8</ns7:InstanceID>
+  <ns7:OriginalDocumentID>uuid:6200E56DE155DD118C3CED023B237FE5</ns7:OriginalDocumentID>
+ </rdf:Description>
+</rdf:RDF>
+</ns0:xmpmeta></xmlBox><contiguousCodestreamBox><siz><lsiz>47</lsiz><rsiz>ISO/IEC 15444-1</rsiz><xsiz>2717</xsiz><ysiz>3701</ysiz><xOsiz>0</xOsiz><yOsiz>0</yOsiz><xTsiz>1024</xTsiz><yTsiz>1024</yTsiz><xTOsiz>0</xTOsiz><yTOsiz>0</yTOsiz><numberOfTiles>12</numberOfTiles><csiz>3</csiz><ssizSign>unsigned</ssizSign><ssizDepth>8</ssizDepth><xRsiz>1</xRsiz><yRsiz>1</yRsiz><ssizSign>unsigned</ssizSign><ssizDepth>8</ssizDepth><xRsiz>1</xRsiz><yRsiz>1</yRsiz><ssizSign>unsigned</ssizSign><ssizDepth>8</ssizDepth><xRsiz>1</xRsiz><yRsiz>1</yRsiz></siz><cod><lcod>18</lcod><precincts>yes</precincts><sop>yes</sop><eph>yes</eph><order>RPCL</order><layers>8</layers><multipleComponentTransformation>yes</multipleComponentTransformation><levels>5</levels><codeBlockWidth>64</codeBlockWidth><codeBlockHeight>64</codeBlockHeight><codingBypass>no</codingBypass><resetOnBoundaries>no</resetOnBoundaries><termOnEachPass>no</termOnEachPass><vertCausalContext>no</vertCausalContext><predTermination>no</predTermination><segmentationSymbols>yes</segmentationSymbols><transformation>9-7 irreversible</transformation><precinctSizeX>128</precinctSizeX><precinctSizeY>128</precinctSizeY><precinctSizeX>128</precinctSizeX><precinctSizeY>128</precinctSizeY><precinctSizeX>128</precinctSizeX><precinctSizeY>128</precinctSizeY><precinctSizeX>128</precinctSizeX><precinctSizeY>128</precinctSizeY><precinctSizeX>256</precinctSizeX><precinctSizeY>256</precinctSizeY><precinctSizeX>256</precinctSizeX><precinctSizeY>256</precinctSizeY></cod><qcd><lqcd>35</lqcd><qStyle>scalar expounded</qStyle><guardBits>2</guardBits><mu>1816</mu><epsilon>13</epsilon><mu>1770</mu><epsilon>13</epsilon><mu>1770</mu><epsilon>13</epsilon><mu>1724</mu><epsilon>13</epsilon><mu>1792</mu><epsilon>12</epsilon></qcd><com><lcom>30</lcom><rcom>ISO/IEC 8859-15 (Latin)</rcom><comment>KB_ACCESS_LOSSY_30/03/2011</comment></com><tileParts><tilePart><sot><lsot>10</lsot><isot>0</isot><psot>163506</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>1</isot><psot>262329</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>2</isot><psot>97933</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>3</isot><psot>169627</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>4</isot><psot>372046</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>5</isot><psot>79334</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>6</isot><psot>141460</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>7</isot><psot>187085</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>8</isot><psot>85473</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>9</isot><psot>116212</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>10</isot><psot>108805</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart><tilePart><sot><lsot>10</lsot><isot>11</isot><psot>73212</psot><tpsot>0</tpsot><tnsot>1</tnsot></sot></tilePart></tileParts></contiguousCodestreamBox><compressionRatio>16.18</compressionRatio></properties></jpylyzer>
