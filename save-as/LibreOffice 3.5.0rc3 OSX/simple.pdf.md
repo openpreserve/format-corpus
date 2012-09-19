@@ -1,0 +1,3 @@
+---
+generatedFrom:simple.odf
+---
