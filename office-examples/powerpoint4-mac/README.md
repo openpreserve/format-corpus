@@ -1,0 +1,3 @@
+
+Andy, I think the first of these is a fairly simple text-based PPT for the ECDL Paris meeting in 1999 (although the text I can see from Word doesn't really look quite appropriate, and I can't see my name on the programme). The second is for an invited talk to some students from UNC Chapel Hill at their summer season in Oxford, and I suspect it's got a few more images in it. I never do fancy stuff with PPT, so maybe these will be best. Pending a review of contents once cracked, I am happy for them to be on your site with a CC0 licence, and do not believe they contain any confidential or compromising information.
+
