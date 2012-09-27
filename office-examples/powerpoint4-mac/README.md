@@ -1,6 +1,6 @@
 Original files are PowerPoint 4.
 
-Files ending '2002.ppt' were converted to the newer binary format using PowerPoint for Mac 2001 (on OS version 10.2.8, 800 MHZ PowerPC G4). See below.
+Files ending '2001.ppt' were converted to the newer binary format using PowerPoint for Mac 2001 (on OS version 10.2.8, 800 MHZ PowerPC G4). See below.
 
 TBA
 
