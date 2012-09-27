@@ -17,4 +17,18 @@ I installed PowerPoint for Mac 2001 and attempted to open the files. The applica
  
 I then transferred the files to my Windows XP system, running Office 2007, and found that the files were able to be opened fully.
  
+License
+=======
 
+<p xmlns:dct="http://purl.org/dc/terms/">
+  <a rel="license" style="float:right;"
+     href="http://creativecommons.org/publicdomain/zero/1.0/">
+    <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
+  </a>
+  <br />
+  To the extent possible under law,
+  <span resource="[_:publisher]" rel="dct:publisher">
+    <span property="dct:title">Chris Rusbridge</span></span>
+  has waived all copyright and related or neighboring rights to
+  this work.
+</p>
