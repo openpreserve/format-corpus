@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">3</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">64697c6c-075e-4c74-a4aa-aa1e83b6be25</dc:identifier>
+        <dc:title>Lorem Ipsum</dc:title>
+        <dc:creator opf:file-as="Jackson, Andrew" opf:role="aut">Andrew Jackson</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">calibre (0.8.57) [http://calibre-ebook.com]</dc:contributor>
+        <dc:date>2012-09-28T20:35:00+00:00</dc:date>
+        <dc:language>eng</dc:language>
+        <meta content="{&quot;Andrew Jackson&quot;: &quot;&quot;}" name="calibre:author_link_map"/>
+        <meta content="0.0" name="calibre:rating"/>
+        <meta content="2012-09-28T20:35:00+00:00" name="calibre:timestamp"/>
+        <meta content="Lorem Ipsum" name="calibre:title_sort"/>
+    </metadata>
+    <guide/>
+</package>

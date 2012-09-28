@@ -1,0 +1,17 @@
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.azw3
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.epub
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.fb2
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.htmlz
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.lit
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.lrf
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.mobi
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.opf
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.pdb
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.pdf
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.pmlz
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.rb
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.rtf
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.snb
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.txt
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.txtz
+ebook-convert ../../lorem-ipsum.txt lorem-ipsum.zip
