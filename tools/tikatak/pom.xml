@@ -118,20 +118,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>1.4</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.python</groupId>
-			<artifactId>jython</artifactId>
-			<version>2.5.0</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
 		<dependency> 
 			<groupId>planets-suite</groupId>
 			<artifactId>planets-core-techreg</artifactId>
@@ -140,11 +126,9 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.python</groupId>
-			<artifactId>jython</artifactId>
-			<version>2.5.0</version>
-			<type>jar</type>
-			<scope>compile</scope>
+		 <groupId>org.apache.tika</groupId>
+		 <artifactId>tika-core</artifactId>
+		 <version>1.2</version>
 		</dependency>
 	</dependencies>
 	
