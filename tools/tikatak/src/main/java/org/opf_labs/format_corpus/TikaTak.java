@@ -4,8 +4,12 @@ import org.apache.tika.detect.DefaultDetector;
 import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.mime.MediaType;
+import org.apache.tika.mime.MimeTypeException;
+import org.apache.tika.mime.MimeTypes;
+import org.apache.tika.mime.MimeTypesFactory;
 
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,13 +17,35 @@ import java.util.List;
 public class TikaTak {
 
     private DefaultDetector detector;
+	private MimeTypes mimeTypes;
 
 
 
-    public TikaTak() {
-        detector = new DefaultDetector();
+    public TikaTak() throws MimeTypeException, IOException {
+    	mimeTypes = TikaTak.create(
+                "tika-mimetypes.xml", "custom-mimetypes.xml");
+        detector = new DefaultDetector(mimeTypes);
     }
 
+    public static MimeTypes create(String coreFilePath, String extensionFilePath)
+            throws IOException, MimeTypeException {
+        // This allows us to replicate class.getResource() when using
+        //  the classloader directly
+        String classPrefix = MimeTypes.class.getPackage().getName().replace('.', '/') + "/";
+        ClassLoader cl = MimeTypes.class.getClassLoader();
+       
+        // Get the core URL, and all the extensions URLs
+        URL coreURL = cl.getResource(classPrefix+coreFilePath);
+        List<URL> extensionURLs = Collections.list(
+              cl.getResources(classPrefix+extensionFilePath));
+
+        // Swap that into an Array, and process
+        List<URL> urls = new ArrayList<URL>();
+        urls.add(coreURL);
+        urls.addAll(extensionURLs);
+        
+        return MimeTypesFactory.create( urls.toArray(new URL[urls.size()]) );
+    }
 
     public Identity detect(File input) throws IOException {
         long before = System.currentTimeMillis();
@@ -47,7 +73,7 @@ public class TikaTak {
 
         List<Identity> identities = new ArrayList<Identity>();
 
-        SimpleWrapper sw = new SimpleWrapper();
+        TikaTak sw = new TikaTak();
 
         for (File file : datafiles) {
             if (!file.isFile()){
