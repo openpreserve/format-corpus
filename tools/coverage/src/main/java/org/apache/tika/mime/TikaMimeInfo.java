@@ -3,7 +3,7 @@
  */
 package org.apache.tika.mime;
 
-import org.opf_labs.fmts.droid.SigSubmissionDef;
+import org.opf_labs.fmts.droid.SigDefSubmission;
 
 /**
  * Utility class to access package-protected fields of Tika's MIME code.
@@ -18,8 +18,8 @@ public class TikaMimeInfo {
 	 * @param mt
 	 * @return
 	 */
-	public static SigSubmissionDef fromTikaMimeType( MimeType mt ) {
-		SigSubmissionDef sd = new SigSubmissionDef();
+	public static SigDefSubmission fromTikaMimeType( MimeType mt ) {
+		SigDefSubmission sd = new SigDefSubmission();
 		sd.name = mt.getName();
 		sd.version = "";
 		sd.puid = "tika/"+mt.getName();
@@ -28,6 +28,7 @@ public class TikaMimeInfo {
 		if( mt.hasMagic() ) {
 			for( Magic m : mt.getMagics() ) {
 				// TODO Fix up Tika so the Clause is only package-private.
+				System.err.println("Could not access Tika signature magic clauses... "+m.getPriority());
 			}
 		}
 		return sd;

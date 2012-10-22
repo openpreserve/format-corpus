@@ -14,7 +14,7 @@ import java.util.List;
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
  *
  */
-public class SigSubmissionDef {
+public class SigDefSubmission {
 
 	public String name = "Development Signature";
 	public String version = "1.0";

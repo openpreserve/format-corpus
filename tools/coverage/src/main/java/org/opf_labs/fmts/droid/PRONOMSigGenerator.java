@@ -27,7 +27,7 @@ import org.apache.http.util.EntityUtils;
  */
 public class PRONOMSigGenerator {
 
-	public static String generatePRONOMSigFile( SigSubmissionDef sigdef ) {
+	public static String generatePRONOMSigFile( SigDefSubmission sigdef ) {
 		DefaultHttpClient httpclient = new DefaultHttpClient();
         try {
         	
@@ -82,7 +82,7 @@ public class PRONOMSigGenerator {
 	 * @throws ClientProtocolException 
 	 */
 	public static void main(String[] args) throws ClientProtocolException, IOException {
-		SigSubmissionDef sd = new SigSubmissionDef();
+		SigDefSubmission sd = new SigDefSubmission();
 		sd.signatures.add( new InternalSigSubmission() );
 		PRONOMSigGenerator.generatePRONOMSigFile(sd);
 	}
