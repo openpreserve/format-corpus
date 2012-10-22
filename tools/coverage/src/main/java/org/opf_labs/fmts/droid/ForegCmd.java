@@ -1,7 +1,7 @@
 /**
  * 
  */
-package uk.bl.dpt.foreg;
+package org.opf_labs.fmts.droid;
 
 import java.io.File;
 import java.io.FileNotFoundException;
