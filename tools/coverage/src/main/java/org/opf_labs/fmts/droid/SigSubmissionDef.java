@@ -7,28 +7,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * This is the class used to create to the PRONOM sig generation service.
+ * 
+ * It has been declared with example entries, but these should of course be overwritten.
+ * 
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
  *
  */
 public class SigSubmissionDef {
 
-	String name = "Development Signature";
-	String version = "1.0";
-	String puid = "dev/1";
-	String extension = "ext";
-	String mimetype = "text/x-test-signature";
-	List<InternalSig> signatures = new ArrayList<InternalSig>();
+	public String name = "Development Signature";
+	public String version = "1.0";
+	public String puid = "dev/1";
+	public String extension = "ext";
+	public String mimetype = "text/x-test-signature";
+	public List<InternalSigSubmission> signatures = new ArrayList<InternalSigSubmission>();
 		
-	public SigSubmissionDef() {
-		signatures.add( new InternalSig());
-	}
-	
-	enum Anchor { BOFoffset, EOFoffset, Variable };
-	
-	public class InternalSig { 
-		String signature = "255044462D312E34";
-		Anchor anchor = Anchor.BOFoffset;
-		int offset = 0;
-		int maxoffset = 0;				
-	}
 }

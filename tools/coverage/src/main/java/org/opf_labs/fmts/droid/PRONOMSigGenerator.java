@@ -18,7 +18,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.opf_labs.fmts.droid.SigSubmissionDef.InternalSig;
 
 /**
  * This class can be used to generate a DROID signature file using the TNA's web service.
@@ -44,7 +43,7 @@ public class PRONOMSigGenerator {
             nvps.add(new BasicNameValuePair("counter", ""+sigdef.signatures.size() ));
             // For each sig:
             for( int i = 0; i < sigdef.signatures.size(); i++ ) {
-            	InternalSig is = sigdef.signatures.get(i);
+            	InternalSigSubmission is = sigdef.signatures.get(i);
             	nvps.add(new BasicNameValuePair("signature"+(i+1), is.signature ));
             	nvps.add(new BasicNameValuePair("anchor"+(i+1), ""+is.anchor )); // BOFoffset, EOFoffset, Variable
             	nvps.add(new BasicNameValuePair("offset"+(i+1), ""+is.offset ));
@@ -84,6 +83,7 @@ public class PRONOMSigGenerator {
 	 */
 	public static void main(String[] args) throws ClientProtocolException, IOException {
 		SigSubmissionDef sd = new SigSubmissionDef();
+		sd.signatures.add( new InternalSigSubmission() );
 		PRONOMSigGenerator.generatePRONOMSigFile(sd);
 	}
 
