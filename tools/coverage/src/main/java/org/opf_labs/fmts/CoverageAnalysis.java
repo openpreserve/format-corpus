@@ -3,12 +3,19 @@
  */
 package org.opf_labs.fmts;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
+import javax.xml.transform.stream.StreamSource;
 
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeType;
@@ -37,8 +44,19 @@ public class CoverageAnalysis {
     	tikaTypes = MimeTypes.getDefaultMimeTypes();
 
     	// Set up DROID coverage analysis.
-		sigFile = SigFileUtils.getLatestSigFile();
-    	
+    	// FIXME Failover if no network?
+		//sigFile = SigFileUtils.getLatestSigFile();
+    	try {
+			sigFile = SigFileUtils.readSigFile( 
+					new FileInputStream("/Users/andy/Documents/workspace/nanite/DROID_SignatureFile_V63.xml") );
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
     public List<MimeType> getTikaTypeList() {
@@ -46,7 +64,7 @@ public class CoverageAnalysis {
         for( MediaType type : tikaTypes.getMediaTypeRegistry().getTypes() ) {
         	try {
         		MimeType mt = tikaTypes.forName(type.toString());
-				System.out.println("Type: "+type.toString()+ " "+mt.getExtensions() );
+				//System.out.println("Type: "+type.toString()+ " "+mt.getExtensions() );
 				mts.add(mt);
 			} catch (MimeTypeException e) {
 				// TODO Auto-generated catch block
@@ -61,7 +79,11 @@ public class CoverageAnalysis {
     private static QName hasPriorityOverFFIDQName = new QName("http://www.nationalarchives.gov.uk/pronom/SignatureFile", "HasPriorityOverFileFormatID");
     
     public List<MimeType> getDroidTypeList() {
+    	System.out.println("DROID "+sigFile);
+    	System.out.println("DROID SigFile "+sigFile.getFFSignatureFile());
     	System.out.println("DROID SigFile Version "+sigFile.getFFSignatureFile().getVersion());
+    	System.out.println("DROID SigFile Version "+sigFile.getFFSignatureFile().getFileFormatCollection());
+    	System.out.println("DROID SigFile Version "+sigFile.getFFSignatureFile().getFileFormatCollection().getFileFormat());
     	for( FileFormatType ff :
     			sigFile.getFFSignatureFile().getFileFormatCollection().getFileFormat() ) {
     		ff.getID();
@@ -110,10 +132,10 @@ public class CoverageAnalysis {
     		}
     		// Parse as MediaType:
     		MediaType mdt = MediaType.parse(mts);
-    		System.out.println("Media Type Source: "+mts);
-    		System.out.println("Media Type: "+mdt);
+    		//System.out.println("Media Type Source: "+mts);
+    		//System.out.println("Media Type: "+mdt);
     		if( iSigID != null ) {
-    			System.out.println("Has Magic.");
+    			//System.out.println("Has Magic.");
     		}
     	}
     	return null;
@@ -125,8 +147,27 @@ public class CoverageAnalysis {
 	public static void main(String[] args) {
 		// Look through signature sources...
 		CoverageAnalysis ca = new CoverageAnalysis();
-		ca.getTikaTypeList();
-		ca.getDroidTypeList();
+		List<MimeType> tika = ca.getTikaTypeList();
+		List<MimeType> droid = ca.getDroidTypeList();
+		//
+		Map<String, MimeCompare> mcm = new HashMap<String,MimeCompare>();
+		// Go through Tika
+		int t_types=0, tnd_types=0;
+		for( MimeType m : tika ) {
+			MimeCompare mc = new MimeCompare();
+			mc.tika = m;
+			t_types++;
+			for( MimeType d : droid ) {
+				if( m.getType().equals(d.getType())) {
+					mc.droid = d;
+				}
+				tnd_types++;
+			}
+			mcm.put(m.getType().toString(), mc);			
+		}
+		// 
+		System.out.println("Types: "+tnd_types+"/"+t_types);
+		
 	}
-
+	 
 }
