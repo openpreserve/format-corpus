@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<mime-info>
+ <mime-type type="application/x-unknown">
+  <acronym></acronym>
+  <_comment></_comment>
+  <magic priority="50">
+    <!-- ASCII: %PDF-1. @0 -->
+    <match value="0x255044462D312E" type="string" offset="0">
+      <!-- ASCII: % @9 -->
+      <match value="0x25" type="string" offset="9">
+      </match>
+    </match>
+  </magic>
+  <glob pattern="*.???"/>
+ </mime-type>
+</mime-info>
+

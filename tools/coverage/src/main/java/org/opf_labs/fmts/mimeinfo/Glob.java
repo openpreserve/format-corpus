@@ -3,6 +3,8 @@
  */
 package org.opf_labs.fmts.mimeinfo;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 /**
  * 
  * glob elements have a pattern attribute. Any file whose name matches this
@@ -17,9 +19,11 @@ package org.opf_labs.fmts.mimeinfo;
 public class Glob {
 
 	// Of the form *.ext'
+	@XmlAttribute
 	String pattern;
 	
 	// Integer 0-100, default 50
+	@XmlAttribute
 	String weight;
 	
 }

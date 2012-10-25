@@ -5,6 +5,9 @@ package org.opf_labs.fmts.mimeinfo;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * 
  * magic elements contain a list of match elements, any of which may match, and
@@ -19,9 +22,11 @@ import java.util.List;
  */
 public class Magic {
 
+	@XmlElement(nillable = true)
 	private List<Match> match;
 	
 	// Integer between 0 and 100, defaults to 50.
+	@XmlAttribute
 	String priority;
 	
 }

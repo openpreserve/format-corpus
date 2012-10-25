@@ -5,6 +5,9 @@ package org.opf_labs.fmts.mimeinfo;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * 
  * Each match element has a number of attributes:
@@ -23,14 +26,20 @@ import java.util.List;
  *
  */
 public class Match {
-
+	
+	@XmlElement(nillable = true)
 	List<Match> match;
 	
+	@XmlAttribute
 	String type;
 	
+	@XmlAttribute
 	String offset;
 	
+	@XmlAttribute
 	String value;
 	
+	@XmlAttribute
 	String mask;
+
 }
