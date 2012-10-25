@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <mime-info>
- <mime-type type="application/x-unknown">
+ <mime-type type="application/pdf">
   <acronym></acronym>
   <_comment></_comment>
   <magic priority="50">
@@ -11,7 +11,7 @@
       </match>
     </match>
   </magic>
-  <glob pattern="*.???"/>
+  <glob pattern="*.pdf"/>
  </mime-type>
 </mime-info>
 
