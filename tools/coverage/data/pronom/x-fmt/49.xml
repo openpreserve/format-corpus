@@ -4,8 +4,7 @@
     <FileFormat>
       <FormatID>80</FormatID>
       <FormatName>AutoCAD Design Web Format</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatVersion>6.0</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -14,8 +13,15 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>The DWF format is essentially an enhancement of the Autodesk Streamline DDP file format. Due to the wide variety of design data produced by Autodesk software packages, the DWF format is being targeted as the publishing format that will hold all published image data, 2D vector data, 3D vector data, animations, metadata, etc. The ZIP file format was chosen as the underlying storage mechanism for the DWF package.
-A DWF package must meet the following requirements: 1) The first 12 bytes of the physical package file must contain the DWF version header. 2) A manifest.xml file (hereafter “the manifest”) at the root of the zip archive that complies with the manifest.xsd schema. 3) File contents logically organized into sections, one for each component of the composite design, described by the manifest. 4) At least one resource file. 5) The manifest must contain an &lt;Interfaces&gt; element containing at least one &lt;Interface&gt; sub-element that indicates a document interface supported by the DWF package.  An example would be the ‘ePlot’ document interface, which implies that the DWF contains at least one valid ePlot page.</FormatDescription>
+      <FormatDescription>AutoCAD Design Web Format (DWF) version 6 is the publishing format of Autodesk software, especially design data, such as 2D vector data, 3D vector data, animations, and metadata.  It uses the ZIP file format as the backing store mechanism.  The content can be roughly divided into:
+•        DWF metadata files – XML files that contain information pertaining to metadata and structure (author, title, creation time, section dependencies, section ordering, resource file descriptions, roles, MIME types, etc.) and pertaining to the section (page information, design metadata, etc.).  The structural metadata is used to create logical objects (collections of files to represent a part or page, etc.).
+•        Resource files – media or other content files that are referenced from the package/section metadata and are usually presentations of design data in various formats (ZGL, W2D, JPG, PNG, AVI, XML, TXT, DOC, etc.)
+A DWF package must meet the following requirements:
+•        The first 12 bytes of the physical package file must contain the DWF version header. 
+•        A manifest.xml file at the root of the zip archive that complies to the manifest.xsd schema
+•        File contents logically organized into sections, one for each component of the composite design.
+•        At least one resource file.
+•        The manifest must contain an &lt;Interfaces&gt; element containing at least one &lt;Interface&gt; sub element that indicates a document interface supported by the DWF package.  An example would be the ‘ePlot’ document interface, which implies that the DWF contains at least one valid ePlot page.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -23,11 +29,11 @@ A DWF package must meet the following requirements: 1) The first 12 bytes of the
       </ReleaseDate>
       <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+      <ProvenanceSourceID>180</ProvenanceSourceID>
+      <ProvenanceName>The National Archives and Records Administration / The National Archives and Records Administration</ProvenanceName>
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>File format information supplied by NARA Information Services/Applied Research Division, The National Archives and Records Administration.</ProvenanceDescription>
-      <LastUpdatedDate>29 Nov 2011</LastUpdatedDate>
+      <LastUpdatedDate>28 Aug 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>

@@ -12,7 +12,7 @@
       <FormatTypes>Image (Raster)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>PUID deprecated. Please see fmt/115 for information on OS/2 Bitmap 1.0 and Windows Bitmap 2.0.
+      <FormatDescription>PUID deprecated.                                                                                                                                         Please see fmt/115 for information on OS/2 Bitmap 1.0 and Windows Bitmap 2.0.
 The only difference between Windows bitmap 2.0 and OS/2 bitmap 1.0 is the data type of the width and height fields of the bitmap header – for Windows 2.0 bitmaps they are signed short integers, for OS/2 1.0 bitmaps they are unsigned shorts. For positive numbers the representation is the same. Consequently, the file formats cannot be distinguished with a file signature test. The PUID for OS/2 Bitmap 1.0 has therefore been deprecated.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>

@@ -75,7 +75,7 @@
         <RelationshipType>Is subsequent version of</RelationshipType>
         <RelatedFormatID>450</RelatedFormatID>
         <RelatedFormatName>Paint Shop Pro Image</RelatedFormatName>
-        <RelatedFormatVersion>6</RelatedFormatVersion>
+        <RelatedFormatVersion>6.0</RelatedFormatVersion>
       </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>

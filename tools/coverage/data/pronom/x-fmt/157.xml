@@ -63,13 +63,6 @@
       </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
-        <RelatedFormatID>194</RelatedFormatID>
-        <RelatedFormatName>Audio Interchange File Format</RelatedFormatName>
-        <RelatedFormatVersion>
-        </RelatedFormatVersion>
-      </RelatedFormat>
-      <RelatedFormat>
-        <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>195</RelatedFormatID>
         <RelatedFormatName>Audio Interchange File Format (compressed)</RelatedFormatName>
         <RelatedFormatVersion>
@@ -88,6 +81,12 @@
         <RelatedFormatName>Interchange File Format 8-bit Sampled Voice</RelatedFormatName>
         <RelatedFormatVersion>
         </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1192</RelatedFormatID>
+        <RelatedFormatName>Audio Interchange File Format</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is supertype of</RelationshipType>

@@ -4,8 +4,7 @@
     <FileFormat>
       <FormatID>919</FormatID>
       <FormatName>FileMaker Pro Ver. 7+ Database Document</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatVersion>7</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -42,6 +41,25 @@
         <Signature>fp7</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>690</SignatureID>
+        <SignatureName>FP7</SignatureName>
+        <SignatureNote>Looking for this 'ÀHBAM7' at an offset of 14 and then this 'HBAM2101OCT99Á.H.Pro 7.0ÀÀ' at a 525 offset.</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>855</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>14</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>C04842414D37{505}4842414D323130314F43543939C102480750726F20372E30C0C0</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

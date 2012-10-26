@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>690</FormatID>
-      <FormatName>Microsoft Word for Windows Document</FormatName>
+      <FormatName>Microsoft Word Document</FormatName>
       <FormatVersion>97-2003</FormatVersion>
       <FormatAliases>Microsoft Word for Windows Document (97-XP)</FormatAliases>
       <FormatFamilies>
@@ -20,9 +20,8 @@
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <ProvenanceDescription>This format can be identified via a container signature in DROID version 6 or later. The PRONOM database cannot currently represent container signatures.</ProvenanceDescription>
+      <LastUpdatedDate>19 Apr 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -151,7 +150,7 @@
       <RelatedFormat>
         <RelationshipType>Is subsequent version of</RelationshipType>
         <RelatedFormatID>688</RelatedFormatID>
-        <RelatedFormatName>Microsoft Word for Windows Document</RelatedFormatName>
+        <RelatedFormatName>Microsoft Word Document</RelatedFormatName>
         <RelatedFormatVersion>6.0/95</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>

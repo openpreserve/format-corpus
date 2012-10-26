@@ -96,6 +96,27 @@
         <RelatedFormatVersion>2.0</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>784</RelatedFormatID>
+        <RelatedFormatName>Waveform Audio (PCMWAVEFORMAT)</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>785</RelatedFormatID>
+        <RelatedFormatName>Waveform Audio (WAVEFORMATEX)</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>786</RelatedFormatID>
+        <RelatedFormatName>Waveform Audio (WAVEFORMATEXTENSIBLE)</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>785</RelatedFormatID>
         <RelatedFormatName>Waveform Audio (WAVEFORMATEX)</RelatedFormatName>

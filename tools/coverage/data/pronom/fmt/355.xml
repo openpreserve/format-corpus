@@ -75,7 +75,7 @@
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>626</RelatedFormatID>
         <RelatedFormatName>Rich Text Format</RelatedFormatName>
-        <RelatedFormatVersion>1.0</RelatedFormatVersion>
+        <RelatedFormatVersion>1.0-1.4</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
@@ -105,7 +105,7 @@
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>631</RelatedFormatID>
         <RelatedFormatName>Rich Text Format</RelatedFormatName>
-        <RelatedFormatVersion>1.5</RelatedFormatVersion>
+        <RelatedFormatVersion>1.5-1.6</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>

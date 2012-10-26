@@ -215,6 +215,44 @@
           <ByteSequenceValue>6D646174</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <InternalSignature>
+        <SignatureID>691</SignatureID>
+        <SignatureName>QuickTime 7</SignatureName>
+        <SignatureNote>size + ftyp + qt2020</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>856</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>000000{1}6674797071742020</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>717</SignatureID>
+        <SignatureName>Quicktime 8</SignatureName>
+        <SignatureNote>Looking for two atoms: 'wide' and 'mvhd'</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>903</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>20</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>77696465{1-20}6D766864</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

@@ -27,7 +27,7 @@ WARC format has been written by the members of the IIPC (http://www.netpreserve.
       </ProvenanceName>
       <ProvenanceSourceDate>02 Nov 2010</ProvenanceSourceDate>
       <ProvenanceDescription>Submitted by Bibliothèque nationale de France with supplementary description information attributed to ISO 28500-2009 standard.</ProvenanceDescription>
-      <LastUpdatedDate>02 Nov 2010</LastUpdatedDate>
+      <LastUpdatedDate>06 Nov 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -62,7 +62,7 @@ WARC format has been written by the members of the IIPC (http://www.netpreserve.
         <SignatureNote>Matching WARC header, type field and date. Header: WARC/{3-4}CRLF Type: WARC-Type:{0-12}CRLF Date: WARC-Date:[expression matching ISO8601 date pattern]CRLF. Note: Seems to be a problem matching WARC record at beginning of file so signature is currently variable position to catch records later in the file before 4096 bytes.</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>406</ByteSequenceID>
-          <PositionType>Variable</PositionType>
+          <PositionType>Absolute from BOF</PositionType>
           <Offset>0</Offset>
           <MaxOffset>4096</MaxOffset>
           <IndirectOffsetLocation>

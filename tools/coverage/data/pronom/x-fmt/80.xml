@@ -24,7 +24,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>11 Jun 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -53,24 +53,6 @@
         <Signature>pict</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
-      <InternalSignature>
-        <SignatureID>467</SignatureID>
-        <SignatureName>Macintosh PICT Image 1.0 (monochrome images)</SignatureName>
-        <SignatureNote>512 byte header, 2-byte picture size, 8 bytes picture frame (rectangle), version operator (11h); version number (01h). The PICT format can be written by a number of applications; as a result the 512 byte header either includes information about the particular software which created the file, or is all zeros. The version operator and version number information is constant across objects of this format.</SignatureNote>
-        <ByteSequence>
-          <ByteSequenceID>583</ByteSequenceID>
-          <PositionType>Absolute from BOF</PositionType>
-          <Offset>522</Offset>
-          <MaxOffset>
-          </MaxOffset>
-          <IndirectOffsetLocation>
-          </IndirectOffsetLocation>
-          <IndirectOffsetLength>
-          </IndirectOffsetLength>
-          <Endianness>Big-endian</Endianness>
-          <ByteSequenceValue>1101</ByteSequenceValue>
-        </ByteSequence>
-      </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>1086</RelatedFormatID>

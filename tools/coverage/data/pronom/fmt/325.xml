@@ -49,8 +49,7 @@
         <ByteSequence>
           <ByteSequenceID>527</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
-          <Offset>
-          </Offset>
+          <Offset>0</Offset>
           <MaxOffset>
           </MaxOffset>
           <IndirectOffsetLocation>
@@ -69,8 +68,7 @@
         <ByteSequence>
           <ByteSequenceID>528</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
-          <Offset>
-          </Offset>
+          <Offset>0</Offset>
           <MaxOffset>
           </MaxOffset>
           <IndirectOffsetLocation>
@@ -89,8 +87,7 @@
         <ByteSequence>
           <ByteSequenceID>529</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
-          <Offset>
-          </Offset>
+          <Offset>0</Offset>
           <MaxOffset>
           </MaxOffset>
           <IndirectOffsetLocation>

@@ -33,8 +33,12 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
+        <Identifier>application/msword</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
         <Identifier>com.microsoft.word.doc</Identifier>
-        <IdentifierType>Apple Uniform Type Identifier</IdentifierType>
+        <IdentifierType>MIME</IdentifierType>
       </FileFormatIdentifier>
       <FileFormatIdentifier>
         <Identifier>x-fmt/64</Identifier>

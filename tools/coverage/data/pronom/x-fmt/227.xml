@@ -24,8 +24,8 @@ Full specifications can be found at http://www.opengeospatial.org/standards/gml<
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>Format description information supplied by the Geospatial Multistate Access and Preservation Partnership (GeoMAPP), a grant funded collaboration sponsored by the National Digital Information Infrastructure Preservation Program (NDIIPP) of the Library of Congress, involving archives staff from North Carolina, Kentucky, Montana, and Utah state archives. Additional information supplied by Ordnance Survey.</ProvenanceDescription>
-      <LastUpdatedDate>01 Nov 2011</LastUpdatedDate>
+      <ProvenanceDescription>Format description information supplied by the Geospatial Multistate Access and Preservation Partnership (GeoMAPP), a grant funded collaboration sponsored by the National Digital Information Infrastructure Preservation Program (NDIIPP) of the Library of Congress, involving archives staff from North Carolina, Kentucky, Montana, and Utah state archives. Additional information supplied by Ordnance Survey. Mime type corrected to application/gml+xml 26/09/2012</ProvenanceDescription>
+      <LastUpdatedDate>26 Sep 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -33,7 +33,7 @@ Full specifications can be found at http://www.opengeospatial.org/standards/gml<
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
-        <Identifier>text/xml</Identifier>
+        <Identifier>application/gml+xml</Identifier>
         <IdentifierType>MIME</IdentifierType>
       </FileFormatIdentifier>
       <FileFormatIdentifier>

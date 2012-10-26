@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>797</FormatID>
-      <FormatName>Tagged Image File Format for Electronic Still Picture Imaging (TIFF/EP)</FormatName>
+      <FormatName>Tagged Image File Format for Electronic Photography (TIFF/EP)</FormatName>
       <FormatVersion>
       </FormatVersion>
       <FormatAliases>
@@ -26,7 +26,7 @@
       <ProvenanceSourceDate>02 Feb 2007</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Feb 2007</LastUpdatedDate>
+      <LastUpdatedDate>11 Jun 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -51,6 +51,133 @@
         <Signature>tiff</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>673</SignatureID>
+        <SignatureName>TIFF/EP (little-endian, BOF)</SignatureName>
+        <SignatureNote>TIFF header plus TIFF/EPStandardId tag near BOF</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>827</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Little-endian</Endianness>
+          <ByteSequenceValue>49492A00{6-4080}169201000400000000000001</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>674</SignatureID>
+        <SignatureName>TIFF/EP (little-endian, BOF+EOF)</SignatureName>
+        <SignatureNote>TIFF header plus TIFF/EPStandardId tag near EOF</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>828</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Little-endian</Endianness>
+          <ByteSequenceValue>49492A00</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>829</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>4</Offset>
+          <MaxOffset>4084</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Little-endian</Endianness>
+          <ByteSequenceValue>169201000400000000000001</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>675</SignatureID>
+        <SignatureName>TIFF/EP (big-endian, BOF)</SignatureName>
+        <SignatureNote>TIFF header plus TIFF/EPStandardId tag near BOF</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>830</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Big-endian</Endianness>
+          <ByteSequenceValue>4D4D002A{6-4080}921600010000000401000000</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>676</SignatureID>
+        <SignatureName>TIFF/EP (big-endian, BOF+EOF)</SignatureName>
+        <SignatureNote>TIFF header plus TIFF/EPStandardId tag near EOF</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>831</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Big-endian</Endianness>
+          <ByteSequenceValue>4D4D002A</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>832</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>4</Offset>
+          <MaxOffset>4084</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Big-endian</Endianness>
+          <ByteSequenceValue>921600010000000401000000</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1223</RelatedFormatID>
+        <RelatedFormatName>Digital Negative Format (DNG)</RelatedFormatName>
+        <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>672</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>673</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>752</RelatedFormatID>
+        <RelatedFormatName>Exchangeable Image File Format (Uncompressed)</RelatedFormatName>
+        <RelatedFormatVersion>2.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1099</RelatedFormatID>
+        <RelatedFormatName>Tagged Image File Format</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subtype of</RelationshipType>
         <RelatedFormatID>612</RelatedFormatID>

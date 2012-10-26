@@ -82,7 +82,7 @@
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>168</RelatedFormatID>
         <RelatedFormatName>Lotus 1-2-3 Worksheet</RelatedFormatName>
-        <RelatedFormatVersion>4.0</RelatedFormatVersion>
+        <RelatedFormatVersion>4-5</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>

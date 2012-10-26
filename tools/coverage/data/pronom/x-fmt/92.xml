@@ -35,7 +35,11 @@
       </TechnicalEnvironment>
       <FileFormatIdentifier>
         <Identifier>com.adobe.photoshop-image</Identifier>
-        <IdentifierType>Apple Uniform Type Identifier</IdentifierType>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
+        <Identifier>image/vnd.adobe.photoshop</Identifier>
+        <IdentifierType>MIME</IdentifierType>
       </FileFormatIdentifier>
       <FileFormatIdentifier>
         <Identifier>x-fmt/92</Identifier>

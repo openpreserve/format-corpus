@@ -105,6 +105,12 @@
       </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>310</RelatedFormatID>
+        <RelatedFormatName>Internet Archive</RelatedFormatName>
+        <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>319</RelatedFormatID>
         <RelatedFormatName>Geography Markup Language</RelatedFormatName>
         <RelatedFormatVersion>
@@ -152,6 +158,25 @@
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>1078</RelatedFormatID>
         <RelatedFormatName>Chemical Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1158</RelatedFormatID>
+        <RelatedFormatName>Internet Archive</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1191</RelatedFormatID>
+        <RelatedFormatName>Scalable Vector Graphics Tiny</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1262</RelatedFormatID>
+        <RelatedFormatName>Microsoft Management Console Snap-in Control file</RelatedFormatName>
         <RelatedFormatVersion>
         </RelatedFormatVersion>
       </RelatedFormat>

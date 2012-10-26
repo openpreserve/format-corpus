@@ -34,6 +34,10 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
+        <Identifier>application/dec-dx.</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
         <Identifier>x-fmt/286</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>

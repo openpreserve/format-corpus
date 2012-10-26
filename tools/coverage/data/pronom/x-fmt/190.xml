@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>263</FormatID>
-      <FormatName>RealAudio Video</FormatName>
+      <FormatName>RealMedia</FormatName>
       <FormatVersion>
       </FormatVersion>
       <FormatAliases>
@@ -26,7 +26,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>16 Mar 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -48,8 +48,8 @@
       </ExternalSignature>
       <InternalSignature>
         <SignatureID>448</SignatureID>
-        <SignatureName>RealAudio Video</SignatureName>
-        <SignatureNote>Header ASCII: .RMF....</SignatureNote>
+        <SignatureName>RealMedia</SignatureName>
+        <SignatureNote>File header chunk + chunk size</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>563</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -62,7 +62,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>2E524D4600000012</ByteSequenceValue>
+          <ByteSequenceValue>2E524D46000000(10|12)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

@@ -56,23 +56,42 @@
       </ExternalSignature>
       <InternalSignature>
         <SignatureID>122</SignatureID>
-        <SignatureName>MPEG-1/2 Video Generic</SignatureName>
-        <SignatureNote>Pack Header start code + System Header start code</SignatureNote>
+        <SignatureName>MPEG-1 Video</SignatureName>
+        <SignatureNote>Pack Header Start Code (where the 4th byte represents the version) + System Header Start Code</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>57</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
           <Offset>0</Offset>
-          <MaxOffset>
-          </MaxOffset>
+          <MaxOffset>0</MaxOffset>
           <IndirectOffsetLocation>
           </IndirectOffsetLocation>
           <IndirectOffsetLength>
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>000001BA{8-11}000001BB</ByteSequenceValue>
+          <ByteSequenceValue>000001BA[20:2F]{7-11}000001BB</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>857</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>32</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>000001B9</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1207</RelatedFormatID>
+        <RelatedFormatName>Video Object File</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

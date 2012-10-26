@@ -3,9 +3,8 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>222</FormatID>
-      <FormatName>Initial Graphics Exchange Specification</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatName>Initial Graphics Exchange Specification (IGES)</FormatName>
+      <FormatVersion>5.x</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -14,20 +13,19 @@
       </FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>Initial Graphics Exchange Specification, or IGES, establishes information structures for the digital representation and exchange of product definition data. It supports exchanging this data among Computer-Aided Design and Computer-Aided Manufacturing (CAD and CAM, respectively) systems.  IGES defines file structure and language formats to represent geometric, topographical, and non-geometric product definition data.  These formats are independent of the modeling method used, and they support data exchange using physical media or electronic communication protocols.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
-      </ReleaseDate>
+      <ReleaseDate>01 Dec 1999</ReleaseDate>
       <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+      <ProvenanceSourceID>180</ProvenanceSourceID>
+      <ProvenanceName>The National Archives and Records Administration / The National Archives and Records Administration</ProvenanceName>
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <ProvenanceDescription>Further information about this file format can be obtained at 
+http://www.wiz-worx.com/iges5x/version5x/version5x.pdf</ProvenanceDescription>
+      <LastUpdatedDate>28 Aug 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -58,7 +56,7 @@
         <SignatureNote>Offset 72 bytes, then section identification character S for Start section; Columns 74-80, section sequence number 1 preceded by leading blanks or zeros; cr/lf or nl;  (Column 73, section identification character S for Start section; Columns 74-80, section sequence number 2 preceded by leading blanks or zeros) or (Column 73, section identification character G for Global section; Columns 74-80, section sequence number 1 preceded by leading blanks or zeros)</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>575</ByteSequenceID>
-          <PositionType>Indirect From BOF</PositionType>
+          <PositionType>Absolute from BOF</PositionType>
           <Offset>72</Offset>
           <MaxOffset>
           </MaxOffset>

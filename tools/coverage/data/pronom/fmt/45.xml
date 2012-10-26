@@ -4,7 +4,7 @@
     <FileFormat>
       <FormatID>626</FormatID>
       <FormatName>Rich Text Format</FormatName>
-      <FormatVersion>1.0</FormatVersion>
+      <FormatVersion>1.0-1.4</FormatVersion>
       <FormatAliases>RTF (1.0)</FormatAliases>
       <FormatFamilies>Rich Text Format</FormatFamilies>
       <FormatTypes>Word Processor</FormatTypes>
@@ -22,7 +22,7 @@
       <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>25 Oct 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -101,7 +101,7 @@
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>631</RelatedFormatID>
         <RelatedFormatName>Rich Text Format</RelatedFormatName>
-        <RelatedFormatVersion>1.5</RelatedFormatVersion>
+        <RelatedFormatVersion>1.5-1.6</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>

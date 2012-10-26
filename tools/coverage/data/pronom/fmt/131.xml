@@ -126,6 +126,12 @@
         </RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1228</RelatedFormatID>
+        <RelatedFormatName>Windows Media Video 9 Advanced Profile (WVC1)</RelatedFormatName>
+        <RelatedFormatVersion>9 Advanced Profile (WVC1)</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
         <RelationshipType>Is supertype of</RelationshipType>
         <RelatedFormatID>692</RelatedFormatID>
         <RelatedFormatName>Windows Media Audio</RelatedFormatName>

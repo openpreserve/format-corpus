@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>866</FormatID>
-      <FormatName>SketchUp Document Backup</FormatName>
+      <FormatName>SketchUp Document</FormatName>
       <FormatVersion>n/a</FormatVersion>
       <FormatAliases>
       </FormatAliases>
@@ -23,9 +23,8 @@
       <ProvenanceSourceID>131</ProvenanceSourceID>
       <ProvenanceName>Digital Library Research Group / MIT Libraries</ProvenanceName>
       <ProvenanceSourceDate>06 Apr 2009</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>06 Apr 2009</LastUpdatedDate>
+      <ProvenanceDescription>An .skp file is a SketchUp document. An .skb is a SketchUp document backup.</ProvenanceDescription>
+      <LastUpdatedDate>25 Oct 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -57,6 +56,11 @@
       <ExternalSignature>
         <ExternalSignatureID>857</ExternalSignatureID>
         <Signature>skb</Signature>
+        <SignatureType>File extension</SignatureType>
+      </ExternalSignature>
+      <ExternalSignature>
+        <ExternalSignatureID>1292</ExternalSignatureID>
+        <Signature>skp</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
       <InternalSignature>

@@ -4,7 +4,7 @@
     <FileFormat>
       <FormatID>941</FormatID>
       <FormatName>Microsoft Powerpoint for Windows</FormatName>
-      <FormatVersion>2007</FormatVersion>
+      <FormatVersion>2007 onwards</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -23,9 +23,8 @@
       <ProvenanceSourceID>1</ProvenanceSourceID>
       <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
       <ProvenanceSourceDate>28 Oct 2009</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>28 Oct 2009</LastUpdatedDate>
+      <ProvenanceDescription>This format can be identified via a container signature in DROID version 6 or later. The PRONOM database cannot currently represent container signatures.</ProvenanceDescription>
+      <LastUpdatedDate>19 Apr 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>

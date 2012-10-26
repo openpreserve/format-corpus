@@ -33,6 +33,10 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
+        <Identifier>application/vnd.stardivision.draw</Identifier>
+        <IdentifierType>MIME</IdentifierType>
+      </FileFormatIdentifier>
+      <FileFormatIdentifier>
         <Identifier>x-fmt/401</Identifier>
         <IdentifierType>PUID</IdentifierType>
       </FileFormatIdentifier>

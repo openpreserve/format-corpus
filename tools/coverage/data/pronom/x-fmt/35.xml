@@ -4,7 +4,7 @@
     <FileFormat>
       <FormatID>66</FormatID>
       <FormatName>Corel Presentation Exchange File</FormatName>
-      <FormatVersion>6/7</FormatVersion>
+      <FormatVersion>6 and Later</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -25,7 +25,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>05 Oct 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -42,11 +42,11 @@
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
       <InternalSignature>
-        <SignatureID>372</SignatureID>
-        <SignatureName>Corel Metafile Exchange Image</SignatureName>
-        <SignatureNote>RIFF (little-endian) or RIFX (big-endian) Form labeled CMX1</SignatureNote>
+        <SignatureID>731</SignatureID>
+        <SignatureName>Corel Metafile Exchange Image (32 bit)</SignatureName>
+        <SignatureNote>RIFF (little-endian) or RIFX (big-endian) Form labeled CMX1, then {62}2</SignatureNote>
         <ByteSequence>
-          <ByteSequenceID>480</ByteSequenceID>
+          <ByteSequenceID>920</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
           <Offset>0</Offset>
           <MaxOffset>
@@ -57,7 +57,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>524946(46|58){4}434D5831</ByteSequenceValue>
+          <ByteSequenceValue>524946(46|58){4}434D5831{62}32</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

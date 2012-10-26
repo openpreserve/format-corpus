@@ -53,9 +53,34 @@
       </ExternalSignature>
       <ExternalSignature>
         <ExternalSignatureID>792</ExternalSignatureID>
-        <Signature>wave</Signature>
+        <Signature>wav</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>606</SignatureID>
+        <SignatureName>Waveform Audio (PCMWAVEFORMAT)</SignatureName>
+        <SignatureNote>RIFF header, WAVE ID, Format chunk, chunk length=16=0x10000000, wformat Tag =1=0x0100 and Data chunk</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>751</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>Big-endian</Endianness>
+          <ByteSequenceValue>52494646{4}57415645666D7420100000000100{14-1000}64617461</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>654</RelatedFormatID>
+        <RelatedFormatName>Waveform Audio</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>785</RelatedFormatID>

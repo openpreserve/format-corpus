@@ -3,30 +3,28 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>686</FormatID>
-      <FormatName>JPEG2000</FormatName>
+      <FormatName>JP2 (JPEG 2000 part 1)</FormatName>
       <FormatVersion>
       </FormatVersion>
       <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
-      </FormatFamilies>
+      <FormatFamilies>JPEG 2000</FormatFamilies>
       <FormatTypes>Image (Raster)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>The JPEG 2000 file format (JP2 file format) provides a foundation for storing application specific data (metadata) in association with a JPEG 2000 codestream, such as information which is required to display the image.  The JP2 file format encapsulates the JPEG 2000 codestream along with other core pieces of information about that codestream.  The building-block of the JP2 file format is called a box; all information contained within the format is contained in boxes.  There are several different box types; some boxes contain other boxes.  The binary structure of a file is a contiguous sequence of boxes.  The start of the first box is the first byte of the file, and the last byte of the last box is the last byte of the file.</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
-      </ReleaseDate>
+      <ReleaseDate>15 Sep 2004</ReleaseDate>
       <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+      <ProvenanceSourceID>180</ProvenanceSourceID>
+      <ProvenanceName>The National Archives and Records Administration / The National Archives and Records Administration</ProvenanceName>
       <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>05 Oct 2009</LastUpdatedDate>
+      <LastUpdatedDate>28 Aug 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -65,7 +63,7 @@
           <IndirectOffsetLength>
           </IndirectOffsetLength>
           <Endianness>Big-endian</Endianness>
-          <ByteSequenceValue>0000000C6A5020200D0A870A</ByteSequenceValue>
+          <ByteSequenceValue>0000000C6A5020200D0A870A{4}667479706A7032</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <FormatProperties>

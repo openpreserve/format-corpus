@@ -125,6 +125,12 @@
         </RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1228</RelatedFormatID>
+        <RelatedFormatName>Windows Media Video 9 Advanced Profile (WVC1)</RelatedFormatName>
+        <RelatedFormatVersion>9 Advanced Profile (WVC1)</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>691</RelatedFormatID>
         <RelatedFormatName>Advanced Systems Format</RelatedFormatName>

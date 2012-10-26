@@ -43,7 +43,7 @@
       </FileFormatIdentifier>
       <ExternalSignature>
         <ExternalSignatureID>1059</ExternalSignatureID>
-        <Signature>sid</Signature>
+        <Signature>dxr</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
       <ExternalSignature>
@@ -59,8 +59,7 @@
         <ByteSequence>
           <ByteSequenceID>512</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
-          <Offset>
-          </Offset>
+          <Offset>0</Offset>
           <MaxOffset>
           </MaxOffset>
           <IndirectOffsetLocation>

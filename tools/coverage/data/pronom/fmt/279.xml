@@ -4,8 +4,7 @@
     <FileFormat>
       <FormatID>1019</FormatID>
       <FormatName>FLAC (Free Lossless Audio Codec)</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatVersion>1.2.1</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -13,21 +12,25 @@
       <FormatTypes>Audio</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>FLAC stands for Free Lossless Audio Codec, an audio format similar to MP3, but lossless, meaning that audio is compressed in FLAC without any loss in quality. 
+The basic structure of a FLAC stream is: •The four byte string "fLaC"
+•The STREAMINFO metadata block
+•Zero or more other metadata blocks
+•One or more audio frames
+ The first four bytes are to identify the FLAC stream. The metadata that follows contains all the information about the stream except for the audio data itself. After the metadata comes the encoded audio data.</FormatDescription>
       <BinaryFileFormat>
       </BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
-      <ReleaseDate>
-      </ReleaseDate>
+      <ReleaseDate>17 Sep 2007</ReleaseDate>
       <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+      <ProvenanceSourceID>180</ProvenanceSourceID>
+      <ProvenanceName>The National Archives and Records Administration / The National Archives and Records Administration</ProvenanceName>
       <ProvenanceSourceDate>29 Jul 2010</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>29 Jul 2010</LastUpdatedDate>
+      <ProvenanceDescription>Further information about this file format can be obtained at:
+http://flac.sourceforge.net/documentation_format_overview.html</ProvenanceDescription>
+      <LastUpdatedDate>28 Aug 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>

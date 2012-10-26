@@ -71,20 +71,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>46726F6D3A</ByteSequenceValue>
-        </ByteSequence>
-        <ByteSequence>
-          <ByteSequenceID>588</ByteSequenceID>
-          <PositionType>Indirect From BOF</PositionType>
-          <Offset>0</Offset>
-          <MaxOffset>105</MaxOffset>
-          <IndirectOffsetLocation>
-          </IndirectOffsetLocation>
-          <IndirectOffsetLength>
-          </IndirectOffsetLength>
-          <Endianness>
-          </Endianness>
-          <ByteSequenceValue>5375626A6563743A{1-100}446174653A{1-100}4D494D452D56657273696F6E3A{1-100}436F6E74656E742D547970653A206D756C7469706172742F72656C617465643B</ByteSequenceValue>
+          <ByteSequenceValue>46726F6D3A{2-100}5375626A6563743A*446174653A*4D494D45??56657273696F6E3A*436F6E74656E74??547970653A??6D756C7469706172742F72656C617465643B</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>

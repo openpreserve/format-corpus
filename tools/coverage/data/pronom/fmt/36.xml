@@ -63,7 +63,7 @@
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>725</RelatedFormatID>
         <RelatedFormatName>Drawing Interchange File Format (ASCII)</RelatedFormatName>
-        <RelatedFormatVersion>2004-2005</RelatedFormatVersion>
+        <RelatedFormatVersion>2004/2005/2006</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>

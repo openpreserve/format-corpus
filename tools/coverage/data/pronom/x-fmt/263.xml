@@ -134,7 +134,7 @@
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>910</RelatedFormatID>
         <RelatedFormatName>Microsoft Office Open XML</RelatedFormatName>
-        <RelatedFormatVersion>2007</RelatedFormatVersion>
+        <RelatedFormatVersion>2007 onwards</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has lower priority than</RelationshipType>
@@ -183,6 +183,30 @@
         <RelatedFormatID>1040</RelatedFormatID>
         <RelatedFormatName>OpenDocument Graphics</RelatedFormatName>
         <RelatedFormatVersion>1.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1206</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Database Format</RelatedFormatName>
+        <RelatedFormatVersion>1.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1215</RelatedFormatID>
+        <RelatedFormatName>CorelDraw Drawing</RelatedFormatName>
+        <RelatedFormatVersion>X4</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1216</RelatedFormatID>
+        <RelatedFormatName>CorelDraw Drawing</RelatedFormatName>
+        <RelatedFormatVersion>X5</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1231</RelatedFormatID>
+        <RelatedFormatName>OpenDocument Database Format</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
       </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>

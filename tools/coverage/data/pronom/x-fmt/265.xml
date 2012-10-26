@@ -67,6 +67,12 @@
           <ByteSequenceValue>[21:EF]{104}[30:37][20:37]00{5}[30:37][20:37]00{5}[30:37][20:37]00{10}[30:37](00|20){10}[30:37](00|20){5}[30:37][00:37](00|20)</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>795</RelatedFormatID>
+        <RelatedFormatName>Digital Negative Format (DNG)</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

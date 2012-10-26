@@ -45,7 +45,7 @@
       <InternalSignature>
         <SignatureID>394</SignatureID>
         <SignatureName>Fractal Image</SignatureName>
-        <SignatureNote>Header: FIF</SignatureNote>
+        <SignatureNote>Header: FIF.{52}À</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>500</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -58,7 +58,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>464946</ByteSequenceValue>
+          <ByteSequenceValue>46494601{52}C0</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

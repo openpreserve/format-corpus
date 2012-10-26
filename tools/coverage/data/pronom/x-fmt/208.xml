@@ -3,7 +3,7 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>289</FormatID>
-      <FormatName>X-Windows Pixmap</FormatName>
+      <FormatName>X-Windows Pixmap Image</FormatName>
       <FormatVersion>X10</FormatVersion>
       <FormatAliases>
       </FormatAliases>
@@ -25,7 +25,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>16 Mar 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -45,6 +45,38 @@
         <Signature>xpm</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>620</SignatureID>
+        <SignatureName>X-Windows Pixmap Image X10</SignatureName>
+        <SignatureNote>XPM files always start with the string “/* XPM */”. The line continues with whitespace and a possible comment, followed by the C declaration of a static char array “static char * “.  The file has "};" or "} ;" at the end or very near the end followed by white space.</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>765</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>2F2A2058504D202A2F*0A7374617469632063686172202A20</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>766</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>4</MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>7D(3B|203B)</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

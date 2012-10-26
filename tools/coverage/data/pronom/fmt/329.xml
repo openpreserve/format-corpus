@@ -56,9 +56,8 @@
         <SignatureNote>ASCII: #!/bin/sh.# This is a shell archive</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>534</ByteSequenceID>
-          <PositionType>Variable</PositionType>
-          <Offset>
-          </Offset>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
           <MaxOffset>1936</MaxOffset>
           <IndirectOffsetLocation>
           </IndirectOffsetLocation>

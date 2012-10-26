@@ -4,7 +4,7 @@
     <FileFormat>
       <FormatID>631</FormatID>
       <FormatName>Rich Text Format</FormatName>
-      <FormatVersion>1.5</FormatVersion>
+      <FormatVersion>1.5-1.6</FormatVersion>
       <FormatAliases>RTF (1.5), RTF (97)</FormatAliases>
       <FormatFamilies>Rich Text Format</FormatFamilies>
       <FormatTypes>Word Processor</FormatTypes>
@@ -94,7 +94,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>7B5C7274(66|6631)5C(616E7369|6D6163|7063|706361)5C616E7369637067</ByteSequenceValue>
+          <ByteSequenceValue>7B5C7274(66|6631){0-1}5C(616E7369|6D6163|7063|706361)5C616E7369637067</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>
@@ -119,7 +119,7 @@
         <RelationshipType>Has priority over</RelationshipType>
         <RelatedFormatID>626</RelatedFormatID>
         <RelatedFormatName>Rich Text Format</RelatedFormatName>
-        <RelatedFormatVersion>1.0</RelatedFormatVersion>
+        <RelatedFormatVersion>1.0-1.4</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Has priority over</RelationshipType>

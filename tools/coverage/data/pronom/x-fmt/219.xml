@@ -3,9 +3,8 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>310</FormatID>
-      <FormatName>Alexa Archive File</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatName>Internet Archive</FormatName>
+      <FormatVersion>1.0</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -26,7 +25,7 @@
       <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>16 Mar 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -35,7 +34,7 @@
       </TechnicalEnvironment>
       <FileFormatIdentifier>
         <Identifier>application/x-internet-archive</Identifier>
-        <IdentifierType>GDFR Format Identifier</IdentifierType>
+        <IdentifierType>MIME</IdentifierType>
       </FileFormatIdentifier>
       <FileFormatIdentifier>
         <Identifier>x-fmt/219</Identifier>
@@ -48,8 +47,8 @@
       </ExternalSignature>
       <InternalSignature>
         <SignatureID>525</SignatureID>
-        <SignatureName>Alexa Archive File</SignatureName>
-        <SignatureNote>ASCII: (filedesc://) followed by recurring content type (URL IP-address Archive-date Content-type Archive-length)</SignatureNote>
+        <SignatureName>Internet Archive 1.0</SignatureName>
+        <SignatureNote>Version block at beginning of file starts with string “filedesc://” followed by a path and filename whose filename extension is “.arc”&lt;sp&gt;. followed by &lt;ip address&gt;, &lt;date&gt; and “text/plain”&lt;sp&gt; followed by &lt;length&gt;&lt;nl&gt; 1&lt;sp&gt;0&lt;sp&gt; followed by “URL IP-address Archive-date Content-type Archive-length”</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>647</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -62,9 +61,64 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>66696C65646573633A2F2F*55524C2049502D6164647265737320417263686976652D6461746520436F6E74656E742D7479706520417263686976652D6C656E677468</ByteSequenceValue>
+          <ByteSequenceValue>66696C65646573633A2F2F{1-128}2E61726320{1-3}2E{1-3}2E{1-3}2E{1-3}20{14}20746578742F706C61696E20{1-16}0A31203020*0A55524C2049502D6164647265737320417263686976652D6461746520436F6E74656E742D7479706520417263686976652D6C656E677468</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>638</RelatedFormatID>
+        <RelatedFormatName>Extensible Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>639</RelatedFormatID>
+        <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>2.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>640</RelatedFormatID>
+        <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>3.2</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>641</RelatedFormatID>
+        <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>4.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>642</RelatedFormatID>
+        <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>4.01</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>643</RelatedFormatID>
+        <RelatedFormatName>Extensible Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>1.0</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>644</RelatedFormatID>
+        <RelatedFormatName>Extensible Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>645</RelatedFormatID>
+        <RelatedFormatName>Hypertext Markup Language</RelatedFormatName>
+        <RelatedFormatVersion>
+        </RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Is previous version of</RelationshipType>
+        <RelatedFormatID>1158</RelatedFormatID>
+        <RelatedFormatName>Internet Archive</RelatedFormatName>
+        <RelatedFormatVersion>1.1</RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

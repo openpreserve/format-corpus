@@ -4,7 +4,7 @@
     <FileFormat>
       <FormatID>325</FormatID>
       <FormatName>Paint Shop Pro Image</FormatName>
-      <FormatVersion>3</FormatVersion>
+      <FormatVersion>3.0</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -12,7 +12,7 @@
       <FormatTypes>Image (Raster)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
+      <FormatDescription>The Paint Shop Pro (PSP) file format is an extremely rich graphics file format that is capable of describing a multi-layered image document in minute detail. The format facilitates the retention of a great deal of information, including layer bitmaps, layer masks, layer grouping information, a sample thumbnail, image dimension, image resolution, creator name, copyright owner, image description, masks, selections, alpha channels, etc. The PSP format supports storing an image document in an uncompressed format or, to reduce the size of the file, in either Run Length Encoding (RLE) or LZ77 compressed format. As each of these is a lossless storage method, the PSP format always maintains the original quality of stored image documents. Finally, the PSP format supports storing image bitmaps at a variety of bit depths, including 24 bit colour (16.7 million colours), 8 bit colour (256 colour), 8 bit greyscale (256 greys), 4 bit colour (16 colours) and 1 bit colour (2 colours).</FormatDescription>
       <BinaryFileFormat>Text</BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
@@ -20,12 +20,11 @@
       </ReleaseDate>
       <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
-      <ProvenanceSourceDate>02 Aug 2005</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <ProvenanceSourceID>180</ProvenanceSourceID>
+      <ProvenanceName>The National Archives and Records Administration / The National Archives and Records Administration</ProvenanceName>
+      <ProvenanceSourceDate>19 Nov 2009</ProvenanceSourceDate>
+      <ProvenanceDescription>Specifications link: http://www.telegraphics.com.au/svn/pspformat/trunk/psp5spec.pdf</ProvenanceDescription>
+      <LastUpdatedDate>11 Jun 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -64,7 +63,7 @@
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>555</RelatedFormatID>
         <RelatedFormatName>Paint Shop Pro Image</RelatedFormatName>
-        <RelatedFormatVersion>4</RelatedFormatVersion>
+        <RelatedFormatVersion>4.00</RelatedFormatVersion>
       </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>

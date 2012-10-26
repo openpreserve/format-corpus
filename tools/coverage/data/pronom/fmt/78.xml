@@ -103,6 +103,41 @@
           <ByteSequenceValue>300D0A454F460D0A</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <InternalSignature>
+        <SignatureID>686</SignatureID>
+        <SignatureName>Drawing Interchange File Format 2000-2002 (0A)</SignatureName>
+        <SignatureNote>replaces 0A0D in the original signature with just 0A to accommodate files with this variation..</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>847</ByteSequenceID>
+          <PositionType>Variable</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>300A53454354494F4E0A2020320A4845414445520A*390A24414341445645520A2020310A4143313031350A*300A454E445345430A</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>848</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>300A454F460A</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
       <RelatedFormat>
         <RelationshipType>Equivalent to</RelationshipType>
         <RelatedFormatID>743</RelatedFormatID>
@@ -125,7 +160,7 @@
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>725</RelatedFormatID>
         <RelatedFormatName>Drawing Interchange File Format (ASCII)</RelatedFormatName>
-        <RelatedFormatVersion>2004-2005</RelatedFormatVersion>
+        <RelatedFormatVersion>2004/2005/2006</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is subsequent version of</RelationshipType>

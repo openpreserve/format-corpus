@@ -3,13 +3,12 @@
   <report_format_detail>
     <FileFormat>
       <FormatID>1082</FormatID>
-      <FormatName>Motion JPEG2000</FormatName>
+      <FormatName>MJ2 (Motion JPEG 2000)</FormatName>
       <FormatVersion>
       </FormatVersion>
       <FormatAliases>
       </FormatAliases>
-      <FormatFamilies>
-      </FormatFamilies>
+      <FormatFamilies>JPEG 2000</FormatFamilies>
       <FormatTypes>Video</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
@@ -52,6 +51,25 @@
         <Signature>mjp2</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>719</SignatureID>
+        <SignatureName>Motion JPEG 2000</SignatureName>
+        <SignatureNote>BOF: ....jP  ..‡.{4}ftypmjp2</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>905</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>0000000C6A5020200D0A870A{4}667479706D6A7032</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

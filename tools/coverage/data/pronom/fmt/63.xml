@@ -22,7 +22,7 @@
       <ProvenanceSourceDate>22 Apr 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>11 Jun 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -59,7 +59,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>300D0A53454354494F4E0D0A{0-2}320D0A*300D0A454E445345430D0A</ByteSequenceValue>
+          <ByteSequenceValue>300D0A53454354494F4E0D0A{0-5}320D0A*300D0A454E445345430D0A</ByteSequenceValue>
         </ByteSequence>
         <ByteSequence>
           <ByteSequenceID>18</ByteSequenceID>
@@ -73,6 +73,41 @@
           <Endianness>
           </Endianness>
           <ByteSequenceValue>300D0A454F460D0A</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>688</SignatureID>
+        <SignatureName>Drawing Interchange File Format (ASCII) (generic) (0D)</SignatureName>
+        <SignatureNote>Replacing 0D0A in the original signature with 0D to accommodate files with this variation.</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>851</ByteSequenceID>
+          <PositionType>Variable</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>300D53454354494F4E0D{0-2}320D*300D454E445345430D</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>852</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>300D454F460D</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>
@@ -169,7 +204,25 @@
         <RelationshipType>Has lower priority than</RelationshipType>
         <RelatedFormatID>725</RelatedFormatID>
         <RelatedFormatName>Drawing Interchange File Format (ASCII)</RelatedFormatName>
-        <RelatedFormatVersion>2004-2005</RelatedFormatVersion>
+        <RelatedFormatVersion>2004/2005/2006</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1220</RelatedFormatID>
+        <RelatedFormatName>Drawing Interchange File Format (ASCII)</RelatedFormatName>
+        <RelatedFormatVersion>2007/2008/2009</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1221</RelatedFormatID>
+        <RelatedFormatName>AutoCAD Drawing</RelatedFormatName>
+        <RelatedFormatVersion>2010/2011/2012</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>1222</RelatedFormatID>
+        <RelatedFormatName>Drawing Interchange File Format (ASCII)</RelatedFormatName>
+        <RelatedFormatVersion>2010/2011/2012</RelatedFormatVersion>
       </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>

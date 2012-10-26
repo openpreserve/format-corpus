@@ -4,7 +4,7 @@
     <FileFormat>
       <FormatID>725</FormatID>
       <FormatName>Drawing Interchange File Format (ASCII)</FormatName>
-      <FormatVersion>2004-2005</FormatVersion>
+      <FormatVersion>2004/2005/2006</FormatVersion>
       <FormatAliases>ASCII DXF (2004-2005)</FormatAliases>
       <FormatFamilies>DXF</FormatFamilies>
       <FormatTypes>Image (Vector)</FormatTypes>
@@ -21,7 +21,7 @@
       <ProvenanceSourceDate>11 Mar 2005</ProvenanceSourceDate>
       <ProvenanceDescription>
       </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <LastUpdatedDate>06 Nov 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -71,7 +71,7 @@
       </ExternalSignature>
       <InternalSignature>
         <SignatureID>114</SignatureID>
-        <SignatureName>Drawing Interchange File Format 2004-2005</SignatureName>
+        <SignatureName>Drawing Interchange File Format 2004/2005/2006</SignatureName>
         <SignatureNote>Header section with $ACADVER group code, EOF marker</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>19</ByteSequenceID>
@@ -101,6 +101,41 @@
           <Endianness>
           </Endianness>
           <ByteSequenceValue>300D0A454F460D0A</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
+      <InternalSignature>
+        <SignatureID>687</SignatureID>
+        <SignatureName>Drawing Interchange File Format 2004/2005/2006 (0A)</SignatureName>
+        <SignatureNote>Replaces 0D0A in original signature with 0A to accommodate files with this variation.</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>849</ByteSequenceID>
+          <PositionType>Variable</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>300A53454354494F4E0A2020320A4845414445520A*390A24414341445645520A2020310A4143313031380A*300A454E445345430A</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>850</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>
+          </Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>300A454F460A</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>

@@ -76,20 +76,6 @@
         <SignatureNote>File header and file terminator.</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>1</ByteSequenceID>
-          <PositionType>Absolute from EOF</PositionType>
-          <Offset>0</Offset>
-          <MaxOffset>
-          </MaxOffset>
-          <IndirectOffsetLocation>
-          </IndirectOffsetLocation>
-          <IndirectOffsetLength>
-          </IndirectOffsetLength>
-          <Endianness>
-          </Endianness>
-          <ByteSequenceValue>00</ByteSequenceValue>
-        </ByteSequence>
-        <ByteSequence>
-          <ByteSequenceID>196</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
           <Offset>0</Offset>
           <MaxOffset>
@@ -101,6 +87,20 @@
           <Endianness>
           </Endianness>
           <ByteSequenceValue>4175746F4341442044584220312E300D0A1A00</ByteSequenceValue>
+        </ByteSequence>
+        <ByteSequence>
+          <ByteSequenceID>196</ByteSequenceID>
+          <PositionType>Absolute from EOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>00</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

@@ -4,8 +4,7 @@
     <FileFormat>
       <FormatID>49</FormatID>
       <FormatName>Adobe Illustrator</FormatName>
-      <FormatVersion>
-      </FormatVersion>
+      <FormatVersion>1.0 / 1.1</FormatVersion>
       <FormatAliases>
       </FormatAliases>
       <FormatFamilies>
@@ -13,20 +12,22 @@
       <FormatTypes>Image (Vector)</FormatTypes>
       <FormatDisclosure>
       </FormatDisclosure>
-      <FormatDescription>This is an outline record only, and requires further details, research or authentication to provide information that will enable users to further understand the format and to assess digital preservation risks associated with it if appropriate. If you are able to help by supplying any additional information concerning this entry, please return to the main PRONOM page and select ‘Add an Entry’.</FormatDescription>
-      <BinaryFileFormat>Text</BinaryFileFormat>
+      <FormatDescription>The documents (files) created by Adobe Illustrator are PostScript language
+documents. A PostScript language document description that minimally conforms to the Document Structuring Conventions has two main parts: a prolog and a script. The prolog encapsulates information needed by other programs to interpret the file. The script describes the graphic elements on the page</FormatDescription>
+      <BinaryFileFormat>
+      </BinaryFileFormat>
       <ByteOrders>
       </ByteOrders>
       <ReleaseDate>
       </ReleaseDate>
       <WithdrawnDate>
       </WithdrawnDate>
-      <ProvenanceSourceID>1</ProvenanceSourceID>
-      <ProvenanceName>Digital Preservation Department / The National Archives</ProvenanceName>
+      <ProvenanceSourceID>180</ProvenanceSourceID>
+      <ProvenanceName>The National Archives and Records Administration / The National Archives and Records Administration</ProvenanceName>
       <ProvenanceSourceDate>23 Sep 2003</ProvenanceSourceDate>
-      <ProvenanceDescription>
-      </ProvenanceDescription>
-      <LastUpdatedDate>02 Aug 2005</LastUpdatedDate>
+      <ProvenanceDescription>http://mercator.elte.hu/~saman/hu/okt/AI7FileFormat.pdf
+Adobe has classified Illustrator versions 1.0 and 1.1 as the same file format.</ProvenanceDescription>
+      <LastUpdatedDate>11 Jun 2012</LastUpdatedDate>
       <FormatNote>
       </FormatNote>
       <FormatRisk>
@@ -34,11 +35,11 @@
       <TechnicalEnvironment>
       </TechnicalEnvironment>
       <FileFormatIdentifier>
-        <Identifier>application/illustrator</Identifier>
+        <Identifier>application/postscript</Identifier>
         <IdentifierType>MIME</IdentifierType>
       </FileFormatIdentifier>
       <FileFormatIdentifier>
-        <Identifier>com.adobe.illustrator-image</Identifier>
+        <Identifier>com.adobe.illustrator.ai-​image</Identifier>
         <IdentifierType>Apple Uniform Type Identifier</IdentifierType>
       </FileFormatIdentifier>
       <FileFormatIdentifier>

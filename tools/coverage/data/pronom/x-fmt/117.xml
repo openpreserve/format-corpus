@@ -68,6 +68,12 @@
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>
+        <RelationshipType>Has lower priority than</RelationshipType>
+        <RelatedFormatID>894</RelatedFormatID>
+        <RelatedFormatName>Microsoft Works Spreadsheet</RelatedFormatName>
+        <RelatedFormatVersion>1-5</RelatedFormatVersion>
+      </RelatedFormat>
+      <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>166</RelatedFormatID>
         <RelatedFormatName>Lotus 1-2-3 Worksheet</RelatedFormatName>
@@ -83,7 +89,7 @@
         <RelationshipType>Is previous version of</RelationshipType>
         <RelatedFormatID>168</RelatedFormatID>
         <RelatedFormatName>Lotus 1-2-3 Worksheet</RelatedFormatName>
-        <RelatedFormatVersion>4.0</RelatedFormatVersion>
+        <RelatedFormatVersion>4-5</RelatedFormatVersion>
       </RelatedFormat>
       <RelatedFormat>
         <RelationshipType>Is previous version of</RelationshipType>

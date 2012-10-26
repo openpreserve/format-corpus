@@ -43,7 +43,7 @@
       </ExternalSignature>
       <InternalSignature>
         <SignatureID>372</SignatureID>
-        <SignatureName>Corel Metafile Exchange Image</SignatureName>
+        <SignatureName>Corel Metafile Exchange Image (16 bit)</SignatureName>
         <SignatureNote>RIFF (little-endian) or RIFX (big-endian) Form labeled CMX1</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>480</ByteSequenceID>
@@ -57,7 +57,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>524946(46|58){4}434D5831</ByteSequenceValue>
+          <ByteSequenceValue>524946(46|58){4}434D5831{62}31</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
     </FileFormat>

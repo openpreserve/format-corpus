@@ -46,6 +46,25 @@
         <Signature>ws5</Signature>
         <SignatureType>File extension</SignatureType>
       </ExternalSignature>
+      <InternalSignature>
+        <SignatureID>610</SignatureID>
+        <SignatureName>WordStar for DOS Document 5.0</SignatureName>
+        <SignatureNote>Header symmetrical sequence of 128 bytes: first thee bytes, 0x1D 0x7D00, sequence type header = 0x00, version =0x50,  last three bytes 0x7D00 0X1D</SignatureNote>
+        <ByteSequence>
+          <ByteSequenceID>755</ByteSequenceID>
+          <PositionType>Absolute from BOF</PositionType>
+          <Offset>0</Offset>
+          <MaxOffset>
+          </MaxOffset>
+          <IndirectOffsetLocation>
+          </IndirectOffsetLocation>
+          <IndirectOffsetLength>
+          </IndirectOffsetLength>
+          <Endianness>
+          </Endianness>
+          <ByteSequenceValue>1D7D000050{120}7D001D</ByteSequenceValue>
+        </ByteSequence>
+      </InternalSignature>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

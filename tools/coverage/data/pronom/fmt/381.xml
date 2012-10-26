@@ -61,6 +61,12 @@
           <ByteSequenceValue>F5??[01:0C][01:1F]{4}010488{21}4E414D45000000000000004D{20}545950450000000000000043{20}54494D455354414D5000004E</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
+      <RelatedFormat>
+        <RelationshipType>Has priority over</RelationshipType>
+        <RelatedFormatID>1120</RelatedFormatID>
+        <RelatedFormatName>FoxPro Database</RelatedFormatName>
+        <RelatedFormatVersion>2.x</RelatedFormatVersion>
+      </RelatedFormat>
     </FileFormat>
     <SearchCriteria>Criteria</SearchCriteria>
   </report_format_detail>

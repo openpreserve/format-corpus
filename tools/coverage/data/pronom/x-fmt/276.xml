@@ -51,7 +51,7 @@
       <InternalSignature>
         <SignatureID>490</SignatureID>
         <SignatureName>Microsoft Word for DOS 5.5</SignatureName>
-        <SignatureNote>File Information Block: wident=0xBE31; DocumentType=0x0000 ;wTool=0xAB00; offset 116 is version. 0x07 = version 5.5</SignatureNote>
+        <SignatureNote>Word signature (4 bytes) Reserved field (10 bytes) Flag (2 bytes) Version (2bytes)</SignatureNote>
         <ByteSequence>
           <ByteSequenceID>607</ByteSequenceID>
           <PositionType>Absolute from BOF</PositionType>
@@ -64,7 +64,7 @@
           </IndirectOffsetLength>
           <Endianness>
           </Endianness>
-          <ByteSequenceValue>31BE000000AB{110}07</ByteSequenceValue>
+          <ByteSequenceValue>31BE000000AB0000000000000000{82}0000{18}07</ByteSequenceValue>
         </ByteSequence>
       </InternalSignature>
       <RelatedFormat>
