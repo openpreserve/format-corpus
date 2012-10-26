@@ -23,11 +23,11 @@ public class MimeInfoUtilsTest {
 	public void testPercipioParser() throws FileNotFoundException, JAXBException {
 		MimeInfo mi = MimeInfoUtils.parser(new FileInputStream(PERCIPIO_XML));
 		MimeInfoUtils.printer(mi);
+		assertTrue("Failed to parse MimeInfo object.", mi !=  null);
 		//
 		mi = MimeInfoUtils.parser(new FileInputStream(TIKA_XML));
 		MimeInfoUtils.printer(mi);
 		//
-		fail("Not yet implemented");
 	}
 
 }
