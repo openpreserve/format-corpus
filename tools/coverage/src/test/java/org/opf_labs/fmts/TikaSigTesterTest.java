@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.SortedSet;
 
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeTypeException;
@@ -29,17 +30,22 @@ public class TikaSigTesterTest {
 	 */
 	@Test
 	public void testTikaSigTesterFileBoolean() throws MimeTypeException, IOException {
-		// 
-		System.out.println("Just One...");
+		// Test loading a single signature, alone.
 		TikaSigTester tst = new TikaSigTester(new File(MimeInfoUtilsTest.PERCIPIO_XML), false);
+		//this.printMimeTypes(tst.getMimeTypes());
+		SortedSet<MediaType> types = tst.getMimeTypes().getMediaTypeRegistry().getTypes();
+		int size = types.size();
+		assertEquals("Unexpected number of signatures: "+size, size, 4 );
+		// Test using the trial signature
 		System.out.println("Try: "+tst.identify( new FileInputStream( "/Users/andy/Documents/workspace/nanite/nanite-ext/src/test/resources/simple.pdf" ) ));
-		this.printMimeTypes(tst.getMimeTypes());
-		//
-		System.out.println("All...");
-		tst = new TikaSigTester( new File(MimeInfoUtilsTest.PERCIPIO_XML), true);
-		this.printMimeTypes(tst.getMimeTypes());		
 		
-		fail("Not yet implemented");
+		// Test loading all signatures:
+		tst = new TikaSigTester( new File(MimeInfoUtilsTest.PERCIPIO_XML), true);
+		//this.printMimeTypes(tst.getMimeTypes());
+		types = tst.getMimeTypes().getMediaTypeRegistry().getTypes();
+		size = types.size();
+		assertTrue("Unexpected number of signatures: "+size, size > 4 );
+		
 	}
 	
 	public void printMimeTypes(MimeTypes mimeTypes) {
