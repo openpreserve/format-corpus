@@ -9,7 +9,6 @@ import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import javax.xml.bind.PropertyException;
 import javax.xml.bind.Unmarshaller;
 
 import org.opf_labs.fmts.droid.InternalSigSubmission;
@@ -62,7 +61,7 @@ public class MimeInfoUtils {
 		MimeType mt = mi.getMimetypes().get(0);
 		SigDefSubmission sd = new SigDefSubmission();
 		sd.name = mt.getAcronyms().toString();
-		sd.version = "";
+		sd.version = null;
 		sd.puid = "tika/"+mt.getType();
 		sd.extension = mt.getGlobs().get(0).getPattern();
 		sd.mimetype = mt.getType();
@@ -80,11 +79,11 @@ public class MimeInfoUtils {
 						// FIXME Warn because getMatches (AND matches) not supported.
 						// MimeInfo only really support BOF offsets.
 						iss.anchor = InternalSigSubmission.Anchor.BOFoffset;
-						iss.offset = Integer.parseInt(m.getOffset());
 						// FIXME Parse 0:8 style offsets and fill out maxoffset accordingly.
-						//iss.maxoffset = 0;
+						iss.offset = Integer.parseInt(m.getOffset());
+						iss.maxoffset = iss.offset;
 						// FIXME Strip of leading 0x, or hex-encode if that is not present.
-						iss.signature = m.getValue();
+						iss.signature = m.getValue().substring(2);
 						// Add to the set:
 						sd.signatures.add(iss);
 					}

@@ -5,6 +5,8 @@ package org.opf_labs.fmts.mimeinfo;
 
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
@@ -20,9 +22,10 @@ import javax.xml.bind.annotation.XmlElement;
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
  * 
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Magic {
 
-	@XmlElement(nillable = true)
+	@XmlElement( name = "match" )
 	private List<Match> matches;
 	
 	// Integer between 0 and 100, defaults to 50.

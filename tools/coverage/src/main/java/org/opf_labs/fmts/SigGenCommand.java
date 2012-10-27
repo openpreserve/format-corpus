@@ -79,6 +79,7 @@ public class SigGenCommand {
 					e.printStackTrace();
 				}
 				SigDefSubmission sigdef = MimeInfoUtils.toDroidSigDef(mi);
+				// FIXME Make is possible to print out the signature submission definition?
 				//TikaMimeInfo.fromTikaMimeType(null);
 				PRONOMSigGenerator.generatePRONOMSigFile(sigdef);
 			} else {

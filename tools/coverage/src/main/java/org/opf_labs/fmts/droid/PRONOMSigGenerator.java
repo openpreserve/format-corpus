@@ -41,10 +41,12 @@ public class PRONOMSigGenerator {
             nvps.add(new BasicNameValuePair("mimetype1",  sigdef.mimetype ));
             // Counter of sigs
             nvps.add(new BasicNameValuePair("counter", ""+sigdef.signatures.size() ));
+            System.out.println("Got: "+sigdef.signatures.size());
             // For each sig:
             for( int i = 0; i < sigdef.signatures.size(); i++ ) {
             	InternalSigSubmission is = sigdef.signatures.get(i);
             	nvps.add(new BasicNameValuePair("signature"+(i+1), is.signature ));
+				System.out.println("Sig: "+is.signature);
             	nvps.add(new BasicNameValuePair("anchor"+(i+1), ""+is.anchor )); // BOFoffset, EOFoffset, Variable
             	nvps.add(new BasicNameValuePair("offset"+(i+1), ""+is.offset ));
             	nvps.add(new BasicNameValuePair("offset"+(i+1), ""+is.maxoffset ));
