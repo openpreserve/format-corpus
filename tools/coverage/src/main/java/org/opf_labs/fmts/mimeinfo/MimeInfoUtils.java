@@ -71,18 +71,20 @@ public class MimeInfoUtils {
 				if( mag.getMatches() != null ) {
 					for( Match m : mag.getMatches() ) {
 						InternalSigSubmission iss = new InternalSigSubmission();
-						if( ! "string".equalsIgnoreCase(m.type) ) {
+						if( ! "string".equalsIgnoreCase(m.getType()) ) {
 							// FIXME Only supports simple match types, so warn for now.
-							System.err.println("Cannot currently transform sigs of type "+m.type);
+							System.err.println("Cannot currently transform sigs of type "+m.getType());
 							continue;
 						}
+						// FIXME Warn because getMask is not supported?
+						// FIXME Warn because getMatches (AND matches) not supported.
 						// MimeInfo only really support BOF offsets.
 						iss.anchor = InternalSigSubmission.Anchor.BOFoffset;
-						iss.offset = Integer.parseInt(m.offset);
+						iss.offset = Integer.parseInt(m.getOffset());
 						// FIXME Parse 0:8 style offsets and fill out maxoffset accordingly.
 						//iss.maxoffset = 0;
 						// FIXME Strip of leading 0x, or hex-encode if that is not present.
-						iss.signature = m.value;
+						iss.signature = m.getValue();
 						// Add to the set:
 						sd.signatures.add(iss);
 					}

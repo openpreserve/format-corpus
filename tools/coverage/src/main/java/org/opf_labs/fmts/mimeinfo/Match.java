@@ -28,18 +28,88 @@ import javax.xml.bind.annotation.XmlElement;
 public class Match {
 	
 	@XmlElement(nillable = true)
-	List<Match> match;
+	private List<Match> matches;
 	
 	@XmlAttribute
-	String type;
+	private String type;
 	
 	@XmlAttribute
-	String offset;
+	private String offset;
 	
 	@XmlAttribute
-	String value;
+	private String value;
 	
 	@XmlAttribute
-	String mask;
+	private String mask;
+
+	/**
+	 * @return the match
+	 */
+	public List<Match> getMatches() {
+		return matches;
+	}
+
+	/**
+	 * @param match the match to set
+	 */
+	public void setMatches(List<Match> matches) {
+		this.matches = matches;
+	}
+
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * @return the offset
+	 */
+	public String getOffset() {
+		return offset;
+	}
+
+	/**
+	 * @param offset the offset to set
+	 */
+	public void setOffset(String offset) {
+		this.offset = offset;
+	}
+
+	/**
+	 * @return the value
+	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * @param value the value to set
+	 */
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	/**
+	 * @return the mask
+	 */
+	public String getMask() {
+		return mask;
+	}
+
+	/**
+	 * @param mask the mask to set
+	 */
+	public void setMask(String mask) {
+		this.mask = mask;
+	}
 
 }
