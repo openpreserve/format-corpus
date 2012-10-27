@@ -24,6 +24,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class MimeInfo {
 
     @XmlElement(name = "mime-type")
-	List<MimeType> mimetype;
+	private List<MimeType> mimetypes;
+
+	/**
+	 * @return the mimetypes
+	 */
+	public List<MimeType> getMimetypes() {
+		return mimetypes;
+	}
+
+	/**
+	 * @param mimetypes the mimetypes to set
+	 */
+	public void setMimetypes(List<MimeType> mimetypes) {
+		this.mimetypes = mimetypes;
+	}
 	
 }

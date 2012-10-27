@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import javax.xml.bind.JAXBException;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -15,6 +17,11 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.apache.tika.mime.MimeTypeException;
+import org.apache.tika.mime.TikaMimeInfo;
+import org.opf_labs.fmts.droid.PRONOMSigGenerator;
+import org.opf_labs.fmts.droid.SigDefSubmission;
+import org.opf_labs.fmts.mimeinfo.MimeInfo;
+import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
@@ -64,7 +71,16 @@ public class SigGenCommand {
 					return;
 				}
 				System.out.println("Generate DROID signature...");
-				
+				MimeInfo mi = null;
+				try {
+					mi = MimeInfoUtils.parser( new FileInputStream(sigfile) );
+				} catch (JAXBException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				SigDefSubmission sigdef = MimeInfoUtils.toDroidSigDef(mi);
+				//TikaMimeInfo.fromTikaMimeType(null);
+				PRONOMSigGenerator.generatePRONOMSigFile(sigdef);
 			} else {
 				// We are in file identification mode:
 				if( line.getArgList().size() == 0 ) {

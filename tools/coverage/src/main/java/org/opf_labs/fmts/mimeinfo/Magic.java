@@ -23,10 +23,38 @@ import javax.xml.bind.annotation.XmlElement;
 public class Magic {
 
 	@XmlElement(nillable = true)
-	private List<Match> match;
+	private List<Match> matches;
 	
 	// Integer between 0 and 100, defaults to 50.
 	@XmlAttribute
-	String priority;
+	private String priority;
+
+	/**
+	 * @return the matches
+	 */
+	public List<Match> getMatches() {
+		return matches;
+	}
+
+	/**
+	 * @param matches the matches to set
+	 */
+	public void setMatches(List<Match> matches) {
+		this.matches = matches;
+	}
+
+	/**
+	 * @return the priority
+	 */
+	public String getPriority() {
+		return priority;
+	}
+
+	/**
+	 * @param priority the priority to set
+	 */
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}	
 	
 }

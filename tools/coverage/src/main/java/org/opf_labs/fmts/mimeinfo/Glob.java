@@ -20,10 +20,38 @@ public class Glob {
 
 	// Of the form *.ext'
 	@XmlAttribute
-	String pattern;
+	private String pattern;
 	
 	// Integer 0-100, default 50
 	@XmlAttribute
-	String weight;
+	private String weight;
+
+	/**
+	 * @return the pattern
+	 */
+	public String getPattern() {
+		return pattern;
+	}
+
+	/**
+	 * @param pattern the pattern to set
+	 */
+	public void setPattern(String pattern) {
+		this.pattern = pattern;
+	}
+
+	/**
+	 * @return the weight
+	 */
+	public String getWeight() {
+		return weight;
+	}
+
+	/**
+	 * @param weight the weight to set
+	 */
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
 	
 }
