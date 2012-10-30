@@ -39,6 +39,31 @@
      </execution>
     </executions>
    </plugin>
+   <plugin>
+   <!-- http://code.google.com/p/maven-license-plugin/wiki/HowTo -->
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+                <header>src/etc/header.txt</header>
+                <excludes>
+                    <exclude>target/**</exclude>
+                    <exclude>data/**</exclude>
+                </excludes>
+                <properties>
+                    <year>${project.inceptionYear}</year>
+                    <name>Andrew Jackson</name>
+                    <email>Andrew.Jackson@bl.uk</email>
+                </properties>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
   </plugins>
  </build>
  <dependencies>
@@ -96,4 +121,5 @@
   </pluginRepository>
  </pluginRepositories>
 
+ <inceptionYear>2012</inceptionYear>
 </project>
