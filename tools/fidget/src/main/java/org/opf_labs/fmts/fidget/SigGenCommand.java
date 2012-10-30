@@ -61,7 +61,7 @@ public class SigGenCommand {
 		options.addOption( "A", "alone", false, "use only the supplied signature file, do not load the embedded ones" );
 		options.addOption( "C", "convert-to-droid", false, "convert supplied signature file into DROID form" );
 		options.addOption( "l", "list", false, "list all known types.");
-		options.addOption( "h", "help", false, "print help message");
+		options.addOption( "?", "help", false, "print help message");
 
 		HelpFormatter formatter = new HelpFormatter();
 		
