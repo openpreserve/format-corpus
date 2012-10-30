@@ -15,7 +15,7 @@
  */
 package org.opf_labs.fmts;
 
-import org.apache.tika.mime.MimeType;
+import org.opf_labs.fmts.mimeinfo.MimeType;
 
 /**
  * 
