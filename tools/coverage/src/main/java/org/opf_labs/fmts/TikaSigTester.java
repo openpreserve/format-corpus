@@ -190,7 +190,7 @@ public class TikaSigTester{
 	public void printTypes() throws MimeTypeException {
 		for( MediaType md : this.getMimeTypes().getMediaTypeRegistry().getTypes() ) {
 			MimeType mt = this.getMimeTypes().forName(md.toString());
-			System.out.println(""+mt.getType()+"\t"+mt.getExtensions()+"\t"+mt.getName());
+			System.out.println(""+mt.getType()+"\t"+mt.getExtensions()+"\t\""+mt.getName()+"\"\t\""+mt.getDescription()+"\"");
 		}		
 	}
 
