@@ -43,6 +43,7 @@ import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
  */
 public class SigGenCommand {
 
+	@SuppressWarnings("static-access")
 	public static void main( String[] args ) throws MimeTypeException, IOException {
 		// create the command line parser
 		CommandLineParser parser = new PosixParser();
@@ -50,7 +51,8 @@ public class SigGenCommand {
 		// create the Options
 		Options options = new Options();
 		// Main option, setting the signature file
-		options.addOption( OptionBuilder.withLongOpt( "sig-file" )
+		options.addOption( 
+				OptionBuilder.withLongOpt( "sig-file" )
 				.withDescription( "use this mime-info signature file" )
 				.hasArg()
 				.withArgName("FILE")
@@ -59,8 +61,7 @@ public class SigGenCommand {
 		options.addOption( "A", "alone", false, "use only the supplied signature file, do not load the embedded ones" );
 		options.addOption( "C", "convert-to-droid", false, "convert supplied signature file into DROID form" );
 		options.addOption( "l", "list", false, "list all known types.");
-		options.addOption( "?", "help", false, "print help message");
-		// FIXME Add a 'search' mode to quickly scan for types that are already covered.
+		options.addOption( "h", "help", false, "print help message");
 
 		HelpFormatter formatter = new HelpFormatter();
 		
@@ -91,12 +92,12 @@ public class SigGenCommand {
 				try {
 					mi = MimeInfoUtils.parser( new FileInputStream(sigfile) );
 				} catch (JAXBException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
+					return;
 				}
 				SigDefSubmission sigdef = MimeInfoUtils.toDroidSigDef(mi);
-				// FIXME Make is possible to print out the signature submission definition?
-				//TikaMimeInfo.fromTikaMimeType(null);
+				// TODO Make is possible to print out the signature submission definition?
+				// This just creates a submission template, but we could output a PRONOM record too.
 				PRONOMSigGenerator.generatePRONOMSigFile(sigdef);
 			} else if( line.hasOption("l") ) {
 				// Set up Tika:

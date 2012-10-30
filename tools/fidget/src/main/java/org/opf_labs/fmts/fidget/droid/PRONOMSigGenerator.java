@@ -41,7 +41,7 @@ import org.apache.http.util.EntityUtils;
  *
  */
 public class PRONOMSigGenerator {
-
+	
 	public static String generatePRONOMSigFile( SigDefSubmission sigdef ) {
 		DefaultHttpClient httpclient = new DefaultHttpClient();
         try {

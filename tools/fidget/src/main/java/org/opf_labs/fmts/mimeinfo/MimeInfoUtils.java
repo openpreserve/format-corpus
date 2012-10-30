@@ -46,7 +46,6 @@ public class MimeInfoUtils {
 			marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
 	        unmarshaller = context.createUnmarshaller();		
 		} catch (JAXBException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -64,7 +63,7 @@ public class MimeInfoUtils {
     /**
      * Generates a DROID-compatible SigDefSubmission from a MimeInfo class.
      * 
-     * FIXME A lot of issues with translation:
+     * FIXME A number of unresolved issues with translation:
      *  - No clear AND/OR mapping. Are multiple DROID signatures ORs or ANDs in this context?
      *  - Only maps a very limited sub-set of MimeInfo 
      *  - No priority mapping.
@@ -107,5 +106,7 @@ public class MimeInfoUtils {
 		}
 		return sd;
 	}
+
+	// TODO Add method to create a PRONOM record from the MimeInfo?
 
 }
