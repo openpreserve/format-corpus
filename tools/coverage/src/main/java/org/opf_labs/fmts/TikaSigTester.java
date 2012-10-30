@@ -3,6 +3,7 @@ package org.opf_labs.fmts;
 import org.apache.tika.io.TikaInputStream;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.mime.MediaType;
+import org.apache.tika.mime.MimeType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
 import org.apache.tika.mime.MimeTypesFactory;
@@ -166,6 +167,17 @@ public class TikaSigTester{
         sw.identify(govDocsData);
 
     }
+
+    /**
+     * Print out a summary of all known types:
+     * @throws MimeTypeException 
+     */
+	public void printTypes() throws MimeTypeException {
+		for( MediaType md : this.getMimeTypes().getMediaTypeRegistry().getTypes() ) {
+			MimeType mt = this.getMimeTypes().forName(md.toString());
+			System.out.println(""+mt.getType()+"\t"+mt.getExtensions()+"\t"+mt.getName());
+		}		
+	}
 
 
 }

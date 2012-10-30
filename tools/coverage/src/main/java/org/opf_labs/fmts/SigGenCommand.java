@@ -44,7 +44,9 @@ public class SigGenCommand {
 		// 
 		options.addOption( "A", "alone", false, "use only the supplied signature file, do not load the embedded ones" );
 		options.addOption( "C", "convert-to-droid", false, "convert supplied signature file into DROID form" );
+		options.addOption( "l", "list", false, "list all known types.");
 		options.addOption( "?", "help", false, "print help message");
+		// FIXME Add a 'search' mode to quickly scan for types that are already covered.
 
 		HelpFormatter formatter = new HelpFormatter();
 		
@@ -82,17 +84,19 @@ public class SigGenCommand {
 				// FIXME Make is possible to print out the signature submission definition?
 				//TikaMimeInfo.fromTikaMimeType(null);
 				PRONOMSigGenerator.generatePRONOMSigFile(sigdef);
+			} else if( line.hasOption("l") ) {
+				// Set up Tika:
+				TikaSigTester tst = SigGenCommand.tikaStarter(sigfile, line.hasOption("A"));
+				tst.printTypes();
+				
 			} else {
 				// We are in file identification mode:
 				if( line.getArgList().size() == 0 ) {
 					System.err.println("No identification test file found!");
 					return;
 				}
-				// Otherwise, set up the right Tika:
-				TikaSigTester tst = new TikaSigTester();
-				if( sigfile != null ) {
-					tst = new TikaSigTester( new File(sigfile), !line.hasOption("A"));					
-				}
+				// Set up Tika:
+				TikaSigTester tst = SigGenCommand.tikaStarter(sigfile, line.hasOption("A"));
 				// Return result:
 				System.out.println(""+tst.identify( new FileInputStream(""+line.getArgList().get(0))));
 				return;
@@ -101,5 +105,13 @@ public class SigGenCommand {
 		catch( ParseException exp ) {
 			System.out.println( "Unexpected exception:" + exp.getMessage() );
 		}
+	}
+	
+	private static TikaSigTester tikaStarter( String sigfile, boolean sigfileAlone ) throws MimeTypeException, IOException {
+		TikaSigTester tst = new TikaSigTester();
+		if( sigfile != null ) {
+			tst = new TikaSigTester( new File(sigfile), !sigfileAlone );					
+		}
+		return tst;
 	}
 }
