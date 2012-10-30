@@ -78,7 +78,7 @@ public class SigGenCommand {
 			// Check mode:
 			if( line.hasOption("?") ) {
 				// HELP mode:
-				formatter.printHelp( "siggen [OPTION]... [FILE]...", options );
+				formatter.printHelp( "fidget [OPTION]... [FILE]...", options );
 				
 			} else if( line.hasOption("C") ) {
 				// Convert mode:
