@@ -36,25 +36,40 @@ public class CoverageAnalysis {
 	public CoverageAnalysis() {
 		List<MimeType> tika = tikaTypes.getTypes();
 		List<MimeType> droid = droidTypes.getTypes();
-		//
+		
+		// Set up the comparison:
 		Map<String, MimeCompare> mcm = new HashMap<String,MimeCompare>();
+		
 		// Go through Tika
-		int t_types=0, tnd_types=0;
+		int t_types = 0, tnd_types = 0;
 		for( MimeType m : tika ) {
 			MimeCompare mc = new MimeCompare();
 			mc.tika = m;
 			t_types++;
 			for( MimeType d : droid ) {
 				if( m.getType().equals(d.getType())) {
-					System.out.println("Got "+m.getType());
 					mc.droid = d;
 					tnd_types++;
+					System.out.println("Both "+m.getType());
 				}
 			}
-			mcm.put(m.getType().toString(), mc);			
+			mcm.put(m.getType(), mc);			
 		}
+		// Now pick up others, i.e. the DROID only ones:
+		int d_types = 0;
+		for( MimeType d : droid ) {
+			if( ! mcm.containsKey(d.getType())) {
+				MimeCompare mc = new MimeCompare();
+				mc.droid = d;
+				mcm.put(d.getType(), mc);			
+				d_types++;
+				System.out.println("DROID only "+d.getType());
+			}
+		}
+		// Currently not lineing up as treated as strings, and some are string plus version
+		// import javax.activation.MimeType; instead?
 		// 
-		System.out.println("Types: "+tnd_types+"/"+t_types);
+		System.out.println("Types: "+tnd_types+"/"+t_types+" "+d_types);
 	}
 	
 	/**
