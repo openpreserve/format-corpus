@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>org.opf-labs.fmt</groupId>
+ <artifactId>fidget</artifactId>
+ <version>0.0.1-SNAPSHOT</version>
+ <name>Format Identification Generation and Testing</name>
+ <description>Make testing and generating new format signatures easier.</description>
+ <build>
+  <plugins>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>2.0.2</version>
+    <configuration>
+     <source>1.6</source>
+     <target>1.6</target>
+    </configuration>
+   </plugin>
+   <plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <configuration>
+     <archive>
+      <manifest>
+       <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass>
+      </manifest>
+     </archive>
+     <descriptorRefs>
+      <descriptorRef>jar-with-dependencies</descriptorRef>
+     </descriptorRefs>
+    </configuration>
+    <executions>
+     <execution>
+      <id>make-my-jar-with-dependencies</id>
+      <phase>package</phase>
+      <goals>
+       <goal>single</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
+   <!-- http://code.google.com/p/maven-license-plugin/wiki/HowTo -->
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+                <header>src/etc/header.txt</header>
+                <excludes>
+                    <exclude>target/**</exclude>
+                    <exclude>data/**</exclude>
+                </excludes>
+                <properties>
+                    <year>${project.inceptionYear}</year>
+                    <name>Andrew Jackson</name>
+                    <email>Andrew.Jackson@bl.uk</email>
+                </properties>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+  </plugins>
+ </build>
+ <dependencies>
+  <dependency>
+   <groupId>junit</groupId>
+   <artifactId>junit</artifactId>
+   <version>4.7</version>
+   <type>jar</type>
+   <scope>test</scope>
+  </dependency>
+  <dependency>
+   <groupId>log4j</groupId>
+   <artifactId>log4j</artifactId>
+   <version>1.2.13</version>
+   <type>jar</type>
+   <scope>compile</scope>
+  </dependency>
+  <dependency>
+   <groupId>org.apache.tika</groupId>
+   <artifactId>tika-core</artifactId>
+   <version>1.2</version>
+  </dependency>
+  <dependency>
+   <groupId>org.apache.httpcomponents</groupId>
+   <artifactId>httpclient</artifactId>
+   <version>4.2.1</version>
+  </dependency>
+  <dependency>
+   <groupId>org.opf-labs.planets</groupId>
+   <artifactId>core-techreg</artifactId>
+   <version>1.0.1</version>
+  </dependency>
+  <dependency>
+   <groupId>commons-cli</groupId>
+   <artifactId>commons-cli</artifactId>
+   <version>1.2</version>
+  </dependency>
+ </dependencies>
+
+ <repositories>
+  <repository>
+   <id>planets-suite-repository</id>
+   <name>The Planets Suite Maven Repository, hosted by SourceForge.</name>
+   <url>http://planets-suite.sourceforge.net/maven2/snapshots/</url>
+   <snapshots>
+    <enabled>true</enabled>
+   </snapshots>
+  </repository>
+ </repositories>
+
+ <pluginRepositories>
+  <pluginRepository>
+   <id>onejar-maven-plugin.googlecode.com</id>
+   <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
+  </pluginRepository>
+ </pluginRepositories>
+
+ <inceptionYear>2012</inceptionYear>
+</project>
