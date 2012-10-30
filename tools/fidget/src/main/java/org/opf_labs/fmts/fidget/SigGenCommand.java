@@ -63,8 +63,6 @@ public class SigGenCommand {
 		options.addOption( "l", "list", false, "list all known types.");
 		options.addOption( "?", "help", false, "print help message");
 
-		HelpFormatter formatter = new HelpFormatter();
-		
 		try {
 			// parse the command line arguments
 			CommandLine line = parser.parse( options, args );
@@ -78,8 +76,7 @@ public class SigGenCommand {
 			
 			// Check mode:
 			if( line.hasOption("?") ) {
-				// HELP mode:
-				formatter.printHelp( "fidget [OPTION]... [FILE]...", options );
+				printHelp(options);
 				
 			} else if( line.hasOption("C") ) {
 				// Convert mode:
@@ -119,7 +116,13 @@ public class SigGenCommand {
 		}
 		catch( ParseException exp ) {
 			System.out.println( "Unexpected exception:" + exp.getMessage() );
+			printHelp(options);
 		}
+	}
+	
+	private static void printHelp(Options options) {
+		HelpFormatter formatter = new HelpFormatter();
+		formatter.printHelp( "fidget [OPTION]... [FILE]...", options );		
 	}
 	
 	private static TikaSigTester tikaStarter( String sigfile, boolean sigfileAlone ) throws MimeTypeException, IOException {
