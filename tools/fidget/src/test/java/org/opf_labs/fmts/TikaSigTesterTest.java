@@ -29,6 +29,7 @@ import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
 import org.junit.Test;
+import org.opf_labs.fmts.fidget.TikaSigTester;
 import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
 import org.opf_labs.fmts.mimeinfo.MimeInfoUtilsTest;
 
@@ -39,7 +40,7 @@ import org.opf_labs.fmts.mimeinfo.MimeInfoUtilsTest;
 public class TikaSigTesterTest {
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.TikaSigTester#TikaSigTester(java.io.File, boolean)}.
+	 * Test method for {@link org.opf_labs.fmts.fidget.TikaSigTester#TikaSigTester(java.io.File, boolean)}.
 	 * @throws IOException 
 	 * @throws MimeTypeException 
 	 */

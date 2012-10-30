@@ -26,8 +26,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import org.opf_labs.fmts.droid.InternalSigSubmission;
-import org.opf_labs.fmts.droid.SigDefSubmission;
+import org.opf_labs.fmts.fidget.droid.InternalSigSubmission;
+import org.opf_labs.fmts.fidget.droid.SigDefSubmission;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>

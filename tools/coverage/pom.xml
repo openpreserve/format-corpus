@@ -22,7 +22,7 @@
     <configuration>
      <archive>
       <manifest>
-       <mainClass>org.opf_labs.fmts.SigGenCommand</mainClass>
+       <mainClass>org.opf_labs.fmts.CoverageAnalysis</mainClass>
       </manifest>
      </archive>
      <descriptorRefs>
@@ -85,11 +85,6 @@
    <groupId>org.apache.tika</groupId>
    <artifactId>tika-core</artifactId>
    <version>1.2</version>
-  </dependency>
-  <dependency>
-   <groupId>org.apache.httpcomponents</groupId>
-   <artifactId>httpclient</artifactId>
-   <version>4.2.1</version>
   </dependency>
   <dependency>
    <groupId>org.opf-labs.planets</groupId>

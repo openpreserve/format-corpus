@@ -16,7 +16,7 @@
 /**
  * 
  */
-package org.opf_labs.fmts;
+package org.opf_labs.fmts.fidget;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,9 +32,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.apache.tika.mime.MimeTypeException;
-import org.apache.tika.mime.TikaMimeInfo;
-import org.opf_labs.fmts.droid.PRONOMSigGenerator;
-import org.opf_labs.fmts.droid.SigDefSubmission;
+import org.opf_labs.fmts.fidget.droid.PRONOMSigGenerator;
+import org.opf_labs.fmts.fidget.droid.SigDefSubmission;
 import org.opf_labs.fmts.mimeinfo.MimeInfo;
 import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
 

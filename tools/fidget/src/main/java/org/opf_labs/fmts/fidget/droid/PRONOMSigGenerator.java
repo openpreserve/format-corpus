@@ -16,7 +16,7 @@
 /**
  * 
  */
-package org.opf_labs.fmts.droid;
+package org.opf_labs.fmts.fidget.droid;
 
 import java.io.IOException;
 import java.util.ArrayList;

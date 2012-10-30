@@ -16,7 +16,7 @@
 /**
  * 
  */
-package org.opf_labs.fmts.droid;
+package org.opf_labs.fmts.fidget.droid;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>

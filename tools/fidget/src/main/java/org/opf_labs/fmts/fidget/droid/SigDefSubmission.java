@@ -16,7 +16,7 @@
 /**
  * 
  */
-package org.opf_labs.fmts.droid;
+package org.opf_labs.fmts.fidget.droid;
 
 import java.util.ArrayList;
 import java.util.List;
