@@ -115,7 +115,7 @@ public class SigGenCommand {
 			}
 		}
 		catch( ParseException exp ) {
-			System.out.println( "Unexpected exception:" + exp.getMessage() );
+			System.out.println( "Unexpected exception:" + exp.getMessage() +"\n" );
 			printHelp(options);
 		}
 	}

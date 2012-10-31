@@ -17,6 +17,7 @@
      <target>1.6</target>
     </configuration>
    </plugin>
+   <!--
    <plugin>
     <artifactId>maven-assembly-plugin</artifactId>
     <configuration>
@@ -39,6 +40,7 @@
      </execution>
     </executions>
    </plugin>
+     -->
    <plugin>
    <!-- http://code.google.com/p/maven-license-plugin/wiki/HowTo -->
             <groupId>com.mycila.maven-license-plugin</groupId>
@@ -64,6 +66,59 @@
                 </execution>
             </executions>
         </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>appassembler-maven-plugin</artifactId>
+        <version>1.3</version>
+        <executions>
+          <execution>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>assemble</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <binPrefix>fidget</binPrefix>
+          <assembleDirectory>${project.build.directory}/appassembler</assembleDirectory>
+          <extraJvmArguments>-Xms256m -Xmx1024m</extraJvmArguments>
+          <generateRepository>false</generateRepository>
+          <repositoryName>lib</repositoryName>
+          <repositoryLayout>flat</repositoryLayout>
+          <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+          <platforms>
+            <platform>windows</platform>
+            <platform>unix</platform>
+          </platforms>
+          <programs>
+            <program>
+              <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass>
+              <name>fidget</name>
+            </program>
+          </programs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <descriptors>
+            <descriptor>src/main/assembly/bin.xml</descriptor>
+            <descriptor>src/main/assembly/bin-unix.xml</descriptor>
+            <descriptor>src/main/assembly/src.xml</descriptor>
+          </descriptors>
+          <tarLongFileMode>gnu</tarLongFileMode>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>        
   </plugins>
  </build>
  <dependencies>
