@@ -48,7 +48,7 @@ public class Glob {
 	 * @return the pattern
 	 */
 	public String getPattern() {
-		return pattern;
+		return this.pattern;
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class Glob {
 	 * @return the weight
 	 */
 	public String getWeight() {
-		return weight;
+		return this.weight;
 	}
 
 	/**

@@ -26,12 +26,14 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import org.opf_labs.fmts.fidget.droid.InternalSigSubmission;
+import org.opf_labs.fmts.fidget.droid.InternalSig;
+import org.opf_labs.fmts.fidget.droid.InternalSig.Anchor;
 import org.opf_labs.fmts.fidget.droid.SigDefSubmission;
+import org.opf_labs.fmts.fidget.droid.SigDefSubmission.Builder;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
- *
+ * 
  */
 public class MimeInfoUtils {
 
@@ -43,68 +45,87 @@ public class MimeInfoUtils {
 		try {
 			context = JAXBContext.newInstance(MimeInfo.class);
 			marshaller = context.createMarshaller();
-			marshaller.setProperty( Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE );
-	        unmarshaller = context.createUnmarshaller();		
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
+					Boolean.TRUE);
+			unmarshaller = context.createUnmarshaller();
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
 	}
-    
-    public static void printer( MimeInfo mimeInfo ) throws JAXBException {
-        StringWriter writer = new StringWriter();
-        marshaller.marshal(mimeInfo,writer);
-        System.out.println(writer.toString());
-    }
-    
-    public static MimeInfo parser( InputStream in ) throws JAXBException {
-        return (MimeInfo)unmarshaller.unmarshal(in);
-    }
 
-    /**
-     * Generates a DROID-compatible SigDefSubmission from a MimeInfo class.
-     * 
-     * FIXME A number of unresolved issues with translation:
-     *  - No clear AND/OR mapping. Are multiple DROID signatures ORs or ANDs in this context?
-     *  - Only maps a very limited sub-set of MimeInfo 
-     *  - No priority mapping.
-     * 
-     * @param mi
-     * @return
-     */
+	/**
+	 * Convenience method to print MimeInfo to screen
+	 * 
+	 * @param mimeInfo
+	 * @throws JAXBException
+	 */
+	public static void printer(MimeInfo mimeInfo) throws JAXBException {
+		StringWriter writer = new StringWriter();
+		marshaller.marshal(mimeInfo, writer);
+		System.out.println(writer.toString());
+	}
+
+	/**
+	 * @param in
+	 *            Input stream to the XML MimeInfo representation
+	 * @return the MimeInfo object from XML
+	 * @throws JAXBException
+	 *             if the XML sucks...
+	 */
+	public static MimeInfo parser(InputStream in) throws JAXBException {
+		return (MimeInfo) unmarshaller.unmarshal(in);
+	}
+
+	/**
+	 * Generates a DROID-compatible SigDefSubmission from a MimeInfo class.
+	 * 
+	 * FIXME A number of unresolved issues with translation: - No clear AND/OR
+	 * mapping. Are multiple DROID signatures ORs or ANDs in this context? -
+	 * Only maps a very limited sub-set of MimeInfo - No priority mapping.
+	 * 
+	 * @param mi
+	 * @return the DROID signature definitions submission
+	 */
 	public static SigDefSubmission toDroidSigDef(MimeInfo mi) {
 		MimeType mt = mi.getMimetypes().get(0);
-		SigDefSubmission sd = new SigDefSubmission();
-		sd.name = mt.getAcronyms().toString();
-		sd.version = null;
-		sd.puid = "tika/"+mt.getType();
-		sd.extension = mt.getGlobs().get(0).getPattern();
-		sd.mimetype = mt.getType();
-		if( mt.getMagics() != null ) {
-			for( Magic mag : mt.getMagics() ) {
-				if( mag.getMatches() != null ) {
-					for( Match m : mag.getMatches() ) {
-						InternalSigSubmission iss = new InternalSigSubmission();
-						if( ! "string".equalsIgnoreCase(m.getType()) ) {
-							// FIXME Only supports simple match types, so warn for now.
-							System.err.println("Cannot currently transform sigs of type "+m.getType());
+		Builder builder = SigDefSubmission.fromValues("tika/" + mt.getType(), mt.getType()).name(mt.getAcronyms().toString());
+		builder.version("").extension(mt.getGlobs().get(0).getPattern());
+		if (mt.getMagics() != null) {
+			for (Magic mag : mt.getMagics()) {
+				if (mag.getMatches() != null) {
+					for (Match m : mag.getMatches()) {
+						if (!"string".equalsIgnoreCase(m.getType())) {
+							// FIXME Only supports simple match types, so warn
+							// for now.
+							System.err
+									.println("Cannot currently transform sigs of type "
+											+ m.getType());
 							continue;
 						}
 						// FIXME Warn because getMask is not supported?
-						// FIXME Warn because getMatches (AND matches) not supported.
+						// FIXME Warn because getMatches (AND matches) not
+						// supported.
 						// MimeInfo only really support BOF offsets.
-						iss.anchor = InternalSigSubmission.Anchor.BOFoffset;
-						// FIXME Parse 0:8 style offsets and fill out maxoffset accordingly.
-						iss.offset = Integer.parseInt(m.getOffset());
-						iss.maxoffset = iss.offset;
-						// FIXME Strip of leading 0x, or hex-encode if that is not present.
-						iss.signature = m.getValue().substring(2);
+						// FIXME Parse 0:8 style offsets and fill out maxoffset
+						// accordingly.
+						int offset = Integer.parseInt(m.getOffset());
+						String cleanSig = cleanSigString(m.getValue());
+						InternalSig iss = InternalSig.fromValues(cleanSig, Anchor.BOFoffset, offset, offset);
 						// Add to the set:
-						sd.signatures.add(iss);
+						builder.addSig(iss);
 					}
 				}
 			}
 		}
-		return sd;
+		return builder.build();
+	}
+
+	private static String cleanSigString(final String sigString) {
+		// FIXME hex-encode if leading 0x not present
+		// FIXME case sensitivity
+		if (sigString.startsWith("0x"))
+			return sigString.substring(2);
+		return sigString;
 	}
 
 	// TODO Add method to create a PRONOM record from the MimeInfo?

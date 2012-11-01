@@ -45,7 +45,7 @@ public class MimeInfo {
 	 * @return the mimetypes
 	 */
 	public List<MimeType> getMimetypes() {
-		return mimetypes;
+		return this.mimetypes;
 	}
 
 	/**

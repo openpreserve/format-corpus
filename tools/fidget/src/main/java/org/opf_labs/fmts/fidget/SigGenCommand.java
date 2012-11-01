@@ -43,6 +43,11 @@ import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
  */
 public class SigGenCommand {
 
+	/**
+	 * @param args
+	 * @throws MimeTypeException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("static-access")
 	public static void main( String[] args ) throws MimeTypeException, IOException {
 		// create the command line parser
@@ -86,11 +91,14 @@ public class SigGenCommand {
 				}
 				System.out.println("Generate DROID signature...");
 				MimeInfo mi = null;
+				FileInputStream sigStr = new FileInputStream(sigfile);
 				try {
-					mi = MimeInfoUtils.parser( new FileInputStream(sigfile) );
+					mi = MimeInfoUtils.parser( sigStr );
 				} catch (JAXBException e) {
 					e.printStackTrace();
 					return;
+				} finally {
+					sigStr.close();
 				}
 				SigDefSubmission sigdef = MimeInfoUtils.toDroidSigDef(mi);
 				// TODO Make is possible to print out the signature submission definition?
@@ -110,7 +118,9 @@ public class SigGenCommand {
 				// Set up Tika:
 				TikaSigTester tst = SigGenCommand.tikaStarter(sigfile, line.hasOption("A"));
 				// Return result:
-				System.out.println(""+tst.identify( new FileInputStream(""+line.getArgList().get(0))));
+				FileInputStream inStr = new FileInputStream(""+line.getArgList().get(0));
+				System.out.println(""+tst.identify(inStr));
+				inStr.close();
 				return;
 			}
 		}

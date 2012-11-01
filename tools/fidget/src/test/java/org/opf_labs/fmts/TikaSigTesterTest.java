@@ -18,7 +18,8 @@
  */
 package org.opf_labs.fmts;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,7 +31,6 @@ import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
 import org.junit.Test;
 import org.opf_labs.fmts.fidget.TikaSigTester;
-import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
 import org.opf_labs.fmts.mimeinfo.MimeInfoUtilsTest;
 
 /**
@@ -64,7 +64,7 @@ public class TikaSigTesterTest {
 		
 	}
 	
-	public void printMimeTypes(MimeTypes mimeTypes) {
+	private void printMimeTypes(MimeTypes mimeTypes) {
 		System.out.println("Total: "+mimeTypes.getMediaTypeRegistry().getTypes().size());
 		for( MediaType mt : mimeTypes.getMediaTypeRegistry().getTypes()) {
 			System.out.println("MediaType: "+mt.toString());

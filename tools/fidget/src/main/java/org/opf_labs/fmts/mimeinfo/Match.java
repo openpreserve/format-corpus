@@ -61,14 +61,14 @@ public class Match {
 	private String mask;
 
 	/**
-	 * @return the match
+	 * @return the list of matched
 	 */
 	public List<Match> getMatches() {
-		return matches;
+		return this.matches;
 	}
 
 	/**
-	 * @param match the match to set
+	 * @param matches the list of matches to set
 	 */
 	public void setMatches(List<Match> matches) {
 		this.matches = matches;
@@ -78,7 +78,7 @@ public class Match {
 	 * @return the type
 	 */
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class Match {
 	 * @return the offset
 	 */
 	public String getOffset() {
-		return offset;
+		return this.offset;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class Match {
 	 * @return the value
 	 */
 	public String getValue() {
-		return value;
+		return this.value;
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class Match {
 	 * @return the mask
 	 */
 	public String getMask() {
-		return mask;
+		return this.mask;
 	}
 
 	/**

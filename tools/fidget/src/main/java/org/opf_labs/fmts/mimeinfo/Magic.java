@@ -51,7 +51,7 @@ public class Magic {
 	 * @return the matches
 	 */
 	public List<Match> getMatches() {
-		return matches;
+		return this.matches;
 	}
 
 	/**
@@ -65,7 +65,7 @@ public class Magic {
 	 * @return the priority
 	 */
 	public String getPriority() {
-		return priority;
+		return this.priority;
 	}
 
 	/**

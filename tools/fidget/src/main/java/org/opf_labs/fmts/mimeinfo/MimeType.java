@@ -86,7 +86,7 @@ public class MimeType {
 	 * @return the type
 	 */
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class MimeType {
 	 * @return the globs
 	 */
 	public List<Glob> getGlobs() {
-		return globs;
+		return this.globs;
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class MimeType {
 	 * @return the magics
 	 */
 	public List<Magic> getMagics() {
-		return magics;
+		return this.magics;
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class MimeType {
 	 * @return the aliases
 	 */
 	public List<String> getAliases() {
-		return aliases;
+		return this.aliases;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class MimeType {
 	 * @return the subclassof
 	 */
 	public SubClassOf getSubclassof() {
-		return subclassof;
+		return this.subclassof;
 	}
 
 	/**
@@ -156,7 +156,7 @@ public class MimeType {
 	 * @return the comments
 	 */
 	public List<String> getComments() {
-		return comments;
+		return this.comments;
 	}
 
 	/**
@@ -170,7 +170,7 @@ public class MimeType {
 	 * @return the acronyms
 	 */
 	public List<String> getAcronyms() {
-		return acronyms;
+		return this.acronyms;
 	}
 
 	/**
@@ -184,7 +184,7 @@ public class MimeType {
 	 * @return the expandedacronyms
 	 */
 	public List<String> getExpandedacronyms() {
-		return expandedacronyms;
+		return this.expandedacronyms;
 	}
 
 	/**
@@ -198,7 +198,7 @@ public class MimeType {
 	 * @return the icons
 	 */
 	public List<String> getIcons() {
-		return icons;
+		return this.icons;
 	}
 
 	/**
@@ -212,7 +212,7 @@ public class MimeType {
 	 * @return the genericicons
 	 */
 	public List<String> getGenericicons() {
-		return genericicons;
+		return this.genericicons;
 	}
 
 	/**
@@ -226,7 +226,7 @@ public class MimeType {
 	 * @return the rootXML
 	 */
 	public RootXML getRootXML() {
-		return rootXML;
+		return this.rootXML;
 	}
 
 	/**

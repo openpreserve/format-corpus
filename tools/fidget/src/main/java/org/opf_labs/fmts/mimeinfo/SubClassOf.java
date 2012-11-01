@@ -37,7 +37,7 @@ public class SubClassOf {
 	 * @return the type
 	 */
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 	/**

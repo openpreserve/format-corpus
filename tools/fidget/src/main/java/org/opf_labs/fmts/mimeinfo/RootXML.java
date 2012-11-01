@@ -39,7 +39,7 @@ public class RootXML {
 	 * @return the namespaceURI
 	 */
 	public String getNamespaceURI() {
-		return namespaceURI;
+		return this.namespaceURI;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class RootXML {
 	 * @return the localName
 	 */
 	public String getLocalName() {
-		return localName;
+		return this.localName;
 	}
 
 	/**
