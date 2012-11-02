@@ -16,7 +16,7 @@
 /**
  * 
  */
-package org.opf_labs.fmts;
+package org.opf_labs.fmts.fidget;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -31,16 +31,16 @@ import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
 import org.junit.Test;
 import org.opf_labs.fmts.fidget.TikaSigTester;
-import org.opf_labs.fmts.mimeinfo.MimeInfoUtilsTest;
+import org.opf_labs.fmts.fidget.mimeinfo.MimeInfoUtilsTest;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
  *
  */
-public class TikaSigTesterTest {
+public class OldTikaSigTesterTest {
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.fidget.TikaSigTester#TikaSigTester(java.io.File, boolean)}.
+	 * Test method for {@link org.opf_labs.fmts.fidget.fidget.TikaSigTester#TikaSigTester(java.io.File, boolean)}.
 	 * @throws IOException 
 	 * @throws MimeTypeException 
 	 */

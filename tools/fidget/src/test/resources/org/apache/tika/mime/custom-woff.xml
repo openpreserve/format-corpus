@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2012 Andrew Jackson <Andrew.Jackson@bl.uk>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!-- See http://tika.apache.org/1.0/parser_guide.html#Add_your_MIME-Type -->
+<mime-info>
+
+  <mime-type type="application/font-woff">
+    <!-- Source is http://www.w3.org/TR/2011/CR-WOFF-20110804/#WOFFHeader 
+         Note that this could be more detailed, covering different versions etc. -->
+    <!-- OSX UTI org.w3c.woff -->
+    <_comment>WOFF File Format</_comment>
+    <magic priority="50">
+      <match value="0x774F4646" type="string" offset="0"/>
+    </magic>
+    <glob pattern="*.woff"/>
+  </mime-type>
+</mime-info>

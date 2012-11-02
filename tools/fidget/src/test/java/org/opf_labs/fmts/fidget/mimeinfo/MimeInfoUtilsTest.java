@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.opf_labs.fmts.mimeinfo;
+package org.opf_labs.fmts.fidget.mimeinfo;
 
 import static org.junit.Assert.*;
 
@@ -23,6 +23,8 @@ import java.io.FileNotFoundException;
 import javax.xml.bind.JAXBException;
 
 import org.junit.Test;
+import org.opf_labs.fmts.mimeinfo.MimeInfo;
+import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
 
 /**
  * 

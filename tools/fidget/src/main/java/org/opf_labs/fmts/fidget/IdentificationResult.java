@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2012 Andrew Jackson <Andrew.Jackson@bl.uk>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.opf_labs.fmts.fidget;
 
 import java.io.BufferedInputStream;
@@ -159,7 +174,7 @@ public final class IdentificationResult {
 		return this.location;
 	}
 
-	private static MediaType identify(final MimeTypes mimeRepo,
+	static MediaType identify(final MimeTypes mimeRepo,
 			final InputStream input) {
 		Metadata metadata = new Metadata();
 		MediaType mediaType;
@@ -172,7 +187,7 @@ public final class IdentificationResult {
 		return mediaType;
 	}
 
-	private static final String hash64K(InputStream stream) throws IOException {
+	static final String hash64K(final InputStream stream) throws IOException {
 		SHA256.reset();
 		// Create input streams for digest calculation
 		DigestInputStream SHA256Stream = new DigestInputStream(stream, SHA256);
@@ -182,4 +197,73 @@ public final class IdentificationResult {
 		// Return the new instance from the calulated details
 		return Hex.encodeHexString(SHA256.digest());
 	}
+
+	/**
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "IdentificationResult [hash64K=" + this.hash64K + ", location="
+				+ this.location + ", mime=" + this.mime + ", duration="
+				+ this.duration + "]";
+	}
+
+	/**
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ (int) (this.duration ^ (this.duration >>> 32));
+		result = prime * result
+				+ ((this.hash64K == null) ? 0 : this.hash64K.hashCode());
+		result = prime * result
+				+ ((this.location == null) ? 0 : this.location.hashCode());
+		result = prime * result
+				+ ((this.mime == null) ? 0 : this.mime.hashCode());
+		return result;
+	}
+
+	/**
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof IdentificationResult)) {
+			return false;
+		}
+
+		IdentificationResult other = (IdentificationResult) obj;
+		if (this.duration != other.duration) {
+			return false;
+		}
+		if (this.hash64K == null) {
+			if (other.hash64K != null) {
+				return false;
+			}
+		} else if (!this.hash64K.equals(other.hash64K)) {
+			return false;
+		}
+		if (this.location == null) {
+			if (other.location != null) {
+				return false;
+			}
+		} else if (!this.location.equals(other.location)) {
+			return false;
+		}
+		if (this.mime == null) {
+			if (other.mime != null) {
+				return false;
+			}
+		} else if (!this.mime.equals(other.mime)) {
+			return false;
+		}
+		return true;
+	}
+
 }

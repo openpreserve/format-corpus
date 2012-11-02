@@ -23,7 +23,7 @@
     <configuration>
      <archive>
       <manifest>
-       <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass>
+       <mainClass>org.opf_labs.fmts.fidget.fidget.SigGenCommand</mainClass>
       </manifest>
      </archive>
      <descriptorRefs>
@@ -92,7 +92,7 @@
           </platforms>
           <programs>
             <program>
-              <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass>
+              <mainClass>org.opf_labs.fmts.fidget.fidget.SigGenCommand</mainClass>
               <name>fidget</name>
             </program>
           </programs>
