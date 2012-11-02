@@ -143,7 +143,7 @@ public class TikaResourceHelperTest {
 		List<String> sigFileHashes = new ArrayList<String>();
 		for (File sigFile : custSigFiles) {
 			FileInputStream fis = new FileInputStream(sigFile);
-			sigFileHashes.add(IdentificationResult.hash64K(fis));
+			sigFileHashes.add(TikaIdentifier.hash64K(fis));
 			fis.close();
 		}
 		// Now convert to an array of Streams using streamsFromFiles()
@@ -151,7 +151,7 @@ public class TikaResourceHelperTest {
 		// And again get the hashes
 		List<String> sigStrHashes = new ArrayList<String>();
 		for (InputStream sigStr : custSigStreams) {
-			sigStrHashes.add(IdentificationResult.hash64K(sigStr));
+			sigStrHashes.add(TikaIdentifier.hash64K(sigStr));
 		}
 		// Make sure we got something
 		assertTrue("Expected some test data", sigStrHashes.size() > 0);
@@ -177,7 +177,7 @@ public class TikaResourceHelperTest {
 		List<String> sigUrlHashes = new ArrayList<String>();
 		for (URL sigUrl : custSigUrls) {
 			InputStream urlStr = sigUrl.openStream();
-			sigUrlHashes.add(IdentificationResult.hash64K(urlStr));
+			sigUrlHashes.add(TikaIdentifier.hash64K(urlStr));
 			urlStr.close();
 		}
 		// Now convert to an array of Streams using streamsFromFiles()
@@ -185,7 +185,7 @@ public class TikaResourceHelperTest {
 		// And again get the hashes
 		List<String> sigStrHashes = new ArrayList<String>();
 		for (InputStream sigStr : custSigStreams) {
-			sigStrHashes.add(IdentificationResult.hash64K(sigStr));
+			sigStrHashes.add(TikaIdentifier.hash64K(sigStr));
 		}
 		// Make sure we got something
 		assertTrue("Expected some test data", sigStrHashes.size() > 0);

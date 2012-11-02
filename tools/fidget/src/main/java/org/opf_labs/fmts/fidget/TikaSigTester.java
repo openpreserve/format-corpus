@@ -279,7 +279,7 @@ public final class TikaSigTester {
 	 */
 	public IdentificationResult identify(File file)
 			throws FileNotFoundException {
-		return IdentificationResult.fromFile(this.mimeRepository, file);
+		return TikaIdentifier.fromFile(this.mimeRepository, file);
 	}
 
 	List<IdentificationResult> identify(String govDocsData) throws Exception {

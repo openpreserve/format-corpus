@@ -16,16 +16,10 @@
 package org.opf_labs.fmts;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.net.URISyntaxException;
 import java.util.Collection;
-import java.util.List;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.filefilter.FileFilterUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
-import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
@@ -66,6 +60,7 @@ public class AllFidgetTests {
 		return new File(ClassLoader.getSystemResource(resName).toURI());
 	}
 
+	@SuppressWarnings("unused")
 	private final static Collection<File> getResourceFiles(String resName,
 			boolean recurse) throws URISyntaxException {
 		return getResourceFilesByExt(resName, recurse, null);
