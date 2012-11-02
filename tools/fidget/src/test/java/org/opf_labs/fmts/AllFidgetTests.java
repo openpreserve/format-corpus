@@ -39,15 +39,36 @@ import org.opf_labs.fmts.fidget.TikaResourceHelperTest;
 @SuiteClasses({ OldTikaSigTesterTest.class, TikaResourceHelperTest.class })
 public class AllFidgetTests {
 	/** Path to the Tika sig file resource dir */
-	public static final String TIKA_MIME_PATH = "org/apache/tika/mime"; 
+	public static final String TIKA_MIME_PATH = "org/apache/tika/mime";
+	private final static String OPF_FMT_PATH = "org/opf_labs/fmts/";
+	private final static String GOVDOCS_PATH = OPF_FMT_PATH + "govdocs/";
+	private final static String GOVDOCS_ZIP_PATH =  GOVDOCS_PATH + "zip/";
+	private final static String GOVDOCS_DIR_PATH = GOVDOCS_PATH + "dir";
 	private static final String XML_EXT = "xml";
 	/**
 	 * @return all of the files
-	 * @throws URISyntaxException
+	 * @throws URISyntaxException when looking up the test resource goes wrong...
 	 */
 	public static final Collection<File> getCustomSigTestFile() throws URISyntaxException {
 		return getResourceFilesByExt(TIKA_MIME_PATH, true, XML_EXT);
 	}
+	
+	/**
+	 * @return the zip based GovDocs test dir
+	 * @throws URISyntaxException when looking up the test resource goes wrong...
+	 */
+	public static final File getGovDocsZip() throws URISyntaxException {
+		return getResourceAsFile(GOVDOCS_ZIP_PATH); 
+	}
+	
+	/**
+	 * @return the Directory based GovDocs test dir
+	 * @throws URISyntaxException when looking up the test resource goes wrong...
+	 */
+	public static final File getGovDocsDir() throws URISyntaxException {
+		return getResourceAsFile(GOVDOCS_DIR_PATH); 
+	}
+
 	/**
 	 * @param resName
 	 *            the name of the resource to retrieve a file for

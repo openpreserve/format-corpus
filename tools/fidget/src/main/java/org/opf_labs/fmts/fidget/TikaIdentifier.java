@@ -98,7 +98,7 @@ class TikaIdentifier {
 		return fromStream(mimeRepo, stream, IdentificationResult.STREAM_LOC);
 	}
 
-	private static final IdentificationResult fromStream(
+	static final IdentificationResult fromStream(
 			final MimeTypes mimeRepo, final InputStream stream, URI loc) {
 		// Get a buffered input stream that supports marks
 		BufferedInputStream mrkStr = new BufferedInputStream(stream);

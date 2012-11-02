@@ -43,9 +43,9 @@ import org.apache.tika.mime.MimeTypesFactory;
  */
 
 class TikaResourceHelper {
-	/** Name of the core Tika MIME Type definition file */
+	/** Name of the core Tika MIME CorpraType definition file */
 	public final static String TIKA_MIMETYPES = "tika-mimetypes.xml";
-	/** Name of the custom Tika MIME Type definition file */
+	/** Name of the custom Tika MIME CorpraType definition file */
 	public final static String CUSTOM_MIMETYPES = "custom-mimetypes.xml";
 
 	private TikaResourceHelper() {

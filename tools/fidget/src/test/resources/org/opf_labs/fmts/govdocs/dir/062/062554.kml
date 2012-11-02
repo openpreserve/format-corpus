@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2012 Andrew Jackson <Andrew.Jackson@bl.uk>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Folder>
+  <name>TEST: GE animation of FSX N0R Radar</name>
+  <description><![CDATA[
+Before animating, shrink time window in slider to minimum.
+Animation only works in latest GE beta 4.0 (after Sept 13, or 14 for Mac).
+Overlay shows NWS Radar (N0R) from the FSX radar
+NOTE: This is experimental.
+]]></description>
+  <LookAt>
+    <longitude>-113.81361029885</longitude>
+    <latitude>36.9721980146928</latitude>
+    <range>10000000</range>
+    <tilt>0</tilt>
+    <heading>0</heading>
+    <TimeSpan>
+    <begin>2009-03-17T20:51:00</begin>
+    <end>2009-03-17T21:01:00</end>
+    </TimeSpan>
+  </LookAt>
+  <TimeSpan>
+      <begin>2009-03-17T20:51:00</begin>
+      <end>2009-03-17T22:39:00</end>
+  </TimeSpan> 
+  <Folder><name>Legend</name>
+  <ScreenOverlay>
+<name>Legend</name>
+<visibility>1</visibility>
+<Icon>
+<href>http://www.srh.noaa.gov/ridge/kml/radarkeyimages/FSX_N0R_Legend_0.gif</href>
+<refreshMode>onInterval</refreshMode>
+<refreshInterval>120</refreshInterval>
+</Icon>
+<overlayXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+<screenXY x="1.0" y="0.5" xunits="fraction" yunits="fraction"/>
+<rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>                     
+</ScreenOverlay></Folder>
+  
+  
+  <Folder>
+    <name>frames</name>
+    <description>Animation frames FSX NWS radar</description>
+    <GroundOverlay>
+      <name>FSX - 20:51</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T20:51:00</begin>
+	<end>2009-03-17T21:01:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2051_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 21:01</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T21:01:00</begin>
+	<end>2009-03-17T21:10:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2101_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 21:10</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T21:10:00</begin>
+	<end>2009-03-17T21:20:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2110_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 21:20</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T21:20:00</begin>
+	<end>2009-03-17T21:30:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2120_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 21:30</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T21:30:00</begin>
+	<end>2009-03-17T21:40:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2130_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 21:40</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T21:40:00</begin>
+	<end>2009-03-17T21:50:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2140_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 21:50</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T21:50:00</begin>
+	<end>2009-03-17T22:00:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2150_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 22:00</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T22:00:00</begin>
+	<end>2009-03-17T22:09:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2200_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 22:09</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T22:09:00</begin>
+	<end>2009-03-17T22:19:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2209_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>    <GroundOverlay>
+      <name>FSX - 22:19</name>
+      <description>FSX Radar</description>
+      <TimeSpan>
+	<begin>2009-03-17T22:19:00</begin>
+	<end>2009-03-17T22:39:00</end>
+      </TimeSpan>
+      <Icon>
+	<href>http://www.srh.noaa.gov/ridge/RadarImg/N0R/FSX/FSX_20090317_2219_N0R.gif</href>
+      </Icon>
+      <LatLonBox id="BBOX">
+	<south>32.16706800981</south>
+	<north>36.9721980146928</north>
+	<west>-113.81361029885</west>
+	<east>-108.57165029352</east>
+	<rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay></Folder>
+</Folder>
+</kml>

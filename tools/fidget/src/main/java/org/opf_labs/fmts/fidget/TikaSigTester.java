@@ -314,7 +314,7 @@ public final class TikaSigTester {
 	}
 
 	/**
-	 * @return the sorted set of media types contained in the MIME Type Repo
+	 * @return the sorted set of media types contained in the MIME CorpraType Repo
 	 */
 	public final SortedSet<MediaType> getTypes() {
 		return Collections.unmodifiableSortedSet(this.mimeRepository
