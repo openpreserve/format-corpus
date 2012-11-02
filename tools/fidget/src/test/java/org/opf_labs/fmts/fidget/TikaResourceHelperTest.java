@@ -20,11 +20,17 @@ package org.opf_labs.fmts.fidget;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+import org.opf_labs.fmts.AllFidgetTests;
 
 /**
  * TODO JavaDoc for TikaResourceHelperTest.</p> TODO Tests for
@@ -39,7 +45,6 @@ import org.junit.Test;
  */
 
 public class TikaResourceHelperTest {
-
 	/**
 	 * Test method for
 	 * {@link org.opf_labs.fmts.fidget.TikaResourceHelper#concat(Object[], Object[])}
@@ -120,5 +125,71 @@ public class TikaResourceHelperTest {
 				.getPath().contains(TikaResourceHelper.TIKA_MIMETYPES));
 		assertTrue("expecting custom mime types NOT:" + vanillaUrls.get(1), vanillaUrls.get(1)
 				.getPath().contains(TikaResourceHelper.CUSTOM_MIMETYPES));
+	}
+	
+	/**
+	 * Test method for
+	 * {@link org.opf_labs.fmts.fidget.TikaResourceHelper#streamsFromFiles(java.io.File...)}.
+	 * @throws URISyntaxException when the test resource lookup goes wrong.
+	 * @throws IOException 
+	 */
+	@SuppressWarnings("javadoc")
+	@Test
+	public final void testStreamsFromFiles() throws URISyntaxException, IOException {
+		// Get the test sig-def files from the resource directory 
+		List<File> custSigFileLst = new ArrayList<File>(AllFidgetTests.getCustomSigTestFile());
+		File[] custSigFiles = custSigFileLst.toArray(new File[custSigFileLst.size()]);
+		// OK going to collect the 64K hashes in order
+		List<String> sigFileHashes = new ArrayList<String>();
+		for (File sigFile : custSigFiles) {
+			FileInputStream fis = new FileInputStream(sigFile);
+			sigFileHashes.add(IdentificationResult.hash64K(fis));
+			fis.close();
+		}
+		// Now convert to an array of Streams using streamsFromFiles()
+		InputStream[] custSigStreams = TikaResourceHelper.streamsFromFiles(custSigFiles);
+		// And again get the hashes
+		List<String> sigStrHashes = new ArrayList<String>();
+		for (InputStream sigStr : custSigStreams) {
+			sigStrHashes.add(IdentificationResult.hash64K(sigStr));
+		}
+		// Make sure we got something
+		assertTrue("Expected some test data", sigStrHashes.size() > 0);
+		// Check that the lists are equal
+		assertTrue("Hash lists should be equal", sigFileHashes.equals(sigStrHashes));
+	}
+
+	/**
+	 * Test method for
+	 * {@link org.opf_labs.fmts.fidget.TikaResourceHelper#streamsFromUrls(List)}.
+	 * @throws URISyntaxException when the test resource lookup goes wrong.
+	 * @throws IOException 
+	 */
+	@SuppressWarnings("javadoc")
+	@Test
+	public final void testStreamsFromUrls() throws URISyntaxException, IOException {
+		// Get the test sig-def files from the resource directory 
+		List<URL> custSigUrls = new ArrayList<URL>();
+		for (File csFile : AllFidgetTests.getCustomSigTestFile()) {
+			custSigUrls.add(csFile.toURI().toURL());
+		}
+		// OK going to collect the 64K hashes in order
+		List<String> sigUrlHashes = new ArrayList<String>();
+		for (URL sigUrl : custSigUrls) {
+			InputStream urlStr = sigUrl.openStream();
+			sigUrlHashes.add(IdentificationResult.hash64K(urlStr));
+			urlStr.close();
+		}
+		// Now convert to an array of Streams using streamsFromFiles()
+		InputStream[] custSigStreams = TikaResourceHelper.streamsFromUrls(custSigUrls);
+		// And again get the hashes
+		List<String> sigStrHashes = new ArrayList<String>();
+		for (InputStream sigStr : custSigStreams) {
+			sigStrHashes.add(IdentificationResult.hash64K(sigStr));
+		}
+		// Make sure we got something
+		assertTrue("Expected some test data", sigStrHashes.size() > 0);
+		// Check that the lists are equal
+		assertTrue("Hash lists should be equal", sigUrlHashes.equals(sigStrHashes));
 	}
 }
