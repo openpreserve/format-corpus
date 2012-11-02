@@ -26,6 +26,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import org.apache.commons.codec.binary.Hex;
 import org.opf_labs.fmts.fidget.droid.InternalSig;
 import org.opf_labs.fmts.fidget.droid.InternalSig.Anchor;
 import org.opf_labs.fmts.fidget.droid.SigDefSubmission;
@@ -88,7 +89,8 @@ public class MimeInfoUtils {
 	 */
 	public static SigDefSubmission toDroidSigDef(MimeInfo mi) {
 		MimeType mt = mi.getMimetypes().get(0);
-		Builder builder = SigDefSubmission.fromValues("tika/" + mt.getType(), mt.getType()).name(mt.getAcronyms().toString());
+		Builder builder = SigDefSubmission.fromValues("tika/" + mt.getType(),
+				mt.getType()).name(mt.getAcronyms().toString());
 		builder.version("").extension(mt.getGlobs().get(0).getPattern());
 		if (mt.getMagics() != null) {
 			for (Magic mag : mt.getMagics()) {
@@ -110,7 +112,8 @@ public class MimeInfoUtils {
 						// accordingly.
 						int offset = Integer.parseInt(m.getOffset());
 						String cleanSig = cleanSigString(m.getValue());
-						InternalSig iss = InternalSig.fromValues(cleanSig, Anchor.BOFoffset, offset, offset);
+						InternalSig iss = InternalSig.fromValues(cleanSig,
+								Anchor.BOFoffset, offset, offset);
 						// Add to the set:
 						builder.addSig(iss);
 					}
@@ -125,6 +128,8 @@ public class MimeInfoUtils {
 		// FIXME case sensitivity
 		if (sigString.startsWith("0x"))
 			return sigString.substring(2);
+		// TODO: test this as I'm not sure it does the right thing ATM
+		Hex.encodeHexString(sigString.getBytes());
 		return sigString;
 	}
 
