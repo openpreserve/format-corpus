@@ -47,18 +47,18 @@ public class TikaSigTesterTest {
 	@Test
 	public void testTikaSigTesterFileBoolean() throws MimeTypeException, IOException {
 		// Test loading a single signature, alone.
-		TikaSigTester tst = new TikaSigTester(new File(MimeInfoUtilsTest.PERCIPIO_XML), false);
+		TikaSigTester tst = TikaSigTester.filesOnly(new File(MimeInfoUtilsTest.PERCIPIO_XML));
 		//this.printMimeTypes(tst.getMimeTypes());
-		SortedSet<MediaType> types = tst.getMimeTypes().getMediaTypeRegistry().getTypes();
+		SortedSet<MediaType> types = tst.getTypes();
 		int size = types.size();
 		assertEquals("Unexpected number of signatures: "+size, size, 4 );
 		// Test using the trial signature
-		System.out.println("Try: "+tst.identify( new FileInputStream( "../.././save-as/OpenOffice.org 3.2.0 OSX/pdf-features/simple.pdf" ) ));
+		System.out.println("Try: "+tst.identify( new File( "../.././save-as/OpenOffice.org 3.2.0 OSX/pdf-features/simple.pdf" ) ));
 		
 		// Test loading all signatures:
-		tst = new TikaSigTester( new File(MimeInfoUtilsTest.PERCIPIO_XML), true);
+		tst = TikaSigTester.vanillaAndFiles(new File(MimeInfoUtilsTest.PERCIPIO_XML));
 		//this.printMimeTypes(tst.getMimeTypes());
-		types = tst.getMimeTypes().getMediaTypeRegistry().getTypes();
+		types = tst.getTypes();
 		size = types.size();
 		assertTrue("Unexpected number of signatures: "+size, size > 4 );
 		

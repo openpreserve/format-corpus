@@ -68,6 +68,12 @@ public class SigGenCommand {
 		options.addOption( "l", "list", false, "list all known types.");
 		options.addOption( "?", "help", false, "print help message");
 
+		if (args.length == 0) { 
+			System.err.println("No identification test file found!");
+			printHelp(options);
+			return;
+		}
+
 		try {
 			// parse the command line arguments
 			CommandLine line = parser.parse( options, args );
@@ -107,20 +113,13 @@ public class SigGenCommand {
 			} else if( line.hasOption("l") ) {
 				// Set up Tika:
 				TikaSigTester tst = SigGenCommand.tikaStarter(sigfile, line.hasOption("A"));
-				tst.printTypes();
+				TikaSigTester.printTypes(tst);
 				
 			} else {
-				// We are in file identification mode:
-				if( line.getArgList().size() == 0 ) {
-					System.err.println("No identification test file found!");
-					return;
-				}
 				// Set up Tika:
 				TikaSigTester tst = SigGenCommand.tikaStarter(sigfile, line.hasOption("A"));
 				// Return result:
-				FileInputStream inStr = new FileInputStream(""+line.getArgList().get(0));
-				System.out.println(""+tst.identify(inStr));
-				inStr.close();
+				System.out.println(""+tst.identify(new File(""+line.getArgList().get(0))));
 				return;
 			}
 		}
@@ -136,9 +135,9 @@ public class SigGenCommand {
 	}
 	
 	private static TikaSigTester tikaStarter( String sigfile, boolean sigfileAlone ) throws MimeTypeException, IOException {
-		TikaSigTester tst = new TikaSigTester();
+		TikaSigTester tst = TikaSigTester.vanilla();
 		if( sigfile != null ) {
-			tst = new TikaSigTester( new File(sigfile), !sigfileAlone );					
+			tst = (sigfileAlone) ? TikaSigTester.filesOnly(new File(sigfile)) : TikaSigTester.vanillaAndFiles(new File(sigfile));					
 		}
 		return tst;
 	}
