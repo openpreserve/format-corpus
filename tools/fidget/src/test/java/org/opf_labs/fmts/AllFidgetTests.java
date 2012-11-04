@@ -54,7 +54,7 @@ public class AllFidgetTests {
 	}
 	
 	/**
-	 * @return the zip based GovDocs test dir
+	 * @return the zip based GovDocsDirectories test dir
 	 * @throws URISyntaxException when looking up the test resource goes wrong...
 	 */
 	public static final File getGovDocsZip() throws URISyntaxException {
@@ -62,7 +62,7 @@ public class AllFidgetTests {
 	}
 	
 	/**
-	 * @return the Directory based GovDocs test dir
+	 * @return the Directory based GovDocsDirectories test dir
 	 * @throws URISyntaxException when looking up the test resource goes wrong...
 	 */
 	public static final File getGovDocsDir() throws URISyntaxException {

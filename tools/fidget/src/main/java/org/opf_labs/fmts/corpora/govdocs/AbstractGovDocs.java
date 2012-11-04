@@ -19,6 +19,7 @@
 package org.opf_labs.fmts.corpora.govdocs;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.Set;
 import java.util.regex.Pattern;
 
@@ -37,11 +38,16 @@ import org.opf_labs.fmts.corpora.CorpusDetails;
  * Created 2 Nov 2012:19:01:26
  */
 
-abstract class AbstractGovDocs implements CorpusDetails {
+abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
+	public static final String NAME = "GovDocsDirectories";
+	/** RegEx string for GovDocsDirectories directory names */
 	public static final String DIR_REGEX = "^\\d{3}";
+	/** RegEx string for GovDocsDirectories file names */
 	public static final String FILE_REGEX = "^\\d{6\\..*}";
 	protected static final Pattern DIR_PATTERN = Pattern.compile(DIR_REGEX);
 	protected static final Pattern FILE_PATTERN = Pattern.compile(FILE_REGEX);
+	private static final int MAX_FOLDER_NUM = 999;
+	private static final int MAX_FILE_NUM = 999999;
 	protected final File root;
 	protected final CorpusDetails details;
 	
@@ -55,6 +61,8 @@ abstract class AbstractGovDocs implements CorpusDetails {
 		this.root = root;
 		this.details = details;
 	}
+
+
 	/**
 	 * @see org.opf_labs.fmts.corpora.CorpusDetails#getName()
 	 */
@@ -131,5 +139,36 @@ abstract class AbstractGovDocs implements CorpusDetails {
 	@Override
 	public String toString() {
 		return "AbstractGovDocs [details=" + this.details + "]";
+	}
+
+	protected String getStringBaseName(int num) {
+		assert((num <= MAX_FILE_NUM) && (num>=0));
+		return (num > (MAX_FILE_NUM / 10)) ? String.valueOf(num) : String.format("%06d", num);
+	}
+	
+	protected String getFolderName(int num) {
+		assert(num >= 0 && num <= MAX_FOLDER_NUM);
+		return (num > (MAX_FOLDER_NUM / 10)) ? String.valueOf(num) : String.format("%3d", num);
+	}
+	
+	protected String makeFileName(int folderNum, int fileNum) {
+		assert(folderNum >= 0 && folderNum <= MAX_FOLDER_NUM);
+		assert(fileNum >= 0 && fileNum <= MAX_FILE_NUM);
+		return String.format("%3d%3d", folderNum, fileNum);
+	}
+	
+	protected static class FolderDetails {
+		final int count;
+		final long size;
+		final Set<String> exts;
+		
+		FolderDetails(final int count, final long size, final Set<String> exts) {
+			assert(count > 0);
+			assert(size > 0);
+			assert(exts!=null);
+			this.count = count;
+			this.size = size;
+			this.exts = Collections.unmodifiableSet(exts);
+		}
 	}
 }

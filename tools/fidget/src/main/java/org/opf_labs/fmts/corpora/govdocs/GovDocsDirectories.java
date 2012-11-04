@@ -24,68 +24,71 @@ import java.io.InputStream;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import org.apache.commons.io.FileUtils;
 import org.opf_labs.fmts.corpora.Corpora;
 import org.opf_labs.fmts.corpora.Corpora.Details;
 import org.opf_labs.fmts.corpora.CorpusDetails;
 
+import com.google.common.base.Preconditions;
+
 /**
- * Class that covers zipped version of GovDocsDirectories.
+ * Quick utility knocked up in a hurry to run the TikaSigTester over the GovDocsDirectories
+ * corpus. Initially done for a the corpus in 1000 zip form, as that's how I've
+ * got it stored. Extending to files should be easier.
  * 
- * @author  <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
- *          <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
+ * @author <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
+ *         <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
  * @version 0.1
  * 
- * Created 2 Nov 2012:19:23:06
+ *          Created 2 Nov 2012:13:35:11
  */
-
-public final class GovDocsZipped extends AbstractGovDocs {
-	/** File extension for zip "folder" in the package */
-	public static final String ZIP_EXT = "zip";
-	/** RegEx pattern for GovDocsDirectories zip "folder" name */
-	public static final String ZIP_REGEX = "\\d{3}\\." + ZIP_EXT;
-	private static final Pattern ZIP_PATTERN = Pattern.compile(ZIP_REGEX);
-
-	private GovDocsZipped(File root) {
+public class GovDocsDirectories extends AbstractGovDocs {
+	private GovDocsDirectories(final File root) {
 		super(root);
 	}
 
-	private GovDocsZipped(File root, CorpusDetails details) {
+	private GovDocsDirectories(final File root, CorpusDetails details) {
 		super(root, details);
 	}
 
-	static final GovDocsZipped fromdDir(final File root) {
-		File[] zipFiles = getZipFolders(root);
-		int count = 0;
-		long size = 0L;
-		for (File zipFile : zipFiles) {
-			count++;
-			size+=zipFile.length();
-		}
-		Details detsBuild = Corpora.details(count, size);
-		return new GovDocsZipped(root, detsBuild.build());
+	/**
+	 * @param root
+	 *            the root directory for the corpus, can be in zip or unpacked
+	 *            form
+	 * @return a new GovDocsDirectories instance rooted on the directory passed
+	 */
+	public static final GovDocsDirectories getNewInstance(final File root) {
+		Preconditions.checkNotNull(root, "root==null");
+		Preconditions.checkArgument(root.isDirectory(),
+				"root must be an existing directory.");
+		// Iterate over the files in the directory
+		return fromDirs(root);
 	}
 
-	private static final File[] getZipFolders(final File root) {
-		return root.listFiles(new FilenameFilter() {
-			@SuppressWarnings("synthetic-access")
+	private static final GovDocsDirectories fromDirs(final File root) {
+		File[] corpFiles = root.listFiles(new FilenameFilter() {
+			private Pattern pattern = null;
+
 			@Override
 			public boolean accept(File dir, String name) {
-				return ZIP_PATTERN.matcher(name).matches();
+				System.out.println(this.pattern.matcher(name).matches());
+				System.out.println("name: " + name);
+				System.out.println("pattern: " + this.pattern.pattern());
+				return this.pattern.matcher(name).matches();
 			}
 		});
-	}
-	
-	private static final void assessZipFolder(File zip) {
-		
+		int count = 0;
+		long size = 0L;
+		for (File corpFile : corpFiles) {
+			count++;
+			size += corpFile.length();
+		}
+		Details detBuild = Corpora.details(count, size);
+
+		return new GovDocsDirectories(root, detBuild.build());
 	}
 
-	static boolean isZip(final File root) {
-		/**
-		 * TODO a really lazy check for zip form, could do better
-		 */
-		return FileUtils.listFiles(root, new String[] { ZIP_EXT }, false)
-				.size() > 0;
+	private static final File[] getFilesFromRoot(final File root) {
+		return null;
 	}
 
 	@Override
@@ -130,5 +133,4 @@ public final class GovDocsZipped extends AbstractGovDocs {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

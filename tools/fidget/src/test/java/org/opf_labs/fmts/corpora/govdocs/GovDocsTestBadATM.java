@@ -27,7 +27,7 @@ import java.net.URISyntaxException;
 
 import org.junit.Test;
 import org.opf_labs.fmts.AllFidgetTests;
-import org.opf_labs.fmts.corpora.govdocs.GovDocs;
+import org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories;
 
 /**
  * TODO JavaDoc for GovDocsTestBadATM.</p>
@@ -44,25 +44,25 @@ import org.opf_labs.fmts.corpora.govdocs.GovDocs;
 public class GovDocsTestBadATM {
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#getNewInstance(java.io.File)}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#getNewInstance(java.io.File)}.
 	 */
 	@Test(expected = NullPointerException.class)
 	public final void testGetNullDir() {
-		GovDocs.getNewInstance(null);
+		GovDocsDirectories.getNewInstance(null);
 	}
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#getNewInstance(java.io.File)}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#getNewInstance(java.io.File)}.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public final void testGetNotDir() {
-		GovDocs.getNewInstance(new File("doesnt exist at all"));
+		GovDocsDirectories.getNewInstance(new File("doesnt exist at all"));
 	}
 
 	/**
 	 * README
 	 * S:/govdocs is the govdocs dir on MY machine. This test will not fire if the directory doesn't exist
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#getCount()}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#getCount()}.
 	 * @throws URISyntaxException 
 	 */
 	@Test
@@ -70,7 +70,7 @@ public class GovDocsTestBadATM {
 		File realRoot = new File("S:/govdocs/");
 		if (!realRoot.isDirectory()) return;
 		
-		GovDocs govDocs = GovDocs.getNewInstance(realRoot);
+		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(realRoot);
 		System.out.println(govDocs.getCount());
 		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() > 0);
 	}
@@ -80,7 +80,7 @@ public class GovDocsTestBadATM {
 	 */
 	@Test
 	public final void testGetCountZip() throws URISyntaxException {
-		GovDocs govDocs = GovDocs.getNewInstance(AllFidgetTests.getGovDocsZip());
+		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(AllFidgetTests.getGovDocsZip());
 		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() == 3);
 	}
 
@@ -89,22 +89,22 @@ public class GovDocsTestBadATM {
 	 */
 	@Test
 	public final void testGetCountDir() throws URISyntaxException {
-		GovDocs govDocs = GovDocs.getNewInstance(AllFidgetTests.getGovDocsDir());
+		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(AllFidgetTests.getGovDocsDir());
 		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() == 11);
 	}
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#getSize()}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#getSize()}.
 	 * @throws URISyntaxException 
 	 */
 	@Test
 	public final void testGetSize() throws URISyntaxException {
-		GovDocs govDocs = GovDocs.getNewInstance(AllFidgetTests.getGovDocsDir());
+		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(AllFidgetTests.getGovDocsDir());
 		assertTrue("No data found size: " + govDocs.getSize(), govDocs.getSize() > 0);
 	}
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#isZip(java.io.File)}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#isZip(java.io.File)}.
 	 * @throws URISyntaxException when resource lookup fails
 	 */
 	@SuppressWarnings("javadoc")

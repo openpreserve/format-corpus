@@ -19,73 +19,105 @@
 package org.opf_labs.fmts.corpora.govdocs;
 
 import java.io.File;
-import java.io.FilenameFilter;
-import java.util.regex.Pattern;
-
-import org.opf_labs.fmts.corpora.Corpora;
-import org.opf_labs.fmts.corpora.Corpora.Details;
-import org.opf_labs.fmts.corpora.CorpusDetails;
-
-import com.google.common.base.Preconditions;
+import java.io.InputStream;
+import java.util.Set;
 
 /**
- * Quick utility knocked up in a hurry to run the TikaSigTester over the GovDocs
- * corpus. Initially done for a the corpus in 1000 zip form, as that's how I've
- * got it stored. Extending to files should be easier.
+ * Describes the GovDocs corpus slice and dice interface.
+ * 
+ * GovDocs 1 million file heterogenous corpus. Each file numbered between 0 and
+ * 999,999. Files named by zero padded number (6 chars), with different
+ * extensions:
+ * 
+ * 000001.txt -> 999999.pdf
+ * 
+ * The corpus is spit into 1,000 folders, name 000 -> 999, each containing 1,000
+ * files. Folder 000 contains file 000000.? -> 000999.?, and folder 999 contains
+ * 999000.? -> 999999.?
+ * 
+ * If we ignore the extension, we know the name of every entry, and the folder
+ * that contained it is given by the first 3 chars of the file name
+ * 
+ * 
+ * TODO Better documentation here Can get a file by full name with or without
+ * extension (String number) Can get an item
  * 
  * @author <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
  * @version 0.1
  * 
- *          Created 2 Nov 2012:13:35:11
+ *          Created 3 Nov 2012:17:19:53
  */
-public class GovDocs extends AbstractGovDocs {
-	private GovDocs(final File root) {
-		super(root);
-	}
 
-	private GovDocs(final File root, CorpusDetails details) {
-		super(root, details);
-	}
+public interface GovDocs {
+	/**
+	 * @param number
+	 *            the number of the item to get (0 <= folderNum <= 999999)
+	 * @return the InputStream to the item data
+	 */
+	public InputStream getItem(int number);
 
 	/**
-	 * @param root
-	 *            the root directory for the corpus, can be in zip or unpacked
-	 *            form
-	 * @return a new GovDocs instance rooted on the directory passed
+	 * A convenience method to allow quick (parallel?) iteration and division of
+	 * the corpus. Each file is viewed as an item numbered numbered between 0
+	 * and 999 within it's folder (ignore the first 3 digits). Useful for
+	 * looping through the corpus or taking smaller samples.
+	 * 
+	 * @param folderNum
+	 *            the number of the folder the item is in (0 <= folderNum <=
+	 *            999)
+	 * @param fileNum
+	 *            the number of the file to retrieve RELATIVE to the folder
+	 *            structure. Each folder is viewed
+	 * @return the InputStream to the item data
 	 */
-	public static final GovDocs getNewInstance(final File root) {
-		Preconditions.checkNotNull(root, "root==null");
-		Preconditions.checkArgument(root.isDirectory(),
-				"root must be an existing directory.");
-		// Iterate over the files in the directory
-		return fromDirs(root);
-	}
+	public InputStream getItem(int folderNum, int fileNum);
 
-	private static final GovDocs fromDirs(final File root) {
-		File[] corpFiles = root.listFiles(new FilenameFilter() {
-			private Pattern pattern = null;
+	/**
+	 * @param number
+	 *            the number of the item to get (0 <= folderNum <= 999999)
+	 * @return the File object for the item
+	 * @throws UnsupportedOperationException
+	 *             if called on a zip based corpus, zips don't easily provide
+	 *             file access
+	 */
+	public File getItemFile(int number) throws UnsupportedOperationException;
 
-			@Override
-			public boolean accept(File dir, String name) {
-				System.out.println(this.pattern.matcher(name).matches());
-				System.out.println("name: " + name);
-				System.out.println("pattern: " + this.pattern.pattern());
-				return this.pattern.matcher(name).matches();
-			}
-		});
-		int count = 0;
-		long size = 0L;
-		for (File corpFile : corpFiles) {
-			count++;
-			size += corpFile.length();
-		}
-		Details detBuild = Corpora.details(count, size);
+	/**
+	 * @param folderNum
+	 *            the number of the folder the item is in (0 <= folderNum <=
+	 *            999)
+	 * @param fileNum
+	 *            the number of the file to retrieve RELATIVE to the folder
+	 *            structure. Each folder is viewed
+	 * @return the File object for the item
+	 * @throws UnsupportedOperationException
+	 *             if called on a zip based corpus, zips don't easily provide
+	 *             file access
+	 */
+	public File getItemFile(int folderNum, int fileNum)
+			throws UnsupportedOperationException;
+	
+	/**
+	 * @param number
+	 *            the number of the item to get (0 <= folderNum <= 999999)
+	 * @return the file name of the item including extension
+	 */
+	public String getItemName(int number);
 
-		return new GovDocs(root, detBuild.build());
-	}
+	/**
+	 * @param folderNum
+	 *            the number of the folder the item is in (0 <= folderNum <=
+	 *            999)
+	 * @param fileNum
+	 *            the number of the file to retrieve RELATIVE to the folder
+	 *            structure. Each folder is viewed
+	 * @return the file name of the item including extension
+	 */
+	public String getItemName(int folderNum, int fileNum);
 
-	private static final File[] getFilesFromRoot(final File root) {
-		return null;
-	}
+	/**
+	 * @return the set of Integers containing the item number of each item missing from the corpus
+	 */
+	public Set<Integer> getMissingItemNumbers();
 }

@@ -336,7 +336,7 @@ public final class TikaSigTester {
 	}
 
 	/**
-	 * A little test main to identify GovDocs from passed param
+	 * A little test main to identify GovDocsDirectories from passed param
 	 * 
 	 * @param args
 	 * @throws Exception
@@ -347,7 +347,7 @@ public final class TikaSigTester {
 			TikaSigTester sw = TikaSigTester.vanilla();
 			sw.identify(govDocsData);
 		} else {
-			System.err.println("Expected a GovDocs dir.");
+			System.err.println("Expected a GovDocsDirectories dir.");
 		}
 
 	}
