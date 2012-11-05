@@ -19,49 +19,53 @@
 package org.opf_labs.fmts.corpora.govdocs;
 
 import java.io.File;
-import java.util.Collections;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Set;
 import java.util.regex.Pattern;
 
 import org.opf_labs.fmts.corpora.Corpora;
 import org.opf_labs.fmts.corpora.CorpusDetails;
 
+import com.google.common.base.Preconditions;
+
 /**
- * TODO JavaDoc for AbstractGovDocs.</p>
- * TODO Tests for AbstractGovDocs.</p>
- * TODO Implementation for AbstractGovDocs.</p>
+ * Abstract base class for GovDocsCorpora Corpora implementations.
  * 
- * @author  <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
- *          <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
+ * @author <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
+ *         <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
  * @version 0.1
  * 
- * Created 2 Nov 2012:19:01:26
+ *          Created 2 Nov 2012:19:01:26
  */
 
-abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
-	public static final String NAME = "GovDocsDirectories";
+abstract class AbstractGovDocs implements GovDocsCorpora {
 	/** RegEx string for GovDocsDirectories directory names */
 	public static final String DIR_REGEX = "^\\d{3}";
+	protected static final String FILE_REGEX_SUFFIX = "\\.?.*";
 	/** RegEx string for GovDocsDirectories file names */
-	public static final String FILE_REGEX = "^\\d{6\\..*}";
+	public static final String FILE_REGEX = "^\\d{6}" + FILE_REGEX_SUFFIX;
 	protected static final Pattern DIR_PATTERN = Pattern.compile(DIR_REGEX);
 	protected static final Pattern FILE_PATTERN = Pattern.compile(FILE_REGEX);
-	private static final int MAX_FOLDER_NUM = 999;
-	private static final int MAX_FILE_NUM = 999999;
+	protected static final int MAX_FOLDER_NUM = 999;
+	protected static final int MAX_FILE_NUM = 999999;
 	protected final File root;
 	protected final CorpusDetails details;
-	
+	private final int folderCount;
+
 	protected AbstractGovDocs(final File root) {
-		this(root, Corpora.canonicalDetails());
-	}
-	protected AbstractGovDocs(final File root, final CorpusDetails details) {
-		assert(root!=null);
-		assert(root.isDirectory());
-		assert(details!=null);
-		this.root = root;
-		this.details = details;
+		this(root, Corpora.canonicalDetails(), 0);
 	}
 
+	protected AbstractGovDocs(final File root, final CorpusDetails details, int folderCount) {
+		assert(root != null);
+		assert(root.isDirectory());
+		assert(details != null);
+		assert(folderCount>=0);
+		this.root = root;
+		this.details = details;
+		this.folderCount = folderCount;
+	}
 
 	/**
 	 * @see org.opf_labs.fmts.corpora.CorpusDetails#getName()
@@ -70,6 +74,7 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 	public String getName() {
 		return this.details.getName();
 	}
+
 	/**
 	 * @see org.opf_labs.fmts.corpora.CorpusDetails#getType()
 	 */
@@ -77,6 +82,7 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 	public CorporaType getType() {
 		return this.details.getType();
 	}
+
 	/**
 	 * @see org.opf_labs.fmts.corpora.CorpusDetails#getCount()
 	 */
@@ -84,6 +90,7 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 	public int getCount() {
 		return this.details.getCount();
 	}
+
 	/**
 	 * @see org.opf_labs.fmts.corpora.CorpusDetails#getSize()
 	 */
@@ -91,6 +98,7 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 	public long getSize() {
 		return this.details.getSize();
 	}
+
 	/**
 	 * @see org.opf_labs.fmts.corpora.CorpusDetails#getExtensions()
 	 */
@@ -98,6 +106,80 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 	public Set<String> getExtensions() {
 		return this.details.getExtensions();
 	}
+
+	/**
+	 * @see org.opf_labs.fmts.corpora.govdocs.GovDocsCorpora#folderCount()
+	 */
+	@Override
+	public int folderCount() {
+		return this.folderCount;
+	}
+
+	/**
+	 * @see org.opf_labs.fmts.corpora.govdocs.GovDocsCorpora#getItem(int)
+	 */
+	@Override
+	public final InputStream getItem(final int itemNum) throws FileNotFoundException {
+		Preconditions.checkArgument(
+				((itemNum >= 0) && (itemNum <= MAX_FILE_NUM)),
+				"Invalid item number should be (0 <= itemNumber <= "
+						+ MAX_FILE_NUM + ") NOT: " + itemNum);
+		return getItemImpl(itemNum);
+	}
+	
+	abstract protected InputStream getItemImpl(final int itemNum) throws FileNotFoundException;
+
+	/**
+	 * @see org.opf_labs.fmts.corpora.govdocs.GovDocsCorpora#getItem(int, int)
+	 */
+	@Override
+	public final InputStream getItem(final int folderNum, final int itemNum)
+			throws FileNotFoundException {
+		Preconditions.checkArgument(
+				((folderNum >= 0) && (folderNum <= MAX_FOLDER_NUM)),
+				"Invalid folder number should be (0 <= folderNum <= "
+						+ MAX_FOLDER_NUM + ") NOT: " + folderNum);
+		Preconditions.checkArgument(
+				((itemNum >= 0) && (itemNum <= MAX_FOLDER_NUM)),
+				"Invalid file number should be (0 <= itemNumber <= "
+						+ MAX_FOLDER_NUM + ") NOT: " + itemNum);
+		return getItemImpl(folderNum, itemNum);
+	}
+
+	abstract protected InputStream getItemImpl(final int folderNum, final int itemNum) throws FileNotFoundException;
+
+	/**
+	 * @see org.opf_labs.fmts.corpora.govdocs.GovDocsCorpora#getItemName(int)
+	 */
+	@Override
+	public final String getItemName(int number) throws FileNotFoundException {
+		Preconditions.checkArgument(
+				((number >= 0) && (number <= MAX_FILE_NUM)),
+				"Invalid item number should be (0 <= itemNumber <= "
+						+ MAX_FILE_NUM + ") NOT: " + number);
+		return getItemNameImpl(number);
+	}
+	
+	abstract protected String getItemNameImpl(final int number) throws FileNotFoundException;
+
+	/**
+	 * @see org.opf_labs.fmts.corpora.govdocs.GovDocsCorpora#getItemName(int, int)
+	 */
+	@Override
+	public final String getItemName(final int folderNum, final int itemNum) throws FileNotFoundException {
+		Preconditions.checkArgument(
+				((folderNum >= 0) && (folderNum <= MAX_FOLDER_NUM)),
+				"Invalid folder number should be (0 <= folderNum <= "
+						+ MAX_FOLDER_NUM + ") NOT: " + folderNum);
+		Preconditions.checkArgument(
+				((itemNum >= 0) && (itemNum <= MAX_FOLDER_NUM)),
+				"Invalid file number should be (0 <= itemNumber <= "
+						+ MAX_FOLDER_NUM + ") NOT: " + itemNum);
+		return getItemNameImpl(folderNum, itemNum);
+	}
+
+	abstract protected String getItemNameImpl(final int folderNum, final int itemNum) throws FileNotFoundException;
+
 	/**
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -109,6 +191,7 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 				+ ((this.details == null) ? 0 : this.details.hashCode());
 		return result;
 	}
+
 	/**
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
@@ -133,6 +216,7 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 		}
 		return true;
 	}
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */
@@ -141,34 +225,25 @@ abstract class AbstractGovDocs implements GovDocs, CorpusDetails {
 		return "AbstractGovDocs [details=" + this.details + "]";
 	}
 
-	protected String getStringBaseName(int num) {
-		assert((num <= MAX_FILE_NUM) && (num>=0));
-		return (num > (MAX_FILE_NUM / 10)) ? String.valueOf(num) : String.format("%06d", num);
+	protected final String baseName(final int fileNum) {
+		assert ((fileNum <= MAX_FILE_NUM) && (fileNum >= 0));
+		return (fileNum > (MAX_FILE_NUM / 10)) ? String.valueOf(fileNum) : String
+				.format("%06d", fileNum);
+	}
+
+	protected final String folderName(final int folderNum) {
+		assert (folderNum >= 0 && folderNum <= MAX_FOLDER_NUM);
+		return (folderNum > (MAX_FOLDER_NUM / 10)) ? String.valueOf(folderNum) : String
+				.format("%3d", folderNum);
 	}
 	
-	protected String getFolderName(int num) {
-		assert(num >= 0 && num <= MAX_FOLDER_NUM);
-		return (num > (MAX_FOLDER_NUM / 10)) ? String.valueOf(num) : String.format("%3d", num);
+	protected final int folderNumber(final int fileNum) {
+		return Integer.valueOf(baseName(fileNum).substring(0,3));
 	}
-	
-	protected String makeFileName(int folderNum, int fileNum) {
-		assert(folderNum >= 0 && folderNum <= MAX_FOLDER_NUM);
-		assert(fileNum >= 0 && fileNum <= MAX_FILE_NUM);
+
+	protected final String fileName(final int folderNum, final int fileNum) {
+		assert (folderNum >= 0 && folderNum <= MAX_FOLDER_NUM);
+		assert (fileNum >= 0 && fileNum <= MAX_FILE_NUM);
 		return String.format("%3d%3d", folderNum, fileNum);
-	}
-	
-	protected static class FolderDetails {
-		final int count;
-		final long size;
-		final Set<String> exts;
-		
-		FolderDetails(final int count, final long size, final Set<String> exts) {
-			assert(count > 0);
-			assert(size > 0);
-			assert(exts!=null);
-			this.count = count;
-			this.size = size;
-			this.exts = Collections.unmodifiableSet(exts);
-		}
 	}
 }

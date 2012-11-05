@@ -20,19 +20,17 @@ package org.opf_labs.fmts.corpora.govdocs;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.net.URISyntaxException;
 
 import org.junit.Test;
 import org.opf_labs.fmts.AllFidgetTests;
-import org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories;
 
 /**
- * TODO JavaDoc for GovDocsTestBadATM.</p>
- * TODO Tests for GovDocsTestBadATM.</p>
- * TODO Implementation for GovDocsTestBadATM.</p>
+ * TODO JavaDoc for GovDocsTest.</p>
+ * TODO Tests for GovDocsTest.</p>
+ * TODO Implementation for GovDocsTest.</p>
  * 
  * @author  <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
  *          <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
@@ -41,22 +39,22 @@ import org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories;
  * Created 2 Nov 2012:15:13:35
  */
 
-public class GovDocsTestBadATM {
+public class GovDocsTest {
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#getNewInstance(java.io.File)}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#newInstance(java.io.File)}.
 	 */
 	@Test(expected = NullPointerException.class)
 	public final void testGetNullDir() {
-		GovDocsDirectories.getNewInstance(null);
+		GovDocs.newInstance(null);
 	}
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocsDirectories#getNewInstance(java.io.File)}.
+	 * Test method for {@link org.opf_labs.fmts.corpora.govdocs.GovDocs#newInstance(java.io.File)}.
 	 */
 	@Test(expected = IllegalArgumentException.class)
 	public final void testGetNotDir() {
-		GovDocsDirectories.getNewInstance(new File("doesnt exist at all"));
+		GovDocs.newInstance(new File("c@n't exist?*"));
 	}
 
 	/**
@@ -70,7 +68,7 @@ public class GovDocsTestBadATM {
 		File realRoot = new File("S:/govdocs/");
 		if (!realRoot.isDirectory()) return;
 		
-		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(realRoot);
+		GovDocsCorpora govDocs = GovDocs.newInstance(realRoot);
 		System.out.println(govDocs.getCount());
 		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() > 0);
 	}
@@ -80,8 +78,8 @@ public class GovDocsTestBadATM {
 	 */
 	@Test
 	public final void testGetCountZip() throws URISyntaxException {
-		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(AllFidgetTests.getGovDocsZip());
-		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() == 3);
+		GovDocsCorpora govDocs = GovDocs.newInstance(AllFidgetTests.getGovDocsZip());
+		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() == 11);
 	}
 
 	/**
@@ -89,7 +87,7 @@ public class GovDocsTestBadATM {
 	 */
 	@Test
 	public final void testGetCountDir() throws URISyntaxException {
-		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(AllFidgetTests.getGovDocsDir());
+		GovDocsCorpora govDocs = GovDocs.newInstance(AllFidgetTests.getGovDocsDir());
 		assertTrue("missing test data? count: " + govDocs.getCount(), govDocs.getCount() == 11);
 	}
 
@@ -99,7 +97,7 @@ public class GovDocsTestBadATM {
 	 */
 	@Test
 	public final void testGetSize() throws URISyntaxException {
-		GovDocsDirectories govDocs = GovDocsDirectories.getNewInstance(AllFidgetTests.getGovDocsDir());
+		GovDocsCorpora govDocs = GovDocs.newInstance(AllFidgetTests.getGovDocsDir());
 		assertTrue("No data found size: " + govDocs.getSize(), govDocs.getSize() > 0);
 	}
 
@@ -110,8 +108,8 @@ public class GovDocsTestBadATM {
 	@SuppressWarnings("javadoc")
 	@Test
 	public final void testIsZip() throws URISyntaxException {
-		assertTrue(GovDocsZipped.isZip(AllFidgetTests.getGovDocsZip()));
-		assertFalse(GovDocsZipped.isZip(AllFidgetTests.getGovDocsDir()));
+		assertTrue("GovDocsZipped.isZip() != true for zip test directory??", GovDocs.isZip(AllFidgetTests.getGovDocsZip()));
+		assertFalse("GovDocsZipped.isZip() == true for dir based test directory??", GovDocs.isZip(AllFidgetTests.getGovDocsDir()));
 	}
 
 }

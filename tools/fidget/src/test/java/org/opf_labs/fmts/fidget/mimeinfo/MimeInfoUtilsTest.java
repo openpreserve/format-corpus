@@ -15,14 +15,16 @@
  */
 package org.opf_labs.fmts.fidget.mimeinfo;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.xml.bind.JAXBException;
 
 import org.junit.Test;
+import org.opf_labs.fmts.AllFidgetTests;
 import org.opf_labs.fmts.mimeinfo.MimeInfo;
 import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
 
@@ -32,17 +34,23 @@ import org.opf_labs.fmts.mimeinfo.MimeInfoUtils;
  *
  */
 public class MimeInfoUtilsTest {
-	
-	public static String PERCIPIO_XML = "src/test/resources/percipio.pdf.xml";
-	public static String TIKA_XML = "src/main/resources/org/apache/tika/mime/custom-mimetypes.xml";
 
+	/**
+	 * @throws JAXBException
+	 * @throws IOException 
+	 * @throws URISyntaxException 
+	 */
 	@Test
-	public void testPercipioParser() throws FileNotFoundException, JAXBException {
-		MimeInfo mi = MimeInfoUtils.parser(new FileInputStream(PERCIPIO_XML));
+	public void testPercipioParser() throws JAXBException, IOException, URISyntaxException {
+		final FileInputStream percepFis = new FileInputStream(AllFidgetTests.getPercepioXml());
+		MimeInfo mi = MimeInfoUtils.parser(percepFis);
+		percepFis.close();
 		MimeInfoUtils.printer(mi);
 		assertTrue("Failed to parse MimeInfo object.", mi !=  null);
 		//
-		mi = MimeInfoUtils.parser(new FileInputStream(TIKA_XML));
+		final FileInputStream tikaFis = new FileInputStream(AllFidgetTests.getTikaCustom());
+		mi = MimeInfoUtils.parser(tikaFis);
+		tikaFis.close();
 		MimeInfoUtils.printer(mi);
 		//
 	}

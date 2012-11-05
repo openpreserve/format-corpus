@@ -23,8 +23,10 @@ import org.apache.commons.io.FileUtils;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import org.opf_labs.fmts.corpora.govdocs.GovDocsTest;
 import org.opf_labs.fmts.fidget.OldTikaSigTesterTest;
 import org.opf_labs.fmts.fidget.TikaResourceHelperTest;
+import org.opf_labs.fmts.fidget.mimeinfo.MimeInfoUtilsTest;
 
 /**
  * Test suite class to run all tests, plus holds test helper methods
@@ -36,15 +38,35 @@ import org.opf_labs.fmts.fidget.TikaResourceHelperTest;
  * Created 2 Nov 2012:11:54:06
  */
 @RunWith(Suite.class)
-@SuiteClasses({ OldTikaSigTesterTest.class, TikaResourceHelperTest.class })
+@SuiteClasses({ OldTikaSigTesterTest.class, TikaResourceHelperTest.class, MimeInfoUtilsTest.class, GovDocsTest.class })
 public class AllFidgetTests {
-	/** Path to the Tika sig file resource dir */
-	public static final String TIKA_MIME_PATH = "org/apache/tika/mime";
+	private static final String PERCIPIO_XML = "percipio.pdf.xml";
+	private static final String TIKA_CUSTOM = "custom-mimetypes.xml";
+	private static final String TIKA_MIME_PATH = "org/apache/tika/mime/";
 	private final static String OPF_FMT_PATH = "org/opf_labs/fmts/";
 	private final static String GOVDOCS_PATH = OPF_FMT_PATH + "govdocs/";
-	private final static String GOVDOCS_ZIP_PATH =  GOVDOCS_PATH + "zip/";
+	private final static String GOVDOCS_ZIP_PATH =  GOVDOCS_PATH + "zip";
 	private final static String GOVDOCS_DIR_PATH = GOVDOCS_PATH + "dir";
 	private static final String XML_EXT = "xml";
+	private static final String PERCIPIO_XML_PATH = TIKA_MIME_PATH + PERCIPIO_XML;
+	private static final String TIKA_CUSTOM_PATH = TIKA_MIME_PATH + TIKA_CUSTOM;
+	
+	/**
+	 * @return the Percipo XML file
+	 * @throws URISyntaxException when looking up the test resource goes wrong...
+	 */
+	public static final File getPercepioXml() throws URISyntaxException {
+		return getResourceAsFile(PERCIPIO_XML_PATH);
+	}
+
+	/**
+	 * @return the Tika Custom MIME Types file
+	 * @throws URISyntaxException when looking up the test resource goes wrong...
+	 */
+	public static final File getTikaCustom() throws URISyntaxException {
+		return getResourceAsFile(TIKA_CUSTOM_PATH);
+	}
+
 	/**
 	 * @return all of the files
 	 * @throws URISyntaxException when looking up the test resource goes wrong...

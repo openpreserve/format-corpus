@@ -19,21 +19,18 @@
 package org.opf_labs.fmts.corpora.govdocs;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.InputStream;
-import java.util.Set;
-import java.util.regex.Pattern;
 
-import org.opf_labs.fmts.corpora.Corpora;
-import org.opf_labs.fmts.corpora.Corpora.Details;
+import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.opf_labs.fmts.corpora.CorpusDetails;
 
-import com.google.common.base.Preconditions;
-
 /**
- * Quick utility knocked up in a hurry to run the TikaSigTester over the GovDocsDirectories
- * corpus. Initially done for a the corpus in 1000 zip form, as that's how I've
- * got it stored. Extending to files should be easier.
+ * Quick utility knocked up in a hurry to run the TikaSigTester over the
+ * GovDocsDirectories corpus. Initially done for a the corpus in 1000 zip form,
+ * as that's how I've got it stored. Extending to files should be easier.
  * 
  * @author <a href="mailto:carl@openplanetsfoundation.org">Carl Wilson</a>.</p>
  *         <a href="https://github.com/carlwilson">carlwilson AT github</a>.</p>
@@ -46,91 +43,58 @@ public class GovDocsDirectories extends AbstractGovDocs {
 		super(root);
 	}
 
-	private GovDocsDirectories(final File root, CorpusDetails details) {
-		super(root, details);
+	private GovDocsDirectories(final File root, final CorpusDetails details,
+			final int folderCount) {
+		super(root, details, folderCount);
 	}
 
 	/**
 	 * @param root
-	 *            the root directory for the corpus, can be in zip or unpacked
-	 *            form
+	 *            the root directory for the corpus form
+	 * @param details
+	 *            the corpus details
+	 * @param folderCount
+	 *            the number of folders in the corpus
 	 * @return a new GovDocsDirectories instance rooted on the directory passed
 	 */
-	public static final GovDocsDirectories getNewInstance(final File root) {
-		Preconditions.checkNotNull(root, "root==null");
-		Preconditions.checkArgument(root.isDirectory(),
-				"root must be an existing directory.");
-		// Iterate over the files in the directory
-		return fromDirs(root);
-	}
-
-	private static final GovDocsDirectories fromDirs(final File root) {
-		File[] corpFiles = root.listFiles(new FilenameFilter() {
-			private Pattern pattern = null;
-
-			@Override
-			public boolean accept(File dir, String name) {
-				System.out.println(this.pattern.matcher(name).matches());
-				System.out.println("name: " + name);
-				System.out.println("pattern: " + this.pattern.pattern());
-				return this.pattern.matcher(name).matches();
-			}
-		});
-		int count = 0;
-		long size = 0L;
-		for (File corpFile : corpFiles) {
-			count++;
-			size += corpFile.length();
-		}
-		Details detBuild = Corpora.details(count, size);
-
-		return new GovDocsDirectories(root, detBuild.build());
-	}
-
-	private static final File[] getFilesFromRoot(final File root) {
-		return null;
+	static final GovDocsDirectories newInstance(final File root,
+			final CorpusDetails details, final int folderCount) {
+		return new GovDocsDirectories(root, details, folderCount);
 	}
 
 	@Override
-	public InputStream getItem(int number) {
-		// TODO Auto-generated method stub
-		return null;
+	protected InputStream getItemImpl(int itemNum) throws FileNotFoundException {
+		return new FileInputStream(getItemFile(itemNum));
 	}
 
 	@Override
-	public InputStream getItem(int folderNum, int fileNum) {
-		// TODO Auto-generated method stub
-		return null;
+	public InputStream getItemImpl(final int folderNum, final int itemNum)
+			throws FileNotFoundException {
+		return new FileInputStream(getItemFile((folderNum * 1000) + itemNum));
 	}
 
 	@Override
-	public File getItemFile(int number) throws UnsupportedOperationException {
-		// TODO Auto-generated method stub
-		return null;
+	public String getItemNameImpl(final int number) throws FileNotFoundException {
+		return getItemFile(number).getName();
 	}
 
 	@Override
-	public File getItemFile(int folder, int file)
-			throws UnsupportedOperationException {
-		// TODO Auto-generated method stub
-		return null;
+	public String getItemNameImpl(final int folderNum, final int itemNum) throws FileNotFoundException {
+		return getItemFile((folderNum * 1000) + itemNum).getName();
 	}
 
-	@Override
-	public Set<Integer> getMissingItemNumbers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getItemName(int number) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getItemName(int folderNum, int fileNum) {
-		// TODO Auto-generated method stub
-		return null;
+	private File getItemFile(int number) throws FileNotFoundException {
+		FilenameFilter itemFilter = new RegexFileFilter("^\\"
+				+ baseName(number) + FILE_REGEX_SUFFIX);
+		int folderNum = folderNumber(number);
+		File folder = new File(this.root.getAbsolutePath() + File.separator
+				+ folderName(folderNum));
+		File[] files = folder.listFiles(itemFilter);
+		if (files.length < 1)
+			throw new FileNotFoundException("Could not file file for number: "
+					+ number);
+		if (files.length > 1)
+			System.err.println("Duplicated entries for number: " + number);
+		return files[0];
 	}
 }

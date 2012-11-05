@@ -23,13 +23,14 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.SortedSet;
 
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
 import org.junit.Test;
-import org.opf_labs.fmts.fidget.mimeinfo.MimeInfoUtilsTest;
+import org.opf_labs.fmts.AllFidgetTests;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
@@ -38,14 +39,15 @@ import org.opf_labs.fmts.fidget.mimeinfo.MimeInfoUtilsTest;
 public class OldTikaSigTesterTest {
 
 	/**
-	 * Test method for {@link org.opf_labs.fmts.fidget.fidget.TikaSigTester#TikaSigTester(java.io.File, boolean)}.
+	 * Test method for {@link org.opf_labs.fmts.fidget.TikaSigTester#filesOnly(File...)}.
 	 * @throws IOException 
 	 * @throws MimeTypeException 
+	 * @throws URISyntaxException 
 	 */
 	@Test
-	public void testTikaSigTesterFileBoolean() throws MimeTypeException, IOException {
+	public void testTikaSigTesterFileBoolean() throws MimeTypeException, IOException, URISyntaxException {
 		// Test loading a single signature, alone.
-		TikaSigTester tst = TikaSigTester.filesOnly(new File(MimeInfoUtilsTest.PERCIPIO_XML));
+		TikaSigTester tst = TikaSigTester.filesOnly(AllFidgetTests.getPercepioXml());
 		//this.printMimeTypes(tst.getMimeTypes());
 		SortedSet<MediaType> types = tst.getTypes();
 		int size = types.size();
@@ -54,7 +56,7 @@ public class OldTikaSigTesterTest {
 		System.out.println("Try: "+tst.identify( new File( "../.././save-as/OpenOffice.org 3.2.0 OSX/pdf-features/simple.pdf" ) ));
 		
 		// Test loading all signatures:
-		tst = TikaSigTester.vanillaAndFiles(new File(MimeInfoUtilsTest.PERCIPIO_XML));
+		tst = TikaSigTester.vanillaAndFiles(AllFidgetTests.getPercepioXml());
 		//this.printMimeTypes(tst.getMimeTypes());
 		types = tst.getTypes();
 		size = types.size();
@@ -62,6 +64,7 @@ public class OldTikaSigTesterTest {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void printMimeTypes(MimeTypes mimeTypes) {
 		System.out.println("Total: "+mimeTypes.getMediaTypeRegistry().getTypes().size());
 		for( MediaType mt : mimeTypes.getMediaTypeRegistry().getTypes()) {

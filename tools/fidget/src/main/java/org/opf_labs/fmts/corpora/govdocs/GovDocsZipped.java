@@ -19,14 +19,16 @@
 package org.opf_labs.fmts.corpora.govdocs;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.Set;
+import java.util.Enumeration;
 import java.util.regex.Pattern;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
-import org.apache.commons.io.FileUtils;
-import org.opf_labs.fmts.corpora.Corpora;
-import org.opf_labs.fmts.corpora.Corpora.Details;
+import org.apache.commons.io.FilenameUtils;
 import org.opf_labs.fmts.corpora.CorpusDetails;
 
 /**
@@ -44,91 +46,89 @@ public final class GovDocsZipped extends AbstractGovDocs {
 	public static final String ZIP_EXT = "zip";
 	/** RegEx pattern for GovDocsDirectories zip "folder" name */
 	public static final String ZIP_REGEX = "\\d{3}\\." + ZIP_EXT;
-	private static final Pattern ZIP_PATTERN = Pattern.compile(ZIP_REGEX);
+	static final Pattern ZIP_PATTERN = Pattern.compile(ZIP_REGEX);
+	static final FilenameFilter ZIP_FILTER = new FilenameFilter() {
+		@Override
+		public boolean accept(File dir, String name) {
+			return ZIP_PATTERN.matcher(name).matches();
+		}
+	};
 
-	private GovDocsZipped(File root) {
+	private ZipFile currFolder;
+	private int current = -1;
+
+	private GovDocsZipped(final File root) {
 		super(root);
 	}
 
-	private GovDocsZipped(File root, CorpusDetails details) {
-		super(root, details);
+	private GovDocsZipped(final File root, final CorpusDetails details, final int folderCount) {
+		super(root, details, folderCount);
 	}
 
-	static final GovDocsZipped fromdDir(final File root) {
-		File[] zipFiles = getZipFolders(root);
-		int count = 0;
-		long size = 0L;
-		for (File zipFile : zipFiles) {
-			count++;
-			size+=zipFile.length();
-		}
-		Details detsBuild = Corpora.details(count, size);
-		return new GovDocsZipped(root, detsBuild.build());
+	/**
+	 * @param root
+	 *            the root directory for the corpus
+	 *            form
+	 * @param details the corpus details
+	 * @param folderCount the number of folders in the corpus
+	 * @return a new GovDocsDirectories instance rooted on the directory passed
+	 */
+	static final GovDocsZipped newInstance(final File root, final CorpusDetails details, final int folderCount) {
+		return new GovDocsZipped(root, details, folderCount);
 	}
 
-	private static final File[] getZipFolders(final File root) {
-		return root.listFiles(new FilenameFilter() {
-			@SuppressWarnings("synthetic-access")
-			@Override
-			public boolean accept(File dir, String name) {
-				return ZIP_PATTERN.matcher(name).matches();
+	@Override
+	protected InputStream getItemImpl(final int number) throws FileNotFoundException {
+			try {
+				return this.currFolder.getInputStream(this.getItemEntry(number));
+			} catch (IOException excep) {
+				throw new FileNotFoundException("Could not file file for number: "
+						+ number);
 			}
-		});
-	}
-	
-	private static final void assessZipFolder(File zip) {
-		
-	}
-
-	static boolean isZip(final File root) {
-		/**
-		 * TODO a really lazy check for zip form, could do better
-		 */
-		return FileUtils.listFiles(root, new String[] { ZIP_EXT }, false)
-				.size() > 0;
 	}
 
 	@Override
-	public InputStream getItem(int number) {
-		// TODO Auto-generated method stub
-		return null;
+	protected InputStream getItemImpl(final int folderNum, final int fileNum) throws FileNotFoundException {
+		return this.getItemImpl((folderNum * 1000) + fileNum);
 	}
 
 	@Override
-	public InputStream getItem(int folderNum, int fileNum) {
-		// TODO Auto-generated method stub
-		return null;
+	protected String getItemNameImpl(final int number) throws FileNotFoundException {
+		return this.getItemEntry(number).getName();
 	}
 
 	@Override
-	public File getItemFile(int number) throws UnsupportedOperationException {
-		// TODO Auto-generated method stub
-		return null;
+	protected final String getItemNameImpl(final int folderNum, final int fileNum) throws FileNotFoundException {
+		return this.getItemEntry((folderNum * 1000) + fileNum).getName();
 	}
 
-	@Override
-	public File getItemFile(int folder, int file)
-			throws UnsupportedOperationException {
-		// TODO Auto-generated method stub
-		return null;
+	private ZipEntry getItemEntry(final int number) throws FileNotFoundException {
+		int folderNum = folderNumber(number);
+		if (folderNum != this.current) {
+			try {
+				this.currFolder.close();
+			} catch (IOException excep) {
+				// Do nothing
+			}
+			try {
+				this.currFolder = new ZipFile(this.root.getAbsolutePath() + File.separator
+						+ folderName(folderNum));
+			} catch (IOException excep) {
+				throw new FileNotFoundException("Could not file file for number: "
+						+ number);
+			}
+			this.current = folderNum;
+		}
+		String baseName = baseName(number);
+		Enumeration<? extends ZipEntry> entries = this.currFolder.entries();
+		ZipEntry entry = null;
+		while (entries.hasMoreElements()) {
+			entry = entries.nextElement();
+			if (!entry.isDirectory()) {
+				if (FilenameUtils.getBaseName(entry.getName()).equals(baseName)) return entry;
+			}
+		}
+		throw new FileNotFoundException("Could not file file for number: "
+				+ number);
 	}
-
-	@Override
-	public Set<Integer> getMissingItemNumbers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getItemName(int number) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getItemName(int folderNum, int fileNum) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
