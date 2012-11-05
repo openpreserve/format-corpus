@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2012 Andrew Jackson <Andrew.Jackson@bl.uk>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!-- See http://tika.apache.org/1.0/parser_guide.html#Add_your_MIME-Type -->
+<mime-info>
+  <!-- WARC -->
+  
+  <mime-type type="application/warc">
+    <acronym>WARC</acronym>
+    <_comment>WARC</_comment>
+    <magic priority="50">
+      <match value="WARC/" type="string" offset="0"/>
+    </magic>
+    <glob pattern="*.warc"/>
+  </mime-type>
+  <!-- General parser module could extract version - some are appended here too. -->
+
+  <mime-type type="application/warc; version=1.0">
+    <sub-class-of type="audio/warc" />
+    <_comment>WARC 1.0</_comment>
+    <magic priority="70">
+      <match value="WARC/1.0" type="string" offset="0"/>
+    </magic>
+  </mime-type>
+  
+  <mime-type type="application/warc; version=0.16">
+    <sub-class-of type="audio/warc" />
+    <_comment>WARC 0.16</_comment>
+    <magic priority="70">
+      <match value="WARC/0.16" type="string" offset="0"/>
+    </magic>
+  </mime-type>
+  
+  <mime-type type="application/warc; version=0.9">
+    <sub-class-of type="audio/warc" />
+    <_comment>WARC 0.9</_comment>
+    <magic priority="70">
+      <match value="WARC/0.9" type="string" offset="0"/>
+    </magic>
+  </mime-type>
+  
+  <!-- http://archive.org/web/researcher/ArcFileFormat.php  -->
+  <mime-type type="application/x-internet-archive">
+    <acronym>ARC</acronym>
+    <_comment>ARC</_comment>
+    <magic priority="90">
+      <match value="filedesc://" type="string" offset="0"/>
+    </magic>
+    <glob pattern="*.arc"/>
+  </mime-type>
+</mime-info>

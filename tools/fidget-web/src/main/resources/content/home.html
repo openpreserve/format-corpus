@@ -1,0 +1,45 @@
+
+<div id="content" class="container_12">
+  <div class="clear"></div>
+  <div id="detail" class="grid_8 alpha">
+    <h3>Try a signature</h3>
+    <form id="sig-form" class="stylized">
+      <p>Use choose sig file to pick a sig file</p>
+      <p>Use choose data file to pick a test data file</p>
+      <p>Use Test Signature to test the sig against your test data</p>
+      <fieldset>
+        <legend>Signature Test data</legend>
+        <label for="sig-file" class="grid_2">Sig File 
+          <span class="small">The Tika XML signature</span>
+        </label>
+        <button id="sig-click" class="grid_3">Choose Sig File</button>
+        <input type="file" id="sig-file" name="sig-file" style="display:none;" />
+        <div class="clear"></div>
+        <label for="data-file" class="grid_2">Data File 
+          <span class="small">Test data to identify</span>
+        </label>
+        <button id="data-click" class="grid_3">Choose Test Data File</button>
+        <input type="file" id="data-file" name="data-file" style="display:none;" />
+        <div class="clear"></div>
+        <div id="result" class="grid_7">
+          <label>Result:</label>
+        </div>
+      </fieldset>
+      <div class="grid_3 prefix_1">
+        <button type="submit" class="grid_3">Test Signature</button>
+      </div>
+    </form>
+  </div>
+</div>
+<#include "/page/footer.html" parse="false">
+<script type="text/javascript">
+	$(document).ready(function() {
+		selNavbarItem("home-nav");
+		$("#sig-click").click(function() {
+			$("#sig-file").click();
+		});
+		$("#data-click").click(function() {
+			$("#data-file").click();
+		});
+	});
+</script>

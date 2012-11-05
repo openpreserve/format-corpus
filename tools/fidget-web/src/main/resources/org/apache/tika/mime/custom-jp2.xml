@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2012 Andrew Jackson <Andrew.Jackson@bl.uk>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!-- See http://tika.apache.org/1.0/parser_guide.html#Add_your_MIME-Type -->
+<mime-info>
+
+  <mime-type type="image/x-jp2-container">
+    <_comment>JPEG 2000 Container Format</_comment>
+    <magic priority="50">
+      <match value="0x0000000C6A5020200D0A870A" type="string" offset="0"/>
+    </magic>
+  </mime-type>
+
+  <mime-type type="image/jp2">
+    <sub-class-of type="image/x-jp2-container" />
+    <acronym>JP2</acronym>
+    <_comment>JPEG 2000 Part 1 (JP2)</_comment>
+    <magic priority="50">
+      <match value="0x0000000C6A5020200D0A870A" type="string" offset="0">
+        <match value="0x6a703220" type="string" offset="20"/>
+      </match>
+    </magic>
+    <glob pattern="*.jp2"/>
+  </mime-type>
+  
+  <mime-type type="image/jpx">
+    <sub-class-of type="image/x-jp2-container" />
+    <acronym>JP2</acronym>
+    <_comment>JPEG 2000 Part 2 (JPX)</_comment>
+    <magic priority="50">
+      <match value="0x0000000C6A5020200D0A870A" type="string" offset="0">
+        <match value="0x6a707820" type="string" offset="20"/>
+      </match>
+    </magic>
+    <glob pattern="*.jpf"/>
+  </mime-type>
+  
+  <mime-type type="image/jpm">
+    <sub-class-of type="image/x-jp2-container" />
+    <acronym>JP2</acronym>
+    <_comment>JPEG 2000 Part 6 (JPM)</_comment>
+    <magic priority="50">
+      <match value="0x0000000C6A5020200D0A870A" type="string" offset="0">
+        <match value="0x6a706d20" type="string" offset="20"/>
+      </match>
+    </magic>
+    <glob pattern="*.jpmM"/>
+  </mime-type>
+  
+  <mime-type type="video/mj2">
+    <sub-class-of type="image/x-jp2-container" />
+    <acronym>MJ2</acronym>
+    <_comment>JPEG 2000 Part 3 (Motion JPEG, MJ2)</_comment>
+    <magic priority="50">
+      <match value="0x0000000C6A5020200D0A870A" type="string" offset="0">
+        <match value="0x6d6a7032" type="string" offset="20"/>
+      </match>
+    </magic>
+    <glob pattern="*.mj2"/>
+  </mime-type>
+  
+  <mime-type type="image/x-jp2-codestream">
+    <_comment>JPEG 2000 Codestream</_comment>
+    <magic priority="25">
+      <match value="0xff4fff51" type="string" offset="0"/>
+    </magic>
+    <glob pattern="*.j2c"/>
+  </mime-type>
+</mime-info>
