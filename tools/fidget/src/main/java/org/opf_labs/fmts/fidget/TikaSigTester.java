@@ -15,13 +15,17 @@
  */
 package org.opf_labs.fmts.fidget;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.SortedSet;
 
@@ -30,6 +34,8 @@ import org.apache.tika.mime.MimeType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
 import org.apache.tika.mime.MimeTypesFactory;
+import org.opf_labs.fmts.corpora.govdocs.GovDocs;
+import org.opf_labs.fmts.corpora.govdocs.GovDocsCorpora;
 
 /**
  * Class that wraps the Apache Tika MimeTypes Repository for purposes of
@@ -282,35 +288,41 @@ public final class TikaSigTester {
 		return TikaIdentifier.fromFile(this.mimeRepository, file);
 	}
 
-	List<IdentificationResult> identify(String govDocsData) throws Exception {
-
-		List<File> datafiles = getFiles(new File(govDocsData));
-		return identify(datafiles);
-
-	}
-
-	/**
-	 * @param files the list of files to identify
-	 * @return the list of identification results
-	 * @throws FileNotFoundException 
-	 */
-	public List<IdentificationResult> identify(List<File> files) throws FileNotFoundException {
-
-		List<IdentificationResult> identities = new ArrayList<IdentificationResult>();
-
-		TikaSigTester sw = new TikaSigTester();
-
-		for (File file : files) {
-			if (!file.isFile()) {
-				continue;
+	@SuppressWarnings("resource")
+	List<IdentificationResult> identify(String govDocsData) {
+		File govDocsRoot = new File(govDocsData);
+		System.out.println("Assessing Corpora:" + new Date());
+		GovDocsCorpora govDocs = GovDocs.newInstance(govDocsRoot);
+		System.out.println(govDocs);
+		List<IdentificationResult> results = new ArrayList<IdentificationResult>();
+		System.out.println("Start:" + new Date());
+		for (int foldNum = 0; foldNum < 1000; foldNum++) {
+			System.out.println("Folder:" + foldNum + " " + new Date());
+			for (int fileNum = 0; fileNum < 1000; fileNum++) {
+				InputStream str = null;
+				URI ident;
+				try {
+					str = govDocs.getItem(foldNum, fileNum);
+					ident = URI.create("govdoc:item:" + govDocs.getItemName(foldNum, fileNum));
+					IdentificationResult result = TikaIdentifier.fromStream(this.mimeRepository, str, ident);
+					results.add(result);
+				} catch (FileNotFoundException excep) {
+					System.err.println("Missing file number " + fileNum);
+					System.err.println(excep);
+					//excep.printStackTrace();
+					// Just miss for now
+				}
+				finally {
+					try {
+						if (str != null) str.close();
+					} catch (IOException excep) {
+						// TODO Auto-generated catch block
+						excep.printStackTrace();
+					}
+				}
 			}
-			IdentificationResult detection = sw.identify(file);
-			identities.add(detection);
-			System.out.println(file.getAbsolutePath() + ":"
-					+ detection.getMime());
 		}
-		return identities;
-
+		return results;
 	}
 
 	/**
@@ -319,20 +331,6 @@ public final class TikaSigTester {
 	public final SortedSet<MediaType> getTypes() {
 		return Collections.unmodifiableSortedSet(this.mimeRepository
 				.getMediaTypeRegistry().getTypes());
-	}
-
-	private static List<File> getFiles(File dir) {
-		List<File> result = new ArrayList<File>();
-		if (!dir.isDirectory()) {
-			result.add(dir);
-			return result;
-		}
-		File[] files = dir.listFiles();
-		for (File file : files) {
-			result.addAll(getFiles(file));
-		}
-		Collections.sort(result);
-		return result;
 	}
 
 	/**
@@ -345,7 +343,14 @@ public final class TikaSigTester {
 		if (args.length > 0) {
 			String govDocsData = args[0];
 			TikaSigTester sw = TikaSigTester.vanilla();
-			sw.identify(govDocsData);
+			List<IdentificationResult> results = sw.identify(govDocsData);
+			FileWriter writer = new FileWriter("d:/tika.txt");
+			BufferedWriter out = new BufferedWriter(writer);
+			for (IdentificationResult result : results) {
+				System.out.println(result);
+				out.write(result.toString());
+			}
+			out.close();
 		} else {
 			System.err.println("Expected a GovDocsDirectories dir.");
 		}

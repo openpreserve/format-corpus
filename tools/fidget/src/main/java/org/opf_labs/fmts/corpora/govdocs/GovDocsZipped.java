@@ -80,7 +80,8 @@ public final class GovDocsZipped extends AbstractGovDocs {
 	@Override
 	protected InputStream getItemImpl(final int number) throws FileNotFoundException {
 			try {
-				return this.currFolder.getInputStream(this.getItemEntry(number));
+				ZipEntry entry = this.getItemEntry(number);
+				return this.currFolder.getInputStream(entry);
 			} catch (IOException excep) {
 				throw new FileNotFoundException("Could not file file for number: "
 						+ number);
@@ -106,13 +107,13 @@ public final class GovDocsZipped extends AbstractGovDocs {
 		int folderNum = folderNumber(number);
 		if (folderNum != this.current) {
 			try {
-				this.currFolder.close();
+				if (this.current >= 0) this.currFolder.close();
 			} catch (IOException excep) {
 				// Do nothing
 			}
 			try {
 				this.currFolder = new ZipFile(this.root.getAbsolutePath() + File.separator
-						+ folderName(folderNum));
+						+ folderName(folderNum) + "." + ZIP_EXT);
 			} catch (IOException excep) {
 				throw new FileNotFoundException("Could not file file for number: "
 						+ number);

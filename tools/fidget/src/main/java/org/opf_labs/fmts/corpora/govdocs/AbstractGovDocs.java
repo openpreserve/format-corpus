@@ -234,7 +234,7 @@ abstract class AbstractGovDocs implements GovDocsCorpora {
 	protected final String folderName(final int folderNum) {
 		assert (folderNum >= 0 && folderNum <= MAX_FOLDER_NUM);
 		return (folderNum > (MAX_FOLDER_NUM / 10)) ? String.valueOf(folderNum) : String
-				.format("%3d", folderNum);
+				.format("%03d", folderNum);
 	}
 	
 	protected final int folderNumber(final int fileNum) {
@@ -244,6 +244,6 @@ abstract class AbstractGovDocs implements GovDocsCorpora {
 	protected final String fileName(final int folderNum, final int fileNum) {
 		assert (folderNum >= 0 && folderNum <= MAX_FOLDER_NUM);
 		assert (fileNum >= 0 && fileNum <= MAX_FILE_NUM);
-		return String.format("%3d%3d", folderNum, fileNum);
+		return String.format("%03d%03d", folderNum, fileNum);
 	}
 }
