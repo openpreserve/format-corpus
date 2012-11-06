@@ -287,6 +287,19 @@ public final class TikaSigTester {
 			throws FileNotFoundException {
 		return TikaIdentifier.fromFile(this.mimeRepository, file);
 	}
+	
+	/**
+	 * @param stream
+	 *            the stream to identify
+	 * @return the IdentificationResult from the file
+	 * @throws FileNotFoundException
+	 *             if the file's not there
+	 */
+	public IdentificationResult identify(InputStream stream)
+			throws FileNotFoundException {
+		return TikaIdentifier.fromStream(this.mimeRepository, stream);
+	}
+	
 
 	@SuppressWarnings("resource")
 	List<IdentificationResult> identify(String govDocsData) {
