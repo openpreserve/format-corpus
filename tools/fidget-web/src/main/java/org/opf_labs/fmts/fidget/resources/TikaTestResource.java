@@ -18,12 +18,22 @@
  */
 package org.opf_labs.fmts.fidget.resources;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.apache.tika.mime.MimeTypeException;
+import org.opf_labs.fmts.fidget.IdentificationResult;
+import org.opf_labs.fmts.fidget.TikaSigTester;
 import org.opf_labs.fmts.fidget.views.ApplicationView;
+
+import com.sun.jersey.multipart.FormDataParam;
 
 
 /**
@@ -48,5 +58,27 @@ public class TikaTestResource {
 	@Produces(MediaType.TEXT_HTML)
 	public ApplicationView homeHtml() {
 		return ApplicationView.getNewInstance("home.ftl");
+	}
+
+	/**
+	 * @return tests the supplied signature against the supplied data file
+	 */
+	@POST
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.TEXT_HTML)
+	public String testSignature(@FormDataParam("sigFile") InputStream sigStream, @FormDataParam("sigName") String sigName, @FormDataParam("datFile") InputStream datStream, @FormDataParam("datName") String datName) {
+		IdentificationResult result = null;
+		try {
+			TikaSigTester tika = TikaSigTester.streamsOnly(sigStream);
+			result = tika.identify(datStream);
+			
+		} catch (MimeTypeException excep) {
+			// TODO Auto-generated catch block
+			excep.printStackTrace();
+		} catch (IOException excep) {
+			// TODO Auto-generated catch block
+			excep.printStackTrace();
+		}
+		return (result!=null) ? result.toString() : "BAD";
 	}
 }

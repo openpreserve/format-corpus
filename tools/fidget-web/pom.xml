@@ -8,7 +8,8 @@
    <description>Make testing and generating new format signatures easier.</description>
 	<properties>
 		<dropwizard.version>0.5.1</dropwizard.version>
-	</properties>
+      <jersey.version>1.13</jersey.version>
+      	</properties>
    <build>
       <plugins>
          <plugin>
@@ -101,6 +102,17 @@
          <scope>compile</scope>
       </dependency>
 		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-multipart</artifactId>
+			<version>${jersey.version}</version>
+			<scope>compile</scope>
+		</dependency>
+      <dependency>
+         <groupId>org.opf-labs.fmt</groupId>
+         <artifactId>fidget</artifactId>
+         <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      		<dependency>
 			<groupId>com.yammer.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
