@@ -35,7 +35,7 @@ function submitSignature() {
 		contentType : false,
 		success : function(data, success) {
 			$("#results").empty();
-			$('<h3>Results</h3><p>' + data + '<p>').appendTo("#results");
+			$("#results").append(data);
 		}
 	});
 }

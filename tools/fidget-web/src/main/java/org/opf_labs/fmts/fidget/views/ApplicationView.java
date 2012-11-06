@@ -18,6 +18,8 @@
  */
 package org.opf_labs.fmts.fidget.views;
 
+import org.opf_labs.fmts.fidget.IdentificationResult;
+
 import com.yammer.dropwizard.views.View;
 
 
@@ -34,12 +36,25 @@ import com.yammer.dropwizard.views.View;
  */
 
 public final class ApplicationView extends View {
+	private final IdentificationResult result;
+	private final boolean isNull;
 
 	/**
 	 * @param templateName the name of the Freemarker template to load
 	 */
 	private ApplicationView(final String templateName) {
 		super(templateName);
+		this.result = null;
+		this.isNull = true;
+	}
+	
+	/**
+	 * @param templateName the name of the Freemarker template to load
+	 */
+	private ApplicationView(final String templateName, final IdentificationResult result) {
+		super(templateName);
+		this.result = result;
+		this.isNull = (this.result == null);
 	}
 	
 	/**
@@ -50,4 +65,26 @@ public final class ApplicationView extends View {
 		return new ApplicationView(templateName);
 	}
 
+	/**
+	 * @param templateName
+	 * @param result 
+	 * @return a new ApplicationView instance processing the passed template
+	 */
+	public static final ApplicationView getNewInstance(final String templateName, final IdentificationResult result) {
+		return new ApplicationView(templateName, result);
+	}
+	
+	/**
+	 * @return the identification result
+	 */
+	public IdentificationResult getResult() {
+		return this.result;
+	}
+	
+	/**
+	 * @return the identification result
+	 */
+	public boolean isNull() {
+		return this.isNull;
+	}
 }

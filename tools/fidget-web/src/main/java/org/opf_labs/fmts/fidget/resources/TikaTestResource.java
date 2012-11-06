@@ -61,12 +61,16 @@ public class TikaTestResource {
 	}
 
 	/**
+	 * @param sigStream the Stream containing the Sig File
+	 * @param sigName the name of the sig file
+	 * @param datStream the Stream containg 64K of test data
+	 * @param datName the test data file name
 	 * @return tests the supplied signature against the supplied data file
 	 */
 	@POST
 	@Consumes(MediaType.MULTIPART_FORM_DATA)
 	@Produces(MediaType.TEXT_HTML)
-	public String testSignature(@FormDataParam("sigFile") InputStream sigStream, @FormDataParam("sigName") String sigName, @FormDataParam("datFile") InputStream datStream, @FormDataParam("datName") String datName) {
+	public ApplicationView testSignature(@FormDataParam("sigFile") InputStream sigStream, @FormDataParam("sigName") String sigName, @FormDataParam("datFile") InputStream datStream, @FormDataParam("datName") String datName) {
 		IdentificationResult result = null;
 		try {
 			TikaSigTester tika = TikaSigTester.streamsOnly(sigStream);
@@ -79,6 +83,6 @@ public class TikaTestResource {
 			// TODO Auto-generated catch block
 			excep.printStackTrace();
 		}
-		return (result!=null) ? result.toString() : "BAD";
+		return ApplicationView.getNewInstance("result.ftl", result);
 	}
 }
