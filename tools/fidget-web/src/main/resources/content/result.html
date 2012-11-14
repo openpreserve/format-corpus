@@ -1,0 +1,41 @@
+<!--
+
+    Copyright (C) 2012 Carl Wilson <carl@openplanetsfoundation.org>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<h3>Result</h3>
+<#if null>
+<p>There's been a problem, it's almost certainly the signature form. At the moment the sig submitted MUST be a valid Tika Signature XML doc, including an XML prolog.</p>
+<p>Below is a PDF example</p>
+<p>&lt;xml version="1.0" encoding="UTF-8"?&gt;</br>
+&lt;mime-type&gt;</br>
+&lt;magic priority="50"&gt;</br>
+    &lt;!-- ASCII: %PDF-1. @0 --&gt;</br>
+    &lt;match value="0x255044462D312E" type="string" offset="0"&gt;</br>
+      &lt;!-- ASCII: % @9 --&gt;</br>
+      &lt;match value="0x25" type="string" offset="9"&gt;</br>
+      &lt;/match&gt;</br>
+    &lt;/match&gt;</br>
+  &lt;/magic&gt;</br>
+  &lt;glob pattern="*.pdf"/&gt;</br>
+&lt;/mime-type&gt;</br>
+<#else>
+<label>SHA-256 of first 64K of data:</label>
+<span>${result.hash64K}</span>
+<label>Tika MIME Type:</label>
+<span>${result.mime}</span>
+<label>Time Taken:</label>
+<span>${result.duration} milliseconds</span>
+</#if>
