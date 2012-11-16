@@ -135,7 +135,7 @@ public final class TikaSigTester {
 			return new TikaSigTester(repo);
 		} catch (Exception excep) {
 			throw new IllegalStateException(
-					"Missing or corrupt mime type definitions.");
+					"Missing or corrupt mime type definitions: " + excep);
 		}
 	}
 
