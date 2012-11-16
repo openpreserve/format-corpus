@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<ContainerSignatureMapping schemaVersion="1.0" signatureVersion="1"> 
+    <ContainerSignatures>
+
+         <ContainerSignature Id="14000" ContainerType="ZIP">
+             <Description>Apple iBook Format</Description>
+             <Files>
+                  <File>
+                     <Path>mimetype</Path>
+                     <BinarySignatures>
+                         <InternalSignatureCollection>
+ 	                        <InternalSignature ID="14000">
+ 	                            <ByteSequence Reference="BOFoffset">
+ 	                                <SubSequence Position="0" SubSeqMinOffset="0" SubSeqMaxOffset="1024">
+ 	                                    <Sequence>'application/x-ibooks+zip'</Sequence>
+ 	                                </SubSequence>
+ 	                            </ByteSequence>
+ 	                        </InternalSignature>
+                         </InternalSignatureCollection>
+                     </BinarySignatures>
+                 </File>
+             </Files>
+         </ContainerSignature>   
+
+         <ContainerSignature Id="14010" ContainerType="ZIP">
+             <Description>ePub format</Description>
+             <Files>
+                  <File>
+                     <Path>mimetype</Path>
+                     <BinarySignatures>
+                         <InternalSignatureCollection>
+ 	                        <InternalSignature ID="14010">
+ 	                            <ByteSequence Reference="BOFoffset">
+ 	                                <SubSequence Position="0" SubSeqMinOffset="0" SubSeqMaxOffset="1024">
+ 	                                    <Sequence>'application/epub+zip'</Sequence>
+ 	                                </SubSequence>
+ 	                            </ByteSequence>
+ 	                        </InternalSignature>
+                         </InternalSignatureCollection>
+                     </BinarySignatures>
+                 </File>
+             </Files>
+         </ContainerSignature>   
+
+        
+    </ContainerSignatures>
+  
+    <FileFormatMappings>
+ 
+
+        <!-- Apple iBooks format-->
+        <FileFormatMapping signatureId="14000" Puid="x-fmt/799"/>
+        <!-- ePub format -->
+        <FileFormatMapping signatureId="14010" Puid="x-fmt/800"/>
+
+        
+    </FileFormatMappings>
+  
+    <TriggerPuids>
+        <TriggerPuid ContainerType="OLE2" Puid="fmt/111"/> 
+        <TriggerPuid ContainerType="ZIP" Puid="fmt/189"/> 
+        <TriggerPuid ContainerType="ZIP" Puid="x-fmt/263"/> 
+    </TriggerPuids>
+
+</ContainerSignatureMapping>

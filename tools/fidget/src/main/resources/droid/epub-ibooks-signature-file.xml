@@ -1,0 +1,14 @@
+<FFSignatureFile xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" Version="1" DateCreated="2012-11-15T16:07:48+00:00">
+	<FileFormatCollection>
+
+
+		<FileFormat ID="1290" Name="Apple iBook format" PUID="x-fmt/799">
+  			<Extension>ibooks</Extension> 
+		</FileFormat>
+
+		<FileFormat ID="1291" Name="ePub format" PUID="x-fmt/800">
+ 			<Extension>epub</Extension> 
+		</FileFormat>
+
+  	</FileFormatCollection>
+ </FFSignatureFile>
