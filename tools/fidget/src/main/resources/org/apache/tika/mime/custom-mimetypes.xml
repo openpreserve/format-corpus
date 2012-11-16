@@ -255,4 +255,136 @@ sl:generator="ibauthor"
      -->
     <glob pattern="*.iba" />
   </mime-type>
+
+
+  <!-- From The British Library -->
+
+<mime-info>
+  <mime-type type="application/vnd.amazon.ebook">
+  <sub-class-of type="application/x-mobipocket-mobibook"/>
+   <_comment>Amazon Kindle eBook</_comment>
+   <glob pattern="*.azw"/>
+  </mime-type>
+  
+<mime-type type="application/x-mobipocket-mobibook">
+   <acronym></acronym>
+   <_comment>Mobipocket eBook</_comment>
+   <magic priority="60">
+     <!-- ASCII: BOOKMOBI @60 -->
+     <match value="BOOKMOBI" type="string" offset="60">
+     </match>
+   </magic>
+  <!-- <glob pattern="*.mobi"/>-->
+  </mime-type>
+
+  <mime-type type="application/x-pdb-plucker-ebook">
+   <acronym></acronym>
+   <_comment>Plucker ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: DataPlkr @60 -->
+     <match value="DataPlkr" type="string" offset="60">
+     </match>
+   </magic>
+   <!-- <glob pattern="*.pdb"/> -->
+  </mime-type>
+  <mime-type type="application/x-pdb-textread-ebook">
+   <acronym></acronym>
+   <_comment>TEXtREAd ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: TEXtREAd @60 -->
+     <match value="TEXtREAd" type="string" offset="60">
+     </match>
+   </magic>
+   <!-- <glob pattern="*.pdb"/> -->
+  </mime-type>
+  <mime-type type="application/x-pdb-ztxt-ebook">
+   <acronym></acronym>
+   <_comment>zTXT ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: zTXT @60 -->
+     <match value="zTXT" type="string" offset="60">
+     </match>
+   </magic>
+   <!-- <glob pattern="*.pdb"/>  -->
+  </mime-type>
+  <mime-type type="application/x-pdb-isilo-ebook">
+   <acronym></acronym>
+   <_comment>ISilo ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: SDocSilX @60 -->
+     <match value="SDocSilX" type="string" offset="60">
+     </match>
+   </magic>
+   <!-- <glob pattern="*.pdb"/> -->
+  </mime-type>
+  <mime-type type="application/x-pdb-peanutpress-ebook">
+   <acronym></acronym>
+   <_comment>PeanutPress ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: PNRdPPrs @60 -->
+     <match value="PNRdPPrs" type="string" offset="60">
+     </match>
+   </magic>
+   <!-- <glob pattern="*.pdb"/> -->
+  </mime-type>
+  <mime-type type="application/x-ext-lrf">
+   <acronym></acronym>
+   <_comment>BroadBand eBook</_comment>
+   <magic priority="60">
+     <match value="0x4C00520046000000" type="string" offset="0">
+     </match>
+   </magic>
+   <glob pattern="*.lrf"/>
+  </mime-type>
+  <mime-type type="application/x-ms-reader">
+   <acronym></acronym>
+   <_comment></_comment>
+   <magic priority="50">
+     <!-- ASCII: ITOLITLS -->
+     <match value="0x49544F4C49544C53" type="string" offset="0">
+     </match>
+   </magic>
+   <glob pattern="*.lit"/>
+  </mime-type>
+  <mime-type type="application/x-rocketbook">
+   <acronym></acronym>
+   <_comment>Rocketbook ebook</_comment>
+   <magic priority="80">
+     <!-- ASCII: NUVO @6 -->
+     <match value="NUVO" type="string" offset="6">
+     </match>
+   </magic>
+   <!-- <glob pattern="*.rb"/> -->
+  </mime-type>
+  <mime-type type="application/x-newton-compatible-pkg">
+   <acronym></acronym>
+   <_comment>Newton compatible pkg eBook</_comment>
+   <magic priority="60">
+     <!-- ASCII: package1xxxx @0 -->
+     <match value="package1xxxx" type="string" offset="0">
+     </match>
+   </magic>
+   <glob pattern="*.pkg"/>
+  </mime-type>
+  <mime-type type="application/x-tcr-ebook">
+   <acronym></acronym>
+   <_comment>TCR ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: !!8-Bit!! @0 -->
+     <match value="!!8-Bit!!" type="string" offset="0">
+     </match>
+   </magic>
+   <glob pattern="*.tcr"/>
+  </mime-type>
+  <mime-type type="application/x-snb-ebook">
+   <acronym></acronym>
+   <_comment>SNB ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: SNBP000B @0 -->
+     <match value="SNBP000B" type="string" offset="0">
+     </match>
+   </magic>
+   <glob pattern="*.snb"/>
+  </mime-type>
+
 </mime-info>
