@@ -53,7 +53,7 @@ public class OldTikaSigTesterTest {
 		int size = types.size();
 		assertEquals("Unexpected number of signatures: "+size, size, 4 );
 		// Test using the trial signature
-		System.out.println("Try: "+tst.identify( new File( "../.././save-as/OpenOffice.org 3.2.0 OSX/pdf-features/simple.pdf" ) ));
+		System.out.println("Try: "+tst.identify( new File( "../../office-examples/OpenOffice.org 3.3.0 OSX/pdf-features/simple.pdf" ) ));
 		
 		// Test loading all signatures:
 		tst = TikaSigTester.vanillaAndFiles(AllFidgetTests.getPercepioXml());
