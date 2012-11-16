@@ -116,6 +116,16 @@
    </magic>
    <glob pattern="*.tcr"/>
   </mime-type>
+  <mime-type type="application/x-snb-ebook">
+   <acronym></acronym>
+   <_comment>SNB ebook</_comment>
+   <magic priority="60">
+     <!-- ASCII: SNBP000B @0 -->
+     <match value="SNBP000B" type="string" offset="0">
+     </match>
+   </magic>
+   <glob pattern="*.snb"/>
+  </mime-type>
 
 </mime-info>
 
