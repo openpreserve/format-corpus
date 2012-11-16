@@ -31,7 +31,7 @@
   <!-- General parser module could extract version - some are appended here too. -->
 
   <mime-type type="application/warc; version=1.0">
-    <sub-class-of type="audio/warc" />
+    <sub-class-of type="application/warc" />
     <_comment>WARC 1.0</_comment>
     <magic priority="70">
       <match value="WARC/1.0" type="string" offset="0"/>
@@ -39,7 +39,7 @@
   </mime-type>
   
   <mime-type type="application/warc; version=0.16">
-    <sub-class-of type="audio/warc" />
+    <sub-class-of type="application/warc" />
     <_comment>WARC 0.16</_comment>
     <magic priority="70">
       <match value="WARC/0.16" type="string" offset="0"/>
@@ -47,7 +47,7 @@
   </mime-type>
   
   <mime-type type="application/warc; version=0.9">
-    <sub-class-of type="audio/warc" />
+    <sub-class-of type="application/warc" />
     <_comment>WARC 0.9</_comment>
     <magic priority="70">
       <match value="WARC/0.9" type="string" offset="0"/>
