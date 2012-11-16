@@ -1,15 +1,15 @@
 ---
-* formatName: TIFF
-* formatVersion: 6.0
-* extensions: .xxx, .yyy
-* mimeType: xxx/xxx
-* mimeTypeAliases: xxx/yyy, xxx/zzz
-* pronomId: fmt/XXX
-* xmlNameSpace: http://www.example.com/ns/
-* creatorTool: App 4.0 (102)
-* creatorToolUrl: http://www.example.com/
-* formatSpecUrl: http://www.example.com/spec/
+* formatName: 
+* formatVersion: 
+* extensions: 
+* mimeType: 
+* mimeTypeAliases: 
+* pronomId: 
+* xmlNameSpace: 
+* creatorTool: 
+* creatorToolUrl: 
+* formatSpecUrl: 
 
 ---
 
-A free-text comment about this file.
+For an example that make it clear how to fill out the fields, see [here](TBA).
