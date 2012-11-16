@@ -259,7 +259,6 @@ sl:generator="ibauthor"
 
   <!-- From The British Library -->
 
-<mime-info>
   <mime-type type="application/vnd.amazon.ebook">
   <sub-class-of type="application/x-mobipocket-mobibook"/>
    <_comment>Amazon Kindle eBook</_comment>
