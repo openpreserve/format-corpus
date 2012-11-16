@@ -3,7 +3,7 @@ format-corpus
 
 An openly-licensed corpus of small example files, covering a wide range of formats and creation tools.
 
-Each folder contains a set of related test files that are related or otherwise managed together. The idea is that each of these would include metadata associated with the files, and an additional process will be written that analyses all the files and builds a set of web pages that cross-reference the content and allow deeper exploration. i.e. a map or atlas.
+All items, apart from the source code under 'tools', is CC0 licenced unless otherwise stated.  The source code is Apache 2.0 Licenced unless otherwise stated.
 
 
 How to Contribute
@@ -11,4 +11,14 @@ How to Contribute
 
 See http://wiki.curatecamp.org/index.php/Collecting_format_ID_test_files for more information.
 
+
+Pooled Signatures
+=================
+
+As well as pooling example files, we also pool format signatures:
+
+* Tika signatures go [https://github.com/openplanets/format-corpus/blob/master/tools/fidget/src/main/resources/org/apache/tika/mime/custom-mimetypes.xml here]
+* DROID signatures go [https://github.com/openplanets/format-corpus/tree/master/tools/fidget/src/main/resources/droid here].
+
+More details here: http://wiki.curatecamp.org/index.php/Improving_format_ID_coverage
 
