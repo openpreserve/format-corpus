@@ -386,4 +386,17 @@ sl:generator="ibauthor"
    <glob pattern="*.snb"/>
   </mime-type>
 
+  <!-- Macromedia Director from @benfinoradin -->
+  
+  <mime-type type="application/x-director">
+   <acronym>DCR</acronym>
+   <_comment>Macromedia Director</_comment>
+   <magic priority="60">
+     <!-- ASCII: SNBP000B @0 -->
+     <match value="0x4647444D" type="string" offset="8">
+     </match>
+   </magic>
+   <glob pattern="*.dcr"/>
+  </mime-type>
+
 </mime-info>
