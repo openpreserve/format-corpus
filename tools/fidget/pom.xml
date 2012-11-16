@@ -17,10 +17,10 @@
                <target>1.6</target>
             </configuration>
          </plugin>
-         <!-- <plugin> <artifactId>maven-assembly-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.opf_labs.fmts.fidget.fidget.SigGenCommand</mainClass> 
-            </manifest> </archive> <descriptorRefs> <descriptorRef>jar-with-dependencies</descriptorRef> </descriptorRefs> </configuration> 
+         <plugin> <artifactId>maven-assembly-plugin</artifactId> <configuration> <archive> <manifest> <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass> 
+            </manifest> </archive> <descriptorRefs> <descriptorRef>jar-with-dependencies</descriptorRef> </descriptorRefs> </configuration>
             <executions> <execution> <id>make-my-jar-with-dependencies</id> <phase>package</phase> <goals> <goal>single</goal> </goals> 
-            </execution> </executions> </plugin> -->
+            </execution> </executions> </plugin> 
          <plugin>
             <!-- http://code.google.com/p/maven-license-plugin/wiki/HowTo -->
             <groupId>com.mycila.maven-license-plugin</groupId>
