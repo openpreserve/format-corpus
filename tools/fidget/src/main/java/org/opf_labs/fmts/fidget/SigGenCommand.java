@@ -135,9 +135,11 @@ public class SigGenCommand {
 	}
 	
 	private static TikaSigTester tikaStarter( String sigfile, boolean sigfileAlone ) throws MimeTypeException, IOException {
-		TikaSigTester tst = TikaSigTester.vanilla();
+		TikaSigTester tst = null;
 		if( sigfile != null ) {
 			tst = (sigfileAlone) ? TikaSigTester.filesOnly(new File(sigfile)) : TikaSigTester.vanillaAndFiles(new File(sigfile));					
+		} else {
+			tst = TikaSigTester.vanilla();
 		}
 		return tst;
 	}
