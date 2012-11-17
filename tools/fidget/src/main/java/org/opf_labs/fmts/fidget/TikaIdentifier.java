@@ -108,7 +108,7 @@ class TikaIdentifier {
 		mrkStr.mark(mimeRepo.getMinLength() * 2);
 		// identify and time
 		long start = new Date().getTime();
-		MediaType mime = identify(mimeRepo, stream);
+		MediaType mime = identify(mimeRepo, stream, loc);
 		long duration = new Date().getTime() - start;
 		// Now reset the stream and hash
 		IdentificationResult result;
@@ -124,8 +124,9 @@ class TikaIdentifier {
 	}
 
 	static MediaType identify(final MimeTypes mimeRepo,
-			final InputStream input) {
+			final InputStream input, URI loc) {
 		Metadata metadata = new Metadata();
+		metadata.set( Metadata.RESOURCE_NAME_KEY, loc.toASCIIString());
 		MediaType mediaType;
 		try {
 			mediaType = mimeRepo.detect(TikaInputStream.get(input), metadata);
