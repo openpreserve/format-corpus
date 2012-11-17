@@ -1,0 +1,21 @@
+<mime-info>
+
+  <!-- Macromedia Director, initially from @benfinoradin -->
+  
+  <mime-type type="application/x-director">
+   <acronym>DCR</acronym>
+   <_comment>Macromedia Director</_comment>
+   <magic priority="50">
+     <!-- One Endian? -->
+     <match value="RIFX" type="string" offset="0">
+        <match value="FGDM" type="string" offset="8"/>
+     </match>
+     <!-- Other Endian? -->
+     <match value="XFIR" type="string" offset="0">
+        <match value="MDGF" type="string" offset="8"/>
+     </match>
+   </magic>
+   <glob pattern="*.dcr"/>
+  </mime-type>
+
+</mime-info>
