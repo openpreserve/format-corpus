@@ -18,10 +18,18 @@
  */
 package org.opf_labs.fmts;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
+import org.opf_labs.fmts.fidget.TikaSigTester;
 import org.opf_labs.fmts.mimeinfo.MimeType;
 
 /**
@@ -74,12 +82,32 @@ public class CoverageAnalysis {
 	
 	/**
 	 * @param args
+	 * @throws FileNotFoundException 
+	 * @throws URISyntaxException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
+		
 		// Look through signature sources...
 		CoverageAnalysis ca = new CoverageAnalysis();
 
 		
+	}
+
+	/**
+	 * 
+	 * @param groupId
+	 * @param artifactId
+	 * @return
+	 */
+	public static String getComponentVersion(String groupId, String artifactId) {
+		InputStream r = CoverageAnalysis.class.getResourceAsStream( "/META-INF/maven/"+groupId+"/"+artifactId+"/pom.properties");
+		Properties p = new Properties();
+		try {
+			p.load(r);
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}
+		return p.getProperty("version");
 	}
 	 
 }
