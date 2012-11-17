@@ -11,7 +11,7 @@ How to Contribute
 
 See http://wiki.curatecamp.org/index.php/Collecting_format_ID_test_files for more information.
 
-See [metadata-template.ext.md](metadata-template.ext.md) for a simple per-file metadata template.
+See [https://github.com/openplanets/format-corpus/blob/master/metadata-template.ext.md metadata-template.ext.md] for a simple per-file metadata template.
 
 
 Pooled Signatures
