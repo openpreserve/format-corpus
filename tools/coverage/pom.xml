@@ -22,7 +22,7 @@
     <configuration>
      <archive>
       <manifest>
-       <mainClass>org.opf_labs.fmts.CoverageAnalysis</mainClass>
+       <mainClass>org.opf_labs.fmts.CorpusCoverageAnalysis</mainClass>
       </manifest>
      </archive>
      <descriptorRefs>
@@ -80,11 +80,6 @@
    <version>1.2.13</version>
    <type>jar</type>
    <scope>compile</scope>
-  </dependency>
-  <dependency>
-   <groupId>org.apache.tika</groupId>
-   <artifactId>tika-core</artifactId>
-   <version>1.2</version>
   </dependency>
   <dependency>
    <groupId>org.opf-labs.planets</groupId>

@@ -101,6 +101,9 @@ public class CoverageAnalysis {
 	 */
 	public static String getComponentVersion(String groupId, String artifactId) {
 		InputStream r = CoverageAnalysis.class.getResourceAsStream( "/META-INF/maven/"+groupId+"/"+artifactId+"/pom.properties");
+		if( r == null ) {
+			return null;
+		}
 		Properties p = new Properties();
 		try {
 			p.load(r);
