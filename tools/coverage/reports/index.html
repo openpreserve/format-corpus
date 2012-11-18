@@ -14,8 +14,15 @@
 
 <div id="container"></div>
 
-<script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
-<script type="text/javascript">
+    <script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
+    
+    <script src="assets/js/jquery-1.7.2.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/jquery.metadata.js"></script>
+    <script src="assets/js/jquery.tablesorter.min.js"></script>
+    <script src="assets/js/jquery.tablecloth.js"></script>
+
+<script type="text/javascript" charset="utf-8">
 
 function tabulate(data, columns) {
     var table = d3.select("#container").append("table"),
@@ -56,27 +63,19 @@ function tabulate(data, columns) {
     return table;
 }
 
-
-d3.csv("corpus-coverage.csv", function(data) {
-	  tabulate(data, ["Resource","Tika Format","Tika Format - no ext","Fidget Format","Fidget Format - no ext"]);
-});
-	
-</script>
-
-    <script src="assets/js/jquery-1.7.2.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/jquery.metadata.js"></script>
-    <script src="assets/js/jquery.tablesorter.min.js"></script>
-    <script src="assets/js/jquery.tablecloth.js"></script>
-    
-    <script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
-        $("table").tablecloth({
-          theme: "paper",
-          striped: true,
-          sortable: true,
-          condensed: true
-        });
+    	  
+	    d3.csv("corpus-coverage.csv", function(data) {
+    		  tabulate(data, ["Resource","Tika Format","Tika Format - no ext","Fidget Format","Fidget Format - no ext"]);
+    	        $("table").tablecloth({
+    	            theme: "paper",
+    	            striped: true,
+    	            sortable: true,
+    	            condensed: true
+    	          });
+    	});
+    		
+    	  
       });
     </script>
 
