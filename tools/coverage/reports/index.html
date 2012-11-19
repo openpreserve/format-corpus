@@ -67,8 +67,8 @@ function tabulate(data, columns) {
     	  
 	    d3.csv("corpus-coverage.csv", function(data) {
     		  tabulate(data, ["Resource","Tika Format","Tika Format - no ext","Fidget Format","Fidget Format - no ext"]);
-    	        $("table").tablecloth({
-    	            theme: "paper",
+    	        $("#container table").tablecloth({
+    	            theme: "dark",
     	            striped: true,
     	            sortable: true,
     	            condensed: true
