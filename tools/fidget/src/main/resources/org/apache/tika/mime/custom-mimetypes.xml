@@ -404,4 +404,15 @@ sl:generator="ibauthor"
    <glob pattern="*.dcr"/>
   </mime-type>
   
+  <!-- Acorn Draw, from @prwheatley -->
+
+  <mime-type type="application/x-acorn_draw">
+    <acronym>Acorn Draw</acronym>
+    <_comment>Risc OS filetype: AFF</_comment>
+    <magic priority="50">
+      <match value="Draw" type="string" offset="0"/>
+    </magic>
+    <glob pattern="*.aff"/>
+  </mime-type>
+
 </mime-info>
