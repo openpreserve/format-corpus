@@ -69,7 +69,7 @@
                </platforms>
                <programs>
                   <program>
-                     <mainClass>org.opf_labs.fmts.fidget.fidget.SigGenCommand</mainClass>
+                     <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass>
                      <name>fidget</name>
                   </program>
                </programs>
@@ -89,6 +89,11 @@
                <descriptorRefs>
                   <descriptorRef>jar-with-dependencies</descriptorRef>
                </descriptorRefs>
+<archive>
+            <manifest>
+                     <mainClass>org.opf_labs.fmts.fidget.SigGenCommand</mainClass>
+            </manifest>
+</archive>
             </configuration>
             <executions>
                <execution>
