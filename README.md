@@ -7,8 +7,6 @@ All items, apart from the source code under 'tools', is CC0 licenced unless othe
 
 A recent summary of the contents of the repository can be found [here](http://www.opf-labs.org/format-corpus/tools/coverage/reports/).
 
-A recent summary of the contents of the repository can be found [here](http://www.opf-labs.org/format-corpus/tools/coverage/reports/).
-
 
 How to Contribute
 =================
