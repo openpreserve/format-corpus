@@ -1,0 +1,4 @@
+# Prevent line-ending normalisation from modifying files
+* text=binary
+
+tools/* text=auto
