@@ -5,6 +5,7 @@ An openly-licensed corpus of small example files, covering a wide range of forma
 
 All items, apart from the source code under 'tools', is CC0 licenced unless otherwise stated.  The source code is Apache 2.0 Licenced unless otherwise stated.
 
+A recent summary of the contents of the repository can be found [here](http://www.opf-labs.org/format-corpus/tools/coverage/reports/).
 
 A recent summary of the contents of the repository can be found [here](http://www.opf-labs.org/format-corpus/tools/coverage/reports/).
 
