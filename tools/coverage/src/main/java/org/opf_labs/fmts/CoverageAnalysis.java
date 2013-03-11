@@ -36,6 +36,7 @@ import java.util.TreeMap;
 import org.opf_labs.fmts.fidget.TikaSigTester;
 import org.opf_labs.fmts.mimeinfo.Glob;
 import org.opf_labs.fmts.mimeinfo.MimeType;
+import org.opf_labs.fmts.mimeinfo.droid.DroidMimeType;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
@@ -68,7 +69,7 @@ public class CoverageAnalysis {
 				String g_type = g.getPattern();
 				ArrayList<MimeCompare> mcs = null;
 				if(extComp.containsKey(g_type)){
-					System.out.println("Already got "+g_type);
+//					System.out.println("Already got "+g_type);
 					mcs = extComp.get(g_type);
 				} else {
 					mcs = new ArrayList<MimeCompare>();
@@ -98,7 +99,7 @@ public class CoverageAnalysis {
 				String g_type = g.getPattern();
 				ArrayList<MimeCompare> mcs = null;
 				if(extComp.containsKey(g_type)){
-					System.out.println("Found MimeCompare list for: "+g_type);
+//					System.out.println("Found MimeCompare list for: "+g_type);
 					mcs = extComp.get(g_type);
 					
 					// search through the list looking for a matching tika mimetype
@@ -112,7 +113,7 @@ public class CoverageAnalysis {
 						}
 					}
 					if(!foundMatch){
-						System.out.println("No equivalent Tika sig for "+droid_mt.getType());
+//						System.out.println("No equivalent Tika sig for "+droid_mt.getType());
 						MimeCompare mc = new MimeCompare();
 						mc.droid = droid_mt;
 						mcs.add(mc);
@@ -145,7 +146,19 @@ public class CoverageAnalysis {
 						t_list.append(mc.tika.getType()).append(" ");
 					}
 					if(mc.droid!=null){
-						d_list.append(mc.droid.getType()).append(" ");
+						d_list.append(mc.droid.getType());
+						
+						DroidMimeType dmt = (DroidMimeType) mc.droid;
+						List<String> sigIds = dmt.getSigIds();
+						if(sigIds!=null && sigIds.size()>0){
+							d_list.append("(");
+							for(String id: sigIds){
+								d_list.append(id).append(" ");
+							}
+							d_list.append(")");
+						}
+						
+						d_list.append(" ");
 					}
 				}
 //				System.out.print(glob+",");

@@ -22,8 +22,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -31,10 +34,12 @@ import javax.xml.namespace.QName;
 
 import org.opf_labs.fmts.mimeinfo.Glob;
 import org.opf_labs.fmts.mimeinfo.MimeType;
+import org.opf_labs.fmts.mimeinfo.droid.DroidMimeType;
 
 import eu.planets_project.ifr.core.techreg.formats.SigFileUtils;
 
 import uk.gov.nationalarchives.pronom.FileFormatType;
+import uk.gov.nationalarchives.pronom.InternalSignatureType;
 import uk.gov.nationalarchives.pronom.SigFile;
 import uk.gov.nationalarchives.pronom.SignatureFileType;
 
@@ -71,6 +76,14 @@ public class DroidTypes {
     	List<MimeType> mtl = new ArrayList<MimeType>();
     	System.out.println("DROID SigFile "+sigFile);
     	System.out.println("DROID SigFile Version "+sigFile.getVersion());
+    	
+    	// get the list of DROID Internal Signatures
+    	List<InternalSignatureType> intSigsList = sigFile.getInternalSignatureCollection().getInternalSignature();
+    	Map<BigInteger, InternalSignatureType> intSigMap = new HashMap<BigInteger, InternalSignatureType>();
+    	for (InternalSignatureType ist: intSigsList){
+    		intSigMap.put(ist.getID(), ist);
+    	}
+    	
     	for( FileFormatType ff :
     			sigFile.getFileFormatCollection().getFileFormat() ) {
     		ff.getID();
@@ -78,7 +91,7 @@ public class DroidTypes {
     		ff.getName();
     		ff.getMIMEType();
     		ff.getVersion();
-       		String iSigID = null;
+       		List<String> iSigID = new ArrayList<String>();
        		List<String> exts = new ArrayList<String>();
     		List<String> hasPOver = new ArrayList<String>();
     		for( JAXBElement<? extends Serializable> e : ff.getInternalSignatureIDOrExtensionOrHasPriorityOverFileFormatID() ) {
@@ -87,7 +100,9 @@ public class DroidTypes {
     				if( !"".equals(v) && !"unknown".equalsIgnoreCase(v))
     					exts.add(v);
        			} else if( iSigIDQName.equals(e.getName()) ) {
-       				iSigID = e.getValue().toString();
+//       				iSigID = e.getValue().toString();
+       				iSigID.add(e.getValue().toString());
+//       				System.out.println(iSigID);
        			} else if( hasPriorityOverFFIDQName.equals(e.getName()) ) {
     				String v = e.getValue().toString();
     				if( !"".equals(v) )
@@ -118,7 +133,7 @@ public class DroidTypes {
     		    mts += ";version=\""+version+"\"";
     		}
     		// Parse as MediaType:
-    		MimeType mt = new MimeType();
+    		DroidMimeType mt = new DroidMimeType();
     		mt.setType(mts);
     		List<Glob> globs = new ArrayList<Glob>();
     		for( String ext : exts ) {
@@ -127,8 +142,9 @@ public class DroidTypes {
     			globs.add(g);
     		}
     		mt.setGlobs(globs);
-    		if( iSigID != null ) {
+    		if( iSigID.size()>0 ) {
     			//System.out.println("Has Magic.");
+    			mt.setSigIds(iSigID);
     		}
     		// Add to the list:
     		mtl.add(mt);
