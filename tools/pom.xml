@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>org.opf-labs.fmt</groupId>
+   <artifactId>format-corpus-tools</artifactId>
+   <version>0.0.4-SNAPSHOT</version>
+   <name>Format Corpus Tools</name>
+   <description>Tools....</description>
+   <inceptionYear>2012</inceptionYear>
+   <packaging>pom</packaging>   
+   <modules>
+      <module>coverage</module>
+      <module>fidget</module>
+   </modules>
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.0.2</version>
+            <configuration>
+               <source>1.6</source>
+               <target>1.6</target>
+            </configuration>
+         </plugin>
+         <plugin>
+            <!-- http://code.google.com/p/maven-license-plugin/wiki/HowTo -->
+            <groupId>com.mycila.maven-license-plugin</groupId>
+            <artifactId>maven-license-plugin</artifactId>
+            <configuration>
+               <header>src/etc/header.txt</header>
+               <excludes>
+                  <exclude>target/**</exclude>
+                  <exclude>data/**</exclude>
+                  <exclude>**/*.xml</exclude>
+               </excludes>
+               <properties>
+                  <year>${project.inceptionYear}</year>
+                  <name>Andrew Jackson</name>
+                  <email>Andrew.Jackson@bl.uk</email>
+               </properties>
+            </configuration>
+            <executions>
+               <execution>
+                  <phase>test</phase>
+                  <goals>
+                     <goal>check</goal>
+                  </goals>
+               </execution>
+            </executions>
+         </plugin>
+
+      </plugins>
+   </build>
+</project>
