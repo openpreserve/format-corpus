@@ -135,7 +135,7 @@ public class CoverageAnalysis {
 		
 		// Show and write results
 		try {
-			BufferedWriter writer = new BufferedWriter(new FileWriter(new File("C:\\Projects\\SPRUCE\\2013-03-Leeds\\data\\output.csv")));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(new File("coverage-output.csv")));
 		
 			for(String glob: extComp.keySet()){
 				

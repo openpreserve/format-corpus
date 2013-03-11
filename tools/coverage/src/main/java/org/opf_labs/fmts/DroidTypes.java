@@ -138,7 +138,7 @@ public class DroidTypes {
     		List<Glob> globs = new ArrayList<Glob>();
     		for( String ext : exts ) {
     			Glob g = new Glob();
-    			g.setPattern("."+ext);
+    			g.setPattern(ext);
     			globs.add(g);
     		}
     		mt.setGlobs(globs);
