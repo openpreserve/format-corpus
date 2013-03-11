@@ -1,4 +1,5 @@
-/.project
-/.pydevproject
-/.settings
-/.classpath
+.project
+.pydevproject
+.settings
+.classpath
+target
