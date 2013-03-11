@@ -25,6 +25,7 @@ import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
+import org.opf_labs.fmts.mimeinfo.Glob;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
@@ -70,6 +71,13 @@ public class TikaTypes {
     private org.opf_labs.fmts.mimeinfo.MimeType toMimeInfo( MimeType mt ) {
     	org.opf_labs.fmts.mimeinfo.MimeType mi = new org.opf_labs.fmts.mimeinfo.MimeType();
     	mi.setType( mt.getType().toString() );
+    	List<Glob> globs = new ArrayList<Glob>();
+    	for( String ext : mt.getExtensions() ) {
+    		Glob g = new Glob();
+    		g.setPattern(ext);
+    		globs.add(g);
+    	}
+    	mi.setGlobs( globs );
     	return mi;
     }
     

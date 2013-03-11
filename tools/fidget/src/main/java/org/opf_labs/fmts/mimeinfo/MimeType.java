@@ -235,5 +235,16 @@ public class MimeType {
 	public void setRootXML(RootXML rootXML) {
 		this.rootXML = rootXML;
 	}
+	
+	/* ---- */
+
+	public String getGlobsAsString() {
+		String exts = "";
+		if( this.getGlobs() == null ) return exts;
+		for( Glob g : getGlobs() ) {
+			exts += " " + g.getPattern();
+		}
+		return exts;
+	}
 
 }

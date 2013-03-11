@@ -29,9 +29,10 @@
             <artifactId>maven-license-plugin</artifactId>
             <configuration>
                <header>src/etc/header.txt</header>
+               <includes>
+                  <include>src/**</include>
+               </includes>
                <excludes>
-                  <exclude>target/**</exclude>
-                  <exclude>data/**</exclude>
                   <exclude>**/*.xml</exclude>
                </excludes>
                <properties>

@@ -18,6 +18,7 @@
  */
 package org.opf_labs.fmts;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
@@ -28,12 +29,14 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.namespace.QName;
 
+import org.opf_labs.fmts.mimeinfo.Glob;
 import org.opf_labs.fmts.mimeinfo.MimeType;
 
 import eu.planets_project.ifr.core.techreg.formats.SigFileUtils;
 
 import uk.gov.nationalarchives.pronom.FileFormatType;
 import uk.gov.nationalarchives.pronom.SigFile;
+import uk.gov.nationalarchives.pronom.SignatureFileType;
 
 /**
  * @author Andrew Jackson <Andrew.Jackson@bl.uk>
@@ -41,7 +44,7 @@ import uk.gov.nationalarchives.pronom.SigFile;
  */
 public class DroidTypes {
 	// DROID
-	private SigFile sigFile;
+	private SignatureFileType sigFile;
 	
     private static QName extensionQName = new QName("http://www.nationalarchives.gov.uk/pronom/SignatureFile", "Extension");
     private static QName iSigIDQName = new QName("http://www.nationalarchives.gov.uk/pronom/SignatureFile", "InternalSignatureID");
@@ -52,8 +55,8 @@ public class DroidTypes {
     	// FIXME Failover if no network?
 		//sigFile = SigFileUtils.getLatestSigFile();
     	try {
-			sigFile = SigFileUtils.readSigFile( 
-					new FileInputStream("/Users/andy/Documents/workspace/nanite/DROID_SignatureFile_V63.xml") );
+			sigFile = SigFileUtils.readSigFileType( 
+					new File("src/main/resources/droid/DROID_SignatureFile_V67.xml") );
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -66,11 +69,10 @@ public class DroidTypes {
     
     public List<MimeType> getTypes() {
     	List<MimeType> mtl = new ArrayList<MimeType>();
-    	System.out.println("DROID "+sigFile);
-    	System.out.println("DROID SigFile "+sigFile.getFFSignatureFile());
-    	System.out.println("DROID SigFile Version "+sigFile.getFFSignatureFile().getVersion());
+    	System.out.println("DROID SigFile "+sigFile);
+    	System.out.println("DROID SigFile Version "+sigFile.getVersion());
     	for( FileFormatType ff :
-    			sigFile.getFFSignatureFile().getFileFormatCollection().getFileFormat() ) {
+    			sigFile.getFileFormatCollection().getFileFormat() ) {
     		ff.getID();
     		ff.getPUID();
     		ff.getName();
@@ -118,6 +120,12 @@ public class DroidTypes {
     		// Parse as MediaType:
     		MimeType mt = new MimeType();
     		mt.setType(mts);
+    		List<Glob> globs = new ArrayList<Glob>();
+    		for( String ext : exts ) {
+    			Glob g = new Glob();
+    			g.setPattern(ext);
+    		}
+    		mt.setGlobs(globs);
     		if( iSigID != null ) {
     			//System.out.println("Has Magic.");
     		}

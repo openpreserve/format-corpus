@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.opf_labs.fmts.fidget.TikaSigTester;
+import org.opf_labs.fmts.mimeinfo.Glob;
 import org.opf_labs.fmts.mimeinfo.MimeType;
 
 /**
@@ -54,12 +55,17 @@ public class CoverageAnalysis {
 			MimeCompare mc = new MimeCompare();
 			mc.tika = m;
 			t_types++;
+			boolean both = false;
 			for( MimeType d : droid ) {
 				if( m.getType().equals(d.getType())) {
 					mc.droid = d;
 					tnd_types++;
 					System.out.println("Both "+m.getType());
+					both = true;
 				}
+			}
+			if( both == false ) {
+				System.out.println("Only in Tika "+m.getType()+" "+m.getGlobsAsString());
 			}
 			mcm.put(m.getType(), mc);			
 		}
@@ -71,7 +77,7 @@ public class CoverageAnalysis {
 				mc.droid = d;
 				mcm.put(d.getType(), mc);			
 				d_types++;
-				System.out.println("DROID only "+d.getType());
+				System.out.println("DROID only "+d.getType()+" "+d.getGlobsAsString());
 			}
 		}
 		// Currently not lineing up as treated as strings, and some are string plus version
