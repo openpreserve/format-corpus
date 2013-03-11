@@ -48,6 +48,8 @@ public class CoverageAnalysis {
 		
 		// Set up the comparison:
 		Map<String, MimeCompare> mcm = new HashMap<String,MimeCompare>();
+		// By Extension:
+		Map<String, MimeCompare> ecm = new HashMap<String,MimeCompare>();
 		
 		// Go through Tika
 		int t_types = 0, tnd_types = 0;
@@ -67,9 +69,12 @@ public class CoverageAnalysis {
 			if( both == false ) {
 				System.out.println("Only in Tika "+m.getType()+" "+m.getGlobsAsString());
 			}
-			mcm.put(m.getType(), mc);			
+			mcm.put(m.getType(), mc);
+			for( Glob g : m.getGlobs() ) {
+				ecm.put(g.getPattern(), mc);
+			}
 		}
-		// Now pick up others, i.e. the DROID only ones:
+ 		// Now pick up others, i.e. the DROID only ones:
 		int d_types = 0;
 		for( MimeType d : droid ) {
 			if( ! mcm.containsKey(d.getType())) {
@@ -78,6 +83,13 @@ public class CoverageAnalysis {
 				mcm.put(d.getType(), mc);			
 				d_types++;
 				System.out.println("DROID only "+d.getType()+" "+d.getGlobsAsString());
+			}
+			for( Glob g : d.getGlobs() ) {
+				if( ecm.containsKey(g.getPattern())) {
+					System.out.println("MATCH "+g.getPattern());
+				} else {
+					System.out.println("NO MATCH "+g.getPattern());
+				}
 			}
 		}
 		// Currently not lineing up as treated as strings, and some are string plus version

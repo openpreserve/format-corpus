@@ -25,6 +25,7 @@ import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
+import org.apache.tika.mime.TikaMimeType;
 import org.opf_labs.fmts.mimeinfo.Glob;
 
 /**
@@ -77,6 +78,7 @@ public class TikaTypes {
     		g.setPattern(ext);
     		globs.add(g);
     	}
+    	// FIXME: List<Magic> magics = TikaMimeType.getMagics(mt);
     	mi.setGlobs( globs );
     	return mi;
     }
