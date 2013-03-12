@@ -16,8 +16,13 @@
 function submitSignature() {
 	var chunksize = (1024 * 64); // We're sending up to 64K of data
 	var sigFile = document.getElementById("sig-file").files[0]; // FileList
+	if (sigFile == undefined) {
+		alert("Please select a signature file.");
+	}
 	var datFile = document.getElementById("data-file").files[0]; // FileList
-																	// object
+	if (datFile == undefined) {
+		alert("Please select a data file.");
+	}
 	var formData = new FormData();
 	formData.append("sigFile", sigFile); // Add sig file to form data
 	formData.append("sigName", sigFile.name); // Get sig file name

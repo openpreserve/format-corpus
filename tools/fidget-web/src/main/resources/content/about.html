@@ -1,4 +1,4 @@
-<#--
+<!--
 
     Copyright (C) 2012 Carl Wilson <carl@openplanetsfoundation.org>
 
@@ -15,17 +15,18 @@
     limitations under the License.
 
 -->
-<#-- @ftlvariable name="" type="org.opf_labs.fmts.fidget.views.ApplicationView" -->
-<!DOCTYPE html>
-<!-- The DOCTYPE declaration above will set the    -->
-<!-- browser's rendering engine into               -->
-<!-- "Standards Mode". Replacing this declaration  -->
-<!-- with a "Quirks Mode" doctype may lead to some -->
-<!-- differences in layout.                        -->
-<html>
-  <#include "/page/head.html" parse="false">
-  <body>
-    <#include "/page/banner.html" parse="false">
-    <#include "/content/home.html" parse="true">
-  </body>
-</html>
+<div id="content" class="container_12">
+	<div class="clear"></div>
+	<div id="detail" class="grid_8 alpha">
+		<h3>Fidget Tika Signature Tester</h3>
+			<p>Allows the quick testing of Tika Signatures</p>
+	</div>
+</div>
+<#include "/page/footer.html" parse="false">
+<script type="text/javascript">
+	$(document).ready(function() {
+		// Select the home link
+		selNavbarItem("about-nav");
+	});
+</script>
+

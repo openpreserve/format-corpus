@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<#-- @ftlvariable name="" type="org.opf_labs.fmts.fidget.views.ApplicationView" -->
+<#-- @ftlvariable name="" type="uk.ac.ox.bodleian.beam.views.ApplicationView" -->
 <!DOCTYPE html>
 <!-- The DOCTYPE declaration above will set the    -->
 <!-- browser's rendering engine into               -->
@@ -26,6 +26,6 @@
   <#include "/page/head.html" parse="false">
   <body>
     <#include "/page/banner.html" parse="false">
-    <#include "/content/home.html" parse="true">
+    <#include "/content/about.html" parse="true">
   </body>
 </html>

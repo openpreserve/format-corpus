@@ -85,4 +85,12 @@ public class TikaTestResource {
 		}
 		return ApplicationView.getNewInstance("result.ftl", result);
 	}
+	
+	@GET
+	@Produces(MediaType.TEXT_HTML)
+	@Path("about")
+	public ApplicationView aboutHtml() {
+		return ApplicationView.getNewInstance("about.ftl");
+	}
+	
 }
