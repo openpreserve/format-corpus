@@ -20,12 +20,13 @@ package org.opf_labs.fmts;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.tika.mime.MagicRetriever;
 import org.apache.tika.mime.MediaType;
 import org.apache.tika.mime.MimeType;
 import org.apache.tika.mime.MimeTypeException;
 import org.apache.tika.mime.MimeTypes;
-import org.apache.tika.mime.TikaMimeType;
 import org.opf_labs.fmts.mimeinfo.Glob;
 
 /**
@@ -42,7 +43,6 @@ public class TikaTypes {
 		// This default should load:
         //   "tika-mimetypes.xml", "custom-mimetypes.xml"
     	tikaTypes = MimeTypes.getDefaultMimeTypes();
-
 	}
 	
 	/**
@@ -82,5 +82,44 @@ public class TikaTypes {
     	mi.setGlobs( globs );
     	return mi;
     }
-    
+        /**
+         * Main function used for testing
+         * @param args
+         * @throws MimeTypeException 
+         */
+        public static void main(String [] args) throws MimeTypeException {
+        	TikaTypes types = new TikaTypes();
+        	int typeCount = 0;
+        	int sigCounter = 0;
+        	int extCounter = 0;
+        	for (MediaType mediaType : types.tikaTypes.getMediaTypeRegistry().getTypes()) {
+        		System.out.print(mediaType.toString() + ",");
+        		/**
+        		 * Output the parameters here
+        		 */
+//        		Map<String, String> params = mediaType.getParameters();
+//        		for (String paramKey : params.keySet()) {
+//        			System.out.println(paramKey + ":" + params.get(paramKey));
+//        		}
+        		MimeType mimeType = types.tikaTypes.getRegisteredMimeType(mediaType.toString());
+        		System.out.print(mimeType.getDescription() + ",");
+        		for (String ext : mimeType.getExtensions()) {
+        			System.out.print(ext + " ");
+        			extCounter++;
+        		}
+        		if (mimeType.hasMagic()) {
+        			List<String> sigs = MagicRetriever.listMagic(mimeType);
+        			System.out.print(",");
+        			for (String sig : sigs) {
+        				System.out.print(sig + " ");
+        			}
+            		sigCounter+=sigs.size();
+        		}
+        		typeCount++;
+        		System.out.println();
+        	}
+        	System.out.println(typeCount + " types.");
+        	System.out.println(sigCounter + " sigs.");
+        	System.out.println(extCounter + " exts.");
+        }
 }
