@@ -16,32 +16,31 @@
 
 -->
 <div id="content" class="container_12">
-  <div class="clear"></div>
-  <div id="detail" class="grid_8 alpha">
-    <h3>Try a signature</h3>
-    <form id="sig-form" class="stylized">
-      <p>Use choose sig file to pick a sig file</p>
-      <p>Use choose data file to pick a test data file</p>
-      <p>Use Test Signature to test the sig against your test data</p>
-      <fieldset>
-        <legend>Signature Test data</legend>
-        <label for="sig-file" class="grid_2">Sig File <span
-          class="small">The Tika XML signature</span>
-        </label> <a id="sig-click" class="grid_3">Choose Sig File</a> <input type="file"
-          id="sig-file" name="sig-file" style="display: none;" />
-        <div class="clear"></div>
-        <label for="data-file" class="grid_2">Data File <span
-          class="small">Test data to identify</span>
-        </label> <a id="data-click" class="grid_3">Choose Test Data File</a> <input
-          type="file" id="data-file" name="data-file" style="display: none;" />
-      </fieldset>
-      <div class="grid_3 prefix_1">
-        <button type="submit" class="grid_3">Test Signature</button>
-      </div>
-    </form>
-  </div>
-  <div id="results" class="grid_4 omega">
-  </div>
+	<div class="clear"></div>
+	<div id="detail" class="grid_8 alpha">
+		<h3>Try a signature</h3>
+		<form id="sig-form" class="stylized">
+			<p>Use choose sig file to pick a sig file</p>
+			<p>Use choose data file to pick a test data file</p>
+			<p>Use Test Signature to test the sig against your test data</p>
+			<fieldset>
+				<legend>Signature Test data</legend>
+				<label for="sig-file" class="grid_2">Sig File <span
+					class="small">The Tika XML signature</span>
+				</label> <a id="sig-click" class="grid_3">Choose Sig File</a> <input
+					type="file" id="sig-file" name="sig-file" style="display: none;" />
+				<div class="clear"></div>
+				<label for="data-file" class="grid_2">Data File <span
+					class="small">Test data to identify</span>
+				</label> <a id="data-click" class="grid_3">Choose Test Data File</a> <input
+					type="file" id="data-file" name="data-file" style="display: none;" />
+			</fieldset>
+			<div class="grid_3 prefix_1">
+				<a id="submit-click" class="grid_3">Test Signature</a>
+			</div>
+		</form>
+	</div>
+	<div id="results" class="grid_4 omega"></div>
 </div>
 <#include "/page/footer.html" parse="false">
 <script type="text/javascript">
@@ -56,8 +55,8 @@
 			$("#data-file").click();
 		});
 		// Handler for the form input
-		$("#sig-form").submit(function(event) {
-			submitSignature(event);
+		$("#submit-click").click(function() {
+			submitSignature();
 		});
 	});
 </script>
