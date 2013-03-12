@@ -75,7 +75,7 @@ public class TikaTypes {
     	List<Glob> globs = new ArrayList<Glob>();
     	for( String ext : mt.getExtensions() ) {
     		Glob g = new Glob();
-    		g.setPattern(ext);
+    		g.setPattern(ext.replaceAll("^\\.", ""));
     		globs.add(g);
     	}
     	// FIXME: List<Magic> magics = TikaMimeType.getMagics(mt);
