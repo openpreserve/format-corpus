@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 function submitSignature() {
-	event.preventDefault();
 	var chunksize = (1024 * 64); // We're sending up to 64K of data
 	var sigFile = document.getElementById("sig-file").files[0]; // FileList
-																// object
 	var datFile = document.getElementById("data-file").files[0]; // FileList
 																	// object
 	var formData = new FormData();
@@ -28,11 +26,12 @@ function submitSignature() {
 																	// form data
 	formData.append("datName", datFile.name); // Data File name
 	$.ajax({
-		url : "",
+		url : "http://localhost:8080/fidget",
 		type : "POST",
 		data : formData,
-		processData : false,
-		contentType : false,
+		dataType: "html",
+		processData: false,
+		contentType: false,
 		success : function(data, success) {
 			$("#results").empty();
 			$("#results").append(data);
@@ -60,7 +59,7 @@ function sliceFile(file, start, stop) {
 	if (file.webkitSlice) {
 		return file.webkitSlice(start, stop);
 	} else if (file.mozSlice) {
-		return f.mozSlice(start, stop);
+		return file.mozSlice(start, stop);
 	} else
 		return file;
 }
