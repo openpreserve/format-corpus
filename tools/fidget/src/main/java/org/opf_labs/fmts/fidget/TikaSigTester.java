@@ -301,7 +301,6 @@ public final class TikaSigTester {
 	}
 	
 
-	@SuppressWarnings("resource")
 	List<IdentificationResult> identify(String govDocsData) {
 		File govDocsRoot = new File(govDocsData);
 		System.out.println("Assessing Corpora:" + new Date());
