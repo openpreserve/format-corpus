@@ -25,5 +25,5 @@ Then open http://localhost:8080/fidget.....
 
 ToDo
 ----
-[ ] Improve build and run instructions
-[ ] Provide example
+- [ ] Improve build and run instructions
+- [ ] Provide example
