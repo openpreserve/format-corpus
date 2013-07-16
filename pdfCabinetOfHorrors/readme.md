@@ -30,7 +30,7 @@ Here's a more detailed description of the files (arranged by feature class):
 + **text\_only\_fontsEmbeddedAll.pdf** - used fonts are embedded
 + **text\_only\_fontsEmbeddedSubset.pdf** - used fonts are embedded as subset
 + **text\_only\_pdfa1b.pdf** - *PDF/A-1a* (with embedded fonts)
-+ **test\_fontArialNotEmbedded.pdf** - font *Arial* is not embedded (other fonts are)
++ **test\_fontArialNotEmbedded.pdf** - <del>font *Arial*</del> fonts *Arial* and *Times New Roman*  <del>is</del> are not embedded
 
 
 ###File attachments
