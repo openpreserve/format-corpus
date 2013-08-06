@@ -43,8 +43,8 @@ Here's a more detailed description of the files (arranged by feature class):
 ###Byte corruption
 + **corruptionOneByteMissing.pdf** - one byte missing from comment line following file header
  
-
-
+###Digitally Signed 3D Portfolio
++ **digitally_signed_3D_Portfolio.pdf** - a digitally signed PDF 1.7 portfolio with multiple sheets, forms and 3D images
 
 
 ## License

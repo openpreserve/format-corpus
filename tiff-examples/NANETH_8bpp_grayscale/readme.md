@@ -12,7 +12,7 @@
 
 ---
 
-= grayscale_8bpp_wrong_bpptag.tif =
+###grayscale_8bpp_wrong_bpptag.tif
 
 Invalid 8 bits per sample grayscale baseline TIFF, defined as 16 bits per sample, 
 showing malformation when rendered.
