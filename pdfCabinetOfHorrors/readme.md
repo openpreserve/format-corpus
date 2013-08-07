@@ -4,12 +4,12 @@
 ## About these files
 Test *PDF* files, created for detecting *PDF* features that are undesired in archival settings. Most of these files were originally created in Microsoft Word 2003, and then converted to *PDF* with Adobe Acrobat Professional 9.5.2. The source Word files are included here as well, but in many cases the *PDFs* required further processing in Acrobat (e.g. embedding videos, attaching files, encryption) so they're probably not that useful.
 
-An exception is *javascript.pdf*, which was created with Didier Stevens' *make-pdf* tool, which is available here:
-
-[http://blog.didierstevens.com/programs/pdf-tools/](http://blog.didierstevens.com/programs/pdf-tools/)
+Exceptions are:
+*javascript.pdf*, which was created with Didier Stevens' *make-pdf* tool, which is available here: [http://blog.didierstevens.com/programs/pdf-tools/](http://blog.didierstevens.com/programs/pdf-tools/)
+*digitally_signed_3D_Portfolio.pdf*, which was kindly provided by Adobe.
 
 ## Description
-Here's a more detailed description of the files (arranged by feature class):
+Here's a more detailed description of the files (arranged by feature class(es)):
 
 ###Encryption
 
@@ -44,8 +44,7 @@ Here's a more detailed description of the files (arranged by feature class):
 + **corruptionOneByteMissing.pdf** - one byte missing from comment line following file header
  
 ###Digitally Signed 3D Portfolio
-+ **digitally_signed_3D_Portfolio.pdf** - a digitally signed PDF 1.7 portfolio with multiple sheets, forms and 3D images
-
++ **digitally_signed_3D_Portfolio.pdf** - a PDF 1.7 portfolio with multiple sheets, forms and 3D images; one of the sheets is digitally signed
 
 ## License
-All files in this folder: Creative Commons CC0: Public Domain Dedication. See [http://creativecommons.org/publicdomain/zero/1.0/](http://creativecommons.org/publicdomain/zero/1.0/) - To the extent possible under law, Johan van der Knijff has waived all copyright and related or neighboring rights to this work.
+All files in this folder: Creative Commons CC0: Public Domain Dedication. See [http://creativecommons.org/publicdomain/zero/1.0/](http://creativecommons.org/publicdomain/zero/1.0/)
