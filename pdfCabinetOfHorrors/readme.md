@@ -34,7 +34,8 @@ Here's a more detailed description of the files (arranged by feature class):
 
 
 ###File attachments
-+ **fileAttachment.pdf** - contains file attachment (an oldskool Quattro Pro spreadsheet, no less!)
++ **fileAttachment.pdf** - contains a document-level file attachment (an oldskool Quattro Pro spreadsheet, no less!) that is defined using an *EmbeddedFiles* entry in the document’s name dictionary
++ **fileAttachment_fileAttachmentAnnotation.pdf** - contains a page-level file attachment that is defined using a *File Attachment Annotation*
 
 ###External references
 + **externalLink.pdf** - contains link to another document
