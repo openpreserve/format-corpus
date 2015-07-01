@@ -15,7 +15,7 @@ Here's a more detailed description of the files (arranged by feature class(es)):
 
 ### Encryption
 
-+ **encryption_openpassword.pdf** - requires password to open the file
++ [**encryption_openpassword.pdf**](./encryption_openpassword.pdf?raw=true)) - requires password to open the file
 + **encryption_nocopy.pdf** - requires password to copy document contents
 + **encryption_noprinting.pdf** - requires password for printing
 + **encryption_notextaccess.pdf** - requires password to enable text access for screen reader devices for the visually impaired
