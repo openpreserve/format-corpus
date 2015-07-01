@@ -41,7 +41,7 @@ Here's a more detailed description of the files (arranged by feature class(es)):
 
 + **veraPDFHiRes.pdf** - Intact and valid PDF/A-1b file with bitmap image
 + **veraPDFHiResChangedHeight.pdf** - As above, but wrong value of *Height*  entry in Image XObject 
-+ **veraPDFHiResWrongObjectID.pdf** - as *veraPDFHiRes.pdf*, but with reference to wrong (non-existing) XObject
++ **veraPDFHiResWrongObjectID.pdf** - As *veraPDFHiRes.pdf*, but with reference to wrong (non-existing) XObject
 
 ### File attachments
 
