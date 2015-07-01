@@ -22,8 +22,8 @@ Here's a more detailed description of the files (arranged by feature class(es)):
 
 ### Multimedia
 
-+ [**embedded\_video\_avi.pdf**](./?raw=true) - contains embedded *AVI* movie 
-+ [**embedded\_video\_quicktime.pdf**](./?raw=true) - contains embedded *Quicktime* movie
++ [**embedded\_video\_avi.pdf**](./embedded_video_avi.pd?raw=true) - contains embedded *AVI* movie 
++ [**embedded\_video\_quicktime.pdf**](./embedded_video_quicktime.pdf?raw=true) - contains embedded *Quicktime* movie
 
 ### Scripts
 
