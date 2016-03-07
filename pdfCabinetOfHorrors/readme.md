@@ -43,7 +43,8 @@ Here's a more detailed description of the files (arranged by feature class(es)):
 + [**veraPDFHiRes.pdf**](./veraPDFHiRes.pdf?raw=true) - Intact and valid PDF/A-1b file with bitmap image
 + [**veraPDFHiResChangedHeight.pdf**](./veraPDFHiResChangedHeight.pdf?raw=true) - As above, but wrong value of *Height*  entry in Image XObject 
 + [**veraPDFHiResWrongObjectID.pdf**](./veraPDFHiResWrongObjectID.pdf?raw=true) - As *veraPDFHiRes.pdf*, but with reference to wrong (non-existing) XObject
-
++ [**balloon_a1b_jp2k.pdf**](./balloon_a1b_jp2k.pdf?raw=true) - file claims PDF/A-1b conformance, but contains JPEG 2000 image, which is not allowed in PDF/A-1 (file also has some other violations of PDF/A-1).
+ 
 ### File attachments
 
 + [**fileAttachment.pdf**](./fileAttachment.pdf?raw=true) - contains a document-level file attachment (an oldskool Quattro Pro spreadsheet, no less!) that is defined using an *EmbeddedFiles* entry in the document’s name dictionary
