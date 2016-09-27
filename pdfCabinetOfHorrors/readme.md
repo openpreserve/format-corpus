@@ -2,6 +2,7 @@
 
 
 ## About these files
+
 Test *PDF* files, created for detecting *PDF* features that are undesired in archival settings. Most of these files were originally created in Microsoft Word 2003, and then converted to *PDF* with Adobe Acrobat Professional 9.5.2. The source Word files are included here as well, but in many cases the *PDFs* required further processing in Acrobat (e.g. embedding videos, attaching files, encryption) so they're probably not that useful.
 
 Exceptions are:
@@ -11,6 +12,7 @@ Exceptions are:
 *digitally_signed_3D_Portfolio.pdf*, which was kindly provided by Adobe.
 
 ## Description
+
 Here's a more detailed description of the files (arranged by feature class(es)):
 
 ### Encryption
@@ -62,6 +64,10 @@ Here's a more detailed description of the files (arranged by feature class(es)):
 ### Digitally Signed 3D Portfolio
 
 + [**digitally_signed_3D_Portfolio.pdf**](./digitally_signed_3D_Portfolio.pdf?raw=true) - a PDF 1.7 portfolio with multiple sheets, forms and 3D images; one of the sheets is digitally signed
+
+### Miscellaneous
+
++ [**pdf-17-header18.pdf**](./pdf-17-header18.pdf?raw=true) - PDF 1.7, but header string is `%PDF-1.8` (which causes a false negative with some identification tools, see e.g. [here](https://github.com/digital-preservation/droid/issues/114)). 
 
 ## License
 All files in this folder: Creative Commons CC0: Public Domain Dedication. See [http://creativecommons.org/publicdomain/zero/1.0/](http://creativecommons.org/publicdomain/zero/1.0/)
