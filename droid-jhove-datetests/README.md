@@ -7,6 +7,9 @@ The one-liner for these files is that I made them (in my own time) back in
 The results of these tests were also used to inform the APSR (research and 
 report) APSR = Australian Partnership for Sustainable Repositories
 
+In this version of the repository files are maintained in ZIP containers
+to enable testing datetime capabilities in preservation workflows.
+
 ###Format MimeType Breakdown, identified by DROID:
 
       application/rtf, text/rtf (41)	   application/xml, text/xml (13)
