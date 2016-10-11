@@ -1,5 +1,5 @@
 #DROID, JHOVE, NLNZ Metadata Extractor Test Collection
-##By Somaya Langley
+##From Somaya Langley
 
 The one-liner for these files is that I made them (in my own time) back in 
 2006 to test DROID, Jhove and the NLNZ Metadata Extractor. 
