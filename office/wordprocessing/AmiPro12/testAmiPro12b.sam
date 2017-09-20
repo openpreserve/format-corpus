@@ -1,0 +1,372 @@
+[ver]
+	4
+[sty]
+
+[files]
+[toc]
+	TOC 1
+	TOC 2
+	TOC 3
+
+
+
+	63
+[prn]
+	PCL / HP LaserJet
+[lang]
+	1
+[fopts]
+	4
+	1
+	2880
+	0
+[lnopts]
+	0
+	Body Text
+[docopts]
+	5
+	0
+[tag]
+	Body Text
+	2
+	[fnt]
+		Roman 10cpi
+		240
+		0
+		32768
+	[algn]
+		257
+		1
+		0
+		0
+		0
+	[spc]
+		33
+		273
+		1
+		0
+		0
+		1
+		100
+	[brk]
+		4
+	[line]
+		8
+		0
+		1
+		0
+		1
+		1
+		1
+		10
+		10
+		1
+	[spec]
+		0
+		0
+
+		0
+		1
+		0
+		0
+		2
+		0
+		0
+	[nfmt]
+		272
+		1
+		2
+		.
+		,
+		$
+[tag]
+	TOC 1
+	2
+	[fnt]
+		Roman 10cpi
+		240
+		0
+		32768
+	[algn]
+		257
+		1
+		0
+		0
+		0
+	[spc]
+		33
+		273
+		1
+		0
+		0
+		1
+		100
+	[brk]
+		4
+	[line]
+		8
+		0
+		1
+		0
+		1
+		1
+		1
+		10
+		10
+		1
+	[spec]
+		0
+		0
+
+		0
+		1
+		0
+		0
+		2
+		0
+		0
+	[nfmt]
+		272
+		1
+		2
+		.
+		,
+		$
+[tag]
+	TOC 2
+	2
+	[fnt]
+		Roman 10cpi
+		240
+		0
+		32768
+	[algn]
+		257
+		1
+		0
+		0
+		0
+	[spc]
+		33
+		273
+		1
+		0
+		0
+		1
+		100
+	[brk]
+		4
+	[line]
+		8
+		0
+		1
+		0
+		1
+		1
+		1
+		10
+		10
+		1
+	[spec]
+		0
+		0
+
+		0
+		1
+		0
+		0
+		2
+		0
+		0
+	[nfmt]
+		272
+		1
+		2
+		.
+		,
+		$
+[tag]
+	TOC 3
+	2
+	[fnt]
+		Roman 10cpi
+		240
+		0
+		32768
+	[algn]
+		257
+		1
+		0
+		0
+		0
+	[spc]
+		33
+		273
+		1
+		0
+		0
+		1
+		100
+	[brk]
+		4
+	[line]
+		8
+		0
+		1
+		0
+		1
+		1
+		1
+		10
+		10
+		1
+	[spec]
+		0
+		0
+
+		0
+		1
+		0
+		0
+		2
+		0
+		0
+	[nfmt]
+		272
+		1
+		2
+		.
+		,
+		$
+[lay]
+	Standard
+	514
+	[rght]
+		16836
+		11904
+		1
+		1416
+		1416
+		1
+		1416
+		1416
+		0
+		0
+		0
+		0
+		0
+		2
+		1
+		1416
+		10488
+		10
+		1
+		720
+		1
+		1440
+		1
+		2160
+		1
+		2880
+		1
+		3600
+		1
+		4320
+		1
+		5040
+		1
+		5760
+		1
+		6480
+		1
+		7200
+	[hrght]
+	[lyfrm]
+		1
+		11200
+		0
+		0
+		12240
+		1440
+		1
+		1
+		3
+		1
+		0
+		0
+		0
+	[frmlay]
+		1440
+		12240
+		1
+		1440
+		72
+		1
+		360
+		1440
+		0
+		1
+		0
+		1
+		1
+		0
+		1
+		1440
+		10800
+		0
+	[txt]
+>
+	[frght]
+	[lyfrm]
+		1
+		13248
+		0
+		14400
+		12240
+		15840
+		1
+		1
+		3
+		1
+		0
+		0
+		0
+	[frmlay]
+		15840
+		12240
+		1
+		1440
+		360
+		1
+		14472
+		1440
+		0
+		1
+		0
+		1
+		1
+		0
+		1
+		1440
+		10800
+		0
+	[txt]
+>
+[elay]
+[l1]
+	0
+[edoc]
+<:R1,37,1,282,1,846,1,1416,1,1980,1,2550,1,3114,1,3678,1,4248,1,4812,1,5382,1,5946,1,6510,1,7080,1,7644,1,8214,1,8778,1,9342,1,9912,1,10476,1,11046,1,11610,1,12174,1,12744,1,13308,1,13878,1,14442,1,15006,1,15576,1,16140,1,16710,1,17274,1,17838,1,18408,1,18972,1,19542,1,20106,1,20670><:f240,1Roman 10cpi,0,0,0>
+
+
+@TOC 1@Sluwe Sjaantje sloeg de slome slager<:f240,1Roman 10cpi,0,0,0>
+
+
+@Body Text@Sluwe Sjaantje sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de 
+slome slager. <:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0>Sluwe 
+Sjaantje sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de slome 
+slager. <:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje 
+sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0><:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de slome slager. 
+<:f240,1Roman 10cpi,0,0,0><:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0><:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de 
+slome slager. <:f240,1Roman 10cpi,0,0,0><:f240,1Roman 10cpi,0,0,0>Sluwe Sjaantje sloeg de slome slager. <:f240,1Roman 10cpi,0,0,0>
+>

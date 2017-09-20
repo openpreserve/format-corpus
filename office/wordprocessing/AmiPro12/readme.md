@@ -1,0 +1,11 @@
+## About these files
+Sample Ami Pro 1.2 files:
+
+- testAmiPro12.sam: Ami Pro 1.2 format
+- testAmiPro12a.sam: Ami Pro 1.2a format
+- testAmiPro12b.sam: Ami Pro 1.2b format
+
+Files created using WordPerfect 6.1 for Windows. 
+
+## License
+All files in this folder: Creative Commons CC0: Public Domain Dedication. See [http://creativecommons.org/publicdomain/zero/1.0/](http://creativecommons.org/publicdomain/zero/1.0/) - To the extent possible under law, Johan van der Knijff has waived all copyright and related or neighboring rights to this work.
