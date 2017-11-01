@@ -6,6 +6,11 @@ Created for the OPF Seminar 'Creating File Format/System Signatures for Submissi
 
 Hierarchical File System (HFS) is a proprietary file system developed by Apple Inc. for use in computer systems running Mac OS.
 
+Images Included:
+
+  * [Blank HFS Example, Untitled Volume](https://github.com/ross-spencer/format-corpus/blob/disk-images/hfs/artefactual/disk-images/hfs/artefactual/blank-untitled-volume.img)
+  * [Single File Called helloworld.txt, Untitled Volume](https://github.com/ross-spencer/format-corpus/blob/disk-images/hfs/artefactual/disk-images/hfs/artefactual/hello-world-untitled-volume.img)
+
 ### License
 
 Creative Commons CC0: Public Domain Dedication. See http://creativecommons.org/publicdomain/zero/1.0/ - To the extent 
