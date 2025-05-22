@@ -1,6 +1,6 @@
 # VLOOKUP compatibility demo file
 
-The file in this directory demonstrates a compatibility issue between the VLOOKUP functions of Quattro Pro for DOS and LibreOffice Calc.
+The file [TESTLU.WQ2](./TESTLU.WQ2) in this directory demonstrates a compatibility issue between the VLOOKUP functions of Quattro Pro for DOS and LibreOffice Calc.
 
 The file looks like this in Quattro Pro for DOS 5.0 (which is also the version I used for creating it), running in DOSBox-X:
 
