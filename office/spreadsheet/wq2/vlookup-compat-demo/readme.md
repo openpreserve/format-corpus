@@ -2,13 +2,13 @@
 
 The file [TESTLU.WQ2](./TESTLU.WQ2) in this directory demonstrates a compatibility issue between the VLOOKUP functions of Quattro Pro for DOS and LibreOffice Calc.
 
-The file looks like this in Quattro Pro for DOS 5.0 (which is also the version I used for creating it), running in DOSBox-X:
+It looks like this in Quattro Pro for DOS 5.0 (which is also the version I used for creating it), running in DOSBox-X:
 
 ![](./qp-vlookup-demo.png)
 
 The top 11 rows contain a 5-column block of data. This is used as a @VLOOKUP data table in row 15.
 
-The data are queried with @VLOOKUP, using the following formulas in cells B15, C15, D15 and E15, respectively:
+The data are queried with Quattro Pro's @VLOOKUP function, using the following formulas in cells B15, C15, D15 and E15, respectively:
 
 ```
 @VLOOKUP($A$15,$A$2..$E$11,1)
@@ -23,7 +23,7 @@ Opening the same file in LibreOffice Calc (I used version 6.4.7.2) initially res
 
 ![](./lo-init.png)
 
-Note how the values in D15 and E15 are different from the original rendering in Quattro Pro (but oddly the values in B15 and C15 are correct).
+Note how the values in D15 and E15 are different from the original rendering in Quattro Pro (but oddly the values in B15 and C15 are correct!).
 
 When I press Ctrl-Shift-F9 to re-calculate the spreadsheet, the values change to:
 
