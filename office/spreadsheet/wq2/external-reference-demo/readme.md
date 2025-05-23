@@ -12,7 +12,13 @@ Here, both values are shown, which means they must be stored in the file. After 
 
 ![](./dest-none.png)
 
-A peek inside the file with a Hex editor shows that the "bitsgalore.org" string is stored towards the end of the file:
+Opening the isolated file in LibreOffice Calc:
+
+![](./dest-calc.png)
+
+Note how Calc only shows the number, and a "#REF" value for the cell with the text string.
+
+A peek inside the file with a Hex editor shows that the "bitsgalore.org" string is actually stored towards the end of the file, but it seems it isn't picked up by Calc:
 
 ![](./dest-ghex.png)
 
