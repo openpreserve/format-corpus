@@ -1,4 +1,0 @@
-# Config
-http:
-  # the root path to the REST resources
-  rootPath: /fidget/*
