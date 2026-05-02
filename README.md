@@ -11,7 +11,7 @@ A recent summary of the contents of the repository can be found [here](http://ww
 How to Contribute
 =================
 
-See http://wiki.curatecamp.org/index.php/Collecting_format_ID_test_files for more information.
+See [the wiki](https://github.com/openpreserve/format-corpus/wiki#contributing) for more information.
 
 See [metadata-template.ext.md](https://github.com/openplanets/format-corpus/blob/master/metadata-template.ext.md) for a simple per-file metadata template.
 
