@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+﻿<monitors version="2">
+  <configuration>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>1</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>eDP-1</connector>
+          <vendor>LGD</vendor>
+          <product>0x0751</product>
+          <serial>0x00000000</serial>
+        </monitorspec>
+        <mode>
+          <width>1600</width>
+          <height>900</height>
+          <rate>59.946</rate>
+        </mode>
+      </monitor>
+      <monitor>
+        <monitorspec>
+          <connector>HDMI-1</connector>
+          <vendor>DEL</vendor>
+          <product>DELL DJIK</product>
+          <serial>22</serial>
+        </monitorspec>
+        <mode>
+          <width>1600</width>
+          <height>900</height>
+          <rate>60.000</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+  </configuration>
+</monitors>
