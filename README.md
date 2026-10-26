@@ -21,9 +21,8 @@ Pooled Signatures
 
 As well as pooling example files, we also pool format signatures:
 
-* Tika signatures staged here: https://github.com/openplanets/format-corpus-tools/tree/master/tools/fidget/src/main/resources/tika-bl-staging
-* Tika signatures later merged here: [https://github.com/openplanets/format-corpus-tools/blob/master/tools/fidget/src/main/resources/org/apache/tika/mime/custom-mimetypes.xml here]
-* DROID signatures go [https://github.com/openplanets/format-corpus-tools/tree/master/tools/fidget/src/main/resources/droid here].
+* Tika signatures staged here: <https://github.com/openplanets/format-corpus-tools/tree/master/tools/fidget/src/main/resources/tika-bl-staging>
+* Tika signatures later merged: <https://github.com/openplanets/format-corpus-tools/blob/master/tools/fidget/src/main/resources/org/apache/tika/mime/custom-mimetypes.xml>
+* DROID signatures: <https://github.com/openplanets/format-corpus-tools/tree/master/tools/fidget/src/main/resources/droid>
 
-More details here: http://wiki.curatecamp.org/index.php/Improving_format_ID_coverage
-
+More details: <http://wiki.curatecamp.org/index.php/Improving_format_ID_coverage>
